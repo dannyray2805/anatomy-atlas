@@ -1,0 +1,196 @@
+[
+  {
+    "id": "body",
+    "uberon": "UBERON:0000468",
+    "fma": null,
+    "label": "Human body",
+    "layer": "unknown",
+    "part_of": null,
+    "sources": [
+      {
+        "source_id": "nlm-vhp-male",
+        "asset": "pending",
+        "note": "whole-body context — asset path after R2 sync"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "heart",
+    "uberon": "UBERON:0000948",
+    "fma": null,
+    "label": "Heart",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "pending",
+        "note": "HuBMAP HRA heart GLB — asset path after R2 sync"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "heart-left-ventricle",
+    "uberon": "UBERON:0002084",
+    "fma": null,
+    "label": "Left ventricle",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-asctb-heart",
+        "asset": "pending",
+        "note": "ASCT+B heart table — map mesh node before review"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": "heart-left-ventricle",
+    "reviewed": false,
+    "mesh_names": ["VH_M_heart_left_ventricle"]
+  },
+  {
+    "id": "skeleton",
+    "uberon": "UBERON:0001434",
+    "fma": null,
+    "label": "Skeletal system",
+    "layer": "skeleton",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Skeletal system' collection — asset path after R2 sync"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "muscle",
+    "uberon": "UBERON:0000383",
+    "fma": null,
+    "label": "Muscular system",
+    "layer": "muscle",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Muscular system' collection — asset path after R2 sync"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "skin",
+    "uberon": "UBERON:0002097",
+    "fma": null,
+    "label": "Skin",
+    "layer": "skin",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "pending",
+        "note": "VH_Male v1.2 Skin, same coordinate frame as heart, registered via heart's baked transform"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "blood-vasculature",
+    "uberon": "UBERON:0004537",
+    "fma": null,
+    "label": "Blood vasculature",
+    "layer": "vessel",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "pending",
+        "note": "VH_Male + VH_Female v1.2 Blood_Vasculature — central/trunk arterial-venous tree, same individual frame as skin (identity). Per-vessel mapping not done yet (whole-layer row)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "aorta-ascending",
+    "uberon": "UBERON:0001496",
+    "fma": null,
+    "label": "Ascending aorta",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "pending",
+        "note": "VH_Male + VH_Female v1.2 Blood_Vasculature.glb — mesh node names VH_M_ascending_aorta + VH_F_ascending_aorta confirmed in the node dump (present in both sexes)"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": "aorta-ascending",
+    "reviewed": false,
+    "mesh_names": ["VH_M_ascending_aorta", "VH_F_ascending_aorta"]
+  },
+  {
+    "id": "heart-right-ventricle",
+    "uberon": "UBERON:0002080",
+    "fma": null,
+    "label": "Right ventricle",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "pending",
+        "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_heart_right_ventricle + VH_F_right_ventricle confirmed by direct GLB inspection (both sexes)"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": "heart-right-ventricle",
+    "reviewed": false,
+    "mesh_names": ["VH_M_heart_right_ventricle", "VH_F_right_ventricle"]
+  },
+  {
+    "id": "heart-right-atrium",
+    "uberon": "UBERON:0002078",
+    "fma": null,
+    "label": "Right atrium",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "pending",
+        "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_right_cardiac_atrium + VH_F_right_cardiac_atrium confirmed by direct GLB inspection (both sexes)"
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": "heart-right-atrium",
+    "reviewed": false,
+    "mesh_names": ["VH_M_right_cardiac_atrium", "VH_F_right_cardiac_atrium"]
+  }
+]

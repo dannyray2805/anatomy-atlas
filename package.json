@@ -1,0 +1,14 @@
+{
+  "name": "anatomy-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Authentic multi-scale anatomy explorer. Datasets are the source of truth.",
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "test": "pnpm --filter ./packages/schema test && pnpm --filter ./packages/graph test && pnpm --filter ./packages/app test && pnpm --filter ./packages/worker test",
+    "validate": "pnpm --filter ./packages/graph validate",
+    "build": "pnpm --filter ./packages/schema build && pnpm --filter ./packages/app build",
+    "dev:app": "pnpm --filter ./packages/app dev",
+    "dev:worker": "pnpm --filter ./packages/worker dev"
+  }
+}

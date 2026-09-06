@@ -1,0 +1,13 @@
+{
+  "name": "@atlas/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --config ../../wrangler.toml",
+    "test": "node --experimental-strip-types --test src/index.test.ts"
+  },
+  "devDependencies": {
+    "wrangler": "^4.127.1"
+  }
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "fixture-tissue",
+    "uberon": null,
+    "fma": null,
+    "label": "Fixture tissue",
+    "layer": "tissue",
+    "part_of": null,
+    "sources": [],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  }
+]

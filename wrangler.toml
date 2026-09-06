@@ -1,0 +1,16 @@
+name = "anatomy-api"
+main = "packages/worker/src/index.ts"
+compatibility_date = "2026-08-01"
+
+[[r2_buckets]]
+binding = "ANATOMY_BUCKET"
+bucket_name = "anatomy-public"
+
+[[d1_databases]]
+binding = "anatomy_graph"
+database_name = "anatomy_graph"
+database_id = "417b972f-3eb2-4a53-92b8-7b764fc2fc5e"
+
+# Pages project is configured in Cloudflare dashboard or wrangler pages.
+# Do not put DEEPSEEK_API_KEY here. Use:
+#   wrangler secret put DEEPSEEK_API_KEY

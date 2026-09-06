@@ -1,0 +1,2 @@
+# Add hoa-tools / zarr only when you start volume conversion.
+# Keep this file empty of unused heavy deps until needed.

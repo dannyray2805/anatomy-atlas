@@ -1,0 +1,13 @@
+{
+  "source_id": "nlm-vhp-male",
+  "acknowledgment": "National Library of Medicine Visible Human Project",
+  "region": "thorax",
+  "width_px": 2048,
+  "height_px": 1216,
+  "pixel_size_mm": 0.33,
+  "slice_spacing_mm": 1.0,
+  "interpolation": "nearest",
+  "fixtures": true,
+  "fixture_note": "Current images are placeholders. Replace with converted real thorax WebPs (packages/tools conversion job) and set fixtures: false.",
+  "slices": ["0000.svg", "0001.svg", "0002.svg"]
+}

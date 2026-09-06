@@ -1,0 +1,28 @@
+[
+  {
+    "id": "body",
+    "uberon": "UBERON:0000468",
+    "fma": null,
+    "label": "Human body",
+    "layer": "unknown",
+    "part_of": null,
+    "sources": [],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "heart",
+    "uberon": "UBERON:0000948",
+    "fma": null,
+    "label": "Heart",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  }
+]

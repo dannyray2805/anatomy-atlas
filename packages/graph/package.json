@@ -1,0 +1,10 @@
+{
+  "name": "@atlas/graph",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node --experimental-strip-types src/validate.ts",
+    "test": "node --experimental-strip-types --test src/validate.test.ts"
+  }
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="304" viewBox="0 0 512 304">
+  <rect width="512" height="304" fill="#212121"/>
+  <text x="256" y="150" font-family="monospace" font-size="22" fill="#f4f1ea" text-anchor="middle">FIXTURE SLICE 0002</text>
+  <text x="256" y="180" font-family="monospace" font-size="13" fill="#9a927f" text-anchor="middle">placeholder — not a real NLM slice</text>
+</svg>

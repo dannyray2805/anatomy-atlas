@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# env (public VITE_ vars are safe, but keep secrets out)
+.env
+.env.local
+
+# large local assets — never commit GLBs or Zarr stores
+incoming/
+
+# wrangler local state / check cache
+.wrangler/
+.wrangler-check/
+
+# python caches
+__pycache__/
+*.py[cod]
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
