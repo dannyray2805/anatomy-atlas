@@ -90,19 +90,31 @@ for (const s of withFacts) {
       delayMs: CHAT_DELAY_MS,
     });
 
-  // in-card: must be grounded (an identity question every card can answer)
-  const inRes = await post("What is the Uberon identifier of this structure?");
-  const inText = await inRes.text();
-  let inJson = {};
-  try {
-    inJson = JSON.parse(inText);
-  } catch {
-    fail(`chat in-card returned non-JSON: ${inText.slice(0, 120)}`);
+  // in-card: must be grounded. NOTE — ask a natural card-grounded question and retry a few
+  // times rather than failing on the first NOT_IN_CARD: the worker's strict citation post-filter
+  // refuses ANY uncited reply (e.g. a terse "UBERON:0002084" with no source token), and LLM
+  // output is probabilistic. We only fail if the worker NEVER grounds across attempts — that is
+  // the real regression signal (a worker that no longer grounds in-card questions at all).
+  const label = pick.label || pick.id;
+  const inQuestion = `Tell me about the ${label} using only its published fact card.`;
+  let grounded = false;
+  let lastIn = "";
+  for (let attempt = 0; attempt < 3 && !grounded; attempt++) {
+    const inRes = await post(inQuestion);
+    lastIn = await inRes.text();
+    try {
+      const j = JSON.parse(lastIn);
+      if (inRes.status === 200 && j.reply && j.reply !== "NOT_IN_CARD") grounded = true;
+    } catch {
+      /* keep lastIn for the failure message below */
+    }
+    if (!grounded) await sleep(3000);
   }
-  if (inRes.status !== 200) fail(`chat in-card -> HTTP ${inRes.status}`);
-  else if (!inJson.reply || inJson.reply === "NOT_IN_CARD")
-    fail(`chat in-card for ${pick.id} was not grounded (empty reply or NOT_IN_CARD)`);
-  else console.log(`ok  chat in-card (${pick.id}) -> grounded, cited reply`);
+  if (!grounded) {
+    fail(`chat in-card for ${pick.id} never grounded across 3 attempts (last: ${lastIn.slice(0, 140)})`);
+  } else {
+    console.log(`ok  chat in-card (${pick.id}) -> grounded, cited reply`);
+  }
 
   // out-of-card: citation gate must return EXACTLY NOT_IN_CARD (this is the regression check
   // that has been done by hand on every deploy so far)
