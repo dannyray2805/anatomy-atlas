@@ -1,0 +1,129 @@
+# Deploy to Cloudflare (Pages + R2 fact cards + Worker) with a test gate and a
+# post-deploy production smoke test.
+#
+# Triggers:
+#   - push to `main` (automatic)
+#   - workflow_dispatch (manual re-run / escape hatch; optionally runs the browser check)
+#
+# Ordering: gate -> deploy -> smoke. The deploy job only runs if the gate passes, and the
+# smoke job only runs after the deploy finishes. CI deploys whatever was committed, exactly
+# as committed — it never flips a `reviewed` flag, edits structures.json, or rewrites a card.
+#
+# IMPORTANT: a red smoke job means the deploy already happened and production may already be
+# broken. Treat it as needing immediate manual attention — not "we'll fix it on the next push."
+#
+# Secrets are referenced ONLY via ${{ secrets.* }}; actual values are configured by a human in
+# GitHub -> Settings -> Secrets and variables -> Actions. Required: CLOUDFLARE_API_TOKEN,
+# CLOUDFLARE_ACCOUNT_ID.
+
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      run_browser_smoke:
+        description: Also run the optional headless-browser /body check (slow — installs Chromium)
+        type: boolean
+        default: false
+
+concurrency:
+  group: "deploy-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    name: Gate (validate + test + build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Validate graph
+        run: pnpm validate
+      - name: App tests
+        run: pnpm --filter ./packages/app test
+      - name: Build app
+        run: pnpm --filter ./packages/app build
+      - name: Package dist for the deploy job
+        run: tar -C packages/app -czf /tmp/app-dist.tgz dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-dist
+          path: /tmp/app-dist.tgz
+          retention-days: 1
+
+  deploy:
+    name: Deploy (Pages + R2 facts + Worker)
+    runs-on: ubuntu-latest
+    needs: gate
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v4
+        with:
+          name: app-dist
+          path: ./
+      - name: Restore dist from artifact
+        run: mkdir -p packages/app && tar -C packages/app -xzf app-dist.tgz
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install wrangler (pinned to the local version)
+        run: npm install -g wrangler@4.127.1
+      - name: Deploy Pages (production)
+        run: wrangler pages deploy packages/app/dist --project-name=anatomy-atlas --branch main --commit-dirty=true
+      - name: Sync published fact cards to R2 (remote)
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Loop over the directory so cards added later are picked up without editing this file.
+          for f in content/published/facts/*.md; do
+            echo "Syncing $f"
+            wrangler r2 object put --remote "anatomy-public/$f" --file "$f"
+          done
+      - name: Deploy Worker (bundled structures.json)
+        run: wrangler deploy
+
+  smoke:
+    name: Smoke (production API + chat gate)
+    runs-on: ubuntu-latest
+    needs: deploy
+    env:
+      BASE_URL: https://anatomy-atlas-5ca.pages.dev
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run production smoke test
+        run: node .github/scripts/smoke.mjs
+
+  browser-smoke:
+    name: Browser smoke /body (optional)
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'workflow_dispatch' && inputs.run_browser_smoke
+    env:
+      BASE_URL: https://anatomy-atlas-5ca.pages.dev
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: npm install --no-save playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run headless /body check
+        run: node .github/scripts/browser-smoke.mjs

@@ -32,3 +32,13 @@ App public config may include the Worker URL only. No API keys in Pages.
 - Small diffs. Touch only the files named in the task.
 - Add or update a test when you change schema or loaders.
 - Fresh session per playbook task (A, B, C, …). Do not chain the whole product in one context.
+
+## Deploys (GitHub Actions)
+
+`.github/workflows/deploy.yml` automates the deploy batch and runs on **every push to `main`** (plus manual `workflow_dispatch`).
+
+- **Gate job** (`pnpm validate` + app tests + app build) must pass before anything deploys.
+- **Deploy job** ships whatever was committed, exactly as committed: `wrangler pages deploy` (Pages `anatomy-atlas`), syncs **every** `content/published/facts/*.md` to R2 (a loop — new cards are picked up automatically), then `wrangler deploy` (Worker, so its bundled `structures.json` is current). CI never flips a `reviewed` flag and never edits structures.json or card content.
+- **Smoke job** hits production and fails the run if: `/api/structures` row count ≠ `content/published/structures.json` count, any `/api/facts/<facts_id>` returns non-200, or the chat out-of-card question does not return exactly `{"reply":"NOT_IN_CARD"}`.
+- **A red smoke job means the deploy already happened and production may already be broken** — treat it as needing immediate manual attention, not "we'll fix it on the next push."
+- Secrets are referenced only via `${{ secrets.* }}`. Required names (added by a human in GitHub → Settings → Secrets and variables → Actions — never typed into a chat/terminal): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. `DEEPSEEK_API_KEY` remains a Cloudflare Worker secret (unchanged).
