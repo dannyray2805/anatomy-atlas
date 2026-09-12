@@ -8,12 +8,21 @@
 //   b. every structures.json row with a facts_id has a 200 /api/facts/<facts_id>
 //   c. the chat citation gate on one facts_id row: an in-card question must be answered,
 //      and an obviously out-of-card question must return exactly {"reply":"NOT_IN_CARD"}
+//   d. the deployed app bundle really carries the production env config (packages/app/.env.production).
+//      This guards the failure mode found on 2026-09-12: the CI build ran without any VITE_* config,
+//      so production served an empty shell — DATA_MISSING on / and blank /body + /reference canvases —
+//      while checks a-c still passed, because they only ever look at /api/*.
 
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const BASE_URL = (process.env.BASE_URL || "https://anatomy-atlas-5ca.pages.dev").replace(/\/+$/, "");
 const STRUCTURES_PATH = resolve("content/published/structures.json");
+const ENV_PRODUCTION_PATH = resolve("packages/app/.env.production");
+
+// Env keys that are declared/documented but not referenced anywhere in app source, so Vite tree-shakes
+// them out of the bundle. Listing a key here means "absence is expected and fine".
+const ENV_KEYS_NOT_IN_BUNDLE = new Set(["VITE_WORKER_URL"]);
 const GET_RETRIES = 10; // deploys can take a few seconds to propagate to the alias
 const GET_DELAY_MS = 4000;
 const CHAT_RETRIES = 3;
@@ -129,6 +138,59 @@ for (const s of withFacts) {
   const isExact = !!outJson && outJson.reply === "NOT_IN_CARD" && Object.keys(outJson).length === 1;
   if (!isExact) fail(`chat out-of-card gate broken: expected {"reply":"NOT_IN_CARD"}, got ${outText}`);
   else console.log("ok  chat out-of-card -> NOT_IN_CARD (citation gate intact)");
+}
+
+// d) the deployed bundle carries the committed production config (catches an env-less CI build).
+{
+  // Minimal .env parser: `KEY=value`, optional double quotes (a quoted value may contain `#`,
+  // which is exactly why the Neuroglancer URL is quoted — see .env.production).
+  const parseEnv = (text) => {
+    const out = {};
+    for (const raw of text.split(/\r?\n/)) {
+      const line = raw.trim();
+      if (!line || line.startsWith("#")) continue;
+      const m = /^([A-Z0-9_]+)\s*=\s*(.*)$/.exec(line);
+      if (!m) continue;
+      let value = m[2].trim();
+      if (value.length >= 2 && value.startsWith('"') && value.endsWith('"')) value = value.slice(1, -1);
+      else value = value.split("#")[0].trim(); // unquoted: an inline `#` starts a comment
+      if (value) out[m[1]] = value;
+    }
+    return out;
+  };
+
+  const expected = Object.entries(parseEnv(await readFile(ENV_PRODUCTION_PATH, "utf8"))).filter(
+    ([key]) => !ENV_KEYS_NOT_IN_BUNDLE.has(key),
+  );
+
+  if (!expected.length) {
+    fail("packages/app/.env.production defines no non-empty config to verify");
+  } else {
+    // The SPA shell lists its built entry chunk(s); concatenate them and look for the values.
+    const html = await (await fetchRetry(`${BASE_URL}/`)).text();
+    const srcs = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map((m) => m[1]);
+
+    if (!srcs.length) {
+      fail(`could not find any <script src> in ${BASE_URL}/ — cannot verify the built config`);
+    } else {
+      const bundle = (
+        await Promise.all(
+          srcs.map((s) => fetchRetry(new URL(s, `${BASE_URL}/`).toString()).then((r) => r.text())),
+        )
+      ).join("\n");
+
+      const missing = expected.filter(([, value]) => !bundle.includes(value)).map(([key]) => key);
+      if (missing.length) {
+        fail(
+          `deployed bundle is missing ${missing.length}/${expected.length} production env value(s): ` +
+            `${missing.join(", ")} — the build ran without packages/app/.env.production, so the app ships ` +
+            "with empty DATA_MISSING data layers",
+        );
+      } else {
+        console.log(`ok  app bundle carries all ${expected.length} production env values (config baked in)`);
+      }
+    }
+  }
 }
 
 if (failures) {
