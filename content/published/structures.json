@@ -106,7 +106,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Z-Anatomy 'Visceral systems' collection (R2 visceral-v1-draco.glb) — 118 surface objects: liver (+ its segments), gallbladder, stomach, duodenum, colon, appendix, pancreas, kidneys, urinary bladder, lung lobes and pleura, trachea, thyroid plus parathyroid glands, salivary glands, tongue, palate, pharynx, pituitary and pineal glands, and that individual's male reproductive organs. Ten of these have their own structure rows (liver, stomach, pancreas, gallbladder, kidney, urinary bladder, trachea, thyroid gland, adrenal gland, lung) so those clicks open an entry; the rest still report not-in-this-dataset."
+        "note": "Z-Anatomy 'Visceral systems' collection (R2 visceral-v1-draco.glb) — the modelling meshes (118 surface objects: liver + its segments, gallbladder, stomach, pancreas, kidneys, urinary bladder, lung lobes, pleura, trachea, thyroid and parathyroid glands, salivary glands, tongue, palate, pharynx, pituitary and pineal glands, and that individual's male reproductive organs) PLUS curve-converted tubes that are equally real geometry: the segmental and lobar bronchi, the oesophagus, the jejunum, the bile duct, the pancreatic and accessory pancreatic ducts, the parotid and submandibular ducts, the ductus deferens, the ejaculatory ducts, the ureters and the urethra. Ten structures have their own rows (liver, stomach, pancreas, gallbladder, kidney, urinary bladder, trachea, thyroid gland, adrenal gland, lung) so those clicks open an entry; everything else in this layer still reports not-in-this-dataset."
       }
     ],
     "voxel_size_um": null,
@@ -130,7 +130,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "liver",
     "reviewed": false,
     "mesh_names": [
       "Liver",
@@ -160,7 +160,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "stomach",
     "reviewed": false,
     "mesh_names": ["Stomach"]
   },
@@ -180,7 +180,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "pancreas",
     "reviewed": false,
     "mesh_names": ["Pancreas"]
   },
@@ -220,7 +220,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "kidney",
     "reviewed": false,
     "mesh_names": ["Kidney.l", "Kidney.r"]
   },
@@ -320,7 +320,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "lung",
     "reviewed": false,
     "mesh_names": [
       "Superior lobe of left lung",
@@ -482,7 +482,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "spleen",
     "reviewed": false,
     "mesh_names": ["Spleen"]
   },

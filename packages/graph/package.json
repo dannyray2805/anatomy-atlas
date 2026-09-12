@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "validate": "node --experimental-strip-types src/validate.ts",
-    "test": "node --experimental-strip-types --test src/validate.test.ts"
+    "test": "node --experimental-strip-types --test src/validate.test.ts src/cards.test.ts"
   }
 }

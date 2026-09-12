@@ -5,19 +5,19 @@ reviewed: false
 reviewer: null
 date: 2026-09-01
 citations:
-  - "asctb-heart"
+  - "hubmap-asctb-heart"
   - "hoa-heart-S-20-29"
 ---
 
 ## Identity
 
-- The structure `heart-left-ventricle` is labelled "heart left ventricle" (asctb-heart).
-- Its Uberon identifier is `UBERON:0002084` (asctb-heart).
-- Its HuBMAP 3D reference object node name is `VH_M_heart_left_ventricle` (asctb-heart).
+- The structure `heart-left-ventricle` is labelled "heart left ventricle" (hubmap-asctb-heart).
+- Its Uberon identifier is `UBERON:0002084` (hubmap-asctb-heart).
+- Its HuBMAP 3D reference object node name is `VH_M_heart_left_ventricle` (hubmap-asctb-heart).
 
 ## Relations
 
-- `VH_M_heart_left_ventricle` is listed on the same male HRA heart 3D reference object as `VH_M_heart` (UBERON:0000948) (asctb-heart).
+- `VH_M_heart_left_ventricle` is listed on the same male HRA heart 3D reference object as `VH_M_heart` (UBERON:0000948) (hubmap-asctb-heart).
 
 ## Source volume
 

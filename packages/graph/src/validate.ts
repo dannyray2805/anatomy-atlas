@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertStructure, type Structure } from "../../schema/src/structure.ts";
+import { validateCards } from "./cards.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
 
@@ -40,7 +41,17 @@ export function validateGraph(structures: Structure[]): string[] {
 
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1]);
 if (isMain) {
-  const errors = validateGraph(loadGraph());
+  const structures = loadGraph();
+  // Cards are validated with the graph: a card that does not parse, a citation key no source row
+  // declares, or a facts_id pointing at a missing card are all invisible until a reader hits them.
+  const errors = [
+    ...validateGraph(structures),
+    ...validateCards({
+      factsDir: resolve(root, "content/published/facts"),
+      sourcesPath: resolve(root, "docs/sources.md"),
+      structures
+    })
+  ];
   if (errors.length) {
     console.error(errors.join("\n"));
     process.exit(1);
