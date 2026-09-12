@@ -58,6 +58,13 @@ export type LayerAsset = {
    * frame -> may carry a human-chosen `transform` and is adjustable in ?align=1.
    */
   sameFrame?: boolean;
+  /**
+   * True for the heavy whole-body systems (nervous, cardiovascular, joints, lymphoid,
+   * viscera): they start HIDDEN so the first paint stays light, and mount on demand when the
+   * user switches them on (see layerVisibility.ts). Also marks them as the set the Layers
+   * panel's "show all systems" control toggles together.
+   */
+  defaultHidden?: boolean;
 };
 
 type VolumeViewerProps = {

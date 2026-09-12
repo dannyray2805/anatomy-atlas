@@ -96,6 +96,101 @@
     "reviewed": false
   },
   {
+    "id": "viscera",
+    "uberon": "UBERON:0002075",
+    "fma": null,
+    "label": "Visceral organs",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Visceral systems' collection (R2 visceral-v1-draco.glb) — 118 surface objects: liver (+ its segments), gallbladder, stomach, duodenum, colon, appendix, pancreas, kidneys, urinary bladder, lung lobes and pleura, trachea, thyroid plus parathyroid glands, salivary glands, tongue, palate, pharynx, pituitary and pineal glands, and that individual's male reproductive organs. Whole-layer row: no per-organ mesh mapping yet, so organ clicks still report not-in-this-dataset."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "cardiovascular-system",
+    "uberon": "UBERON:0001009",
+    "fma": null,
+    "label": "Heart and vessels",
+    "layer": "vessel",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Cardiovascular system' collection (R2 cardiovascular-v1-draco.glb) — 676 surface nodes: heart chambers, valves, papillary muscles, pulmonary trunk, dural sinuses, plus 654 vessel tubes converted from beveled curves, i.e. the arterial and venous tree including distal limb coverage. Distinct from the HuBMAP blood-vasculature row, which is a different individual and trunk-only."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "nervous-system",
+    "uberon": "UBERON:0001016",
+    "fma": null,
+    "label": "Nervous system",
+    "layer": "nerve",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Nervous system & Sense organs' collection (R2 nervous-v1-draco.glb) — 580 surface nodes: brain surfaces, spinal cord parts, spinal dura, cranial and peripheral nerve tubes (247 converted from beveled curves). Honest gap: the eye's ciliary body has NO surface geometry in this source (its two curves are unbeveled and were dropped)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "joints",
+    "uberon": "UBERON:0000982",
+    "fma": null,
+    "label": "Joints",
+    "layer": "joint",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Joints' collection (R2 joints-v1-draco.glb) — 409 surface nodes of periarticular structures only: joint capsules, ligaments, menisci, labra. Contains no bones (those are the skeleton row), so it reads as connective-tissue detail laid over the skeleton."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
+    "id": "lymphoid-system",
+    "uberon": "UBERON:0002465",
+    "fma": null,
+    "label": "Lymphoid system",
+    "layer": "lymphatic",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Z-Anatomy 'Lymphoid organs' collection (R2 lymphoid-v1-draco.glb) — 158 surface nodes: about 150 named lymph-node groups (cervical, axillary, inguinal, iliac, mesenteric, mediastinal, popliteal, etc.), palatine tonsils, thymus lobes and spleen. Lymphatic VESSELS are not part of this collection."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false
+  },
+  {
     "id": "skin",
     "uberon": "UBERON:0002097",
     "fma": null,

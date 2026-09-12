@@ -8,6 +8,13 @@ import {
   type VolumeViewerHandle
 } from "./components/VolumeViewer";
 import { StructureDrawer } from "./components/StructureDrawer";
+import {
+  allSystemsShown,
+  applyVisibility,
+  isLayerVisible,
+  setSystemsVisibility,
+  systemLayers
+} from "./layerVisibility";
 import { lookupStructure } from "./structureLookup";
 import { guideStepOrder, type GuideStepKey } from "./guide";
 import { useGuidedPeel } from "./useGuidedPeel";
@@ -20,9 +27,11 @@ const LAYER_LABELS: Record<string, string> = {
   fascia: "Fascia",
   muscle: "Muscle",
   skeleton: "Skeleton",
+  joint: "Joints",
   organ: "Organs (heart)",
   vessel: "Vessels",
   nerve: "Nerves",
+  lymphatic: "Lymphatic",
   tissue: "Tissue"
 };
 
@@ -39,6 +48,11 @@ type BodyPageProps = {
   showSex: boolean;
   /** Anatomical layers that are honestly ABSENT here -> quiet "not in this dataset" chips. */
   missingLayers?: string[];
+  /**
+   * Route-specific display names for a layer whose generic name would be wrong here (e.g. the
+   * Reference Atlas "organ" layer is the whole viscera, not just the heart).
+   */
+  layerLabels?: Record<string, string>;
 };
 
 /**
@@ -51,7 +65,15 @@ type BodyPageProps = {
  * Extraction note: this component is presentation. The guided-peel state machine lives in
  * useGuidedPeel.ts and its per-stop effects in guide.ts (both testable without React).
  */
-export function BodyPage({ build, banners, note, showSex, missingLayers, attribution }: BodyPageProps) {
+export function BodyPage({
+  build,
+  banners,
+  note,
+  showSex,
+  missingLayers,
+  attribution,
+  layerLabels
+}: BodyPageProps) {
   const [sex, setSex] = useState<Sex>("male");
   const [pickedName, setPickedName] = useState<string | null>(null);
   const [opacity, setOpacity] = useState(1);
@@ -79,14 +101,11 @@ export function BodyPage({ build, banners, note, showSex, missingLayers, attribu
   };
 
   const structure = useMemo(() => lookupStructure(structures, pickedName), [pickedName]);
-  // Rebuild the layer list when sex changes, mapping each LayerAsset's `visible` flag through
-  // the per-layer visibility map (see layers.ts).
+  // Rebuild the layer list when sex changes, mapping each LayerAsset's visibility through the
+  // per-layer choice map; a layer with no explicit choice falls back to its own default (the
+  // heavy whole-body systems start hidden — see layerVisibility.ts).
   const layers = useMemo(
-    () =>
-      build(sex).map((entry) => ({
-        ...entry,
-        visible: visibleLayers[entry.layer] ?? true
-      })),
+    () => applyVisibility(build(sex), visibleLayers),
     [build, sex, visibleLayers]
   );
   // Unique anatomical layers that currently have at least one real asset. Only these render a
@@ -95,8 +114,17 @@ export function BodyPage({ build, banners, note, showSex, missingLayers, attribu
     () => Array.from(new Set(layers.map((entry) => entry.layer))),
     [layers]
   );
+  const labelFor = (layer: string) => layerLabels?.[layer] ?? LAYER_LABELS[layer] ?? layer;
+  // The optional heavy systems (hidden until asked for) and whether they are all on. Offered as
+  // one control so the whole body is a single click from the default view.
+  const systems = useMemo(() => systemLayers(layers).filter((l) => l.url.length > 0), [layers]);
+  const systemsOn = allSystemsShown(layers, visibleLayers);
   const toggleLayer = (layer: string) =>
-    setVisibleLayers((prev) => ({ ...prev, [layer]: !(prev[layer] ?? true) }));
+    setVisibleLayers((prev) => {
+      const entry = layers.find((l) => l.layer === layer);
+      const current = entry ? isLayerVisible(entry, prev) : (prev[layer] ?? true);
+      return { ...prev, [layer]: !current };
+    });
   const hasOpacity = configuredLayers.includes("organ");
   const primaryBanner = banners(sex)[0];
 
@@ -351,7 +379,8 @@ export function BodyPage({ build, banners, note, showSex, missingLayers, attribu
           <div className="glass glass--layers" role="group" aria-label="Layers">
             <span className="glass__label">Layers</span>
             {configuredLayers.map((layer) => {
-              const on = visibleLayers[layer] ?? true;
+              const entry = layers.find((l) => l.layer === layer);
+              const on = entry ? isLayerVisible(entry, visibleLayers) : true;
               return (
                 <button
                   key={layer}
@@ -361,7 +390,7 @@ export function BodyPage({ build, banners, note, showSex, missingLayers, attribu
                   onClick={() => toggleLayer(layer)}
                 >
                   {on ? "◉ " : "○ "}
-                  {LAYER_LABELS[layer] ?? layer}
+                  {labelFor(layer)}
                 </button>
               );
             })}
@@ -389,9 +418,22 @@ export function BodyPage({ build, banners, note, showSex, missingLayers, attribu
                 key={layer}
                 title="Not in this dataset — see Notes & licensing"
               >
-                {LAYER_LABELS[layer] ?? layer} · not in this dataset
+                {labelFor(layer)} · not in this dataset
               </span>
             ))}
+            {systems.length > 1 && (
+              <button
+                type="button"
+                className={`pill${systemsOn ? " pill--active" : ""}`}
+                aria-pressed={systemsOn}
+                onClick={() =>
+                  setVisibleLayers((prev) => setSystemsVisibility(layers, prev, !systemsOn))
+                }
+                title="Show every remaining body system (organs, vessels, nerves, joints, lymphatics)"
+              >
+                {systemsOn ? "⟲ Hide systems" : "▸ All systems"}
+              </button>
+            )}
             {sceneReady && isBodyPeel && (
               <button
                 type="button"

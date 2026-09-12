@@ -19,6 +19,16 @@ interface ImportMetaEnv {
    * individual as the Z-Anatomy systems, with its frame translation already baked in).
    */
   readonly VITE_Z_ANATOMY_SKIN_GLB?: string;
+  /** URL of the Z-Anatomy visceral-system GLB (organs; same body; Reference Atlas, starts hidden). */
+  readonly VITE_VISCERAL_GLB?: string;
+  /** URL of the Z-Anatomy cardiovascular-system GLB (heart + whole vessel tree; same body, starts hidden). */
+  readonly VITE_CARDIOVASCULAR_GLB?: string;
+  /** URL of the Z-Anatomy nervous-system GLB (brain, spinal cord, nerve tubes; same body, starts hidden). */
+  readonly VITE_NERVOUS_GLB?: string;
+  /** URL of the Z-Anatomy joints GLB (capsules, ligaments, menisci; same body, starts hidden). */
+  readonly VITE_JOINTS_GLB?: string;
+  /** URL of the Z-Anatomy lymphoid GLB (node groups, thymus, spleen, tonsils; same body, starts hidden). */
+  readonly VITE_LYMPHOID_GLB?: string;
   /** URL of the HuBMAP VH-MALE whole-body skin GLB (same VH-M frame as the male heart; identity in the VH peel). */
   readonly VITE_SKIN_GLB_MALE?: string;
   /** URL of the HuBMAP VH-FEMALE whole-body skin GLB (same VH-F frame as the female heart; identity in the VH peel). */

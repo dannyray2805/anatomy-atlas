@@ -5,9 +5,11 @@ export const AnatomyLayerSchema = z.enum([
   "fascia",
   "muscle",
   "skeleton",
+  "joint",
   "organ",
   "vessel",
   "nerve",
+  "lymphatic",
   "tissue",
   "unknown",
 ]);

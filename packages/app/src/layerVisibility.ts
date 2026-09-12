@@ -16,3 +16,50 @@ export function filterVisibleLayers(layers: LayerAsset[]): LayerAsset[] {
 export function hasConfiguredUrl(layers: LayerAsset[]): boolean {
   return layers.some((layer) => layer.url.length > 0);
 }
+
+/**
+ * Resolve a layer's on/off state: an explicit user choice wins, otherwise the layer's own
+ * default (the heavy systems start off; everything else starts on). Pure so the page component
+ * stays presentation and this rule stays unit-tested.
+ */
+export function isLayerVisible(
+  layer: LayerAsset,
+  choices: Record<string, boolean>
+): boolean {
+  return choices[layer.layer] ?? !layer.defaultHidden;
+}
+
+/** Apply the visibility choices to a layer list (used to build the rendered scene). */
+export function applyVisibility(
+  layers: LayerAsset[],
+  choices: Record<string, boolean>
+): LayerAsset[] {
+  return layers.map((layer) => ({ ...layer, visible: isLayerVisible(layer, choices) }));
+}
+
+/** The optional heavy systems — the set the "all systems" control switches together. */
+export function systemLayers(layers: LayerAsset[]): LayerAsset[] {
+  return layers.filter((layer) => layer.defaultHidden);
+}
+
+/** True when every available system layer is currently switched on. */
+export function allSystemsShown(
+  layers: LayerAsset[],
+  choices: Record<string, boolean>
+): boolean {
+  const systems = systemLayers(layers).filter((l) => l.url.length > 0);
+  return systems.length > 0 && systems.every((l) => isLayerVisible(l, choices));
+}
+
+/** New choice map with every available system layer set to `on` (other layers untouched). */
+export function setSystemsVisibility(
+  layers: LayerAsset[],
+  choices: Record<string, boolean>,
+  on: boolean
+): Record<string, boolean> {
+  const next = { ...choices };
+  for (const layer of systemLayers(layers)) {
+    if (layer.url.length > 0) next[layer.layer] = on;
+  }
+  return next;
+}

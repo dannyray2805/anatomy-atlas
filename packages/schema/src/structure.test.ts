@@ -56,6 +56,14 @@ describe("StructureSchema (zod)", () => {
     assert.equal(StructureSchema.safeParse(bad).success, false);
   });
 
+  // The whole-body systems on /reference each need their own layer value; "joint" and
+  // "lymphatic" were added for the Z-Anatomy joints and lymphoid collections.
+  for (const layer of ["joint", "lymphatic"]) {
+    it(`accepts the ${layer} layer`, () => {
+      assert.equal(StructureSchema.safeParse({ ...base(), layer }).success, true);
+    });
+  }
+
   it("rejects missing label", () => {
     const bad = { ...base(), label: "" } as unknown;
     assert.equal(StructureSchema.safeParse(bad).success, false);

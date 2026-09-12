@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { buildVhBodyFromUrls, buildReferenceFromUrls } from "./layers.ts";
-import { filterVisibleLayers } from "./layerVisibility.ts";
+import { filterVisibleLayers, applyVisibility } from "./layerVisibility.ts";
 import type { LayerAsset } from "./components/VolumeViewer";
 
 const HEART = {
@@ -20,14 +20,9 @@ const SKELETON_URL = "https://example/skeleton.glb";
 const MUSCLE_URL = "https://example/muscle.glb";
 const REF_SKIN_URL = "https://example/z-anatomy-skin.glb";
 
-// Mirrors App.tsx BodyPage: a configured layer is visible unless the user stored a false
-// for that layer NAME in visibleLayers (default-visible via `?? true`).
-function applyVisibility(
-  entries: LayerAsset[],
-  hidden: Record<string, boolean> = {}
-): LayerAsset[] {
-  return entries.map((e) => ({ ...e, visible: hidden[e.layer] ?? true }));
-}
+// Visibility is resolved by the SHIPPED rule (layerVisibility.applyVisibility), not by a copy:
+// an explicit user choice wins, otherwise a layer falls back to its own default. Duplicating the
+// rule here would let the test keep passing after the real behaviour changed.
 
 describe("layers.ts — VH body peel (Path 1, per-sex same-individual)", () => {
   it("yields that sex's skin + heart at identity; no transforms, all same-frame", () => {
@@ -130,5 +125,42 @@ describe("layers.ts — Reference Atlas (Z-Anatomy body + BodyParts3D skin)", ()
     const all = buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL, REF_SKIN_URL);
     const visible = filterVisibleLayers(applyVisibility(all, { skin: false }));
     assert.deepEqual(visible.map((l) => l.structureId), ["skeleton", "muscle"]);
+  });
+
+  it("adds each whole-body system as its own same-frame layer, hidden by default", () => {
+    const ref = buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL, REF_SKIN_URL, {
+      nervous: "https://example/nervous.glb",
+      cardiovascular: "https://example/cardio.glb",
+      visceral: "https://example/visceral.glb",
+      joints: "https://example/joints.glb",
+      lymphoid: "https://example/lymphoid.glb"
+    });
+    const systems = ref.slice(3).map((l) => [l.structureId, l.layer, l.url]);
+    assert.deepEqual(systems, [
+      ["viscera", "organ", "https://example/visceral.glb"],
+      ["cardiovascular-system", "vessel", "https://example/cardio.glb"],
+      ["nervous-system", "nerve", "https://example/nervous.glb"],
+      ["joints", "joint", "https://example/joints.glb"],
+      ["lymphoid-system", "lymphatic", "https://example/lymphoid.glb"]
+    ]);
+    for (const l of ref.slice(3)) {
+      assert.equal(l.sameFrame, true);
+      assert.equal(l.defaultHidden, true, `${l.structureId} should not load until asked for`);
+    }
+    // The base three keep their shipped behaviour: present, same-frame, NOT hidden.
+    for (const l of ref.slice(0, 3)) assert.equal(l.defaultHidden, undefined);
+  });
+
+  it("omits a system whose url is unset and lists the rest", () => {
+    const ref = buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL, "", {
+      visceral: "https://example/visceral.glb",
+      joints: "https://example/joints.glb"
+    });
+    assert.deepEqual(ref.map((l) => l.structureId), [
+      "skeleton",
+      "muscle",
+      "viscera",
+      "joints"
+    ]);
   });
 });

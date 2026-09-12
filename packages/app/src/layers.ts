@@ -60,11 +60,29 @@ export function buildVhBodyFromUrls(
   return layers;
 }
 
-/** Pure core: the Z-Anatomy Reference Atlas (skin + skeleton + muscle) at identity. */
+/**
+ * The Z-Anatomy whole-body systems that complete the Reference Atlas. Each is a separate
+ * collection exported from the same body (see packages/tools/export_layers.py and
+ * docs/sources.md), so all of them share the body frame and render at identity.
+ *
+ * They are marked `defaultHidden` because together they are ~10 MB and ~1,940 extra meshes: the
+ * first paint loads only skin + skeleton + muscle, and each system mounts when switched on. The
+ * Layers panel exposes them individually and as one "all systems" control.
+ */
+export type ReferenceSystemUrls = {
+  nervous?: string;
+  cardiovascular?: string;
+  visceral?: string;
+  joints?: string;
+  lymphoid?: string;
+};
+
+/** Pure core: the Z-Anatomy Reference Atlas (skin + skeleton + muscle + the whole-body systems). */
 export function buildReferenceFromUrls(
   skeletonUrl: string,
   muscleUrl: string,
-  skinUrl = ""
+  skinUrl = "",
+  systems: ReferenceSystemUrls = {}
 ): LayerAsset[] {
   const layers: LayerAsset[] = [];
   // Skin FIRST: it is the outermost layer (layer 0), matching the peel order on /body.
@@ -99,6 +117,26 @@ export function buildReferenceFromUrls(
       sameFrame: true
     });
   }
+  // The systems, innermost-context last in the panel: organs, vessels, nerves, joints, lymph.
+  const systemEntries: Array<[string, string, string | undefined]> = [
+    ["viscera", "organ", systems.visceral],
+    ["cardiovascular-system", "vessel", systems.cardiovascular],
+    ["nervous-system", "nerve", systems.nervous],
+    ["joints", "joint", systems.joints],
+    ["lymphoid-system", "lymphatic", systems.lymphoid]
+  ];
+  for (const [structureId, layer, url] of systemEntries) {
+    if (!url) continue;
+    layers.push({
+      structureId,
+      layer,
+      url,
+      visible: false,
+      // Z-Anatomy collection of the same body -> identity is correct.
+      sameFrame: true,
+      defaultHidden: true
+    });
+  }
   return layers;
 }
 
@@ -115,6 +153,11 @@ const VESSEL_FEMALE = (ENV.VITE_VESSEL_GLB_FEMALE ?? "").trim();
 const SKELETON_GLB = (ENV.VITE_SKELETON_GLB ?? "").trim();
 const MUSCLE_GLB = (ENV.VITE_MUSCLE_GLB ?? "").trim();
 const Z_ANATOMY_SKIN_GLB = (ENV.VITE_Z_ANATOMY_SKIN_GLB ?? "").trim();
+const NERVOUS_GLB = (ENV.VITE_NERVOUS_GLB ?? "").trim();
+const CARDIOVASCULAR_GLB = (ENV.VITE_CARDIOVASCULAR_GLB ?? "").trim();
+const VISCERAL_GLB = (ENV.VITE_VISCERAL_GLB ?? "").trim();
+const JOINTS_GLB = (ENV.VITE_JOINTS_GLB ?? "").trim();
+const LYMPHOID_GLB = (ENV.VITE_LYMPHOID_GLB ?? "").trim();
 
 /** VH body peel for a sex: per-sex HuBMAP VH skin + heart + blood vasculature at identity (CC BY 4.0). */
 export function buildVhBody(sex: Sex): LayerAsset[] {
@@ -127,10 +170,17 @@ export function buildVhBody(sex: Sex): LayerAsset[] {
 }
 
 /**
- * Z-Anatomy Reference Atlas: skin + skeleton + muscle (CC BY-SA, derived from BodyParts3D —
- * "Taro"; the skin is BodyParts3D's own whole-body skin, the same individual).
+ * Z-Anatomy Reference Atlas: the whole body — skin + skeleton + muscle + viscera +
+ * cardiovascular + nervous + joints + lymphoid (CC BY-SA, derived from BodyParts3D — "Taro";
+ * the skin is BodyParts3D's own whole-body skin, the same individual).
  */
 export function buildReference(): LayerAsset[] {
-  return buildReferenceFromUrls(SKELETON_GLB, MUSCLE_GLB, Z_ANATOMY_SKIN_GLB);
+  return buildReferenceFromUrls(SKELETON_GLB, MUSCLE_GLB, Z_ANATOMY_SKIN_GLB, {
+    nervous: NERVOUS_GLB,
+    cardiovascular: CARDIOVASCULAR_GLB,
+    visceral: VISCERAL_GLB,
+    joints: JOINTS_GLB,
+    lymphoid: LYMPHOID_GLB
+  });
 }
 

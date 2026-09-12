@@ -1,6 +1,13 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { filterVisibleLayers, hasConfiguredUrl } from "./layerVisibility.ts";
+import {
+  allSystemsShown,
+  applyVisibility,
+  filterVisibleLayers,
+  hasConfiguredUrl,
+  isLayerVisible,
+  setSystemsVisibility
+} from "./layerVisibility.ts";
 import type { LayerAsset } from "./components/VolumeViewer";
 
 // Mock layer config with 2+ layers — synthetic test data, never shipped. Only the shape
@@ -51,5 +58,62 @@ describe("filterVisibleLayers (visibility -> rendering + framing)", () => {
     assert.deepEqual(filterVisibleLayers(hiddenOnly), []);
     // Configured but hidden -> the "all hidden" empty panel, not the "not configured" one.
     assert.equal(hasConfiguredUrl(hiddenOnly), true);
+  });
+});
+
+// The whole-body systems are ~10 MB / ~1,940 meshes together, so they load on demand: hidden
+// until switched on. This is the rule that keeps the first paint light.
+const nervous: LayerAsset = {
+  structureId: "nervous-system",
+  layer: "nerve",
+  url: "https://example/nervous.glb",
+  visible: false,
+  defaultHidden: true
+};
+const joints: LayerAsset = {
+  structureId: "joints",
+  layer: "joint",
+  url: "https://example/joints.glb",
+  visible: false,
+  defaultHidden: true
+};
+const unconfiguredSystem: LayerAsset = { ...joints, url: "" };
+
+describe("layerVisibility — on-demand system layers", () => {
+  it("defaults an un-chosen system to hidden and a normal layer to visible", () => {
+    assert.equal(isLayerVisible(nervous, {}), false);
+    assert.equal(isLayerVisible(heart, {}), true);
+  });
+
+  it("an explicit choice beats the default in both directions", () => {
+    assert.equal(isLayerVisible(nervous, { nerve: true }), true);
+    assert.equal(isLayerVisible(heart, { organ: false }), false);
+  });
+
+  it("applyVisibility mounts no system until asked for, then mounts it", () => {
+    const all = [heart, nervous, joints];
+    assert.deepEqual(
+      applyVisibility(all, {}).map((l) => l.visible),
+      [true, false, false]
+    );
+    const requested = applyVisibility(all, { nerve: true });
+    assert.deepEqual(
+      filterVisibleLayers(requested).map((l) => l.structureId),
+      ["heart", "nervous-system"]
+    );
+  });
+
+  it("allSystemsShown ignores unconfigured systems", () => {
+    assert.equal(allSystemsShown([unconfiguredSystem], {}), false);
+    assert.equal(allSystemsShown([nervous, unconfiguredSystem], { nerve: true }), true);
+  });
+
+  it("setSystemsVisibility switches every configured system and nothing else", () => {
+    const all = [heart, nervous, joints, unconfiguredSystem];
+    const on = setSystemsVisibility(all, {}, true);
+    assert.deepEqual(on, { nerve: true, joint: true });
+    assert.equal(isLayerVisible(heart, on), true, "skin/skeleton/muscle untouched");
+    const off = setSystemsVisibility(all, on, false);
+    assert.deepEqual(off, { nerve: false, joint: false });
   });
 });

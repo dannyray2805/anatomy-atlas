@@ -29,6 +29,31 @@ node packages/tools/compress_layers.mjs
 Source-of-truth GLBs are never overwritten; the original uncompressed R2 keys
 stay as rollback, and new `-draco` keys are what `packages/app/.env` points at.
 
+**Its printed numbers are NOT a safety check.** They are counted over unique mesh data blocks,
+which `dedup()` deliberately collapses, so a large drop there can be exactly right (the
+Z-Anatomy systems share mesh data: `cardiovascular-v1` reports 675 → 430 blocks with the body
+unchanged). Verify a derivative with `compare_glb_scene.mjs` instead — see below.
+
+## `compare_glb_scene.mjs` — prove a compressed GLB is scene-equivalent to its source
+
+```text
+node packages/tools/compare_glb_scene.mjs <source.glb> <derived.glb> [<source2> <derived2> ...]
+```
+
+Walks the NODE hierarchy and counts triangles per node (instanced) rather than per mesh data
+block, and separates surface-bearing nodes from geometry-less ones. The contract it enforces:
+
+- **must match** — the set of surface-bearing node names and how many there are. This is what
+  `mesh_names` resolution and per-mesh picking depend on, and what the viewer draws.
+- **may differ** — unique mesh data blocks (`dedup()` doing its job) and geometry-less nodes,
+  which `prune()` drops (the Blender sources carry `.j` placeholders and vertex-only stubs).
+- **reported** — instanced triangles, because Draco drops sub-quantization (zero-area) slivers:
+  measured 0.53 % on `nervous-v1`, 0 % on cardiovascular/muscle/lymphoid, and an image diff of
+  the two renders showed 10 of 1,638,400 pixels differing by more than 8/255.
+
+Exit code is non-zero if any must-match field differs, so it can gate a batch. Use it before
+uploading any new derivative; node names are the one thing compression may never quietly lose.
+
 ## `export_layers.py` — headless named-collection → GLB export (Blender)
 
 Exports named collections from a `.blend` to glTF Binary (`.glb`), exactly as named,

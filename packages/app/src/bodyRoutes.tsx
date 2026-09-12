@@ -39,6 +39,18 @@ function ReferenceAttribution() {
         Z-Anatomy, derived from BodyParts3D — CC BY-SA 2.1 Japan / CC BY-SA 4.0.
       </li>
       <li>
+        Systems — all from that one body&apos;s Z-Anatomy collections, so they are the same
+        individual as the skeleton and muscle and need no registration: muscle, skeleton,
+        organs/viscera (liver, gallbladder, stomach, intestines, pancreas, kidneys, urinary
+        bladder, lungs, trachea, thyroid and other glands, tongue and palate, and the male
+        reproductive organs), heart and the full vessel tree, brain + spinal cord + nerve
+        tubes, joint capsules/ligaments/menisci, and lymph nodes + thymus + spleen + tonsils.
+        The muscle layer excludes the connective-tissue sheets (fascia, aponeurosis,
+        retinaculum) the source groups with the muscles, because they are not muscle. A
+        layer&apos;s source therefore does NOT imply every structure of that name is present:
+        e.g. the eye&apos;s ciliary body has no surface geometry in this source.
+      </li>
+      <li>
         Skin — the BodyParts3D whole-body skin (FMA7163), the SAME individual as the Z-Anatomy
         systems (Z-Anatomy is a retopologised BodyParts3D derivative and contains no skin mesh).
         Placed by a landmark-derived translation, with its inconsistent face winding repaired
@@ -57,7 +69,8 @@ function ReferenceAttribution() {
       </li>
       <li>
         A single fixed male reference individual (“Taro”) — a different person from the VH peel
-        body, and a male body: no female anatomy is shown on this route. Not per-sex.
+        body, and a male body: no female anatomy is shown on this route, while the visceral
+        layer does include that individual&apos;s male reproductive organs. Not per-sex.
       </li>
     </ul>
   );
@@ -95,27 +108,31 @@ export function VhBodyPeelPage() {
 }
 
 /**
- * /reference — Z-Anatomy "Taro" skeletal + muscular systems (CC BY-SA), kept as a clearly
- * separated reference individual for muscular/skeletal study. NOT part of the VH peel body.
+ * /reference — the whole Z-Anatomy "Taro" body: skin, muscle, skeleton, viscera, heart +
+ * vessels, nervous system, joints and lymphoid system (CC BY-SA). Kept as a clearly separated
+ * reference individual. NOT part of the VH peel body.
  */
 export function ReferenceAtlasPage() {
   return (
     <BodyPage
       showSex={false}
       build={() => buildReference()}
+      layerLabels={{ organ: "Viscera", vessel: "Heart + vessels" }}
       banners={() => [
         <>
           Reference Atlas — Z-Anatomy, derived from BodyParts3D (CC BY-SA 2.1 Japan / CC BY-SA
           4.0). A single fixed male reference individual (&quot;Taro&quot;) — a different person
-          from the VH peel body. Skin, muscle and skeleton of that one individual.
+          from the VH peel body. Skin, muscle, skeleton, viscera, vessels, nerves, joints and
+          lymphatics of that one individual.
         </>
       ]}
       attribution={() => <ReferenceAttribution />}
       note={() => (
         <>
-          Click a structure to inspect it. These are whole-layer GLBs: per-bone/per-muscle names
-          are not mapped to structures yet, so mesh clicks show “not in this dataset”. The VH
-          body peel (skin + organs, per sex) is on the Visible Human body tab.
+          Switch a system on to load it (they are the larger layers, so they load on demand).
+          These are whole-layer GLBs: per-bone/per-muscle/per-organ names are not mapped to
+          structures yet, so mesh clicks show “not in this dataset”. The VH body peel (skin +
+          organs, per sex) is on the Visible Human body tab.
         </>
       )}
     />

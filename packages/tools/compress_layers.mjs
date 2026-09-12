@@ -40,6 +40,14 @@ const SRC = [
   // v1 is superseded: its face winding was inconsistent (~46 % of faces backwards), so it
   // rendered with see-through holes. Do not regenerate it.
   ["incoming/z-anatomy-skin-v2.glb", "z-anatomy-skin-v2"],
+  // The Z-Anatomy whole-body systems exported in Phase 1c, which make up the rest of the
+  // /reference atlas. Export provenance (collection, title-glyph exclusion, curve->mesh
+  // conversion, and the one visceral object that does not ship) is recorded in docs/sources.md.
+  ["incoming/nervous-v1.glb", "nervous-v1"],
+  ["incoming/cardiovascular-v1.glb", "cardiovascular-v1"],
+  ["incoming/visceral-v1.glb", "visceral-v1"],
+  ["incoming/joints-v1.glb", "joints-v1"],
+  ["incoming/lymphoid-v1.glb", "lymphoid-v1"],
 ];
 const OUT_DIR = "incoming/opt";
 fs.mkdirSync(OUT_DIR, { recursive: true });
