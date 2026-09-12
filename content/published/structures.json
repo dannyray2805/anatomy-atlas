@@ -106,13 +106,229 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Z-Anatomy 'Visceral systems' collection (R2 visceral-v1-draco.glb) — 118 surface objects: liver (+ its segments), gallbladder, stomach, duodenum, colon, appendix, pancreas, kidneys, urinary bladder, lung lobes and pleura, trachea, thyroid plus parathyroid glands, salivary glands, tongue, palate, pharynx, pituitary and pineal glands, and that individual's male reproductive organs. Whole-layer row: no per-organ mesh mapping yet, so organ clicks still report not-in-this-dataset."
+        "note": "Z-Anatomy 'Visceral systems' collection (R2 visceral-v1-draco.glb) — 118 surface objects: liver (+ its segments), gallbladder, stomach, duodenum, colon, appendix, pancreas, kidneys, urinary bladder, lung lobes and pleura, trachea, thyroid plus parathyroid glands, salivary glands, tongue, palate, pharynx, pituitary and pineal glands, and that individual's male reproductive organs. Ten of these have their own structure rows (liver, stomach, pancreas, gallbladder, kidney, urinary bladder, trachea, thyroid gland, adrenal gland, lung) so those clicks open an entry; the rest still report not-in-this-dataset."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
     "reviewed": false
+  },
+  {
+    "id": "liver",
+    "uberon": "UBERON:0002107",
+    "fma": null,
+    "label": "Liver",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Liver' plus its eight named segments, confirmed present in the shipped viscera GLB (R2 visceral-v1-draco.glb) with packages/tools/compare_glb_scene.mjs. Uberon id verified against OLS4 (label 'liver', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Liver",
+      "Anterior lateral segment of liver (VI)",
+      "Anterior medial segment of liver (V)",
+      "Left anterior lateral segment of liver (III)",
+      "Left medial segment of liver (IV)",
+      "Left posterior lateral segment of liver (II)",
+      "Posterior lateral segment of liver (VII)",
+      "Posterior medial segment of liver (VIII)",
+      "Posterior segment of liver (I)"
+    ]
+  },
+  {
+    "id": "stomach",
+    "uberon": "UBERON:0000945",
+    "fma": null,
+    "label": "Stomach",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Stomach' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'stomach', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Stomach"]
+  },
+  {
+    "id": "pancreas",
+    "uberon": "UBERON:0001264",
+    "fma": null,
+    "label": "Pancreas",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Pancreas' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'pancreas', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Pancreas"]
+  },
+  {
+    "id": "gallbladder",
+    "uberon": "UBERON:0002110",
+    "fma": null,
+    "label": "Gallbladder",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Gallbladder' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'gallbladder', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Gallbladder"]
+  },
+  {
+    "id": "kidney",
+    "uberon": "UBERON:0002113",
+    "fma": null,
+    "label": "Kidney",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Kidney.l' and 'Kidney.r' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'kidney', not obsolete). Renal pelvis is a separate mesh and is not mapped here."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Kidney.l", "Kidney.r"]
+  },
+  {
+    "id": "urinary-bladder",
+    "uberon": "UBERON:0001255",
+    "fma": null,
+    "label": "Urinary bladder",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Urinary bladder' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'urinary bladder', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Urinary bladder"]
+  },
+  {
+    "id": "trachea",
+    "uberon": "UBERON:0003126",
+    "fma": null,
+    "label": "Trachea",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Trachea' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'trachea', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Trachea"]
+  },
+  {
+    "id": "thyroid-gland",
+    "uberon": "UBERON:0002046",
+    "fma": null,
+    "label": "Thyroid gland",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Thyroid gland' confirmed present in the shipped viscera GLB. The parathyroid glands are separate meshes and are not mapped here. Uberon id verified against OLS4 (label 'thyroid gland', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Thyroid gland"]
+  },
+  {
+    "id": "adrenal-gland",
+    "uberon": "UBERON:0002369",
+    "fma": null,
+    "label": "Adrenal gland",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Suprarenal gland.l' and 'Suprarenal gland.r' (suprarenal = adrenal) confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'adrenal gland', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Suprarenal gland.l", "Suprarenal gland.r"]
+  },
+  {
+    "id": "lung",
+    "uberon": "UBERON:0002048",
+    "fma": null,
+    "label": "Lung",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "The five lobe meshes (superior and inferior of the left lung; superior, middle and inferior of the right) confirmed present in the shipped viscera GLB. There is no single whole-lung mesh in this source, so the structure maps to its lobes. Uberon id verified against OLS4 (label 'lung', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior lobe of left lung",
+      "Inferior lobe of left lung",
+      "Superior lobe of right lung",
+      "Middle lobe of right lung",
+      "Inferior lobe of right lung"
+    ]
   },
   {
     "id": "cardiovascular-system",
@@ -153,6 +369,66 @@
     "reviewed": false
   },
   {
+    "id": "midbrain",
+    "uberon": "UBERON:0001891",
+    "fma": null,
+    "label": "Midbrain",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Midbrain.l' and 'Midbrain.r' confirmed present in the shipped nervous-system GLB (R2 nervous-v1-draco.glb). This source carries the brain as its named parts, not as one whole-brain mesh. Uberon id verified against OLS4 (label 'midbrain', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Midbrain.l", "Midbrain.r"]
+  },
+  {
+    "id": "pons",
+    "uberon": "UBERON:0000988",
+    "fma": null,
+    "label": "Pons",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Pons.l' and 'Pons.r' confirmed present in the shipped nervous-system GLB. Uberon id verified against OLS4 (label 'pons', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Pons.l", "Pons.r"]
+  },
+  {
+    "id": "medulla-oblongata",
+    "uberon": "UBERON:0001896",
+    "fma": null,
+    "label": "Medulla oblongata",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Medulla oblongata.l' and 'Medulla oblongata.r' confirmed present in the shipped nervous-system GLB. The pyramids of the medulla are separate meshes and are not mapped here. Uberon id verified against OLS4 (label 'medulla oblongata', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Medulla oblongata.l", "Medulla oblongata.r"]
+  },
+  {
     "id": "joints",
     "uberon": "UBERON:0000982",
     "fma": null,
@@ -189,6 +465,46 @@
     "hoa_dataset_doi": null,
     "facts_id": null,
     "reviewed": false
+  },
+  {
+    "id": "spleen",
+    "uberon": "UBERON:0002106",
+    "fma": null,
+    "label": "Spleen",
+    "layer": "lymphatic",
+    "part_of": "lymphoid-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Spleen' confirmed present in the shipped lymphoid GLB (R2 lymphoid-v1-draco.glb). Uberon id verified against OLS4 (label 'spleen', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Spleen"]
+  },
+  {
+    "id": "thymus",
+    "uberon": "UBERON:0002370",
+    "fma": null,
+    "label": "Thymus",
+    "layer": "lymphatic",
+    "part_of": "lymphoid-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Left lobe of thymus' and 'Right lobe of thymus' confirmed present in the shipped lymphoid GLB; this source models the thymus as its two lobes. Uberon id verified against OLS4 (label 'thymus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Left lobe of thymus", "Right lobe of thymus"]
   },
   {
     "id": "skin",

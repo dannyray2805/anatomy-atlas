@@ -368,9 +368,11 @@ export function BodyPage({
               }}
             />
             <datalist id="structure-search-list">
-              {inventory.map((it) => (
-                <option key={it.name} value={it.label} />
-              ))}
+              {Array.from(new Set(inventory.map((it) => it.label)))
+                .sort()
+                .map((label) => (
+                  <option key={label} value={label} />
+                ))}
             </datalist>
           </div>
         )}

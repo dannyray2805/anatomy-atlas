@@ -30,4 +30,19 @@ describe("validateGraph", () => {
     const errors = validateGraph(load("missing-parent.json"));
     assert.ok(errors.some((e) => e.includes("part_of")));
   });
+
+  // Both of these protect click resolution: a clicked mesh must map to exactly one structure.
+  it("rejects a mesh name claimed by two structures", () => {
+    const base = load("valid-graph.json");
+    const first = base[0];
+    const second = { ...base[1], mesh_names: ["Shared_mesh"] };
+    const errors = validateGraph([{ ...first, mesh_names: ["Shared_mesh"] }, second]);
+    assert.ok(errors.some((e) => e.includes('mesh name "Shared_mesh"') && e.includes("more than one")));
+  });
+
+  it("rejects a duplicate structure id", () => {
+    const base = load("valid-graph.json");
+    const errors = validateGraph([base[0], { ...base[0] }]);
+    assert.ok(errors.some((e) => e.includes("duplicate structure id")));
+  });
 });
