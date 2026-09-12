@@ -51,3 +51,54 @@ export type GuideExitReset = {
 export function guideExitReset(): GuideExitReset {
   return { visibleLayers: {}, opacity: 1, pickedName: null };
 }
+
+/**
+ * What ENTERING a stop does to the lab state. Pure data (no React, no JSX) so it is testable and so
+ * the state machine in useGuidedPeel only has to apply it.
+ */
+export type GuideEntryPlan = {
+  /** Layer visibility to FORCE for this stop (omitted layers keep the user's current choice). */
+  visibleLayers?: Record<string, boolean>;
+  opacity?: number;
+  clearPicked?: boolean;
+  preset?: "front" | "threequarter" | "top";
+  /** Structure whose mesh to fly to, when it resolves in this body. */
+  flyToStructureId?: string;
+  /** Fly to the heart mesh instead (fallback when the mapped structure is not in the scene). */
+  flyToHeart?: boolean;
+};
+
+export type GuidePresenceIds = {
+  rightVentricleId?: string;
+  leftVentricleId?: string;
+  ascendingAortaId?: string;
+};
+
+/**
+ * Per-stop effects. Two hard-won details are encoded here:
+ *  - `peel-skin` and the ventricle stops keep the VESSEL layer mounted. Hiding it would feed back
+ *    into the scene-derived inventory and drop the later "follow the aorta out" stop, collapsing
+ *    the journey's own step list (this bug was hit for real, not theorised).
+ *  - the aorta stop force-enables the vessel layer, because that is where its mesh lives.
+ */
+export function guideEntryPlan(key: GuideStepKey, presence: GuidePresenceIds): GuideEntryPlan {
+  switch (key) {
+    case "whole-body":
+      return { visibleLayers: {}, opacity: 1, clearPicked: true, preset: "front" };
+    case "peel-skin":
+      return { visibleLayers: { skin: false }, opacity: 1, clearPicked: true, preset: "front" };
+    case "right-ventricle":
+      return { visibleLayers: { skin: false }, opacity: 1, flyToStructureId: presence.rightVentricleId };
+    case "left-ventricle":
+      return { visibleLayers: { skin: false }, opacity: 1, flyToStructureId: presence.leftVentricleId };
+    case "ascending-aorta":
+      return {
+        visibleLayers: { skin: false, vessel: true },
+        opacity: 1,
+        flyToStructureId: presence.ascendingAortaId,
+        flyToHeart: !presence.ascendingAortaId
+      };
+    case "inside-heart":
+      return { visibleLayers: { skin: false, vessel: false }, opacity: 1, flyToHeart: true };
+  }
+}

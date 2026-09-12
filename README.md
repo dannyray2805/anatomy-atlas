@@ -35,9 +35,9 @@ incoming/              ← gitignored: GLBs, Zarr stores, throwaway scripts
 
 ## Cloudflare
 
-Same account pattern as Numberra: Pages + R2 + Workers + D1. See `wrangler.toml`.
+Same account pattern as Numberra: Pages + R2 + Workers. See `wrangler.toml`.
 
-Bindings/secret to create before deploy: R2 bucket `anatomy-public`, D1 database `anatomy_graph`, Worker secret `DEEPSEEK_API_KEY`.
+Bindings/secret to create before deploy: R2 bucket `anatomy-public`, Worker secret `DEEPSEEK_API_KEY`. D1 is not bound — the structure graph is compile-time JSON that CI validates — so no database is required.
 
 ## Local
 

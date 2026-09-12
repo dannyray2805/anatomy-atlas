@@ -6,13 +6,25 @@ import type { Env } from "./index.ts";
 type CardMap = Record<string, string>;
 
 function makeR2(cards: CardMap) {
+  const encode = (key: string) => new TextEncoder().encode(cards[key]);
   return {
-    async get(key: string) {
+    async head(key: string) {
+      return cards[key] == null ? null : { size: encode(key).byteLength };
+    },
+    // Mirrors the real R2 contract: `size` is the FULL object size, while `range` describes the
+    // slice actually returned (which is what the handler must report in Content-Range).
+    async get(key: string, options?: { range?: { offset: number; length?: number } }) {
       const body = cards[key];
       if (body == null) return null;
+      const bytes = encode(key);
+      const { offset, length } = options?.range ?? {};
+      const slice = offset == null ? bytes : bytes.slice(offset, length == null ? undefined : offset + length);
       return {
-        text: async () => body,
-        arrayBuffer: async () => new TextEncoder().encode(body).buffer
+        size: bytes.byteLength,
+        range: offset == null ? undefined : { offset, length: slice.byteLength },
+        text: async () => new TextDecoder().decode(slice),
+        arrayBuffer: async () => slice.buffer.slice(slice.byteOffset, slice.byteOffset + slice.byteLength),
+        body: new Response(slice).body
       };
     }
   };
@@ -21,7 +33,6 @@ function makeR2(cards: CardMap) {
 function makeEnv(cards: CardMap, deepseekKey = "test-key"): Env {
   return {
     ANATOMY_BUCKET: makeR2(cards) as unknown as Env["ANATOMY_BUCKET"],
-    anatomy_graph: {} as Env["anatomy_graph"],
     DEEPSEEK_API_KEY: deepseekKey
   };
 }
@@ -204,6 +215,62 @@ describe("worker facts API", () => {
     assert.equal(res.status, 206);
     assert.equal(res.headers.get("Content-Range"), "bytes 0-3/10");
     assert.equal(await res.text(), "0123");
+  });
+
+  it("GET /api/media/:key streams the full object with an explicit Content-Length", async () => {
+    const env = makeEnv({ "hoa/preview/s20-29-heart.webm": "0123456789" });
+    const res = await call("/api/media/hoa/preview/s20-29-heart.webm", undefined, env);
+    assert.equal(res.status, 200);
+    assert.equal(res.headers.get("Content-Length"), "10");
+    assert.equal(res.headers.get("Accept-Ranges"), "bytes");
+    assert.equal(await res.text(), "0123456789");
+  });
+
+  it("GET /api/media/:key supports an open-ended range (bytes=5-)", async () => {
+    const env = makeEnv({ "hoa/preview/s20-29-heart.webm": "0123456789" });
+    const res = await call(
+      "/api/media/hoa/preview/s20-29-heart.webm",
+      { headers: { Range: "bytes=5-" } },
+      env
+    );
+    assert.equal(res.status, 206);
+    assert.equal(res.headers.get("Content-Range"), "bytes 5-9/10");
+    assert.equal(res.headers.get("Content-Length"), "5");
+    assert.equal(await res.text(), "56789");
+  });
+
+  it("GET /api/media/:key supports a suffix range (bytes=-3)", async () => {
+    const env = makeEnv({ "hoa/preview/s20-29-heart.webm": "0123456789" });
+    const res = await call(
+      "/api/media/hoa/preview/s20-29-heart.webm",
+      { headers: { Range: "bytes=-3" } },
+      env
+    );
+    assert.equal(res.status, 206);
+    assert.equal(res.headers.get("Content-Range"), "bytes 7-9/10");
+    assert.equal(await res.text(), "789");
+  });
+
+  it("GET /api/media/:key returns 416 for an unsatisfiable range", async () => {
+    const env = makeEnv({ "hoa/preview/s20-29-heart.webm": "0123456789" });
+    const res = await call(
+      "/api/media/hoa/preview/s20-29-heart.webm",
+      { headers: { Range: "bytes=20-30" } },
+      env
+    );
+    assert.equal(res.status, 416);
+    assert.equal(res.headers.get("Content-Range"), "bytes */10");
+  });
+
+  it("GET /api/media/:key ignores a malformed Range header and serves 200", async () => {
+    const env = makeEnv({ "hoa/preview/s20-29-heart.webm": "0123456789" });
+    const res = await call(
+      "/api/media/hoa/preview/s20-29-heart.webm",
+      { headers: { Range: "items=0-3" } },
+      env
+    );
+    assert.equal(res.status, 200);
+    assert.equal(await res.text(), "0123456789");
   });
 
   it("GET /api/media/:key unknown returns DATA_MISSING", async () => {

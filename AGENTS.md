@@ -16,14 +16,16 @@ Read `docs/specs/00-truth-rules.md` and `docs/hoa-anatomy-cloudflare-playbook.md
 - App: Vite + React + TypeScript + React Three Fiber + drei
 - Volume: embed Neuroglancer or Vizarr pointing at OME-Zarr on R2 / HOA
 - API: Cloudflare Worker
-- Data: R2 + D1
+- Data: R2 (D1 is intentionally unbound — see `wrangler.toml`)
 - Package manager: pnpm
 
 ## Cloudflare bind names (`wrangler.toml`)
 
 - R2: `ANATOMY_BUCKET`
-- D1: `anatomy_graph`
 - Secret: `DEEPSEEK_API_KEY` (Worker only, never frontend)
+
+D1 (`anatomy_graph`) is deliberately **not** bound: the structure graph is compile-time JSON that CI
+validates, so a database binding would have no consumer. Re-add it only alongside a real one.
 
 App public config may include the Worker URL only. No API keys in Pages.
 
@@ -39,6 +41,6 @@ App public config may include the Worker URL only. No API keys in Pages.
 
 - **Gate job** (`pnpm validate` + app tests + app build) must pass before anything deploys.
 - **Deploy job** ships whatever was committed, exactly as committed: `wrangler pages deploy` (Pages `anatomy-atlas`), syncs **every** `content/published/facts/*.md` to R2 (a loop — new cards are picked up automatically), then `wrangler deploy` (Worker, so its bundled `structures.json` is current). CI never flips a `reviewed` flag and never edits structures.json or card content.
-- **Smoke job** hits production and fails the run if: `/api/structures` row count ≠ `content/published/structures.json` count, any `/api/facts/<facts_id>` returns non-200, or the chat out-of-card question does not return exactly `{"reply":"NOT_IN_CARD"}`.
-- **A red smoke job means the deploy already happened and production may already be broken** — treat it as needing immediate manual attention, not "we'll fix it on the next push."
+- **Smoke job** hits production and fails the run if: `/api/structures` row count ≠ `content/published/structures.json` count, any `/api/facts/<facts_id>` returns non-200, the chat out-of-card question does not return exactly `{"reply":"NOT_IN_CARD"}`, or the deployed bundle does not carry every non-empty `VITE_*` value from `packages/app/.env.production`.
+- **A red smoke job means the deploy already happened and production may already be broken** — treat it as needing immediate manual attention, not "we'll fix it on the next push." Follow `docs/deploy-runbook.md`: triage the failing check, then roll back the right layer (Pages revert is dashboard-only; Worker rollback is `wrangler rollback`).
 - Secrets are referenced only via `${{ secrets.* }}`. Required names (added by a human in GitHub → Settings → Secrets and variables → Actions — never typed into a chat/terminal): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. `DEEPSEEK_API_KEY` remains a Cloudflare Worker secret (unchanged).

@@ -6,11 +6,15 @@ compatibility_date = "2026-08-01"
 binding = "ANATOMY_BUCKET"
 bucket_name = "anatomy-public"
 
-[[d1_databases]]
-binding = "anatomy_graph"
-database_name = "anatomy_graph"
-database_id = "417b972f-3eb2-4a53-92b8-7b764fc2fc5e"
-
+# D1 is deliberately NOT bound. The structure graph is compile-time JSON
+# (content/published/structures.json), bundled into both the Worker and the app, validated by
+# `pnpm validate` in CI and served from a static route. Nothing queries a database today, and a
+# binding with no consumer is a lie in the architecture.
+# The `anatomy_graph` D1 database still exists in the account (unused, unbound). Re-add the binding
+# only together with a real consumer (e.g. mutable review flags) AND a seeding step: pointing the
+# Worker at D1 as things stand would create a THIRD copy of the graph (app bundle + worker bundle +
+# D1) and add a seed-drift failure mode that this repo does not have now.
+#
 # Pages project is configured in Cloudflare dashboard or wrangler pages.
 # Do not put DEEPSEEK_API_KEY here. Use:
 #   wrangler secret put DEEPSEEK_API_KEY

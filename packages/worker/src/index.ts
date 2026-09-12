@@ -3,7 +3,6 @@ import type { Structure } from "../../schema/src/structure";
 
 export interface Env {
   ANATOMY_BUCKET: R2Bucket;
-  anatomy_graph: D1Database;
   DEEPSEEK_API_KEY?: string;
 }
 
@@ -105,14 +104,31 @@ function groundReply(reply: string, card: string): string {
   return reply;
 }
 
-// Serve derived media (preview WebM/poster) from R2. Key layout: hoa/preview/...
-// (docs/sources.md records the preview as a derived asset of DOI 10.15151/ESRF-DC-1773964017).
-// Public, cacheable, CORS-open (media is played cross-origin from the Pages app) and
-// supports byte ranges so <video> can seek.
+// Serve derived media from R2 with NATIVE ranged reads: the object body is streamed straight from
+// R2 to the client instead of being buffered here. Buffering was acceptable for a poster, but not
+// for multi-MB Draco GLBs under concurrent seeks, where every request materialised the whole file.
+// Public, cacheable, CORS-open (media is played cross-origin from the Pages app).
+type ByteRange = { offset: number; length: number };
+
+// `"ignore"` = malformed header, which RFC 9110 says to ignore (serve the full 200 response).
+// `"unsatisfiable"` = syntactically valid but outside the object (416).
+function parseRange(header: string, size: number): ByteRange | "ignore" | "unsatisfiable" {
+  const m = /^bytes=(\d*)-(\d*)$/.exec(header.trim());
+  if (!m || (m[1] === "" && m[2] === "")) return "ignore";
+  const [, startRaw, endRaw] = m;
+  if (startRaw === "") {
+    const suffix = Number(endRaw);
+    if (!Number.isFinite(suffix) || suffix <= 0) return "unsatisfiable";
+    const offset = Math.max(0, size - suffix);
+    return { offset, length: size - offset };
+  }
+  const start = Number(startRaw);
+  const end = endRaw === "" ? size - 1 : Math.min(Number(endRaw), size - 1);
+  if (!Number.isFinite(start) || start >= size || end < start) return "unsatisfiable";
+  return { offset: start, length: end - start + 1 };
+}
+
 async function handleMedia(env: Env, key: string, request: Request): Promise<Response> {
-  const obj = await env.ANATOMY_BUCKET.get(key);
-  if (!obj) return json(DATA_MISSING, 404);
-  const data = new Uint8Array(await obj.arrayBuffer());
   const contentType = key.endsWith(".webm")
     ? "video/webm"
     : key.endsWith(".webp")
@@ -126,24 +142,44 @@ async function handleMedia(env: Env, key: string, request: Request): Promise<Res
     Vary: "Origin"
   } as Record<string, string>;
 
-  const range = request.headers.get("Range");
-  if (range && /^bytes=(\d*)-(\d*)$/.test(range)) {
-    const [, sRaw, eRaw] = /^bytes=(\d*)-(\d*)$/.exec(range)!;
-    const start = sRaw === "" ? 0 : Number(sRaw);
-    const end = eRaw === "" ? data.byteLength - 1 : Math.min(Number(eRaw), data.byteLength - 1);
-    if (start <= end && start < data.byteLength) {
-      const slice = data.slice(start, end + 1);
-      return new Response(slice, {
-        status: 206,
-        headers: {
-          ...base,
-          "Content-Length": String(slice.byteLength),
-          "Content-Range": `bytes ${start}-${end}/${data.byteLength}`
-        }
-      });
-    }
+  const full = async (): Promise<Response> => {
+    const obj = await env.ANATOMY_BUCKET.get(key);
+    if (!obj) return json(DATA_MISSING, 404);
+    return new Response(obj.body, {
+      status: 200,
+      headers: { ...base, "Content-Length": String(obj.size) }
+    });
+  };
+
+  const rangeHeader = request.headers.get("Range");
+  if (!rangeHeader) return full();
+
+  // The total size is needed up front: to resolve a suffix range (`bytes=-N`) and to answer 416
+  // correctly. `head()` is metadata-only, so it stays cheap next to the payload.
+  const head = await env.ANATOMY_BUCKET.head(key);
+  if (!head) return json(DATA_MISSING, 404);
+
+  const range = parseRange(rangeHeader, head.size);
+  if (range === "ignore") return full();
+  if (range === "unsatisfiable") {
+    return new Response(null, {
+      status: 416,
+      headers: { ...base, "Content-Range": `bytes */${head.size}` }
+    });
   }
-  return new Response(data, { status: 200, headers: { ...base, "Content-Length": String(data.byteLength) } });
+
+  const obj = await env.ANATOMY_BUCKET.get(key, {
+    range: { offset: range.offset, length: range.length }
+  });
+  if (!obj) return json(DATA_MISSING, 404);
+  return new Response(obj.body, {
+    status: 206,
+    headers: {
+      ...base,
+      "Content-Length": String(range.length),
+      "Content-Range": `bytes ${range.offset}-${range.offset + range.length - 1}/${head.size}`
+    }
+  });
 }
 
 async function handleChat(request: Request, env: Env): Promise<Response> {
