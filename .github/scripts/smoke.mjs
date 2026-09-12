@@ -67,14 +67,37 @@ if (!Array.isArray(structures)) {
 }
 const withFacts = structures.filter((s) => s.facts_id);
 
-// a) structures row count matches live
+// a) structures row count matches live.
+//
+// RETRIED, because `fetchRetry` only retries transport/5xx failures — a 200 carrying the PREVIOUS
+// Worker version is a "successful" response, so a version that has not finished propagating to this
+// edge looks like a real mismatch. That happened on 2026-09-12: the Worker deployed at 06:15:54 and
+// the first check ran 8 s later, reporting "count 10 != 15" for a deploy that was already correct.
+// Per the deploy runbook a red smoke means "production may already be broken", so a false alarm is
+// expensive — it sends someone to roll back a healthy deploy. Wait for the count to converge.
 {
-  const res = await fetchRetry(`${BASE_URL}/api/structures`);
-  const live = await res.json();
+  let live = null;
+  let lastCount = null;
+  for (let attempt = 0; attempt < GET_RETRIES; attempt++) {
+    const res = await fetchRetry(`${BASE_URL}/api/structures`);
+    live = await res.json();
+    if (Array.isArray(live) && live.length === structures.length) break;
+    lastCount = Array.isArray(live) ? live.length : "not-an-array";
+    if (attempt < GET_RETRIES - 1) {
+      console.log(
+        `... /api/structures has ${lastCount} rows, expected ${structures.length}; ` +
+          `waiting for the Worker version to propagate (attempt ${attempt + 1}/${GET_RETRIES})`
+      );
+      await sleep(GET_DELAY_MS);
+    }
+  }
   if (!Array.isArray(live)) {
     fail("/api/structures did not return an array");
   } else if (live.length !== structures.length) {
-    fail(`/api/structures count ${live.length} != structures.json count ${structures.length}`);
+    fail(
+      `/api/structures count ${live.length} != structures.json count ${structures.length} ` +
+        `(still mismatched after ${GET_RETRIES} attempts over ${(GET_RETRIES * GET_DELAY_MS) / 1000}s)`
+    );
   } else {
     console.log(`ok  /api/structures -> ${live.length} rows (matches structures.json)`);
   }

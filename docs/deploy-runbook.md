@@ -28,6 +28,14 @@ The four smoke checks map to four different owners. Find the failing check first
 | (c) chat gate | `chat in-card ... never grounded`, or `out-of-card gate broken` | Worker chat code or `DEEPSEEK_API_KEY` | B |
 | (d) bundle config | `deployed bundle is missing N/M production env value(s)` | Pages build lost its `VITE_*` config | D |
 
+Check (a) looks like the scariest one and is usually benign: a Worker version takes a few seconds
+to reach every edge, so an edge still serving the previous version reports the OLD row count for a
+deploy that is already correct (this happened on 2026-09-12 — deployed 06:15:54, first check
+06:16:02, reported `10 != 15`). The check therefore retries for ~40 s before failing, and logs
+`waiting for the Worker version to propagate` while it does. If it still fails after that, the
+Worker genuinely did not ship: confirm the deploy job ran `wrangler deploy` and that
+`content/published/structures.json` in the deployed commit has the rows you expect.
+
 ## A. App / UI regression → revert the Pages deployment
 
 **The CLI cannot roll back Pages.** Verified on wrangler 4.127.1: `wrangler pages deployment` exposes
