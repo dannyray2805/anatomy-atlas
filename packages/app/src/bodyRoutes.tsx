@@ -39,8 +39,25 @@ function ReferenceAttribution() {
         Z-Anatomy, derived from BodyParts3D — CC BY-SA 2.1 Japan / CC BY-SA 4.0.
       </li>
       <li>
+        Skin — the BodyParts3D whole-body skin (FMA7163), the SAME individual as the Z-Anatomy
+        systems (Z-Anatomy is a retopologised BodyParts3D derivative and contains no skin mesh).
+        Placed by a landmark-derived translation, with its inconsistent face winding repaired
+        (~46&nbsp;% of faces were wound backwards in the source). The two are independently
+        derived surfaces and do not coincide: against the skin, the median muscle vertex is
+        ~18&nbsp;mm inside it, but ~6&nbsp;% of muscle vertices lie outside (worst ~26&nbsp;mm —
+        hand and forearm muscles, eye muscles) and ~4&nbsp;% of skeleton vertices lie outside
+        (worst ~44&nbsp;mm — skull, fingertips). With the skin on, that shows as patches of
+        muscle and bone across the shoulders, back, hips, hands and lower legs. The outer
+        envelope is correct (skin sits above the skull and below the sole, and wraps front and
+        back) — it is the local surface fit that fails, so it cannot be removed by re-scaling
+        the skin without disfiguring the hands. Source property, not a registration error; no
+        geometry is offset or rescaled to hide it.
+        CC BY-SA 2.1 Japan — attribution: “BodyParts3D, (c) The Database Center for Life
+        Science licensed under CC Attribution-Share Alike 2.1 Japan”.
+      </li>
+      <li>
         A single fixed male reference individual (“Taro”) — a different person from the VH peel
-        body. Muscular/skeletal study only; not per-sex.
+        body, and a male body: no female anatomy is shown on this route. Not per-sex.
       </li>
     </ul>
   );
@@ -90,7 +107,7 @@ export function ReferenceAtlasPage() {
         <>
           Reference Atlas — Z-Anatomy, derived from BodyParts3D (CC BY-SA 2.1 Japan / CC BY-SA
           4.0). A single fixed male reference individual (&quot;Taro&quot;) — a different person
-          from the VH peel body, shown for muscular/skeletal study only.
+          from the VH peel body. Skin, muscle and skeleton of that one individual.
         </>
       ]}
       attribution={() => <ReferenceAttribution />}

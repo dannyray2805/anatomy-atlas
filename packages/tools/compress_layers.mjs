@@ -1,6 +1,7 @@
 // P0 layer-GLB compression (2026-09-05).
-// Uniform, name-preserving, topology-preserving compression for the four layer assets
-// served from R2 (male/female VH skin, Z-Anatomy skeleton/muscle -v2). The VH hearts are
+// Uniform, name-preserving, topology-preserving compression for the layer assets served
+// from R2: male/female VH skin, VH male/female blood vasculature, the Z-Anatomy
+// skeleton/muscle -v2, and the Z-Anatomy (BodyParts3D) whole-body skin. The VH hearts are
 // loaded from the HuBMAP CDN and are NOT in our R2, so they are out of scope here.
 //
 // Two lossy-but-safe variants per asset:
@@ -28,7 +29,17 @@ const SRC = [
   ["incoming/VH_M_Blood_Vasculature.glb", "vasculature-male"],
   ["incoming/VH_F_Blood_Vasculature.glb", "vasculature-female"],
   ["incoming/skeleton-v2.glb", "skeleton-v2"],
-  ["incoming/muscle-v2.glb", "muscle-v2"],
+  // v2 is superseded by v3: v2 included the 62 connective-tissue sheets (fascia,
+  // aponeurosis, retinaculum) that the "Muscular system" collection carries alongside the
+  // muscle bellies. Those sheets sit at or above skin level and were the worst group of
+  // protrusions (max 26.15 mm, mean 5.90 mm). v3 excludes them by explicit object name --
+  // connective-tissue sheets are not muscle, and the exclusion changes no muscle geometry
+  // (the muscle group measures identically: 184 objects, 5702 verts, max 24.48 mm).
+  // Do not regenerate v2.
+  ["incoming/muscle-v3.glb", "muscle-v3"],
+  // v1 is superseded: its face winding was inconsistent (~46 % of faces backwards), so it
+  // rendered with see-through holes. Do not regenerate it.
+  ["incoming/z-anatomy-skin-v2.glb", "z-anatomy-skin-v2"],
 ];
 const OUT_DIR = "incoming/opt";
 fs.mkdirSync(OUT_DIR, { recursive: true });

@@ -9,8 +9,10 @@ import type { Sex } from "./sex";
  *    VH_F_* together; each sex's assets share that individual's frame, so IDENTITY is the
  *    correct registration (sameFrame). Muscle + full skeleton of that individual are NOT
  *    sourced → they don't exist in this body (Reference Atlas shows Z-Anatomy instead).
- *  - **Reference Atlas**: Z-Anatomy skeleton + muscle ("Taro", a different male individual),
- *    also identity/sameFrame, shown on its own route and never claimed as the peel's body.
+ *  - **Reference Atlas**: Z-Anatomy skeleton + muscle + the BodyParts3D whole-body skin
+ *    ("Taro", a different male individual, also identity/sameFrame — the skin's frame
+ *    translation is baked into the GLB), shown on its own route and never claimed as the
+ *    peel's body.
  */
 type UrlsPair = { male: string; female: string };
 
@@ -58,9 +60,25 @@ export function buildVhBodyFromUrls(
   return layers;
 }
 
-/** Pure core: the Z-Anatomy Reference Atlas (skeleton + muscle) at identity. */
-export function buildReferenceFromUrls(skeletonUrl: string, muscleUrl: string): LayerAsset[] {
+/** Pure core: the Z-Anatomy Reference Atlas (skin + skeleton + muscle) at identity. */
+export function buildReferenceFromUrls(
+  skeletonUrl: string,
+  muscleUrl: string,
+  skinUrl = ""
+): LayerAsset[] {
   const layers: LayerAsset[] = [];
+  // Skin FIRST: it is the outermost layer (layer 0), matching the peel order on /body.
+  if (skinUrl) {
+    layers.push({
+      structureId: "skin",
+      layer: "skin",
+      url: skinUrl,
+      visible: true,
+      // BodyParts3D skin for the same individual as the Z-Anatomy systems; the frame
+      // translation is already baked into the GLB, so identity is the correct registration.
+      sameFrame: true
+    });
+  }
   if (skeletonUrl) {
     layers.push({
       structureId: "skeleton",
@@ -96,6 +114,7 @@ const VESSEL_MALE = (ENV.VITE_VESSEL_GLB_MALE ?? "").trim();
 const VESSEL_FEMALE = (ENV.VITE_VESSEL_GLB_FEMALE ?? "").trim();
 const SKELETON_GLB = (ENV.VITE_SKELETON_GLB ?? "").trim();
 const MUSCLE_GLB = (ENV.VITE_MUSCLE_GLB ?? "").trim();
+const Z_ANATOMY_SKIN_GLB = (ENV.VITE_Z_ANATOMY_SKIN_GLB ?? "").trim();
 
 /** VH body peel for a sex: per-sex HuBMAP VH skin + heart + blood vasculature at identity (CC BY 4.0). */
 export function buildVhBody(sex: Sex): LayerAsset[] {
@@ -107,8 +126,11 @@ export function buildVhBody(sex: Sex): LayerAsset[] {
   );
 }
 
-/** Z-Anatomy Reference Atlas: skeleton + muscle (CC BY-SA, derived from BodyParts3D — "Taro"). */
+/**
+ * Z-Anatomy Reference Atlas: skin + skeleton + muscle (CC BY-SA, derived from BodyParts3D —
+ * "Taro"; the skin is BodyParts3D's own whole-body skin, the same individual).
+ */
 export function buildReference(): LayerAsset[] {
-  return buildReferenceFromUrls(SKELETON_GLB, MUSCLE_GLB);
+  return buildReferenceFromUrls(SKELETON_GLB, MUSCLE_GLB, Z_ANATOMY_SKIN_GLB);
 }
 

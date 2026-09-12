@@ -11,11 +11,21 @@ argument is the output .glb path. Collections are exported EXACTLY as named -- n
 renamed, merged, substituted, or reinterpreted here, and geometry is not simplified,
 retopologized, or decimated.
 
-Task N: exports are GEOMETRY ONLY. Within each named collection only objects of
-type 'MESH' are selected for the GLB; FONT (text labels) and CURVE/EMPTY annotation
-objects are excluded so no floating label text ships in the model. The label text is
-captured separately by packages/tools/extract_labels.py. The source .blend is never
-modified on disk (opened fresh in memory; never saved).
+Task N: exports are GEOMETRY ONLY. Within each named collection, MESH objects are
+selected for the GLB and FONT (text labels) is excluded, so no floating label text
+ships in the model. Label text is captured separately by
+packages/tools/extract_labels.py. The source .blend is never modified on disk
+(opened fresh in memory; never saved).
+
+Phase 1a: CURVE objects are anatomical geometry in this source, not annotation -- 946
+of 951 curves carry a bevel profile (bevel_depth 0.0005, i.e. 0.5 mm tubes at metre
+scale) and are named tubular structures (nerves, vessels, bronchi). They are therefore
+converted to MESH in memory and exported, with the authored bevel profile left exactly
+as-is: no bevel_resolution change, no smoothing, no remeshing. A curve that yields no
+surface (no bevel) cannot be represented in glTF, which has no line primitive, so it is
+dropped with an explicit log line -- never silently. Before Phase 1a the wholesale
+CURVE exclusion silently dropped the entire vessel/nerve/bronchus tree (the
+cardiovascular collection alone is 654 CURVE vs 60 MESH).
 
 Optional flag: `--exclude <object name>` may appear anywhere after the .blend (one
 per object, applied to every exported collection). It drops a HUMAN-SPECIFIED
@@ -117,6 +127,86 @@ def select_only(objs) -> None:
         view_layer.objects.active = objs[0]
 
 
+def convert_curves_to_mesh(curves):
+    """Replace CURVE objects with equivalent MESH objects, in the transient scene only.
+
+    Conversion is done at the DATA level (``meshes.new_from_object`` on the evaluated
+    object) instead of with ``bpy.ops.object.convert``. The operator was measured to
+    return ``{'CANCELLED'}`` and change nothing for curves that live inside hidden layer
+    collections -- which is most of this source -- so it would silently export nothing.
+    Evaluating the object applies the authored bevel profile exactly as rendered: no
+    resampling, smoothing, simplification, or remeshing.
+
+    Each replacement keeps the original object's NAME (what ``structures.json``
+    ``mesh_names`` resolve against), its world matrix, and its collection links, so the
+    exported scene graph is unchanged apart from the object's data type. Parent
+    relationships are deliberately not re-created: placement is baked into the world
+    matrix, so the exported position is identical.
+
+    Returns the replacement MESH objects plus the names of curves that produced no
+    surface (an unbeveled curve has no surface, and glTF has no line primitive, so it
+    cannot ship -- reported rather than dropped silently). A curve that fails to
+    evaluate is a hard error rather than a silent omission.
+
+    TWO PASSES, deliberately. Everything is evaluated FIRST, against a single depsgraph,
+    and the scene is only mutated afterwards. Evaluating and mutating in the same loop
+    forces a fresh ``evaluated_depsgraph_get()`` per curve, and on this source that means
+    re-evaluating a ~7,200-object scene with geometry nodes once per curve -- measured at
+    >10 minutes without completing a 654-curve collection. Since nothing is mutated while
+    evaluating, one depsgraph stays valid for the whole first pass.
+    """
+    # Pass 1 -- evaluate only (no scene mutation, so one depsgraph stays valid).
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    prepared = []  # (name, matrix_world, collections, mesh)
+    no_surface = []
+    for obj in curves:
+        evaluated = obj.evaluated_get(depsgraph)
+        try:
+            mesh = bpy.data.meshes.new_from_object(evaluated)
+        except Exception as exc:  # noqa: BLE001 - surface any evaluation error
+            err(f"ERROR: could not evaluate curve '{obj.name}' to a mesh: {exc}")
+            sys.exit(1)
+        if len(mesh.polygons) == 0:
+            bpy.data.meshes.remove(mesh)
+            no_surface.append(obj.name)
+            continue
+        prepared.append(
+            (obj.name, obj.matrix_world.copy(), list(obj.users_collection), mesh)
+        )
+
+    # Pass 2 -- mutate. Removing objects invalidates the depsgraph and the view layer,
+    # which is exactly why every evaluation above happens before this point.
+    replaced = []
+    for name, matrix_world, collections, mesh in prepared:
+        # Objects are looked up by name rather than held by reference, so a reference
+        # can never outlive the object it points at.
+        original = bpy.data.objects.get(name)
+        if original is None:
+            err(f"ERROR: curve '{name}' vanished before conversion")
+            sys.exit(1)
+        # Remove the curve FIRST so the replacement can take the exact original name
+        # (Blender would otherwise suffix it with .001 while the curve still exists).
+        bpy.data.objects.remove(original, do_unlink=True)
+        new = bpy.data.objects.new(name, mesh)
+        new.matrix_world = matrix_world
+        for coll in collections:
+            coll.objects.link(new)
+        replaced.append(new)
+
+    missing = [o for o in replaced if o.type != "MESH"]
+    if missing:
+        err(
+            "ERROR: curve -> mesh conversion did not yield a MESH for: "
+            + ", ".join(sorted(o.name for o in missing)[:10])
+        )
+        sys.exit(1)
+
+    # Removing and linking objects invalidates the view layer; without this the next
+    # select/serialize pass can observe stale (None) object bases.
+    bpy.context.view_layer.update()
+    return replaced, no_surface
+
+
 def mesh_stats(objs):
     """Return (mesh_count, vertex_count, triangle_count) over unique mesh data."""
     verts = 0
@@ -195,22 +285,51 @@ def main() -> None:
             )
             sys.exit(1)
 
-        # Task N: export geometry only. FONT (text labels) and any CURVE/annotation
-        # objects are excluded from the GLB. Labels are captured separately by
-        # packages/tools/extract_labels.py (never guessed by proximity here).
-        excluded_types = sorted({o.type for o in objs} - {"MESH"})
-        objs = [o for o in objs if o.type == "MESH"]
+        # Task N + Phase 1a: export geometry only -- MESH objects, plus CURVE objects
+        # converted to mesh below (they are real tubular anatomy here, not labels).
+        # FONT (text) and every other object type stay excluded. Labels are captured
+        # separately by packages/tools/extract_labels.py (never guessed by
+        # proximity here).
+        excluded_types = sorted({o.type for o in objs} - {"MESH", "CURVE"})
+        objs = [o for o in objs if o.type in ("MESH", "CURVE")]
         if not objs:
             err(
-                f'ERROR: collection "{col.name}" has no MESH objects to export '
+                f'ERROR: collection "{col.name}" has no geometry to export '
                 "(only " + ", ".join(excluded_types) + " present)"
             )
             sys.exit(1)
         if excluded_types:
             log(
-                f'     "{col.name}": excluding non-MESH from export '
+                f'     "{col.name}": excluding non-geometry from export '
                 f"({', '.join(excluded_types)})"
             )
+
+        # Phase 1a: evaluate the beveled curves into mesh surfaces, using the authored
+        # profile exactly as-is. Objects already of type MESH are passed through
+        # UNTOUCHED -- this step never filters or rewrites them, so collections that
+        # were exported before Phase 1a are unaffected.
+        curves = [o for o in objs if o.type == "CURVE"]
+        if curves:
+            # Read the MESH list BEFORE converting: the conversion removes the CURVE
+            # objects, so holding those references past it would raise ReferenceError.
+            existing_meshes = [o for o in objs if o.type == "MESH"]
+            log(
+                f'     "{col.name}": converting {len(curves)} CURVE object(s) to MESH '
+                "(authored bevel profile, no smoothing)"
+            )
+            converted, no_surface = convert_curves_to_mesh(curves)
+            objs = existing_meshes + converted
+            if no_surface:
+                shown = sorted(no_surface)
+                log(
+                    f'     "{col.name}": dropping {len(shown)} unbeveled curve(s) with '
+                    "no surface: "
+                    + ", ".join(shown[:6])
+                    + (" ..." if len(shown) > 6 else "")
+                )
+            if not objs:
+                err(f'ERROR: collection "{col.name}" has nothing left to export')
+                sys.exit(1)
 
         # Human-specified exclusions (exact object names, never inferred).
         if excludes:

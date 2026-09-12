@@ -87,7 +87,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Z-Anatomy 'Muscular system' collection — asset path after R2 sync"
+        "note": "Z-Anatomy 'Muscular system' collection (R2 muscle-v3-draco.glb) — the 62 connective-tissue sheets it carries alongside the muscle bellies (fascia, aponeurosis, retinaculum; e.g. Epicranial aponeurosis, Fascia lata, the thoracolumbar layers) are excluded by explicit object name, because they are not muscle and they sat at or above skin level. Tensor fasciae latae is kept (a muscle). 607 mesh nodes."
       }
     ],
     "voxel_size_um": null,
@@ -106,7 +106,12 @@
       {
         "source_id": "hubmap-hra-glb",
         "asset": "pending",
-        "note": "VH_Male v1.2 Skin, same coordinate frame as heart, registered via heart's baked transform"
+        "note": "VH male + female v1.2 whole-body skins — each in its own individual's frame, layered at identity in the /body peel (no transform)"
+      },
+      {
+        "source_id": "bodyparts3d",
+        "asset": "pending",
+        "note": "Taro reference-model whole-body skin (FJ2810.obj, FMA7163), layer 0 of the /reference body — placed by a landmark-derived translation, no rotation or scale"
       }
     ],
     "voxel_size_um": null,

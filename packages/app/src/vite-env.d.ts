@@ -14,6 +14,11 @@ interface ImportMetaEnv {
   readonly VITE_SKELETON_GLB?: string;
   /** URL of the Z-Anatomy muscular-system GLB (whole layer; served via Worker /api/media). */
   readonly VITE_MUSCLE_GLB?: string;
+  /**
+   * URL of the BodyParts3D whole-body skin GLB (layer 0 of the Reference Atlas body; the same
+   * individual as the Z-Anatomy systems, with its frame translation already baked in).
+   */
+  readonly VITE_Z_ANATOMY_SKIN_GLB?: string;
   /** URL of the HuBMAP VH-MALE whole-body skin GLB (same VH-M frame as the male heart; identity in the VH peel). */
   readonly VITE_SKIN_GLB_MALE?: string;
   /** URL of the HuBMAP VH-FEMALE whole-body skin GLB (same VH-F frame as the female heart; identity in the VH peel). */

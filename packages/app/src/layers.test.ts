@@ -18,6 +18,7 @@ const VESSEL = {
 };
 const SKELETON_URL = "https://example/skeleton.glb";
 const MUSCLE_URL = "https://example/muscle.glb";
+const REF_SKIN_URL = "https://example/z-anatomy-skin.glb";
 
 // Mirrors App.tsx BodyPage: a configured layer is visible unless the user stored a false
 // for that layer NAME in visibleLayers (default-visible via `?? true`).
@@ -98,12 +99,13 @@ describe("layers.ts — VH body peel (Path 1, per-sex same-individual)", () => {
   });
 });
 
-describe("layers.ts — Reference Atlas (Z-Anatomy skeleton + muscle)", () => {
-  it("yields skeleton + muscle at identity, both same-frame", () => {
-    const ref = buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL);
+describe("layers.ts — Reference Atlas (Z-Anatomy body + BodyParts3D skin)", () => {
+  it("yields skin + skeleton + muscle at identity, all same-frame", () => {
+    const ref = buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL, REF_SKIN_URL);
     assert.deepEqual(
       ref.map((l) => [l.structureId, l.layer, l.url]),
       [
+        ["skin", "skin", REF_SKIN_URL],
         ["skeleton", "skeleton", SKELETON_URL],
         ["muscle", "muscle", MUSCLE_URL]
       ]
@@ -114,9 +116,19 @@ describe("layers.ts — Reference Atlas (Z-Anatomy skeleton + muscle)", () => {
     }
   });
 
-  it("omits a reference layer with no url", () => {
+  it("omits a reference layer with no url (skin defaults off, existing calls unchanged)", () => {
     assert.deepEqual(buildReferenceFromUrls("", MUSCLE_URL).map((l) => l.structureId), [
       "muscle"
     ]);
+    assert.deepEqual(buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL).map((l) => l.structureId), [
+      "skeleton",
+      "muscle"
+    ]);
+  });
+
+  it("hiding the skin removes it from the rendered+framed set", () => {
+    const all = buildReferenceFromUrls(SKELETON_URL, MUSCLE_URL, REF_SKIN_URL);
+    const visible = filterVisibleLayers(applyVisibility(all, { skin: false }));
+    assert.deepEqual(visible.map((l) => l.structureId), ["skeleton", "muscle"]);
   });
 });
