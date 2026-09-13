@@ -55,7 +55,9 @@
     "hoa_dataset_doi": null,
     "facts_id": "heart-left-ventricle",
     "reviewed": false,
-    "mesh_names": ["VH_M_heart_left_ventricle"]
+    "mesh_names": [
+      "VH_M_heart_left_ventricle"
+    ]
   },
   {
     "id": "skeleton",
@@ -126,6 +128,11 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh nodes 'Liver' plus its eight named segments, confirmed present in the shipped viscera GLB (R2 visceral-v1-draco.glb) with packages/tools/compare_glb_scene.mjs. Uberon id verified against OLS4 (label 'liver', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
@@ -133,15 +140,41 @@
     "facts_id": "liver",
     "reviewed": false,
     "mesh_names": [
-      "Liver",
       "Anterior lateral segment of liver (VI)",
       "Anterior medial segment of liver (V)",
       "Left anterior lateral segment of liver (III)",
       "Left medial segment of liver (IV)",
       "Left posterior lateral segment of liver (II)",
+      "Liver",
       "Posterior lateral segment of liver (VII)",
       "Posterior medial segment of liver (VIII)",
-      "Posterior segment of liver (I)"
+      "Posterior segment of liver (I)",
+      "VH_M_bare_area_of_liver",
+      "VH_M_caudate_lobe_of_liver",
+      "VH_M_colic_impression_of_liver",
+      "VH_M_coronary_ligament_of_liver",
+      "VH_M_diaphragmatic_surface",
+      "VH_M_duodenal_impression_of_liver",
+      "VH_M_esophageal_impression_of_liver",
+      "VH_M_falciform_ligament",
+      "VH_M_gastric_impression_of_liver",
+      "VH_M_hepataduodenal_ligament",
+      "VH_M_left_anterolateral_segment",
+      "VH_M_left_inferomedial_segment",
+      "VH_M_left_posterolateral_segment",
+      "VH_M_left_superiomedial_segment",
+      "VH_M_ligamentum_venosum",
+      "VH_M_liver_capsule",
+      "VH_M_porta_hepatis",
+      "VH_M_quadrate_lobe_of_liver",
+      "VH_M_renal_impression_of_liver",
+      "VH_M_right_anteroinferior_segment",
+      "VH_M_right_anterosuperior_segment",
+      "VH_M_right_posteroinferior_segment",
+      "VH_M_right_posterosuperior_segment",
+      "VH_M_round_ligament_of_liver",
+      "VH_M_suprarenal_impression_of_liver",
+      "VH_M_triangular_ligament_of_liver"
     ]
   },
   {
@@ -162,7 +195,9 @@
     "hoa_dataset_doi": null,
     "facts_id": "stomach",
     "reviewed": false,
-    "mesh_names": ["Stomach"]
+    "mesh_names": [
+      "Stomach"
+    ]
   },
   {
     "id": "pancreas",
@@ -176,13 +211,25 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Pancreas' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'pancreas', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "pancreas",
     "reviewed": false,
-    "mesh_names": ["Pancreas"]
+    "mesh_names": [
+      "Pancreas",
+      "VH_M_body_of_pancreas",
+      "VH_M_head_of_pancreas",
+      "VH_M_neck_of_pancreas",
+      "VH_M_tail_of_pancreas",
+      "VH_M_uncinate_process_of_the_pancreas"
+    ]
   },
   {
     "id": "gallbladder",
@@ -196,13 +243,21 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Gallbladder' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'gallbladder', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "gallbladder",
     "reviewed": false,
-    "mesh_names": ["Gallbladder"]
+    "mesh_names": [
+      "Gallbladder",
+      "VH_M_gallbladder"
+    ]
   },
   {
     "id": "kidney",
@@ -216,13 +271,92 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh nodes 'Kidney.l' and 'Kidney.r' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'kidney', not obsolete). Renal pelvis is a separate mesh and is not mapped here."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "kidney",
     "reviewed": false,
-    "mesh_names": ["Kidney.l", "Kidney.r"]
+    "mesh_names": [
+      "Kidney.l",
+      "Kidney.r",
+      "VH_M_hilum_of_kidney_L",
+      "VH_M_hilum_of_kidney_R",
+      "VH_M_kidney_capsule_L",
+      "VH_M_kidney_capsule_R",
+      "VH_M_major_calyx_L_a",
+      "VH_M_major_calyx_L_b",
+      "VH_M_major_calyx_L_c",
+      "VH_M_major_calyx_R_a",
+      "VH_M_major_calyx_R_b",
+      "VH_M_minor_calyx_L_a",
+      "VH_M_minor_calyx_L_b",
+      "VH_M_minor_calyx_L_c",
+      "VH_M_minor_calyx_L_d",
+      "VH_M_minor_calyx_L_e",
+      "VH_M_minor_calyx_L_f",
+      "VH_M_minor_calyx_L_g",
+      "VH_M_minor_calyx_L_h",
+      "VH_M_minor_calyx_L_i",
+      "VH_M_minor_calyx_R_a",
+      "VH_M_minor_calyx_R_b",
+      "VH_M_minor_calyx_R_c",
+      "VH_M_minor_calyx_R_d",
+      "VH_M_minor_calyx_R_e",
+      "VH_M_minor_calyx_R_f",
+      "VH_M_minor_calyx_R_g",
+      "VH_M_minor_calyx_R_h",
+      "VH_M_minor_calyx_R_i",
+      "VH_M_outer_cortex_of_kidney_L",
+      "VH_M_outer_cortex_of_kidney_R",
+      "VH_M_renal_column_L",
+      "VH_M_renal_column_R",
+      "VH_M_renal_papilla_L_a",
+      "VH_M_renal_papilla_L_b",
+      "VH_M_renal_papilla_L_c",
+      "VH_M_renal_papilla_L_d",
+      "VH_M_renal_papilla_L_e",
+      "VH_M_renal_papilla_L_f",
+      "VH_M_renal_papilla_L_g",
+      "VH_M_renal_papilla_L_h",
+      "VH_M_renal_papilla_L_i",
+      "VH_M_renal_papilla_R_a",
+      "VH_M_renal_papilla_R_b",
+      "VH_M_renal_papilla_R_c",
+      "VH_M_renal_papilla_R_d",
+      "VH_M_renal_papilla_R_e",
+      "VH_M_renal_papilla_R_f",
+      "VH_M_renal_papilla_R_g",
+      "VH_M_renal_papilla_R_h",
+      "VH_M_renal_papilla_R_i",
+      "VH_M_renal_papilla_R_j",
+      "VH_M_renal_pelvis_L",
+      "VH_M_renal_pelvis_R",
+      "VH_M_renal_pyramid_L_a",
+      "VH_M_renal_pyramid_L_b",
+      "VH_M_renal_pyramid_L_c",
+      "VH_M_renal_pyramid_L_d",
+      "VH_M_renal_pyramid_L_e",
+      "VH_M_renal_pyramid_L_f",
+      "VH_M_renal_pyramid_L_g",
+      "VH_M_renal_pyramid_L_h",
+      "VH_M_renal_pyramid_L_i",
+      "VH_M_renal_pyramid_a",
+      "VH_M_renal_pyramid_b",
+      "VH_M_renal_pyramid_c",
+      "VH_M_renal_pyramid_d",
+      "VH_M_renal_pyramid_e",
+      "VH_M_renal_pyramid_f",
+      "VH_M_renal_pyramid_g",
+      "VH_M_renal_pyramid_h",
+      "VH_M_renal_pyramid_i",
+      "VH_M_renal_pyramid_j"
+    ]
   },
   {
     "id": "urinary-bladder",
@@ -236,13 +370,26 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Urinary bladder' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'urinary bladder', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "urinary-bladder",
     "reviewed": false,
-    "mesh_names": ["Urinary bladder"]
+    "mesh_names": [
+      "Urinary bladder",
+      "VH_M_fundus_of_urinary_bladder_base1",
+      "VH_M_fundus_of_urinary_bladder_dome",
+      "VH_M_trigone_of_urinary_bladder",
+      "VH_M_ureteral_orifice_L",
+      "VH_M_ureteral_orifice_R",
+      "VH_M_urinary_bladder_neck_smooth_muscle"
+    ]
   },
   {
     "id": "trachea",
@@ -256,13 +403,23 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Trachea' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'trachea', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "trachea",
     "reviewed": false,
-    "mesh_names": ["Trachea"]
+    "mesh_names": [
+      "Trachea",
+      "VH_M_carina",
+      "VH_M_trachea",
+      "VH_M_tracheal_cartilage"
+    ]
   },
   {
     "id": "thyroid-gland",
@@ -282,7 +439,9 @@
     "hoa_dataset_doi": null,
     "facts_id": "thyroid-gland",
     "reviewed": false,
-    "mesh_names": ["Thyroid gland"]
+    "mesh_names": [
+      "Thyroid gland"
+    ]
   },
   {
     "id": "adrenal-gland",
@@ -302,7 +461,10 @@
     "hoa_dataset_doi": null,
     "facts_id": "adrenal-gland",
     "reviewed": false,
-    "mesh_names": ["Suprarenal gland.l", "Suprarenal gland.r"]
+    "mesh_names": [
+      "Suprarenal gland.l",
+      "Suprarenal gland.r"
+    ]
   },
   {
     "id": "lung",
@@ -316,6 +478,11 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "The five lobe meshes (superior and inferior of the left lung; superior, middle and inferior of the right) confirmed present in the shipped viscera GLB. There is no single whole-lung mesh in this source, so the structure maps to its lobes. Uberon id verified against OLS4 (label 'lung', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
@@ -323,11 +490,38 @@
     "facts_id": "lung",
     "reviewed": false,
     "mesh_names": [
-      "Superior lobe of left lung",
       "Inferior lobe of left lung",
-      "Superior lobe of right lung",
+      "Inferior lobe of right lung",
       "Middle lobe of right lung",
-      "Inferior lobe of right lung"
+      "Superior lobe of left lung",
+      "Superior lobe of right lung",
+      "VH_M_hilum_L",
+      "VH_M_hilum_R",
+      "VH_M_hilum_lower_L",
+      "VH_M_hilum_lower_R",
+      "VH_M_hilum_middle_R",
+      "VH_M_hilum_upper_L",
+      "VH_M_hilum_upper_R",
+      "VH_M_left_anterior_basal_bronchopulmonary_segment",
+      "VH_M_left_anterior_bronchopulmonary_segment",
+      "VH_M_left_apical_bronchopulmonary_segment",
+      "VH_M_left_lateral_basal_bronchopulmonary_segment",
+      "VH_M_left_lingula_inferior_bronchopulmonary_segment",
+      "VH_M_left_lingula_superior_bronchopulmonary_segment",
+      "VH_M_left_medial_basal_bronchopulmonary_segment",
+      "VH_M_left_posetrior_basal_bronchopulmonary_segment",
+      "VH_M_left_posterior_bronchopulmonary_segment",
+      "VH_M_left_superior_bronchopulmonary_segment",
+      "VH_M_right_anterior_basal_bronchopulmonary_segment",
+      "VH_M_right_anterior_bronchopulmonary_segment",
+      "VH_M_right_apical_bronchopulmonary_segment",
+      "VH_M_right_lateral_basal_bronchopulmonary_segment",
+      "VH_M_right_lateral_bronchopulmonary_segment",
+      "VH_M_right_medial_basal_bronchopulmonary_segment",
+      "VH_M_right_medial_bronchopulmonary_segment",
+      "VH_M_right_posterior_basal_bronchopulmonary_segment",
+      "VH_M_right_posterior_bronchopulmonary_segment",
+      "VH_M_right_superior_bronchopulmonary_segment"
     ]
   },
   {
@@ -348,7 +542,9 @@
     "hoa_dataset_doi": null,
     "facts_id": "oesophagus",
     "reviewed": false,
-    "mesh_names": ["Oesophagus"]
+    "mesh_names": [
+      "Oesophagus"
+    ]
   },
   {
     "id": "jejunum",
@@ -362,13 +558,21 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Jejunum' confirmed present in the shipped viscera GLB (a converted curve tube). It is the only part of the small intestine mapped to a structure in this atlas: the source also carries a 'Duodenum' mesh, which has no structure row yet, and it contains no ileum mesh at all. Re-verified 2026-09-13 by loading the GLB with the app's own loader ('Duodenum' PRESENT, 'Jejunum' PRESENT, 'Ileum' ABSENT). Uberon id verified against OLS4 (label 'jejunum', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "jejunum",
     "reviewed": false,
-    "mesh_names": ["Jejunum"]
+    "mesh_names": [
+      "Jejunum",
+      "VH_M_jejunum"
+    ]
   },
   {
     "id": "ureter",
@@ -382,13 +586,23 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh nodes 'Ureter.l' and 'Ureter.r' confirmed present in the shipped viscera GLB (converted curve tubes). Uberon id verified against OLS4 (label 'ureter', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "ureter",
     "reviewed": false,
-    "mesh_names": ["Ureter.l", "Ureter.r"]
+    "mesh_names": [
+      "Ureter.l",
+      "Ureter.r",
+      "VH_M_ureter_L",
+      "VH_M_ureter_R"
+    ]
   },
   {
     "id": "urethra",
@@ -402,13 +616,22 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Urethra' confirmed present in the shipped viscera GLB (a converted curve tube). Uberon id verified against OLS4 (label 'urethra', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "urethra",
     "reviewed": false,
-    "mesh_names": ["Urethra"]
+    "mesh_names": [
+      "Urethra",
+      "VH_M_other_urethra",
+      "VH_M_prostatic_urethra"
+    ]
   },
   {
     "id": "bile-duct",
@@ -422,13 +645,21 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Bile duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source also carries a project-typed 'Extrahepatic bile ducts.j' object, which holds no surface and therefore ships as a node without geometry. Uberon id verified against OLS4 (label 'bile duct', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "bile-duct",
     "reviewed": false,
-    "mesh_names": ["Bile duct"]
+    "mesh_names": [
+      "Bile duct",
+      "VH_M_common_bile_duct"
+    ]
   },
   {
     "id": "pancreatic-duct",
@@ -442,13 +673,22 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Pancreatic duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source also names a separate 'Accessory pancreatic duct' mesh, which is left unmapped — and that is a deliberate choice, NOT a missing term. CORRECTED 2026-09-13: this note previously said no matching Uberon term was found, which the ontology contradicts. OLS4's curator note on UBERON:0007329 reads 'this class groups together accessory (dorsal) and main (ventral) pancreatic ducts', and that term's own description lists 'duct of pancreas', 'ductus pancreaticus' and 'pancreas duct' as synonyms. So the class does cover the accessory duct, and mapping both meshes to it would make one structure row stand for two separately named ducts that drain to different papillae; the accessory duct is therefore left unmapped and disclosed in the card instead. UBERON:0001064 remains the VENTRAL pancreatic duct on its own and was not used. Uberon id verified against OLS4 (label 'pancreatic duct', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "pancreatic-duct",
     "reviewed": false,
-    "mesh_names": ["Pancreatic duct"]
+    "mesh_names": [
+      "Pancreatic duct",
+      "VH_M_dorsal_pancreatic_duct",
+      "VH_M_ventral_pancreatic_duct"
+    ]
   },
   {
     "id": "bronchus",
@@ -462,6 +702,11 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "All 28 bronchus tubes confirmed present in the shipped viscera GLB (converted curve tubes): the left and right main bronchi, the lobar bronchi, and the segmental bronchi the source names individually (BI–BX and the left apicoposterior and lingular ones). This source models each bronchus as its own tube and has no single 'bronchi' mesh, so this structure maps to them all; the more specific names are not mapped as separate structures yet. Uberon id verified against OLS4 (label 'bronchus', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
@@ -469,34 +714,63 @@
     "facts_id": "bronchus",
     "reviewed": false,
     "mesh_names": [
-      "Left main bronchus",
-      "Right main bronchus",
-      "Left superior lobar bronchus",
-      "Left inferior lobar bronchus",
-      "Right superior lobar bronchus",
-      "Right inferior lobar bronchus",
-      "Middle lobar bronchus.r",
-      "Intermediate bronchus.r",
       "(Anteromedial basal segmental bronchus of left lung)",
-      "Apicoposterior segmental bronchus of left lung (BI+BII)",
-      "Anterior segmental bronchus of left lung (BIII)",
-      "Superior lingular segmental bronchus of left lung (BIV)",
-      "Inferior lingular segmental bronchus of left lung (BV)",
-      "Superior segmental bronchus of left lung (BVI)",
-      "Medial basal segmental bronchus of left lung (BVII)",
       "Anterior basal segmental bronchus of left lung (BVIII)",
-      "Lateral basal segmental bronchus of left lung (BIX)",
-      "Posterior basal segmental bronchus of left lung (BX)",
-      "Apical segmental bronchus of right lung (BI)",
-      "Posterior segmental bronchus of right lung (BII)",
-      "Anterior segmental bronchus of right lung (BIII)",
-      "Lateral segmental bronchus of right lung (BIV)",
-      "Medial segmental bronchus of right lung (BV)",
-      "Superior segmental bronchus of right lung (BVI)",
-      "Medial basal segmental bronchus of right lung (BVII)",
       "Anterior basal segmental bronchus of right lung (BVIII)",
+      "Anterior segmental bronchus of left lung (BIII)",
+      "Anterior segmental bronchus of right lung (BIII)",
+      "Apical segmental bronchus of right lung (BI)",
+      "Apicoposterior segmental bronchus of left lung (BI+BII)",
+      "Inferior lingular segmental bronchus of left lung (BV)",
+      "Intermediate bronchus.r",
+      "Lateral basal segmental bronchus of left lung (BIX)",
       "Lateral basal segmental bronchus of right lung (BIX)",
-      "Posterior basal segmental bronchus of right lung (BX)"
+      "Lateral segmental bronchus of right lung (BIV)",
+      "Left inferior lobar bronchus",
+      "Left main bronchus",
+      "Left superior lobar bronchus",
+      "Medial basal segmental bronchus of left lung (BVII)",
+      "Medial basal segmental bronchus of right lung (BVII)",
+      "Medial segmental bronchus of right lung (BV)",
+      "Middle lobar bronchus.r",
+      "Posterior basal segmental bronchus of left lung (BX)",
+      "Posterior basal segmental bronchus of right lung (BX)",
+      "Posterior segmental bronchus of right lung (BII)",
+      "Right inferior lobar bronchus",
+      "Right main bronchus",
+      "Right superior lobar bronchus",
+      "Superior lingular segmental bronchus of left lung (BIV)",
+      "Superior segmental bronchus of left lung (BVI)",
+      "Superior segmental bronchus of right lung (BVI)",
+      "VH_M_bronchial_cartilage",
+      "VH_M_bronchus",
+      "VH_M_left_anterior_basal_bronchus",
+      "VH_M_left_anterior_bronchus",
+      "VH_M_left_apical_bronchus",
+      "VH_M_left_inferior_lobar_bronchus",
+      "VH_M_left_lateral_basal_bronchus",
+      "VH_M_left_lingula_inferior_bronchus",
+      "VH_M_left_lingula_superior_bronchus",
+      "VH_M_left_lingular_bronchus",
+      "VH_M_left_main_bronchus",
+      "VH_M_left_medial_basal_bronchus",
+      "VH_M_left_posterior_basal_bronchus",
+      "VH_M_left_superior_bronchus",
+      "VH_M_left_superior_lobar_bronchus",
+      "VH_M_right_anterior_basal_bronchus",
+      "VH_M_right_anterior_bronchus",
+      "VH_M_right_apical_bronchus",
+      "VH_M_right_intermediate_bronchus",
+      "VH_M_right_lateral_basal_bronchus",
+      "VH_M_right_lateral_bronchus",
+      "VH_M_right_lower_lobar_bronchus",
+      "VH_M_right_main_bronchus",
+      "VH_M_right_medial_basal_bronchus",
+      "VH_M_right_medial_bronchus",
+      "VH_M_right_middle_lobar_bronchus",
+      "VH_M_right_posterior_bronchus",
+      "VH_M_right_superior_bronchus",
+      "VH_M_right_superior_lobar_bronchus"
     ]
   },
   {
@@ -555,7 +829,10 @@
     "hoa_dataset_doi": null,
     "facts_id": "midbrain",
     "reviewed": false,
-    "mesh_names": ["Midbrain.l", "Midbrain.r"]
+    "mesh_names": [
+      "Midbrain.l",
+      "Midbrain.r"
+    ]
   },
   {
     "id": "pons",
@@ -575,7 +852,10 @@
     "hoa_dataset_doi": null,
     "facts_id": "pons",
     "reviewed": false,
-    "mesh_names": ["Pons.l", "Pons.r"]
+    "mesh_names": [
+      "Pons.l",
+      "Pons.r"
+    ]
   },
   {
     "id": "medulla-oblongata",
@@ -595,7 +875,10 @@
     "hoa_dataset_doi": null,
     "facts_id": "medulla-oblongata",
     "reviewed": false,
-    "mesh_names": ["Medulla oblongata.l", "Medulla oblongata.r"]
+    "mesh_names": [
+      "Medulla oblongata.l",
+      "Medulla oblongata.r"
+    ]
   },
   {
     "id": "joints",
@@ -647,13 +930,25 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh node 'Spleen' confirmed present in the shipped lymphoid GLB (R2 lymphoid-v1-draco.glb). Uberon id verified against OLS4 (label 'spleen', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "spleen",
     "reviewed": false,
-    "mesh_names": ["Spleen"]
+    "mesh_names": [
+      "Spleen",
+      "VH_M_colic_surface_of_spleen",
+      "VH_M_diaphragmatic_surface_of_spleen",
+      "VH_M_gastric_surface_of_spleen",
+      "VH_M_hilum_of_spleen",
+      "VH_M_renal_surface_of_spleen"
+    ]
   },
   {
     "id": "thymus",
@@ -667,13 +962,23 @@
         "source_id": "z-anatomy",
         "asset": "pending",
         "note": "Mesh nodes 'Left lobe of thymus' and 'Right lobe of thymus' confirmed present in the shipped lymphoid GLB; this source models the thymus as its two lobes. Uberon id verified against OLS4 (label 'thymus', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "Visible Human male organ set",
+        "note": "Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
     "reviewed": false,
-    "mesh_names": ["Left lobe of thymus", "Right lobe of thymus"]
+    "mesh_names": [
+      "Left lobe of thymus",
+      "Right lobe of thymus",
+      "VH_M_thymus_lobe_L",
+      "VH_M_thymus_lobe_R"
+    ]
   },
   {
     "id": "skin",
@@ -736,7 +1041,10 @@
     "hoa_dataset_doi": null,
     "facts_id": "aorta-ascending",
     "reviewed": false,
-    "mesh_names": ["VH_M_ascending_aorta", "VH_F_ascending_aorta"]
+    "mesh_names": [
+      "VH_M_ascending_aorta",
+      "VH_F_ascending_aorta"
+    ]
   },
   {
     "id": "heart-right-ventricle",
@@ -756,7 +1064,10 @@
     "hoa_dataset_doi": null,
     "facts_id": "heart-right-ventricle",
     "reviewed": false,
-    "mesh_names": ["VH_M_heart_right_ventricle", "VH_F_right_ventricle"]
+    "mesh_names": [
+      "VH_M_heart_right_ventricle",
+      "VH_F_right_ventricle"
+    ]
   },
   {
     "id": "heart-right-atrium",
@@ -776,6 +1087,256 @@
     "hoa_dataset_doi": null,
     "facts_id": "heart-right-atrium",
     "reviewed": false,
-    "mesh_names": ["VH_M_right_cardiac_atrium", "VH_F_right_cardiac_atrium"]
+    "mesh_names": [
+      "VH_M_right_cardiac_atrium",
+      "VH_F_right_cardiac_atrium"
+    ]
+  },
+  {
+    "id": "duodenum",
+    "uberon": "UBERON:0002114",
+    "fma": null,
+    "label": "Duodenum",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Small_Intestine.glb",
+        "note": "The four named parts, the hepatopancreatic ampulla, its sphincter and the duodenal papilla. OLS4 label 'duodenum', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_duodenal_ampulla",
+      "VH_M_duodenum_ascending",
+      "VH_M_duodenum_descending",
+      "VH_M_duodenum_horizonal",
+      "VH_M_duodenum_superior",
+      "VH_M_hepatopancreatic_ampulla",
+      "VH_M_papilla_of_santorini",
+      "VH_M_sphincter_of_hepatopancreatic_ampulla"
+    ]
+  },
+  {
+    "id": "ileum",
+    "uberon": "UBERON:0002116",
+    "fma": null,
+    "label": "Ileum",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Small_Intestine.glb",
+        "note": "VH_M_ileum and VH_M_ileum_terminal. OLS4 label 'ileum', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_ileum",
+      "VH_M_ileum_terminal"
+    ]
+  },
+  {
+    "id": "large-intestine",
+    "uberon": "UBERON:0000059",
+    "fma": null,
+    "label": "Large intestine",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "SBU_M_Intestine_Large.glb",
+        "note": "Colon, rectum, caecum, appendix and ileocecal valve. OLS4 label 'large intestine', not obsolete. CONTRIBUTOR: this asset is a Stony Brook University (SBU) model published inside the HuBMAP CCF reference library and registered into the Visible Human male frame — it is not HuBMAP-authored. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_ascending_colon",
+      "VH_M_caecum",
+      "VH_M_descending_colon",
+      "VH_M_hepatic_flexure_of_colon",
+      "VH_M_ileocecal_valve",
+      "VH_M_rectum",
+      "VH_M_sigmoid_colon",
+      "VH_M_splenic_flexure_of_colon",
+      "VH_M_transverse_colon",
+      "VH_M_vermiform_appendix"
+    ]
+  },
+  {
+    "id": "prostate",
+    "uberon": "UBERON:0002367",
+    "fma": null,
+    "label": "Prostate",
+    "layer": "organ",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Prostate.glb",
+        "note": "Zones, apex, base, stroma and prostatic ducts. The same asset also carries this individual's vas deferens, seminal vesicle, ejaculatory duct, prostatic utricle and seminal colliculus — those are DIFFERENT organs and are deliberately NOT mapped to this row. OLS4 label 'prostate gland', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_anterior_fibromuscular_stroma_L",
+      "VH_M_anterior_fibromuscular_stroma_R",
+      "VH_M_apex_of_prostate",
+      "VH_M_base_of_prostate",
+      "VH_M_central_zone_of_prostate_L",
+      "VH_M_central_zone_of_prostate_R",
+      "VH_M_peripheral_zone_of_prostate_L",
+      "VH_M_peripheral_zone_of_prostate_R",
+      "VH_M_prostate_duct_L",
+      "VH_M_prostate_duct_R",
+      "VH_M_transition_zone__of_prostate_L",
+      "VH_M_transition_zone_of_prostate_R"
+    ]
+  },
+  {
+    "id": "vertebral-column",
+    "uberon": "UBERON:0001130",
+    "fma": null,
+    "label": "Vertebral column",
+    "layer": "skeleton",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Vertebrae.glb",
+        "note": "All 24 vertebrae (C1-C7, T1-T12, L1-L5) individually. This is the spine ONLY — the donor's full articulated skeleton (skull, ribs, limbs) is not published. OLS4 label 'vertebral column', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_cervical_vertebra_1",
+      "VH_M_cervical_vertebra_2",
+      "VH_M_cervical_vertebra_3",
+      "VH_M_cervical_vertebra_4",
+      "VH_M_cervical_vertebra_5",
+      "VH_M_cervical_vertebra_6",
+      "VH_M_cervical_vertebra_7",
+      "VH_M_lumbar_vertebra_1",
+      "VH_M_lumbar_vertebra_2",
+      "VH_M_lumbar_vertebra_3",
+      "VH_M_lumbar_vertebra_4",
+      "VH_M_lumbar_vertebra_5",
+      "VH_M_thoracic_vertebra_1",
+      "VH_M_thoracic_vertebra_10",
+      "VH_M_thoracic_vertebra_11",
+      "VH_M_thoracic_vertebra_12",
+      "VH_M_thoracic_vertebra_2",
+      "VH_M_thoracic_vertebra_3",
+      "VH_M_thoracic_vertebra_4",
+      "VH_M_thoracic_vertebra_5",
+      "VH_M_thoracic_vertebra_6",
+      "VH_M_thoracic_vertebra_7",
+      "VH_M_thoracic_vertebra_8",
+      "VH_M_thoracic_vertebra_9"
+    ]
+  },
+  {
+    "id": "bony-pelvis",
+    "uberon": "UBERON:0001270",
+    "fma": null,
+    "label": "Bony pelvis",
+    "layer": "skeleton",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Pelvis.glb",
+        "note": "Sacrum, coccyx, and the compact and spongy bone of ilium, ischium and pubis, both sides. OLS4 label 'bony pelvis', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_coccyx",
+      "VH_M_ilium_compact_bone_L",
+      "VH_M_ilium_compact_bone_R",
+      "VH_M_ilium_spongy_bone_L",
+      "VH_M_ilium_spongy_bone_R",
+      "VH_M_ischium_compact_bone_L",
+      "VH_M_ischium_compact_bone_R",
+      "VH_M_ischium_spongy_bone_L",
+      "VH_M_ischium_spongy_bone_R",
+      "VH_M_pubis_compact_bone_L",
+      "VH_M_pubis_compact_bone_R",
+      "VH_M_pubis_spongy_bone_L",
+      "VH_M_pubis_spongy_bone_R",
+      "VH_M_sacrum"
+    ]
+  },
+  {
+    "id": "spinal-cord",
+    "uberon": "UBERON:0002240",
+    "fma": null,
+    "label": "Spinal cord",
+    "layer": "nerve",
+    "part_of": "body",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Spinal_Cord.glb",
+        "note": "All 30 named segments (C1-C8, T1-T12, L1-L5, S1-S5). Only the cord is published for this individual — there is no whole-body peripheral nerve set. OLS4 label 'spinal cord', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_C1_segment_of_cervical_spinal_cord",
+      "VH_M_C2_segment_of_cervical_spinal_cord",
+      "VH_M_C3_segment_of_cervical_spinal_cord",
+      "VH_M_C4_segment_of_cervical_spinal_cord",
+      "VH_M_C5_segment_of_cervical_spinal_cord",
+      "VH_M_C6_segment_of_cervical_spinal_cord",
+      "VH_M_C7_segment_of_cervical_spinal_cord",
+      "VH_M_C8_segment_of_cervical_spinal_cord",
+      "VH_M_eighth_thoracic_spinal_cord_segment",
+      "VH_M_eleventh_thoracic_spinal_cord_segment",
+      "VH_M_fifth_lumbar_spinal_cord_segment",
+      "VH_M_fifth_sacral_spinal_cord_segment",
+      "VH_M_fifth_thoracic_spinal_cord_segment",
+      "VH_M_first_lumbar_spinal_cord_segment",
+      "VH_M_first_sacral_spinal_cord_segment",
+      "VH_M_first_thoracic_spinal_cord_segment",
+      "VH_M_fourth_lumbar_spinal_cord_segment",
+      "VH_M_fourth_sacral_spinal_cord_segment",
+      "VH_M_fourth_thoracic_spinal_cord_segment",
+      "VH_M_ninth_thoracic_spinal_cord_segment",
+      "VH_M_second_lumbar_spinal_cord_segment",
+      "VH_M_second_sacral_spinal_cord_segment",
+      "VH_M_second_thoracic_spinal_cord_segment",
+      "VH_M_seventh_thoracic_spinal_cord_segment",
+      "VH_M_sixth_thoracic_spinal_cord_segment",
+      "VH_M_tenth_thoracic_spinal_cord_segment",
+      "VH_M_third_lumbar_spinal_cord_segment",
+      "VH_M_third_sacral_spinal_cord_segment",
+      "VH_M_third_thoracic_spinal_cord_segment",
+      "VH_M_twelfth_thoracic_spinal_cord_segment"
+    ]
   }
 ]

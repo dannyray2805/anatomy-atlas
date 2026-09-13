@@ -37,6 +37,12 @@ interface ImportMetaEnv {
   readonly VITE_VESSEL_GLB_MALE?: string;
   /** URL of the HuBMAP VH-FEMALE blood-vasculature GLB (same VH-F frame as skin/heart; identity in the VH peel). */
   readonly VITE_VESSEL_GLB_FEMALE?: string;
+  /**
+   * Base URL for the donor's compressed organ / spine / pelvis / spinal-cord assets
+   * (…/api/media/hubmap/glb). The individual file names live in layers.ts (MALE_DONOR_EXTRAS),
+   * so the list and the env cannot drift apart.
+   */
+  readonly VITE_DONOR_GLB_BASE?: string;
   /** Neuroglancer URL to iframe on the HOA volume view (landing route `/`, legacy `/volume/heart`). */
   readonly VITE_HOA_HEART_ZARR?: string;
   /** HOA dataset DOI, e.g. 10.5281/zenodo.XXXX. */

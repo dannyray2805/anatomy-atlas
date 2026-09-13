@@ -187,10 +187,23 @@ on-click deep dive and was kept as-is.
 ### Consequence worth stating
 
 On the reference body the peel makes **17 organs reachable** (and its ducts, bronchi and
-brainstem), where before the default view offered no search at all. The honest gaps are unchanged
-and still surfaced: the donor bodies show `Skeleton · not in this dataset` and
-`Muscle · not in this dataset`, and a female donor body is the only female body there is —
-no female whole-body anatomy is published, so none is shown and none is invented.
+brainstem), where before the default view offered no search at all.
+
+**The male donor body now opens up too (2026-09-13).** 19 of his published assets are wired —
+liver, lungs, kidneys, gallbladder and biliary tree, pancreas, spleen, thymus, small and large
+intestine, urinary bladder, ureters, urethra and prostate, plus the spine, bony pelvis and spinal
+cord — which takes that body's resolvable structures from **4 to 23**. The organs show on first
+paint so peeling the skin reveals a real interior; the spine and cord are opt-in because they are
+the heavy ones. Each layer is named for exactly what it holds (`Spine + pelvis`, `Spinal cord`),
+never stretched to imply more.
+
+The gaps are surfaced rather than hidden: `Muscle · not in this dataset` remains, a full
+articulated skeleton is still not published (only the spine, pelvis and cord), the female donor's
+organ set is a separate not-yet-wired batch, and the Allen brain atlas and an NIH lymph-node model
+in that same library are deliberately left out — they are other labs' models registered into this
+body's frame, so including them would make the body a composite and change what the page may
+claim. A female donor body remains the only female body there is: no female whole-body anatomy is
+published, so none is shown and none is invented.
 
 ### Follow-ups (deliberately not done)
 

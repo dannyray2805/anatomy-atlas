@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { buildVhBodyFromUrls, buildReferenceFromUrls } from "./layers.ts";
+import { buildVhBodyFromUrls, buildReferenceFromUrls, donorExtrasFromBase } from "./layers.ts";
 import { filterVisibleLayers, applyVisibility } from "./layerVisibility.ts";
 import type { LayerAsset } from "./components/VolumeViewer";
 
@@ -162,5 +162,55 @@ describe("layers.ts — Reference Atlas (Z-Anatomy body + BodyParts3D skin)", ()
       "viscera",
       "joints"
     ]);
+  });
+});
+
+describe("donorExtrasFromBase (the Visible Human donor's published interiors)", () => {
+  const BASE = "https://example/api/media/hubmap/glb";
+
+  it("returns nothing without a base url, or for a body we have not wired yet", () => {
+    // A missing base must never yield half a body, and the female organ set is a separate batch
+    // that has not been wired — both must be an empty list, not a partial or invented one.
+    assert.deepEqual(donorExtrasFromBase("male", ""), []);
+    assert.deepEqual(donorExtrasFromBase("male", "   "), []);
+    assert.deepEqual(donorExtrasFromBase("female", BASE), []);
+  });
+
+  it("builds every male asset against the base, normalising a trailing slash on the base", () => {
+    const extras = donorExtrasFromBase("male", BASE);
+    assert.ok(extras.length >= 19, `expected the male set, got ${extras.length}`);
+    assert.ok(extras.every((l) => l.url.startsWith(`${BASE}/`)));
+    // A base given with a trailing slash must produce the identical urls, not a doubled slash.
+    assert.deepEqual(
+      donorExtrasFromBase("male", `${BASE}/`).map((l) => l.url),
+      extras.map((l) => l.url)
+    );
+    // Only the scheme may contain a double slash.
+    assert.equal(extras[0].url.split("//").length - 1, 1);
+  });
+
+  it("mounts the organs by default and keeps the heavy spine + cord opt-in", () => {
+    const extras = donorExtrasFromBase("male", BASE);
+    const organ = extras.filter((l) => l.layer === "organ");
+    assert.ok(organ.length >= 16, "the donor's organs should be the bulk of the set");
+    assert.ok(organ.every((l) => l.visible && !l.defaultHidden), "organs must show on first paint");
+    for (const layer of ["skeleton", "nerve"]) {
+      const entries = extras.filter((l) => l.layer === layer);
+      assert.ok(entries.length > 0, `${layer} should be wired`);
+      assert.ok(entries.every((l) => l.defaultHidden && !l.visible), `${layer} must start hidden`);
+    }
+  });
+
+  it("marks every donor layer sameFrame — they are that same individual's assets", () => {
+    // If this ever goes false, the layer would become alignable in ?align=1 and a stale override
+    // could displace a correctly-registered organ.
+    assert.ok(donorExtrasFromBase("male", BASE).every((l) => l.sameFrame === true));
+  });
+
+  it("names a real structure id for every entry, so picking resolves to a published row", () => {
+    const ids = donorExtrasFromBase("male", BASE).map((l) => l.structureId);
+    assert.ok(ids.every((id) => id.length > 0));
+    // The donor's organ layer must not be labelled as the heart alone any more.
+    assert.ok(ids.includes("liver") && ids.includes("spinal-cord") && ids.includes("vertebral-column"));
   });
 });

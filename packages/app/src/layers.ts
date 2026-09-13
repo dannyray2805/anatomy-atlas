@@ -21,7 +21,8 @@ export function buildVhBodyFromUrls(
   sex: Sex,
   heartUrls: UrlsPair,
   skinUrls: UrlsPair,
-  vesselUrls: UrlsPair = { male: "", female: "" }
+  vesselUrls: UrlsPair = { male: "", female: "" },
+  extras: LayerAsset[] = []
 ): LayerAsset[] {
   const layers: LayerAsset[] = [];
   const skin = skinUrls[sex];
@@ -57,6 +58,8 @@ export function buildVhBodyFromUrls(
       sameFrame: true
     });
   }
+  // The donor's published organs/spine/cord, already fully described by the caller.
+  for (const extra of extras) layers.push(extra);
   return layers;
 }
 
@@ -140,6 +143,64 @@ export function buildReferenceFromUrls(
   return layers;
 }
 
+/**
+ * The extra organs, spine and spinal cord published for the HuBMAP Visible Human male reference
+ * body — the same individual as his skin and vessels, so every entry is `sameFrame` (identity).
+ *
+ * [compressed asset file name, structureId, layer, defaultHidden]
+ *
+ * The organs are VISIBLE by default so peeling the skin reveals a full interior — that is the
+ * point of them. The spine and the cord are opt-in (about 3.9 MB together) so the first paint
+ * stays light; peeling to their rail stop mounts them.
+ *
+ * NOT here, deliberately: the Allen brain atlas and the NIH lymph node. Both are OTHER labs'
+ * models registered into this body's frame, so wiring them changes what the body may claim.
+ * See docs/sources.md.
+ */
+const MALE_DONOR_EXTRAS: Array<[string, string, string, boolean]> = [
+  // Viscera (organ layer)
+  ["liver-male-draco", "liver", "organ", false],
+  ["lung-male-draco", "lung", "organ", false],
+  ["kidney-l-male-draco", "kidney", "organ", false],
+  ["kidney-r-male-draco", "kidney", "organ", false],
+  ["gallbladder-male-draco", "gallbladder", "organ", false],
+  ["biliary-tree-male-draco", "bile-duct", "organ", false],
+  ["pancreas-male-draco", "pancreas", "organ", false],
+  ["spleen-male-draco", "spleen", "organ", false],
+  ["thymus-male-draco", "thymus", "organ", false],
+  ["small-intestine-male-draco", "jejunum", "organ", false],
+  ["large-intestine-male-draco", "large-intestine", "organ", false],
+  ["urinary-bladder-male-draco", "urinary-bladder", "organ", false],
+  ["ureter-l-male-draco", "ureter", "organ", false],
+  ["ureter-r-male-draco", "ureter", "organ", false],
+  ["urethra-male-draco", "urethra", "organ", false],
+  ["prostate-male-draco", "prostate", "organ", false],
+  // Spine + pelvis (skeleton layer — a PARTIAL skeleton, not a full one)
+  ["vertebrae-male-draco", "vertebral-column", "skeleton", true],
+  ["pelvis-male-draco", "bony-pelvis", "skeleton", true],
+  // Spinal cord (nerve layer — the cord only; no peripheral nerves are published)
+  ["spinal-cord-male-draco", "spinal-cord", "nerve", true]
+];
+
+/**
+ * Pure core: build the donor's extra layers from an asset base URL (…/api/media/hubmap/glb).
+ * Returns [] when there is no base, when the body is female (her organ set is a separate,
+ * not-yet-wired batch) — never a partial or invented list.
+ */
+export function donorExtrasFromBase(sex: Sex, base: string): LayerAsset[] {
+  const root = base.trim().replace(/\/+$/, "");
+  if (!root || sex !== "male") return [];
+  return MALE_DONOR_EXTRAS.map(([file, structureId, layer, defaultHidden]) => ({
+    structureId,
+    layer,
+    url: `${root}/${file}.glb`,
+    visible: !defaultHidden,
+    // Same Visible Human male as the skin/heart/vessels -> identity is the correct registration.
+    sameFrame: true,
+    defaultHidden
+  }));
+}
+
 // Vite injects import.meta.env; under node:test it is undefined, so read it defensively
 // to keep this module importable (the pure cores above are what the tests exercise).
 const ENV = (import.meta as unknown as { env?: Record<string, string | undefined> }).env ?? {};
@@ -150,6 +211,10 @@ const SKIN_MALE = (ENV.VITE_SKIN_GLB_MALE ?? "").trim();
 const SKIN_FEMALE = (ENV.VITE_SKIN_GLB_FEMALE ?? "").trim();
 const VESSEL_MALE = (ENV.VITE_VESSEL_GLB_MALE ?? "").trim();
 const VESSEL_FEMALE = (ENV.VITE_VESSEL_GLB_FEMALE ?? "").trim();
+// Base URL for the donor's compressed organ/spine/cord assets (…/api/media/hubmap/glb). One key
+// rather than twenty: the file names live in MALE_DONOR_EXTRAS above, so the list cannot drift
+// out of step with the env.
+const DONOR_GLB_BASE = (ENV.VITE_DONOR_GLB_BASE ?? "").trim();
 const SKELETON_GLB = (ENV.VITE_SKELETON_GLB ?? "").trim();
 const MUSCLE_GLB = (ENV.VITE_MUSCLE_GLB ?? "").trim();
 const Z_ANATOMY_SKIN_GLB = (ENV.VITE_Z_ANATOMY_SKIN_GLB ?? "").trim();
@@ -159,13 +224,15 @@ const VISCERAL_GLB = (ENV.VITE_VISCERAL_GLB ?? "").trim();
 const JOINTS_GLB = (ENV.VITE_JOINTS_GLB ?? "").trim();
 const LYMPHOID_GLB = (ENV.VITE_LYMPHOID_GLB ?? "").trim();
 
-/** VH body peel for a sex: per-sex HuBMAP VH skin + heart + blood vasculature at identity (CC BY 4.0). */
+/** VH body peel for a sex: per-sex HuBMAP VH skin + heart + blood vasculature at identity (CC BY 4.0).
+ *  For the male body this also mounts his published organs, spine, pelvis and spinal cord. */
 export function buildVhBody(sex: Sex): LayerAsset[] {
   return buildVhBodyFromUrls(
     sex,
     { male: HEART_MALE, female: HEART_FEMALE },
     { male: SKIN_MALE, female: SKIN_FEMALE },
-    { male: VESSEL_MALE, female: VESSEL_FEMALE }
+    { male: VESSEL_MALE, female: VESSEL_FEMALE },
+    donorExtrasFromBase(sex, DONOR_GLB_BASE)
   );
 }
 

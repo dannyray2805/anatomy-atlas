@@ -41,7 +41,8 @@ export const BODY_SOURCE_LABELS: Record<BodySource, string> = {
 /** One-line honest identity for each source, shown beside the control. */
 export const BODY_SOURCE_WHO: Record<BodySource, string> = {
   reference: "Z-Anatomy “Taro” — one male reference individual",
-  "donor-male": "Visible Human male donor — skin, heart and vessels only",
+  "donor-male":
+    "Visible Human male donor — skin, organs, vessels, spine and spinal cord",
   "donor-female": "Visible Human female donor — skin, heart and vessels only"
 };
 

@@ -48,6 +48,35 @@ const SRC = [
   ["incoming/visceral-v1.glb", "visceral-v1"],
   ["incoming/joints-v1.glb", "joints-v1"],
   ["incoming/lymphoid-v1.glb", "lymphoid-v1"],
+  // --- Male Visible Human donor: organs, spine and brain (2026-09-13) ---
+  // The HuBMAP Visible Human male is ONE individual, and ccf-3d-reference-object-library
+  // publishes that same individual's organs in the same folder as his skin, so they nest at
+  // identity and need NO registration (sameFrame). Verified with the app's own loader BEFORE
+  // anything was compressed or uploaded — incoming/check_male_organs.mjs reports all 20 inside
+  // the skin bounding box with anatomically plausible heights (brain 0.95, lungs 0.80, liver
+  // 0.70, kidneys 0.66, bladder 0.52 of body height).
+  // NOTE: SBU_M_Intestine_Large and Allen_M_Brain are published by OTHER contributors inside
+  // that same repo; their provenance is recorded per asset in docs/sources.md.
+  ["incoming/vh-male/VH_M_Liver.glb", "liver-male"],
+  ["incoming/vh-male/VH_M_Lung.glb", "lung-male"],
+  ["incoming/vh-male/VH_M_Kidney_L.glb", "kidney-l-male"],
+  ["incoming/vh-male/VH_M_Kidney_R.glb", "kidney-r-male"],
+  ["incoming/vh-male/VH_M_Gallbladder.glb", "gallbladder-male"],
+  ["incoming/vh-male/VH_M_Biliary_Tree.glb", "biliary-tree-male"],
+  ["incoming/vh-male/VH_M_Pancreas.glb", "pancreas-male"],
+  ["incoming/vh-male/VH_M_Spleen.glb", "spleen-male"],
+  ["incoming/vh-male/VH_M_Thymus.glb", "thymus-male"],
+  ["incoming/vh-male/VH_M_Small_Intestine.glb", "small-intestine-male"],
+  ["incoming/vh-male/SBU_M_Intestine_Large.glb", "large-intestine-male"],
+  ["incoming/vh-male/VH_M_Urinary_Bladder.glb", "urinary-bladder-male"],
+  ["incoming/vh-male/VH_M_Ureter_L.glb", "ureter-l-male"],
+  ["incoming/vh-male/VH_M_Ureter_R.glb", "ureter-r-male"],
+  ["incoming/vh-male/VH_M_Urethra.glb", "urethra-male"],
+  ["incoming/vh-male/VH_M_Prostate.glb", "prostate-male"],
+  ["incoming/vh-male/VH_M_Vertebrae.glb", "vertebrae-male"],
+  ["incoming/vh-male/VH_M_Pelvis.glb", "pelvis-male"],
+  ["incoming/vh-male/VH_M_Spinal_Cord.glb", "spinal-cord-male"],
+  ["incoming/vh-male/Allen_M_Brain.glb", "brain-male"],
 ];
 const OUT_DIR = "incoming/opt";
 fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -98,7 +127,22 @@ const drIO = await makeIO(
   { "draco3d.encoder": await draco3d.createEncoderModule() }
 );
 
-for (const [input, base] of SRC) {
+// Optional filter so an incremental addition does not re-compress every existing asset.
+// Each argument is matched against the entry's base name and input path:
+//   node packages/tools/compress_layers.mjs incoming/vh-male      <- the 20 male donor organs
+//   node packages/tools/compress_layers.mjs liver-male lung-male
+// With no arguments, every entry is compressed (the full rebuild).
+const only = process.argv.slice(2);
+const selected = only.length
+  ? SRC.filter(([input, base]) => only.some((token) => base.includes(token) || input.includes(token)))
+  : SRC;
+if (only.length && selected.length === 0) {
+  console.error(`No SRC entries matched: ${only.join(", ")}`);
+  process.exit(1);
+}
+console.log(`compressing ${selected.length} of ${SRC.length} entries${only.length ? ` (filter: ${only.join(", ")})` : ""}`);
+
+for (const [input, base] of selected) {
   if (!fs.existsSync(input)) {
     console.error(`MISSING source: ${input}`);
     continue;

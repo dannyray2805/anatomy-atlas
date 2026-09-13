@@ -40,26 +40,50 @@ export type BodySourceConfig = {
 
 function VhAttribution({ sex }: { sex: Sex }) {
   const mf = SEX_LABELS[sex].toLowerCase();
+  const isMale = sex === "male";
   return (
     <ul>
       <li>
-        HuBMAP HRA <em>{mf}</em> VH skin + heart — CC BY 4.0 (ccf-3d-reference-object-library{" "}
-        {sex === "male" ? "VH_Male" : "VH_Female"} v1.2; ref-organ heart v1.3). One individual per
-        sex; skin and heart share that individual&apos;s frame, so they nest at identity.
+        HuBMAP HRA <em>{mf}</em> Visible Human — one real individual per sex (CC BY 4.0;
+        ccf-3d-reference-object-library {sex === "male" ? "VH_Male" : "VH_Female"} v1.2, ref-organ
+        heart v1.3). Skin, heart and blood vasculature are published for both sexes, and skin and
+        heart share that individual&apos;s frame, so they nest at identity.
+      </li>
+      {isMale ? (
+        <li>
+          This body&apos;s organ set is published inside the same HuBMAP reference body and is
+          registered into his frame, so nothing is aligned by hand: liver, lungs, kidneys,
+          gallbladder and biliary tree, pancreas, spleen, thymus, small and large intestine,
+          urinary bladder, ureters, urethra and prostate — plus the spine (all 24 vertebrae), the
+          bony pelvis and the spinal cord. Every one was checked to sit inside his skin envelope at
+          identity before it was wired.
+        </li>
+      ) : (
+        <li>
+          Her published set is skin, heart and blood vasculature only. Her organ set exists in the
+          same source and is a separate, not-yet-wired batch — nothing is shown in its place.
+        </li>
+      )}
+      <li>
+        Not published for this individual, and therefore shown as “not in this dataset”: whole-body
+        muscle, and a full articulated skeleton — only the spine, pelvis and spinal cord exist.
+        (The Reference body shows a different individual&apos;s complete musculature and skeleton.)
       </li>
       <li>
-        Blood vasculature — same {mf} VH individual, v1.2 (CC BY 4.0): a central/trunk
-        arterial-venous tree. The ascending aorta is mapped to a structure (both sexes); most
-        of the ~104/108 per-vessel node names are not yet, so most vessel clicks show
-        &quot;not in this dataset&quot;.
+        Blood vasculature (v1.2) is a central/trunk arterial-venous tree. The ascending aorta is
+        mapped to a structure (both sexes); most of the ~104/108 per-vessel node names are not, so
+        most vessel clicks show “not in this dataset”.
       </li>
       <li>
-        This individual&apos;s muscle + full skeleton are not published (not in this dataset).
-        The Reference body holds Z-Anatomy “Taro” — a different male individual.
+        Contributor note: the large-intestine model is a Stony Brook University contribution
+        published inside the same HuBMAP CCF reference library and registered into this body&apos;s
+        frame — it is not HuBMAP-authored. The Allen brain atlas and an NIH lymph-node model from
+        that library are deliberately NOT shown here: they are other labs&apos; models, and adding
+        them would change what this body may honestly claim.
       </li>
       <li>
         HOA tissue volume (male donor S-20-29, DOI 10.15151/ESRF-DC-1773964017, CC BY 4.0) is a
-        different individual again — reachable from a heart pick or from the deep dives above.
+        different individual again — reachable from a heart pick or from the deep dives below.
       </li>
       <li>Body-context slices: NLM Visible Human Project.</li>
     </ul>
@@ -115,23 +139,26 @@ function donorConfig(sex: Sex): BodySourceConfig {
     label: BODY_SOURCE_LABELS[id],
     who: BODY_SOURCE_WHO[id],
     build: () => buildVhBody(sex),
-    // The donor's "organ" layer is that individual's heart reference mesh and nothing else.
-    layerLabels: { organ: "Heart" },
-    missingLayers: ["skeleton", "muscle"],
+    // The donor's "organ" layer is now every organ published for that body, not only the heart;
+    // the skeleton is a PARTIAL one (spine + pelvis) and the nerve layer is the cord alone, so
+    // both are named for exactly what they contain.
+    layerLabels: { organ: "Organs", skeleton: "Spine + pelvis", nerve: "Spinal cord" },
+    missingLayers: ["muscle"],
     guided: true,
     banners: [
       <>
-        Visible Human {SEX_LABELS[sex].toLowerCase()} donor — HuBMAP HRA skin + heart (CC BY 4.0),
-        one real individual. Muscle and full skeleton of this person are not published, and the
-        HOA tissue volume is yet another individual (donor S-20-29).
+        Visible Human {SEX_LABELS[sex].toLowerCase()} donor — HuBMAP HRA (CC BY 4.0), one real
+        individual. {sex === "male" ? "His" : "Her"} published anatomy is rendered here;
+        anything not published is shown as “not in this dataset”. Muscle and a full skeleton are
+        not published for this individual. The HOA tissue volume is yet another individual (donor
+        S-20-29).
       </>
     ],
     note: (
       <>
-        Peel down the rail to reveal what is inside this one person — skin, heart and the vessel
-        tree are all this individual&apos;s. Click any structure to inspect it. Most of this
-        body&apos;s interior is not published, so it is shown as “not in this dataset”, never
-        filled in.
+        Peel down the rail to open this one person up: skin, then organs, then the spine and
+        spinal cord, with the vessel tree throughout. Click any structure to inspect it. Whatever
+        is not published for this individual is labelled as such and never filled in.
       </>
     ),
     attribution: <VhAttribution sex={sex} />
