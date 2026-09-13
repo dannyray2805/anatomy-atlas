@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
-import { guideEntryPlan, guideExitReset, type GuideStepKey } from "./guide";
+import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from "react";
+import { guideExitReset, mountLayers, type GuideStop } from "./guide";
 import type { CameraPreset, InventoryItem } from "./components/VolumeViewer";
-import type { Sex } from "./sex";
 
 export type GuidedPeelPorts = {
-  /** True only where a real outer→inner peel exists (the per-sex VH body: skin + organs). */
-  isBodyPeel: boolean;
-  /** Changing body leaves the journey — its layers and captions are per-sex. */
-  sex: Sex;
-  /** Stop order for this body, from guide.ts (pure + tested, never padded per sex). */
-  steps: GuideStepKey[];
-  rightVentricle?: InventoryItem;
-  leftVentricle?: InventoryItem;
-  ascendingAorta?: InventoryItem;
-  setVisibleLayers: (next: Record<string, boolean>) => void;
+  /** False when this body offers no journey at all (no stops to walk). */
+  enabled: boolean;
+  /** Changing body leaves the journey — the stops, layers and copy belong to that body. */
+  journeyId: string;
+  /** Stops for this body, already filtered to what resolves here, in order. */
+  stops: GuideStop[];
+  /** Layers the journey holds mounted for its whole length (see GuideJourney.mount). */
+  mount: string[];
+  /** What the scene actually mounted — how a stop's structure is found to fly to. */
+  inventory: InventoryItem[];
+  setVisibleLayers: Dispatch<SetStateAction<Record<string, boolean>>>;
+  /** Peel to a layer using the rail's own rule (peel.ts), so the rail shows what happened. */
+  peelToLayer: (layer: string) => void;
   setOpacity: (value: number) => void;
   clearPicked: () => void;
   goPreset: (preset: CameraPreset) => void;
@@ -22,20 +24,27 @@ export type GuidedPeelPorts = {
 };
 
 /**
- * The P3 guided-peel state machine (spotlight mode), extracted from App.tsx so the page component
- * is presentation. It owns only the step index and *applies* each stop's plan to the caller's lab
- * state — the stop order and each stop's effects are pure functions in guide.ts, so they are
- * testable without rendering React.
+ * The guided-peel state machine (spotlight mode), extracted from BodyPage so the page component is
+ * presentation. It owns only the step index and *applies* each stop to the caller's lab state — the
+ * stop order, its layer effects and its copy are pure data in guide.ts, so they are testable
+ * without rendering React.
+ *
+ * Two ordering rules matter and are easy to get wrong:
+ *  - a stop's own layer state is applied BEFORE the journey's `mount` layers, because a stop may
+ *    reset visibility to the defaults (which unmounts a lazily-mounted system) and the journey's
+ *    layers must survive that. Otherwise the journey's own later stops would vanish mid-walk.
+ *  - a stop with no layer fields touches NO layers: "omitted layers keep the user's current
+ *    choice" is what makes the reference journey's steps 4-7 keep the peel its step 3 established.
  */
 export function useGuidedPeel(ports: GuidedPeelPorts) {
   const {
-    isBodyPeel,
-    sex,
-    steps,
-    rightVentricle,
-    leftVentricle,
-    ascendingAorta,
+    enabled,
+    journeyId,
+    stops,
+    mount,
+    inventory,
     setVisibleLayers,
+    peelToLayer,
     setOpacity,
     clearPicked,
     goPreset,
@@ -46,45 +55,48 @@ export function useGuidedPeel(ports: GuidedPeelPorts) {
   const [guideOpen, setGuideOpen] = useState(false);
   const [guideStep, setGuideStep] = useState(0);
 
-  // Primitive deps: the caller rebuilds `steps`/items every render, so depend on their CONTENT.
-  const stepKey = steps.join(",");
-  const rvId = rightVentricle?.structureId ?? "";
-  const lvId = leftVentricle?.structureId ?? "";
-  const aortaId = ascendingAorta?.structureId ?? "";
+  // Primitive deps: the caller rebuilds `stops` and `inventory` every render, so depend on their
+  // CONTENT. The target's resolved mesh name is what tells us a stop's structure has arrived,
+  // which is exactly when the camera should fly to it.
+  const stopKeys = stops.map((entry) => entry.key).join(",");
+  const mountKey = mount.join(",");
+  const stepIndexRaw = Math.min(guideStep, Math.max(stops.length - 1, 0));
+  const activeStop = stops[stepIndexRaw];
+  const targetId = activeStop?.structureId ?? "";
+  const targetName = targetId
+    ? (inventory.find((item) => item.structureId === targetId)?.name ?? "")
+    : "";
+
+  // Read the inventory through a ref so the effect can act on the item without the whole inventory
+  // becoming a dependency (it is rebuilt on every scene change).
+  const inventoryRef = useRef(inventory);
+  inventoryRef.current = inventory;
 
   useEffect(() => {
-    if (!guideOpen || !isBodyPeel) return;
-    const key = steps[Math.min(guideStep, steps.length - 1)];
-    if (!key) return;
+    if (!guideOpen || !enabled || !activeStop) return;
 
-    const plan = guideEntryPlan(key, {
-      rightVentricleId: rvId || undefined,
-      leftVentricleId: lvId || undefined,
-      ascendingAortaId: aortaId || undefined
-    });
+    if (activeStop.peelToLayer) peelToLayer(activeStop.peelToLayer);
+    else if (activeStop.visibleLayers) setVisibleLayers(activeStop.visibleLayers);
+    // AFTER the stop's own layers: a stop may reset visibility to the defaults, which unmounts a
+    // lazily-mounted system the journey itself is about to walk into.
+    if (mount.length > 0) setVisibleLayers((prev) => mountLayers(prev, mount));
+    setOpacity(activeStop.opacity ?? 1);
+    if (activeStop.clearPicked) clearPicked();
+    if (activeStop.preset) goPreset(activeStop.preset);
 
-    if (plan.visibleLayers) setVisibleLayers(plan.visibleLayers);
-    if (plan.opacity != null) setOpacity(plan.opacity);
-    if (plan.clearPicked) clearPicked();
-    if (plan.preset) goPreset(plan.preset);
-
-    // Fly to the mapped structure's mesh; the aorta stop falls back to the heart mesh when the
-    // vessel is not in this body's scene.
-    const target = plan.flyToStructureId
-      ? [rightVentricle, leftVentricle, ascendingAorta].find(
-          (item) => item?.structureId === plan.flyToStructureId
-        )
+    const target = activeStop.structureId
+      ? inventoryRef.current.find((item) => item.structureId === activeStop.structureId)
       : undefined;
     if (target) pickAndFly(target);
-    else if (plan.flyToHeart) flyToHeart();
+    else if (activeStop.flyToHeart) flyToHeart();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [guideOpen, guideStep, sex, isBodyPeel, stepKey, rvId, lvId, aortaId]);
+  }, [guideOpen, guideStep, enabled, stopKeys, mountKey, targetId, targetName]);
 
-  // A different body means different layers and captions: leave spotlight mode.
+  // A different body means different layers, stops and copy: leave spotlight mode.
   useEffect(() => {
     setGuideOpen(false);
     setGuideStep(0);
-  }, [sex]);
+  }, [journeyId]);
 
   const start = () => {
     setGuideStep(0);
@@ -101,15 +113,13 @@ export function useGuidedPeel(ports: GuidedPeelPorts) {
     clearPicked();
   };
 
-  const stepIndex = Math.min(guideStep, Math.max(steps.length - 1, 0));
-
   return {
     guideOpen,
     guideStep,
     setGuideStep,
-    /** Clamped index safe to read for captions/dots when the step list shrinks. */
-    stepIndex,
-    atLast: stepIndex >= steps.length - 1,
+    /** Clamped index safe to read for titles/dots when the step list shrinks. */
+    stepIndex: stepIndexRaw,
+    atLast: stepIndexRaw >= stops.length - 1,
     start,
     stop
   };

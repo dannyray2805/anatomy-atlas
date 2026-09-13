@@ -707,7 +707,13 @@ code {
   left: 50%;
   bottom: 1rem;
   transform: translateX(-50%);
-  z-index: 12;
+  /*
+   * Above the drawer backdrop (30) but below the drawer itself (40). Most stops open a drawer, and
+   * the backdrop covers the whole stage — so at 12 the journey's own Back/Next/Done and its step
+   * dots became unclickable the moment the first structure stop opened, which turns a six-stop walk
+   * into six close-the-drawer detours. In spotlight mode the journey controls have to stay live.
+   */
+  z-index: 35;
   width: min(480px, calc(100% - 2rem));
   padding: 0.7rem 1rem 0.85rem;
   display: flex;

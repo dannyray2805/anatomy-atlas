@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { BODY_SOURCE_LABELS, BODY_SOURCE_WHO, type BodySource } from "./bodySource";
 import type { LayerAsset } from "./components/VolumeViewer";
+import { DONOR_JOURNEY, REFERENCE_JOURNEY, type GuideJourney } from "./guide";
 import { buildReference, buildVhBody } from "./layers";
 import { SEX_LABELS, type Sex } from "./sex";
 
@@ -30,12 +31,13 @@ export type BodySourceConfig = {
   /** Display names for layers whose generic name would be wrong for this body. */
   layerLabels?: Record<string, string>;
   /**
-   * True only where the guided outer->inner journey is backed by real mapped meshes. The guide
-   * navigates to specific structure ids (right ventricle, left ventricle, aorta) that exist on
-   * the VH donor hearts; the reference body's heart meshes are not mapped to structures, so a
-   * journey there would be theatre — it is not offered.
+   * The guided journey this body offers, or undefined where it offers none. Each body has its OWN
+   * journey because they are different people with different published anatomies: the donor's
+   * follows circulation through the heart, the reference body's follows the alimentary passage.
+   * The stops are filtered at render time to what actually resolves in this body's scene, so a
+   * journey can never walk into a structure the body does not have.
    */
-  guided: boolean;
+  journey?: GuideJourney;
 };
 
 function VhAttribution({ sex }: { sex: Sex }) {
@@ -159,7 +161,7 @@ function donorConfig(sex: Sex): BodySourceConfig {
     // both are named for exactly what they contain.
     layerLabels: { organ: "Organs", skeleton: "Spine + pelvis", nerve: "Brain + cord", lymphatic: "Lymph node" },
     missingLayers: ["muscle"],
-    guided: true,
+    journey: DONOR_JOURNEY,
     banners: [
       <>
         Visible Human {SEX_LABELS[sex].toLowerCase()} donor — HuBMAP HRA (CC BY 4.0).{" "}
@@ -188,7 +190,7 @@ const REFERENCE: BodySourceConfig = {
   who: BODY_SOURCE_WHO.reference,
   build: () => buildReference(),
   layerLabels: { organ: "Viscera", vessel: "Heart + vessels" },
-  guided: false,
+  journey: REFERENCE_JOURNEY,
   banners: [
     <>
       Reference body — Z-Anatomy, derived from BodyParts3D (CC BY-SA 2.1 Japan / CC BY-SA 4.0).

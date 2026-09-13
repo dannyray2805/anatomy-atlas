@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import structuresJson from "../../../content/published/structures.json";
 import type { Structure } from "../../schema/src/structure";
@@ -16,15 +16,13 @@ import {
   buildShareQuery,
   resolveSource,
   shareStateFromQuery,
-  sourceSex,
   type BodySource
 } from "./bodySource";
 import { BODY_SOURCES, type BodySourceConfig } from "./bodySources";
 import { lookupStructure } from "./structureLookup";
 import { indexSummary } from "./structureIndex";
-import { guideStepOrder, type GuideStepKey } from "./guide";
+import { guideStops } from "./guide";
 import { useGuidedPeel } from "./useGuidedPeel";
-import { SEX_LABELS, type Sex } from "./sex";
 
 /**
  * The published graph, typed as Structure[]. `pnpm validate` checks structures.json against
@@ -89,9 +87,6 @@ export function BodyPage() {
   const goPreset = (preset: CameraPreset) => setPresetReq({ preset, n: ++presetN.current });
 
   const config: BodySourceConfig = resolveSource(BODY_SOURCES, source) ?? BODY_SOURCES[0];
-  // The sex of the individual being shown, for the one place it is anatomically meaningful (the
-  // drawer's note about unmapped VH_F_ nodes). Never presented as a control.
-  const sex: Sex = sourceSex(config.id) ?? "male";
 
   const hoverStructure = hover ? lookupStructure(structures, hover.name) : undefined;
   const pickAndFly = (item: InventoryItem) => {
@@ -126,32 +121,29 @@ export function BodyPage() {
   // the index actually lists.
   const documentedCount = indexSummary(structures).documented;
 
-  // The guided journey needs a real outer->inner peel AND mapped stops. Only the donor bodies
-  // have both; on the reference body it is not offered rather than shown as theatre.
-  const isBodyPeel =
-    config.guided && configuredLayers.includes("skin") && configuredLayers.includes("organ");
-  const lvItem = inventory.find((i) => i.structureId === "heart-left-ventricle");
-  const aortaItem = inventory.find((i) => i.structureId === "aorta-ascending");
-  const rvItem = inventory.find((i) => i.structureId === "heart-right-ventricle");
+  // The guided journey belongs to the BODY: each one walks its own real, mapped stops (the donor
+  // follows circulation; the reference body follows the alimentary passage, then out through the
+  // kidney). A stop is offered only where its structure actually resolves in this body's scene, so
+  // a walk can never point at something the body does not have.
+  const journeyStops = config.journey
+    ? guideStops(config.journey, (structureId) =>
+        inventory.some((item) => item.structureId === structureId)
+      )
+    : [];
+  const canPeelSkin = configuredLayers.includes("skin");
   const skinVisible = visibleLayers.skin ?? true;
   const togglePeel = () => setVisibleLayers((prev) => ({ ...prev, skin: !(prev.skin ?? true) }));
 
-  const guideStepKeys: GuideStepKey[] = isBodyPeel
-    ? guideStepOrder({
-        rightVentricle: !!rvItem,
-        leftVentricle: !!lvItem,
-        ascendingAorta: !!aortaItem
-      })
-    : [];
-
   const guide = useGuidedPeel({
-    isBodyPeel,
-    sex,
-    steps: guideStepKeys,
-    rightVentricle: rvItem,
-    leftVentricle: lvItem,
-    ascendingAorta: aortaItem,
+    enabled: journeyStops.length > 0,
+    journeyId: config.id,
+    stops: journeyStops,
+    mount: config.journey?.mount ?? [],
+    inventory,
     setVisibleLayers,
+    // The journey peels with the rail's own rule, so the rail then shows exactly what the journey
+    // did and the same ⟲ Restore undoes it.
+    peelToLayer: onPeel,
     setOpacity,
     // Clearing the selection must also clear the search box: leaving a structure name in it
     // while nothing is selected claims a pick that is no longer on screen.
@@ -164,68 +156,8 @@ export function BodyPage() {
     flyToHeart: () => viewerRef.current?.flyToHeartMesh()
   });
 
-  const captions: Record<GuideStepKey, { title: string; caption: ReactNode }> = {
-    "whole-body": {
-      title: "Whole body",
-      caption: (
-        <>
-          {SEX_LABELS[sex]} VH individual — HuBMAP HRA skin + heart (CC BY 4.0), one individual
-          per sex. This individual&apos;s muscle + full skeleton are not published.
-        </>
-      )
-    },
-    "peel-skin": {
-      title: "Peel the skin",
-      caption: (
-        <>
-          Hiding the skin reveals the organs inside the same individual&apos;s frame — here the
-          heart in its thorax. The peel rail and the slider do this freely.
-        </>
-      )
-    },
-    "right-ventricle": {
-      title: "Focus: right ventricle",
-      caption: (
-        <>
-          The right ventricle (UBERON:0002080) receives blood from the right atrium and pumps it
-          into the pulmonary artery toward the lungs; its HRA mesh is mapped on this{" "}
-          {SEX_LABELS[sex].toLowerCase()} body — its published fields open in the drawer.
-        </>
-      )
-    },
-    "left-ventricle": {
-      title: "Focus: left ventricle",
-      caption: (
-        <>
-          The left ventricle (UBERON:0002084) is a part of the heart whose HRA mesh is mapped on
-          this {SEX_LABELS[sex].toLowerCase()} body — its published fields open in the drawer.
-        </>
-      )
-    },
-    "ascending-aorta": {
-      title: "Follow the aorta out",
-      caption: (
-        <>
-          The ascending aorta (UBERON:0001496) is the portion of the aorta that begins at the
-          base of the left ventricle and carries blood toward the arch; its HRA mesh is mapped on
-          this {SEX_LABELS[sex].toLowerCase()} body — its published fields open in the drawer.
-        </>
-      )
-    },
-    "inside-heart": {
-      title: "Inside: the heart",
-      caption: (
-        <>
-          This {SEX_LABELS[sex].toLowerCase()} body&apos;s heart is a real HRA reference mesh
-          inside the thorax. Only published mesh→structure mappings resolve on click — most heart
-          parts are not mapped to a structure yet.
-        </>
-      )
-    }
-  };
-  const guideSteps: { key: GuideStepKey; title: string; caption: ReactNode }[] = guideStepKeys.map(
-    (key) => ({ key, ...captions[key] })
-  );
+  // Stop titles and captions come from the body's own journey (guide.ts), so the copy that
+  // explains a stop cannot drift from the stop itself.
 
   // A different body is a different set of GLBs and a different person: reset the peel, the
   // selection and the readiness gate so nothing from the previous individual leaks across.
@@ -451,7 +383,7 @@ export function BodyPage() {
                     {systemsOn ? "⟲ Hide systems" : "▸ All systems"}
                   </button>
                 )}
-                {sceneReady && isBodyPeel && (
+                {sceneReady && canPeelSkin && (
                   <button
                     type="button"
                     className={`pill${!skinVisible ? " pill--active" : ""}`}
@@ -461,7 +393,7 @@ export function BodyPage() {
                     {skinVisible ? "▸ Peel skin" : "⟲ Restore skin"}
                   </button>
                 )}
-                {sceneReady && isBodyPeel && (
+                {sceneReady && journeyStops.length > 0 && (
                   <button type="button" className="chip chip--quiet" onClick={guide.start}>
                     ▶ Guided peel
                   </button>
@@ -479,18 +411,18 @@ export function BodyPage() {
             </div>
           )}
 
-          {guide.guideOpen && isBodyPeel && guideSteps.length > 0 && (
+          {guide.guideOpen && journeyStops.length > 0 && (
             <div className="glass glass--guide" role="group" aria-label="Guided peel journey">
               <div className="guide-head">
-                <span className="glass__label">Guided peel · {SEX_LABELS[sex]}</span>
+                <span className="glass__label">Guided peel · {config.label}</span>
                 <button type="button" className="chip chip--quiet" onClick={guide.stop}>
                   Exit guide
                 </button>
               </div>
               <div className="guide-dots" role="tablist" aria-label="Journey steps">
-                {guideSteps.map((s, i) => (
+                {journeyStops.map((s, i) => (
                   <button
-                    key={s.title}
+                    key={s.key}
                     type="button"
                     role="tab"
                     aria-selected={i === guide.stepIndex}
@@ -500,8 +432,8 @@ export function BodyPage() {
                   />
                 ))}
               </div>
-              <h3 className="guide-title">{guideSteps[guide.stepIndex].title}</h3>
-              <p className="guide-caption">{guideSteps[guide.stepIndex].caption}</p>
+              <h3 className="guide-title">{journeyStops[guide.stepIndex].title}</h3>
+              <p className="guide-caption">{journeyStops[guide.stepIndex].caption}</p>
               <div className="guide-actions">
                 <button
                   type="button"
@@ -520,7 +452,7 @@ export function BodyPage() {
                     type="button"
                     className="pill pill--active"
                     onClick={() =>
-                      guide.setGuideStep((s) => Math.min(guideSteps.length - 1, s + 1))
+                      guide.setGuideStep((s) => Math.min(journeyStops.length - 1, s + 1))
                     }
                   >
                     Next ›

@@ -1,6 +1,6 @@
 # Agent rules
 
-Read `docs/specs/00-truth-rules.md` and `docs/hoa-anatomy-cloudflare-playbook.md` before any task.
+Read `docs/specs/00-truth-rules.md`, `docs/hoa-anatomy-cloudflare-playbook.md` and `docs/review-log.md` before any task.
 
 ## Truth
 
@@ -40,7 +40,7 @@ App public config may include the Worker URL only. No API keys in Pages.
 `.github/workflows/deploy.yml` automates the deploy batch and runs on **every push to `main`** (plus manual `workflow_dispatch`).
 
 - **Gate job** (`pnpm validate` + app tests + app build) must pass before anything deploys.
-- **Deploy job** ships whatever was committed, exactly as committed: `wrangler pages deploy` (Pages `anatomy-atlas`), syncs **every** `content/published/facts/*.md` to R2 (a loop — new cards are picked up automatically), then `wrangler deploy` (Worker, so its bundled `structures.json` is current). CI never flips a `reviewed` flag and never edits structures.json or card content.
+- **Deploy job** ships whatever was committed, exactly as committed: `wrangler pages deploy` (Pages `anatomy-atlas`), syncs the `content/published/facts/*.md` cards to R2 via `.github/scripts/sync-facts.mjs` — which uploads **only the cards whose bytes changed**, in parallel, against a manifest at `.sync/facts-manifest.json` in R2 (a missing manifest means it uploads everything, so it can fail slow but never skip a card) — then `wrangler deploy` (Worker, so its bundled `structures.json` is current). CI never flips a `reviewed` flag and never edits structures.json or card content.
 - **Smoke job** hits production and fails the run if: `/api/structures` row count ≠ `content/published/structures.json` count, any `/api/facts/<facts_id>` returns non-200, the chat out-of-card question does not return exactly `{"reply":"NOT_IN_CARD"}`, or the deployed bundle does not carry every non-empty `VITE_*` value from `packages/app/.env.production`.
 - **A red smoke job means the deploy already happened and production may already be broken** — treat it as needing immediate manual attention, not "we'll fix it on the next push." Follow `docs/deploy-runbook.md`: triage the failing check, then roll back the right layer (Pages revert is dashboard-only; Worker rollback is `wrangler rollback`).
 - Secrets are referenced only via `${{ secrets.* }}`. Required names (added by a human in GitHub → Settings → Secrets and variables → Actions — never typed into a chat/terminal): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. `DEEPSEEK_API_KEY` remains a Cloudflare Worker secret (unchanged).

@@ -83,15 +83,8 @@ jobs:
         run: npm install -g wrangler@4.127.1
       - name: Deploy Pages (production)
         run: wrangler pages deploy packages/app/dist --project-name=anatomy-atlas --branch main --commit-dirty=true
-      - name: Sync published fact cards to R2 (remote)
-        shell: bash
-        run: |
-          set -euo pipefail
-          # Loop over the directory so cards added later are picked up without editing this file.
-          for f in content/published/facts/*.md; do
-            echo "Syncing $f"
-            wrangler r2 object put --remote "anatomy-public/$f" --file "$f"
-          done
+      - name: Sync published fact cards to R2 (remote, changed files only)
+        run: node .github/scripts/sync-facts.mjs
       - name: Deploy Worker (bundled structures.json)
         run: wrangler deploy
 
