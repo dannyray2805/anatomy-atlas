@@ -346,7 +346,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "oesophagus",
     "reviewed": false,
     "mesh_names": ["Oesophagus"]
   },
@@ -361,12 +361,12 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Mesh node 'Jejunum' confirmed present in the shipped viscera GLB (a converted curve tube). It is the only part of the small intestine modelled as its own tube in this source; the duodenum is a modelling mesh and the ileum is not present. Uberon id verified against OLS4 (label 'jejunum', not obsolete)."
+        "note": "Mesh node 'Jejunum' confirmed present in the shipped viscera GLB (a converted curve tube). It is the only part of the small intestine mapped to a structure in this atlas: the source also carries a 'Duodenum' mesh, which has no structure row yet, and it contains no ileum mesh at all. Re-verified 2026-09-13 by loading the GLB with the app's own loader ('Duodenum' PRESENT, 'Jejunum' PRESENT, 'Ileum' ABSENT). Uberon id verified against OLS4 (label 'jejunum', not obsolete)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "jejunum",
     "reviewed": false,
     "mesh_names": ["Jejunum"]
   },
@@ -386,7 +386,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ureter",
     "reviewed": false,
     "mesh_names": ["Ureter.l", "Ureter.r"]
   },
@@ -406,7 +406,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "urethra",
     "reviewed": false,
     "mesh_names": ["Urethra"]
   },
@@ -426,7 +426,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "bile-duct",
     "reviewed": false,
     "mesh_names": ["Bile duct"]
   },
@@ -441,12 +441,12 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Mesh node 'Pancreatic duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source names 'Accessory pancreatic duct' as a separate mesh; it is left unmapped because no matching Uberon term was found (the closest hits were the dorsal pancreatic duct and the duodenal papillae, which are different structures). UBERON:0001064 is the VENTRAL pancreatic duct and was deliberately not used. Uberon id verified against OLS4 (label 'pancreatic duct', not obsolete)."
+        "note": "Mesh node 'Pancreatic duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source also names a separate 'Accessory pancreatic duct' mesh, which is left unmapped — and that is a deliberate choice, NOT a missing term. CORRECTED 2026-09-13: this note previously said no matching Uberon term was found, which the ontology contradicts. OLS4's curator note on UBERON:0007329 reads 'this class groups together accessory (dorsal) and main (ventral) pancreatic ducts', and that term's own description lists 'duct of pancreas', 'ductus pancreaticus' and 'pancreas duct' as synonyms. So the class does cover the accessory duct, and mapping both meshes to it would make one structure row stand for two separately named ducts that drain to different papillae; the accessory duct is therefore left unmapped and disclosed in the card instead. UBERON:0001064 remains the VENTRAL pancreatic duct on its own and was not used. Uberon id verified against OLS4 (label 'pancreatic duct', not obsolete)."
       }
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "pancreatic-duct",
     "reviewed": false,
     "mesh_names": ["Pancreatic duct"]
   },
@@ -466,7 +466,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "bronchus",
     "reviewed": false,
     "mesh_names": [
       "Left main bronchus",
