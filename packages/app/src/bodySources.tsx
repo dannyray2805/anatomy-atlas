@@ -140,6 +140,15 @@ function ReferenceAttribution() {
         Alike 2.1 Japan”.
       </li>
       <li>
+        Skeleton — the bones of the skull, the vertebral column (atlas and axis through L5,
+        sacrum and coccyx), the ribs, the sternum, the shoulder girdle and arms, and the pelvis
+        and legs are each their own structure, sourced to this one body&apos;s Skeletal system
+        collection. What is NOT mapped yet is stated rather than hidden: the bones of the hand
+        and foot, the three ear ossicles and the teeth, and the laryngeal, nasal and costal
+        cartilages, which are cartilage rather than bone. Those meshes render and click, and the
+        drawer says they are not mapped to a structure.
+      </li>
+      <li>
         A single fixed male reference individual (“Taro”) — a different person from the Visible
         Human donors, and a male body: no female anatomy is shown here, while the viscera layer
         does include that individual&apos;s male reproductive organs. Not per-sex.
@@ -203,9 +212,10 @@ const REFERENCE: BodySourceConfig = {
     <>
       Peel down the rail — each stop takes the layers outside it off, so the body opens up from
       skin to nerves. Layers inside the peel point stay as you left them; the heavy systems
-      mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi
-      and the brainstem are mapped to structures; bone, muscle, vessel and peripheral-nerve
-      names are not mapped yet, so they report “not mapped to a structure”.
+      mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi,
+      the brainstem and the bones of the skull, spine, ribs, sternum and limbs are each mapped to
+      a structure; muscle, vessel, hand-and-foot bone and peripheral-nerve names are not mapped
+      yet, so they report “not mapped to a structure”.
     </>
   ),
   attribution: <ReferenceAttribution />

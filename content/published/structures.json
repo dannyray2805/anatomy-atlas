@@ -69,8 +69,8 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
-        "note": "Z-Anatomy 'Skeletal system' collection — asset path after R2 sync"
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Z-Anatomy 'Skeletal system' collection. The bones of the skull, the vertebral column (atlas and axis through L5, sacrum and coccyx), the ribs, the sternum, the shoulder girdle and arms, and the pelvis and legs are mapped as their own structures. NOT mapped yet: the bones of the hand and foot, the three ear ossicles, the teeth, and the laryngeal, nasal and costal cartilages, which are cartilage rather than bone."
       }
     ],
     "voxel_size_um": null,
@@ -2228,6 +2228,1572 @@
     "reviewed": true,
     "mesh_names": [
       "VH_F_cystic_duct"
+    ]
+  },
+  {
+    "id": "atlas-c1",
+    "uberon": "UBERON:0001092",
+    "fma": null,
+    "label": "Atlas (C1)",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'vertebral bone 1'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Atlas_(C1)_1",
+      "Atlas_(C1)_2"
+    ]
+  },
+  {
+    "id": "axis-c2",
+    "uberon": "UBERON:0001093",
+    "fma": null,
+    "label": "Axis (C2)",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'vertebral bone 2'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Axis_(C2)_1",
+      "Axis_(C2)_2"
+    ]
+  },
+  {
+    "id": "body-of-sternum",
+    "uberon": "UBERON:0006820",
+    "fma": null,
+    "label": "Body of sternum",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'body of sternum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Body_of_sternum_1",
+      "Body_of_sternum_2"
+    ]
+  },
+  {
+    "id": "clavicle",
+    "uberon": "UBERON:0001105",
+    "fma": null,
+    "label": "Clavicle",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'clavicle bone'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Clavicle",
+      "Clavicle_1"
+    ]
+  },
+  {
+    "id": "coccyx",
+    "uberon": "UBERON:0001350",
+    "fma": null,
+    "label": "Coccyx",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'coccyx', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Coccyx"
+    ]
+  },
+  {
+    "id": "eighth-rib",
+    "uberon": "UBERON:0010757",
+    "fma": null,
+    "label": "Eighth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 8'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Eighth_rib",
+      "Eighth_rib_1"
+    ]
+  },
+  {
+    "id": "eleventh-rib",
+    "uberon": "UBERON:0004610",
+    "fma": null,
+    "label": "Eleventh rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 11'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Eleventh_rib",
+      "Eleventh_rib_1"
+    ]
+  },
+  {
+    "id": "ethmoid-bone",
+    "uberon": "UBERON:0001679",
+    "fma": null,
+    "label": "Ethmoid bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ethmoid bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_cells_of_ethmoid_bonel",
+      "Anterior_cells_of_ethmoid_boner",
+      "Ethmoid_bone",
+      "Middle_cells_of_ethmoid_bonel",
+      "Middle_cells_of_ethmoid_boner",
+      "Posterior_cells_of_ethmoid_bonel",
+      "Posterior_cells_of_ethmoid_boner"
+    ]
+  },
+  {
+    "id": "femur",
+    "uberon": "UBERON:0000981",
+    "fma": null,
+    "label": "Femur",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'femur', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Femur",
+      "Femur_1"
+    ]
+  },
+  {
+    "id": "fibula",
+    "uberon": "UBERON:0001446",
+    "fma": null,
+    "label": "Fibula",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'fibula', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fibula",
+      "Fibula_1"
+    ]
+  },
+  {
+    "id": "fifth-rib",
+    "uberon": "UBERON:0004605",
+    "fma": null,
+    "label": "Fifth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 5'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fifth_rib",
+      "Fifth_rib_1"
+    ]
+  },
+  {
+    "id": "first-rib",
+    "uberon": "UBERON:0004601",
+    "fma": null,
+    "label": "First rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 1'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "First_rib",
+      "First_rib_1"
+    ]
+  },
+  {
+    "id": "fourth-rib",
+    "uberon": "UBERON:0004604",
+    "fma": null,
+    "label": "Fourth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 4'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fourth_rib",
+      "Fourth_rib_1"
+    ]
+  },
+  {
+    "id": "frontal-bone",
+    "uberon": "UBERON:0000209",
+    "fma": null,
+    "label": "Frontal bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'tetrapod frontal bone'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Frontal_bone_1",
+      "Frontal_bone_2",
+      "Frontal_bone_3",
+      "Frontal_bone_4",
+      "Frontal_bone_5",
+      "Frontal_bone_6",
+      "Frontal_bone_7",
+      "Sinus_of_frontal_bone"
+    ]
+  },
+  {
+    "id": "hip-bone",
+    "uberon": "UBERON:0001272",
+    "fma": null,
+    "label": "Hip bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'innominate bone'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hip_bone",
+      "Hip_bone_1",
+      "Hip_bone_2",
+      "Hip_bone_3"
+    ]
+  },
+  {
+    "id": "humerus",
+    "uberon": "UBERON:0000976",
+    "fma": null,
+    "label": "Humerus",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'humerus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Humerus",
+      "Humerus_1"
+    ]
+  },
+  {
+    "id": "hyoid-bone",
+    "uberon": "UBERON:0001685",
+    "fma": null,
+    "label": "Hyoid bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'hyoid bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hyoid_bone"
+    ]
+  },
+  {
+    "id": "inferior-nasal-concha-bone",
+    "uberon": "UBERON:0005922",
+    "fma": null,
+    "label": "Inferior nasal concha bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'inferior nasal concha'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_nasal_concha_bonel",
+      "Inferior_nasal_concha_boner"
+    ]
+  },
+  {
+    "id": "lacrimal-bone",
+    "uberon": "UBERON:0001680",
+    "fma": null,
+    "label": "Lacrimal bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lacrimal bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lacrimal_bone",
+      "Lacrimal_bone_1",
+      "Lacrimal_bone_2",
+      "Lacrimal_bone_3",
+      "Lacrimal_bone_4"
+    ]
+  },
+  {
+    "id": "mandible",
+    "uberon": "UBERON:0001684",
+    "fma": null,
+    "label": "Mandible",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'mandible', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Mandible_1",
+      "Mandible_2",
+      "Mandible_3"
+    ]
+  },
+  {
+    "id": "manubrium-of-sternum",
+    "uberon": "UBERON:0002205",
+    "fma": null,
+    "label": "Manubrium of sternum",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'manubrium of sternum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Manubrium_of_sternum_1",
+      "Manubrium_of_sternum_2"
+    ]
+  },
+  {
+    "id": "maxilla",
+    "uberon": "UBERON:0002397",
+    "fma": null,
+    "label": "Maxilla",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'maxilla', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Maxilla",
+      "Maxilla_1",
+      "Maxilla_2",
+      "Maxilla_3",
+      "Maxilla_4",
+      "Maxilla_5",
+      "Maxilla_6",
+      "Maxilla_7"
+    ]
+  },
+  {
+    "id": "nasal-bone",
+    "uberon": "UBERON:0001681",
+    "fma": null,
+    "label": "Nasal bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'nasal bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nasal_bone",
+      "Nasal_bone_1",
+      "Nasal_bone_2",
+      "Nasal_bone_3"
+    ]
+  },
+  {
+    "id": "ninth-rib",
+    "uberon": "UBERON:0004608",
+    "fma": null,
+    "label": "Ninth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 9'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ninth_rib",
+      "Ninth_rib_1"
+    ]
+  },
+  {
+    "id": "occipital-bone",
+    "uberon": "UBERON:0001676",
+    "fma": null,
+    "label": "Occipital bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'occipital bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Occipital_bone_1",
+      "Occipital_bone_2",
+      "Occipital_bone_3",
+      "Occipital_bone_4",
+      "Occipital_bone_5"
+    ]
+  },
+  {
+    "id": "palatine-bone",
+    "uberon": "UBERON:0001682",
+    "fma": null,
+    "label": "Palatine bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'palatine bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Palatine_bone",
+      "Palatine_bone_1",
+      "Palatine_bone_2",
+      "Palatine_bone_3",
+      "Palatine_bone_4"
+    ]
+  },
+  {
+    "id": "parietal-bone",
+    "uberon": "UBERON:0000210",
+    "fma": null,
+    "label": "Parietal bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'tetrapod parietal bone'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Parietal_bonel_1",
+      "Parietal_bonel_2",
+      "Parietal_bonel_3",
+      "Parietal_bonel_4",
+      "Parietal_bonel_5",
+      "Parietal_boner_1",
+      "Parietal_boner_2",
+      "Parietal_boner_3",
+      "Parietal_boner_4",
+      "Parietal_boner_5",
+      "Parietal_boner_6"
+    ]
+  },
+  {
+    "id": "patella",
+    "uberon": "UBERON:0002446",
+    "fma": null,
+    "label": "Patella",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'patella', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Patella",
+      "Patella_1"
+    ]
+  },
+  {
+    "id": "radius",
+    "uberon": "UBERON:0001423",
+    "fma": null,
+    "label": "Radius",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'radius bone'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Radius",
+      "Radius_1"
+    ]
+  },
+  {
+    "id": "sacrum",
+    "uberon": "UBERON:0003690",
+    "fma": null,
+    "label": "Sacrum",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'fused sacrum'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sacrum_1",
+      "Sacrum_2"
+    ]
+  },
+  {
+    "id": "scapula",
+    "uberon": "UBERON:0006849",
+    "fma": null,
+    "label": "Scapula",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'scapula', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Scapula",
+      "Scapula_1"
+    ]
+  },
+  {
+    "id": "second-rib",
+    "uberon": "UBERON:0004602",
+    "fma": null,
+    "label": "Second rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 2'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Second_rib",
+      "Second_rib_1"
+    ]
+  },
+  {
+    "id": "seventh-rib",
+    "uberon": "UBERON:0004607",
+    "fma": null,
+    "label": "Seventh rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 7'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Seventh_rib",
+      "Seventh_rib_1"
+    ]
+  },
+  {
+    "id": "sixth-rib",
+    "uberon": "UBERON:0004606",
+    "fma": null,
+    "label": "Sixth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 6'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sixth_rib",
+      "Sixth_rib_1"
+    ]
+  },
+  {
+    "id": "sphenoid-bone",
+    "uberon": "UBERON:0001677",
+    "fma": null,
+    "label": "Sphenoid bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sphenoid bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sinus_of_sphenoid_bone",
+      "Sphenoid_bonel",
+      "Sphenoid_bonel_1",
+      "Sphenoid_bonel_2",
+      "Sphenoid_bonel_3",
+      "Sphenoid_bonel_4",
+      "Sphenoid_bonel_5",
+      "Sphenoid_bonel_6"
+    ]
+  },
+  {
+    "id": "temporal-bone",
+    "uberon": "UBERON:0001678",
+    "fma": null,
+    "label": "Temporal bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'temporal bone', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Temporal_bone",
+      "Temporal_bone_1",
+      "Temporal_bone_2",
+      "Temporal_bone_3",
+      "Temporal_bone_4"
+    ]
+  },
+  {
+    "id": "tenth-rib",
+    "uberon": "UBERON:0004609",
+    "fma": null,
+    "label": "Tenth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 10'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tenth_rib",
+      "Tenth_rib_1"
+    ]
+  },
+  {
+    "id": "third-rib",
+    "uberon": "UBERON:0004603",
+    "fma": null,
+    "label": "Third rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 3'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Third_rib",
+      "Third_rib_1"
+    ]
+  },
+  {
+    "id": "tibia",
+    "uberon": "UBERON:0000979",
+    "fma": null,
+    "label": "Tibia",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'tibia', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tibia",
+      "Tibia_1"
+    ]
+  },
+  {
+    "id": "twelfth-rib",
+    "uberon": "UBERON:0004611",
+    "fma": null,
+    "label": "Twelfth rib",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'rib 12'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Twelfth_rib",
+      "Twelfth_rib_1"
+    ]
+  },
+  {
+    "id": "ulna",
+    "uberon": "UBERON:0001424",
+    "fma": null,
+    "label": "Ulna",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ulna', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ulna",
+      "Ulna_1"
+    ]
+  },
+  {
+    "id": "vertebra-c3",
+    "uberon": "UBERON:0004612",
+    "fma": null,
+    "label": "Vertebra C3",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'mammalian cervical vertebra 3'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_C3_1",
+      "Vertebra_C3_2"
+    ]
+  },
+  {
+    "id": "vertebra-c4",
+    "uberon": "UBERON:0004613",
+    "fma": null,
+    "label": "Vertebra C4",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'mammalian cervical vertebra 4'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_C4_1",
+      "Vertebra_C4_2"
+    ]
+  },
+  {
+    "id": "vertebra-c5",
+    "uberon": "UBERON:0004614",
+    "fma": null,
+    "label": "Vertebra C5",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'mammalian cervical vertebra 5'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_C5_1",
+      "Vertebra_C5_2"
+    ]
+  },
+  {
+    "id": "vertebra-c6",
+    "uberon": "UBERON:0004615",
+    "fma": null,
+    "label": "Vertebra C6",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'mammalian cervical vertebra 6'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_C6_1",
+      "Vertebra_C6_2"
+    ]
+  },
+  {
+    "id": "vertebra-c7",
+    "uberon": "UBERON:0004616",
+    "fma": null,
+    "label": "Vertebra C7",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'mammalian cervical vertebra 7'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_C7"
+    ]
+  },
+  {
+    "id": "vertebra-l1",
+    "uberon": "UBERON:0004617",
+    "fma": null,
+    "label": "Vertebra L1",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'lumbar vertebra 1'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_L1_1",
+      "Vertebra_L1_2"
+    ]
+  },
+  {
+    "id": "vertebra-l2",
+    "uberon": "UBERON:0004618",
+    "fma": null,
+    "label": "Vertebra L2",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'lumbar vertebra 2'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_L2_1",
+      "Vertebra_L2_2"
+    ]
+  },
+  {
+    "id": "vertebra-l3",
+    "uberon": "UBERON:0004619",
+    "fma": null,
+    "label": "Vertebra L3",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'lumbar vertebra 3'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_L3_1",
+      "Vertebra_L3_2"
+    ]
+  },
+  {
+    "id": "vertebra-l4",
+    "uberon": "UBERON:0004620",
+    "fma": null,
+    "label": "Vertebra L4",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'lumbar vertebra 4'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_L4_1",
+      "Vertebra_L4_2"
+    ]
+  },
+  {
+    "id": "vertebra-l5",
+    "uberon": "UBERON:0004621",
+    "fma": null,
+    "label": "Vertebra L5",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'lumbar vertebra 5'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_L5_1",
+      "Vertebra_L5_2"
+    ]
+  },
+  {
+    "id": "vertebra-t1",
+    "uberon": "UBERON:0004626",
+    "fma": null,
+    "label": "Vertebra T1",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 1'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T1_1",
+      "Vertebra_T1_2"
+    ]
+  },
+  {
+    "id": "vertebra-t10",
+    "uberon": "UBERON:0004634",
+    "fma": null,
+    "label": "Vertebra T10",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 10'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T10_1",
+      "Vertebra_T10_2"
+    ]
+  },
+  {
+    "id": "vertebra-t11",
+    "uberon": "UBERON:0004635",
+    "fma": null,
+    "label": "Vertebra T11",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 11'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T11_1",
+      "Vertebra_T11_2"
+    ]
+  },
+  {
+    "id": "vertebra-t12",
+    "uberon": "UBERON:0004636",
+    "fma": null,
+    "label": "Vertebra T12",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 12'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T12_1",
+      "Vertebra_T12_2"
+    ]
+  },
+  {
+    "id": "vertebra-t2",
+    "uberon": "UBERON:0004627",
+    "fma": null,
+    "label": "Vertebra T2",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 2'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T2_1",
+      "Vertebra_T2_2"
+    ]
+  },
+  {
+    "id": "vertebra-t3",
+    "uberon": "UBERON:0004628",
+    "fma": null,
+    "label": "Vertebra T3",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 3'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T3_1",
+      "Vertebra_T3_2"
+    ]
+  },
+  {
+    "id": "vertebra-t4",
+    "uberon": "UBERON:0004629",
+    "fma": null,
+    "label": "Vertebra T4",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 4'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T4_1",
+      "Vertebra_T4_2"
+    ]
+  },
+  {
+    "id": "vertebra-t5",
+    "uberon": "UBERON:0004630",
+    "fma": null,
+    "label": "Vertebra T5",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 5'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T5_1",
+      "Vertebra_T5_2"
+    ]
+  },
+  {
+    "id": "vertebra-t6",
+    "uberon": "UBERON:0004631",
+    "fma": null,
+    "label": "Vertebra T6",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 6'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T6_1",
+      "Vertebra_T6_2"
+    ]
+  },
+  {
+    "id": "vertebra-t7",
+    "uberon": "UBERON:0004632",
+    "fma": null,
+    "label": "Vertebra T7",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 7'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T7_1",
+      "Vertebra_T7_2"
+    ]
+  },
+  {
+    "id": "vertebra-t8",
+    "uberon": "UBERON:0011050",
+    "fma": null,
+    "label": "Vertebra T8",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 8'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T8_1",
+      "Vertebra_T8_2"
+    ]
+  },
+  {
+    "id": "vertebra-t9",
+    "uberon": "UBERON:0004633",
+    "fma": null,
+    "label": "Vertebra T9",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'thoracic vertebra 9'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebra_T9_1",
+      "Vertebra_T9_2"
+    ]
+  },
+  {
+    "id": "vomer",
+    "uberon": "UBERON:0002396",
+    "fma": null,
+    "label": "Vomer",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'vomer', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vomer"
+    ]
+  },
+  {
+    "id": "xiphoid-process",
+    "uberon": "UBERON:0002207",
+    "fma": null,
+    "label": "Xiphoid process",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'xiphoid process', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Xiphoid_process_1",
+      "Xiphoid_process_2"
+    ]
+  },
+  {
+    "id": "zygomatic-bone",
+    "uberon": "UBERON:0001683",
+    "fma": null,
+    "label": "Zygomatic bone",
+    "layer": "skeleton",
+    "part_of": "skeleton",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/skeleton-v2-draco.glb",
+        "note": "Mesh node(s) for this bone confirmed present in the shipped skeleton GLB (R2 skeleton-v2-draco.glb) with the app's own loader. UBERON's own label for this bone is 'jugal bone'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Zygomatic_bone",
+      "Zygomatic_bone_1",
+      "Zygomatic_bone_2",
+      "Zygomatic_bone_3",
+      "Zygomatic_bone_4"
     ]
   }
 ]
