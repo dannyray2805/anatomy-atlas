@@ -270,7 +270,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Mesh nodes 'Kidney.l' and 'Kidney.r' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'kidney', not obsolete). Renal pelvis is a separate mesh and is not mapped here."
+        "note": "Mesh nodes 'Kidney.l' and 'Kidney.r' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'kidney', not obsolete). In that Z-Anatomy asset the renal pelvis is a separate mesh and is not mapped; for the Visible Human male the renal pelvis and calyces ARE mapped to this row."
       },
       {
         "source_id": "hubmap-hra-glb",
