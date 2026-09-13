@@ -1227,7 +1227,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "thymus",
     "reviewed": false,
     "mesh_names": [
       "Left lobe of thymus",
@@ -1371,7 +1371,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "duodenum",
     "reviewed": false,
     "mesh_names": [
       "VH_F_duodenal_ampulla",
@@ -1412,7 +1412,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ileum",
     "reviewed": false,
     "mesh_names": [
       "VH_F_ileum",
@@ -1442,7 +1442,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "large-intestine",
     "reviewed": false,
     "mesh_names": [
       "VH_F_ascending_colon",
@@ -1483,7 +1483,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "prostate",
     "reviewed": false,
     "mesh_names": [
       "VH_M_anterior_fibromuscular_stroma_L",
@@ -1521,7 +1521,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "vertebral-column",
     "reviewed": false,
     "mesh_names": [
       "VH_F_cervical_vertebra_1",
@@ -1596,7 +1596,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "bony-pelvis",
     "reviewed": false,
     "mesh_names": [
       "VH_F_coccyx",
@@ -1650,7 +1650,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "spinal-cord",
     "reviewed": false,
     "mesh_names": [
       "VH_F_C1_segment_of_cervical_spinal_cord",
@@ -1735,7 +1735,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "brain",
     "reviewed": false,
     "mesh_names": [
       "Allen_amygdalohippocampal_area_L",
@@ -2045,7 +2045,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "lymph-node",
     "reviewed": false,
     "mesh_names": [
       "Yao_afferent_lymphatic_vessel",
@@ -2073,7 +2073,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "uterus",
     "reviewed": false,
     "mesh_names": [
       "VH_F_anterior_wall_of_uterus",
@@ -2100,7 +2100,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "uterine-cervix",
     "reviewed": false,
     "mesh_names": [
       "VH_F_cervix",
@@ -2124,7 +2124,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ovary",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_ovary",
@@ -2147,7 +2147,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "fallopian-tube",
     "reviewed": false,
     "mesh_names": [
       "VH_F_abdominal_ostium_of_uterine_tube",
@@ -2177,7 +2177,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "vagina",
     "reviewed": false,
     "mesh_names": [
       "VH_F_cervicovaginal_junction",
@@ -2200,7 +2200,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "hepatic-duct",
     "reviewed": false,
     "mesh_names": [
       "VH_F_common_hepatic_duct",
@@ -2224,7 +2224,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "cystic-duct",
     "reviewed": false,
     "mesh_names": [
       "VH_F_cystic_duct"

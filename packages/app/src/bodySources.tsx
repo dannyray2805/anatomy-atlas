@@ -86,7 +86,7 @@ function VhAttribution({ sex }: { sex: Sex }) {
       <li>
         Blood vasculature (v1.2) is a central/trunk arterial-venous tree. The ascending aorta is
         mapped to a structure (both sexes); most of the ~104/108 per-vessel node names are not, so
-        most vessel clicks show “not in this dataset”.
+        most vessel clicks report “not mapped to a structure”.
       </li>
       <li>
         Contributor note: three models in this body come from other labs, published inside the same
@@ -203,7 +203,7 @@ const REFERENCE: BodySourceConfig = {
       skin to nerves. Layers inside the peel point stay as you left them; the heavy systems
       mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi
       and the brainstem are mapped to structures; bone, muscle, vessel and peripheral-nerve
-      names are not mapped yet and show “not in this dataset”.
+      names are not mapped yet, so they report “not mapped to a structure”.
     </>
   ),
   attribution: <ReferenceAttribution />

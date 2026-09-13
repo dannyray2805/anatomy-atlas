@@ -208,7 +208,7 @@ export function BodyPage() {
         <>
           This {SEX_LABELS[sex].toLowerCase()} body&apos;s heart is a real HRA reference mesh
           inside the thorax. Only published mesh→structure mappings resolve on click — most heart
-          parts currently show “not in this dataset”.
+          parts are not mapped to a structure yet.
         </>
       )
     }
@@ -259,7 +259,7 @@ export function BodyPage() {
               style={{ left: hover.x, top: hover.y }}
               role="status"
             >
-              {hoverStructure ? hoverStructure.label : "Not in this dataset"}
+              {hoverStructure ? hoverStructure.label : "Not mapped to a structure"}
             </div>
           )}
 
@@ -493,7 +493,6 @@ export function BodyPage() {
             <StructureDrawer
               pickedName={pickedName}
               structure={structure}
-              sex={sex}
               onClose={() => setPickedName(null)}
             />
           )}

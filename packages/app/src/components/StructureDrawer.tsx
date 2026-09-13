@@ -1,14 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Structure } from "../../../schema/src/structure";
-import type { Sex } from "../sex";
 import { canAsk, canSend, chatRequestBody, CHAT_ENDPOINT, interpretChatResponse } from "../chat";
 import type { ChatOutcome } from "../chat";
 
 type StructureDrawerProps = {
   pickedName: string;
   structure: Structure | undefined;
-  sex: Sex;
   onClose: () => void;
 };
 
@@ -97,22 +95,21 @@ function AskAboutStructure({ structureId }: { structureId: string }) {
  * instead. Resolution (structureLookup) is unchanged and name-based; anything not in the
  * published graph renders as a quiet "Not in this dataset" note, never a guessed label.
  */
-export function StructureDrawer({ pickedName, structure, sex, onClose }: StructureDrawerProps) {
+export function StructureDrawer({ pickedName, structure, onClose }: StructureDrawerProps) {
   const navigate = useNavigate();
 
   const content = !structure ? (
     <>
-      <p className="drawer-kicker">Not in this dataset</p>
+      <p className="drawer-kicker">Not mapped to a structure</p>
       <p>
-        Picked mesh <code>{pickedName}</code> is not in the published graph. No label is
-        guessed.
+        The picked mesh <code>{pickedName}</code> is drawn from a published source, but it is not
+        one of the parts mapped to a structure row in this atlas — so no label is guessed and no
+        facts are shown for it.
       </p>
-      {sex === "female" && pickedName.startsWith("VH_F_") && (
-        <p className="note">
-          Female HRA reference node (<code>VH_F_</code>). Female mesh → structure mappings
-          are not published yet, so this shows as not in this dataset.
-        </p>
-      )}
+      <p className="note">
+        That is a different situation from a part the source does not publish at all, which is
+        labelled “not in this dataset” in the Layers panel.
+      </p>
     </>
   ) : (
     <>
