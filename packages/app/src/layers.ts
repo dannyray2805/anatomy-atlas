@@ -153,9 +153,10 @@ export function buildReferenceFromUrls(
  * point of them. The spine and the cord are opt-in (about 3.9 MB together) so the first paint
  * stays light; peeling to their rail stop mounts them.
  *
- * NOT here, deliberately: the Allen brain atlas and the NIH lymph node. Both are OTHER labs'
- * models registered into this body's frame, so wiring them changes what the body may claim.
- * See docs/sources.md.
+ * NOT here: nothing is left out of the HuBMAP male reference body. The three assets that come
+ * from OTHER contributors inside that same library (SBU large intestine, Allen brain, NIH lymph
+ * node) ARE wired, because the sources are authentic and licensed; what each one actually is, and
+ * who authored it, is stated on its structure row and in the page's notes.
  */
 const MALE_DONOR_EXTRAS: Array<[string, string, string, boolean]> = [
   // Viscera (organ layer)
@@ -179,7 +180,12 @@ const MALE_DONOR_EXTRAS: Array<[string, string, string, boolean]> = [
   ["vertebrae-male-draco", "vertebral-column", "skeleton", true],
   ["pelvis-male-draco", "bony-pelvis", "skeleton", true],
   // Spinal cord (nerve layer — the cord only; no peripheral nerves are published)
-  ["spinal-cord-male-draco", "spinal-cord", "nerve", true]
+  ["spinal-cord-male-draco", "spinal-cord", "nerve", true],
+  // Contributed models in the same reference body, included deliberately: the Allen Institute
+  // brain atlas and one NIH lymph-node model. Both are other labs' work registered into this
+  // individual's frame — the structure rows and the page's notes state that explicitly.
+  ["brain-male-draco", "brain", "nerve", true],
+  ["lymph-node-male-draco", "lymph-node", "lymphatic", true]
 ];
 
 /**

@@ -77,6 +77,7 @@ const SRC = [
   ["incoming/vh-male/VH_M_Pelvis.glb", "pelvis-male"],
   ["incoming/vh-male/VH_M_Spinal_Cord.glb", "spinal-cord-male"],
   ["incoming/vh-male/Allen_M_Brain.glb", "brain-male"],
+  ["incoming/vh-male/NIH_M_Lymph_Node.glb", "lymph-node-male"],
 ];
 const OUT_DIR = "incoming/opt";
 fs.mkdirSync(OUT_DIR, { recursive: true });

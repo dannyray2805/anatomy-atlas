@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { BodyPage } from "./BodyPage";
 import { HoaVolume } from "./components/HoaVolume";
 import { SliceViewer } from "./components/SliceViewer";
@@ -27,7 +27,8 @@ function readStoredTheme(): Theme {
   }
 }
 
-export function App() {
+function Shell() {
+  const { pathname } = useLocation();
   const [theme, setTheme] = useState<Theme>(readStoredTheme);
 
   // The theme is a document-level attribute, so CSS — including the 3D viewing surface —
@@ -44,46 +45,59 @@ export function App() {
   }, [theme]);
 
   return (
-    <BrowserRouter>
-      <div className="app">
-        <header className="topbar">
-          <h1 className="brand">
-            <Link to="/">Anatomy Atlas</Link>
-          </h1>
-          <p className="tagline">One body, peeled and clickable — every claim sourced.</p>
-          <ThemeToggle theme={theme} onToggle={() => setTheme((t) => nextTheme(t))} />
-        </header>
-        <Routes>
-          <Route path="/" element={<BodyPage />} />
-          <Route
-            path="/volume"
-            element={
-              <div className="doc-page">
-                <HoaVolume />
-              </div>
-            }
-          />
-          <Route
-            path="/slices"
-            element={
-              <div className="doc-page">
-                <SliceViewer />
-              </div>
-            }
-          />
-          {/* Legacy multi-tab URLs -> the single pane, or the deep dive they used to point at. */}
-          <Route path="/body" element={<Navigate to="/?body=donor-male" replace />} />
-          <Route path="/reference" element={<Navigate to="/?body=reference" replace />} />
-          <Route path="/heart-3d" element={<Navigate to="/?body=donor-male" replace />} />
-          <Route path="/volume/heart" element={<Navigate to="/volume" replace />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+    <div className="app">
+      <header className="topbar">
+        <h1 className="brand">
+          <Link to="/">Anatomy Atlas</Link>
+        </h1>
+        <p className="tagline">One body, peeled and clickable — every claim sourced.</p>
+        <ThemeToggle theme={theme} onToggle={() => setTheme((t) => nextTheme(t))} />
+      </header>
+      <Routes>
+        <Route path="/" element={<BodyPage />} />
+        <Route
+          path="/volume"
+          element={
+            <div className="doc-page">
+              <HoaVolume />
+            </div>
+          }
+        />
+        <Route
+          path="/slices"
+          element={
+            <div className="doc-page">
+              <SliceViewer />
+            </div>
+          }
+        />
+        {/* Legacy multi-tab URLs -> the single pane, or the deep dive they used to point at. */}
+        <Route path="/body" element={<Navigate to="/?body=donor-male" replace />} />
+        <Route path="/reference" element={<Navigate to="/?body=reference" replace />} />
+        <Route path="/heart-3d" element={<Navigate to="/?body=donor-male" replace />} />
+        <Route path="/volume/heart" element={<Navigate to="/volume" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      {/*
+        Document pages carry this global summary line. The body pane does NOT: its own fixed
+        disclosure strip already states the sources, and a second in-flow footer would push the
+        pane past the viewport — the one thing the pane is built to avoid.
+      */}
+      {pathname !== "/" && (
         <p className="site-credit">
           Body context: NLM Visible Human. Organ geometry: HuBMAP HRA (CC BY 4.0). Tissue volume:
           Human Organ Atlas (DOI 10.15151/ESRF-DC-1773964017). Named structures: Uberon/FMA. Not
           for diagnosis.
         </p>
-      </div>
+      )}
+    </div>
+  );
+}
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <Shell />
     </BrowserRouter>
   );
 }

@@ -501,15 +501,24 @@ export function BodyPage() {
       </section>
 
       {/*
-        Disclosure + licensing at the very bottom of the page: small, muted, plain embedded text.
-        Present on every view and fully readable (selectable, searchable, exposed to assistive
-        tech) — deliberately NOT hidden, just quiet, so it never competes with the body.
+        Disclosure + licensing: a slim fixed strip along the bottom edge of the viewport. It takes
+        NO page height — opening it slides a panel UP over the pane instead of pushing the layout
+        down. Kept as a native <details> so it needs no JavaScript state, stays keyboard-operable,
+        and cannot be lost to a script failure. The one-line disclosure is always visible (truth
+        rule 10), and the full sources are one click away.
       */}
       <footer className="lab-notes">
-        <p className="lab-notes__line">{primaryBanner}</p>
         <details className="lab-notes__details">
-          <summary>Notes &amp; licensing</summary>
-          <div className="lab-notes__body">
+          <summary className="lab-notes__bar">
+            <span className="lab-notes__line">{primaryBanner}</span>
+            <span className="lab-notes__toggle">
+              Notes &amp; licensing
+              <span className="lab-notes__chev" aria-hidden="true">
+                ▾
+              </span>
+            </span>
+          </summary>
+          <div className="lab-notes__panel">
             {config.banners.slice(1).map((b, i) => (
               <p key={i}>{b}</p>
             ))}

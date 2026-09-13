@@ -231,8 +231,8 @@ code {
    Body "lab" page — full-height stage, floating controls
    -------------------------------------------------------------------------- */
 /*
-   The pane fills the viewport; the disclosure + licensing footer sits BELOW it at the bottom of
-   the page, so it is always present but never competes with the body for attention.
+   The pane fills the viewport exactly. Its content is inset from the bottom so the fixed
+   disclosure strip never covers the controls, while the strip itself takes no layout space.
 */
 .lab-page {
   display: flex;
@@ -244,68 +244,119 @@ code {
   box-sizing: border-box;
   flex: 1 1 auto;
   min-height: 560px;
-  padding: 0.7rem;
+  padding: 0.7rem 0.7rem 2.3rem;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
 }
 
-/* Quiet embedded disclosure at the very bottom of the page (truth rule 10 keeps it on every
-   view; it is small and muted, not hidden — it stays selectable, searchable and screen-read). */
+/*
+   Disclosure + licensing — a slim FIXED strip along the bottom edge.
+   It occupies no page height: opening it slides a panel UP over the pane (a bottom sheet)
+   instead of reflowing the page. A native <details> drives it, so there is no JS state to get
+   out of step, and the one-line disclosure stays readable on every view.
+*/
 .lab-notes {
-  max-width: 1020px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0.2rem 1.35rem 1.6rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  background: var(--glass);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   color: var(--faint);
   font-size: 0.72rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
-.lab-notes__line {
-  margin: 0 0 0.35rem;
-}
-.lab-notes__details summary {
-  display: inline-block;
-  cursor: pointer;
-  color: var(--faint);
-  font-size: 0.72rem;
-  opacity: 0.72;
+.lab-notes__details > summary {
   list-style: none;
+  cursor: pointer;
 }
-.lab-notes__details summary::-webkit-details-marker {
+.lab-notes__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0.28rem 1.35rem;
+}
+.lab-notes__bar::-webkit-details-marker {
   display: none;
 }
-.lab-notes__details summary::before {
-  content: "\25B8\00a0";
+.lab-notes__line {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.lab-notes__details[open] summary::before {
-  content: "\25BE\00a0";
+.lab-notes__toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--faint);
+  padding: 0.1rem 0.4rem;
+  border-radius: 7px;
+  transition: color 0.18s ease, background 0.18s ease;
 }
-.lab-notes__details summary:hover {
-  color: var(--muted);
-  opacity: 1;
+.lab-notes__bar:hover .lab-notes__toggle {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
 }
-.lab-notes__body {
-  margin-top: 0.4rem;
+.lab-notes__chev {
+  display: inline-block;
+  font-size: 0.7rem;
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.lab-notes__body h4 {
+.lab-notes__details[open] .lab-notes__chev {
+  transform: rotate(180deg);
+}
+.lab-notes__panel {
+  max-height: min(58vh, 520px);
+  overflow-y: auto;
+  border-top: 1px solid var(--line);
+  padding: 0.75rem 1.35rem 1.15rem;
+  animation: notes-in 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes notes-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.lab-notes__panel h4 {
   margin: 0.7rem 0 0.2rem;
   font-size: 0.74rem;
   color: var(--muted);
 }
-.lab-notes__body p {
+.lab-notes__panel p {
   margin: 0.25rem 0;
 }
-.lab-notes__body ul {
+.lab-notes__panel ul {
   margin: 0.15rem 0 0.4rem;
   padding-left: 1.1rem;
 }
-.lab-notes__body li {
+.lab-notes__panel li {
   margin: 0.2rem 0;
   line-height: 1.45;
 }
 .lab-notes__fine {
   opacity: 0.85;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-notes__panel {
+    animation: none;
+  }
+  .lab-notes__chev {
+    transition: none;
+  }
 }
 
 /* The stage: canvas + floating glass overlays + drawer */
@@ -1081,6 +1132,78 @@ code {
 :root[data-theme="light"] .volume-loading {
   background: rgba(244, 247, 252, 0.72);
   color: #46536b;
+}
+
+/* --------------------------------------------------------------------------
+   Motion
+
+   Short and subtle: enough to make the pane feel alive without slowing anyone down. Only
+   `opacity` is animated on the floating chrome, because several panels position themselves with
+   `transform` and a transform animation would fight their own centring.
+
+   Every rule here is switched off for `prefers-reduced-motion`.
+   -------------------------------------------------------------------------- */
+.pill,
+.chip,
+.theme-toggle {
+  transition: color 0.16s ease, border-color 0.16s ease, background 0.2s ease,
+    transform 0.12s ease, opacity 0.2s ease;
+}
+.pill:active,
+.chip:active,
+.theme-toggle:active {
+  transform: scale(0.97);
+}
+.peel-stop {
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+.glass--source,
+.glass--search,
+.glass--peel,
+.glass--camera {
+  animation: chrome-in 0.3s ease;
+}
+@keyframes chrome-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hover-label {
+  animation: hover-in 0.12s ease;
+}
+@keyframes hover-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -120%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -135%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill,
+  .chip,
+  .theme-toggle,
+  .peel-stop {
+    transition: none;
+  }
+  .pill:active,
+  .chip:active,
+  .theme-toggle:active {
+    transform: none;
+  }
+  .glass--source,
+  .glass--search,
+  .glass--peel,
+  .glass--camera,
+  .hover-label {
+    animation: none;
+  }
 }
 
 /* --------------------------------------------------------------------------

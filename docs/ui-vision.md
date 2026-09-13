@@ -189,21 +189,26 @@ on-click deep dive and was kept as-is.
 On the reference body the peel makes **17 organs reachable** (and its ducts, bronchi and
 brainstem), where before the default view offered no search at all.
 
-**The male donor body now opens up too (2026-09-13).** 19 of his published assets are wired —
+**The male donor body now opens up too (2026-09-13).** 21 of his published assets are wired —
 liver, lungs, kidneys, gallbladder and biliary tree, pancreas, spleen, thymus, small and large
-intestine, urinary bladder, ureters, urethra and prostate, plus the spine, bony pelvis and spinal
-cord — which takes that body's resolvable structures from **4 to 23**. The organs show on first
-paint so peeling the skin reveals a real interior; the spine and cord are opt-in because they are
-the heavy ones. Each layer is named for exactly what it holds (`Spine + pelvis`, `Spinal cord`),
-never stretched to imply more.
+intestine, urinary bladder, ureters, urethra and prostate, plus the spine, bony pelvis, spinal
+cord, brain and one lymph node — which takes that body from **4 resolvable structures to 23 on
+first paint (25 once the brain and lymph-node layers are mounted)**. The organs show on first
+paint so peeling the skin reveals a real interior; the spine, cord, brain and lymph node are
+opt-in because they are the heavy ones. Each layer is named for exactly what it holds
+(`Spine + pelvis`, `Brain + cord`, `Lymph node`), never stretched to imply more.
 
-The gaps are surfaced rather than hidden: `Muscle · not in this dataset` remains, a full
-articulated skeleton is still not published (only the spine, pelvis and cord), the female donor's
-organ set is a separate not-yet-wired batch, and the Allen brain atlas and an NIH lymph-node model
-in that same library are deliberately left out — they are other labs' models registered into this
-body's frame, so including them would make the body a composite and change what the page may
-claim. A female donor body remains the only female body there is: no female whole-body anatomy is
-published, so none is shown and none is invented.
+Three of those assets come from **other labs** and are included deliberately, because the sources
+are authentic and licensed: the large intestine (SBU), the Allen Institute brain atlas and an NIH
+lymph node. What each one actually is — the brain is an atlas, not that donor's scanned brain; the
+lymph node is one node, not a lymphatic system — is stated on its structure row and in the page's
+notes, which is what keeps a composite reference body honest rather than pretending it is one
+person's scan throughout.
+
+The remaining gaps are surfaced rather than hidden: `Muscle · not in this dataset`, no full
+articulated skeleton (only the spine, pelvis and cord), and a female donor body remains the only
+female body there is — no female whole-body anatomy is published, so none is shown and none is
+invented.
 
 ### Follow-ups (deliberately not done)
 
@@ -253,17 +258,21 @@ obviously visible… embedded text on the page with not so visible font size.”
 female and male color is blue, see if real human skin color is possible even if it deviates from
 originals… ensure to apply real color throughout the exterior and interior.”
 
-### Disclosure moved to a quiet footer
+### Disclosure is a bottom sheet that occupies no page height
 
-The dismissible bar across the top of the pane is gone. Disclosure + licensing now live in
-`.lab-notes`, a **footer below the pane** at the very bottom of the page: small (0.72 rem), muted
-(`--faint`), plain embedded text, with the full sources in a native `<details>` element.
+The dismissible bar across the top of the pane is gone, and so is the in-flow footer. Disclosure
+always lives in a **slim fixed strip along the bottom edge of the viewport** (30 px), which shows the
+per-body disclosure line and a “Notes & licensing” affordance. Opening it slides a panel **up over
+the pane** rather than pushing the layout down: measured, the page height is identical collapsed and
+expanded (`scrollHeight` 1044 = viewport in both states, panel 436 px), so the pane never gains a
+scrollbar and the body keeps the whole viewport.
 
-Deliberate limits on “not obviously visible”: the text is **small and muted, never hidden**. It is
+Deliberate limits on “not obviously visible”: the line is **small and muted, never hidden**. It is
 still present on every view (truth rule 10), still selectable and searchable, still exposed to
-assistive technology, and the `<details>` needs no JavaScript — so the disclosure cannot be lost
-to a rendering or script failure. `<details>` also replaces the old open/dismiss React state, which
-removes a piece of UI state rather than adding one.
+assistive technology, and a native `<details>` drives it — so it needs no JavaScript (it cannot be
+lost to a script failure) and adds no state. The global `.site-credit` line is suppressed on the
+body pane for the same reason it was moved: a second in-flow footer would only duplicate the strip
+and push the pane past the viewport.
 
 ### Illustrative anatomy colour
 

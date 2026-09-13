@@ -75,11 +75,12 @@ function VhAttribution({ sex }: { sex: Sex }) {
         most vessel clicks show “not in this dataset”.
       </li>
       <li>
-        Contributor note: the large-intestine model is a Stony Brook University contribution
-        published inside the same HuBMAP CCF reference library and registered into this body&apos;s
-        frame — it is not HuBMAP-authored. The Allen brain atlas and an NIH lymph-node model from
-        that library are deliberately NOT shown here: they are other labs&apos; models, and adding
-        them would change what this body may honestly claim.
+        Contributor note: three models in this body come from other labs, published inside the same
+        HuBMAP CCF reference library and registered into this body&apos;s frame — the large
+        intestine (Stony Brook University), the brain (the Allen Institute brain atlas: 283 named
+        regions, each resolving to the brain as a whole) and one lymph node (NIH; its meshes are
+        authored &quot;Yao&quot;). None of the three is HuBMAP-authored, and the brain is an atlas
+        rather than that donor&apos;s scanned brain. Each structure row says so.
       </li>
       <li>
         HOA tissue volume (male donor S-20-29, DOI 10.15151/ESRF-DC-1773964017, CC BY 4.0) is a
@@ -142,15 +143,17 @@ function donorConfig(sex: Sex): BodySourceConfig {
     // The donor's "organ" layer is now every organ published for that body, not only the heart;
     // the skeleton is a PARTIAL one (spine + pelvis) and the nerve layer is the cord alone, so
     // both are named for exactly what they contain.
-    layerLabels: { organ: "Organs", skeleton: "Spine + pelvis", nerve: "Spinal cord" },
+    layerLabels: { organ: "Organs", skeleton: "Spine + pelvis", nerve: "Brain + cord", lymphatic: "Lymph node" },
     missingLayers: ["muscle"],
     guided: true,
     banners: [
       <>
-        Visible Human {SEX_LABELS[sex].toLowerCase()} donor — HuBMAP HRA (CC BY 4.0), one real
-        individual. {sex === "male" ? "His" : "Her"} published anatomy is rendered here;
-        anything not published is shown as “not in this dataset”. Muscle and a full skeleton are
-        not published for this individual. The HOA tissue volume is yet another individual (donor
+        Visible Human {SEX_LABELS[sex].toLowerCase()} donor — HuBMAP HRA (CC BY 4.0).{" "}
+        {sex === "male"
+          ? "His published anatomy, plus three models contributed by other labs and registered into his frame (large intestine, brain atlas, one lymph node — named in the notes below)."
+          : "Her published anatomy."}{" "}
+        Anything not published is labelled “not in this dataset”; muscle and a full skeleton are not
+        published for this individual. The HOA tissue volume is yet another individual (donor
         S-20-29).
       </>
     ],

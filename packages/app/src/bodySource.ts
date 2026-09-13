@@ -42,7 +42,7 @@ export const BODY_SOURCE_LABELS: Record<BodySource, string> = {
 export const BODY_SOURCE_WHO: Record<BodySource, string> = {
   reference: "Z-Anatomy “Taro” — one male reference individual",
   "donor-male":
-    "Visible Human male donor — skin, organs, vessels, spine and spinal cord",
+    "Visible Human male donor — skin, organs, brain, vessels, spine and cord",
   "donor-female": "Visible Human female donor — skin, heart and vessels only"
 };
 
