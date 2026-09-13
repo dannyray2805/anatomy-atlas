@@ -88,8 +88,8 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
-        "note": "Z-Anatomy 'Muscular system' collection (R2 muscle-v3-draco.glb) — the 62 connective-tissue sheets it carries alongside the muscle bellies (fascia, aponeurosis, retinaculum; e.g. Epicranial aponeurosis, Fascia lata, the thoracolumbar layers) are excluded by explicit object name, because they are not muscle and they sat at or above skin level. Tensor fasciae latae is kept (a muscle). 607 mesh nodes."
+        "asset": "z-anatomy/glb/muscle-v3-draco.glb",
+        "note": "Z-Anatomy 'Muscular system' collection. 132 of its muscles are mapped as their own structures, each with a Uberon id verified by exact label against OLS4. NOT mapped: muscles Uberon does not model, or models only as part of a named group (e.g. extensor indicis, corrugator supercilii, and named heads and bellies such as the clavicular head of pectoralis major), and the 62 connective-tissue sheets the collection carries alongside the muscle bellies (fascia, aponeurosis, retinaculum; e.g. Epicranial aponeurosis, Fascia lata, the thoracolumbar layers), excluded by explicit object name because they are not muscle and they sat at or above skin level. Tensor fasciae latae is kept (a muscle). 607 mesh nodes."
       }
     ],
     "voxel_size_um": null,
@@ -3794,6 +3794,3047 @@
       "Zygomatic_bone_2",
       "Zygomatic_bone_3",
       "Zygomatic_bone_4"
+    ]
+  },
+  {
+    "id": "abductor-digiti-minimi-of-hand",
+    "uberon": "UBERON:0036173",
+    "fma": null,
+    "label": "Abductor digiti minimi of hand",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'abductor digiti minimi of hand', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Abductor_digiti_minimi_of_hand",
+      "Abductor_digiti_minimi_of_hand_1"
+    ]
+  },
+  {
+    "id": "abductor-hallucis",
+    "uberon": "UBERON:0008464",
+    "fma": null,
+    "label": "Abductor hallucis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'abductor hallucis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Abductor_hallucis",
+      "Abductor_hallucis_1"
+    ]
+  },
+  {
+    "id": "abductor-pollicis-brevis",
+    "uberon": "UBERON:0008465",
+    "fma": null,
+    "label": "Abductor pollicis brevis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'abductor pollicis brevis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Abductor_pollicis_brevis",
+      "Abductor_pollicis_brevis_1"
+    ]
+  },
+  {
+    "id": "abductor-pollicis-longus",
+    "uberon": "UBERON:0001527",
+    "fma": null,
+    "label": "Abductor pollicis longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'abductor pollicis longus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Abductor_pollicis_longus",
+      "Abductor_pollicis_longus_1"
+    ]
+  },
+  {
+    "id": "adductor-brevis",
+    "uberon": "UBERON:0000368",
+    "fma": null,
+    "label": "Adductor brevis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'adductor brevis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Adductor_brevisl",
+      "Adductor_brevisr"
+    ]
+  },
+  {
+    "id": "adductor-longus",
+    "uberon": "UBERON:0000303",
+    "fma": null,
+    "label": "Adductor longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'adductor longus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Adductor_longus",
+      "Adductor_longus_1"
+    ]
+  },
+  {
+    "id": "adductor-magnus",
+    "uberon": "UBERON:0000370",
+    "fma": null,
+    "label": "Adductor magnus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'adductor magnus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "(Adductor_minimus)l",
+      "(Adductor_minimus)r",
+      "Adductor_magnus",
+      "Adductor_magnus_1"
+    ]
+  },
+  {
+    "id": "anconeus-muscle",
+    "uberon": "UBERON:0002989",
+    "fma": null,
+    "label": "Anconeus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'anconeus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anconeus_muscle",
+      "Anconeus_muscle_1"
+    ]
+  },
+  {
+    "id": "brachialis-muscle",
+    "uberon": "UBERON:0001506",
+    "fma": null,
+    "label": "Brachialis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'brachialis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Brachialis_muscle",
+      "Brachialis_muscle_1"
+    ]
+  },
+  {
+    "id": "brachioradialis-muscle",
+    "uberon": "UBERON:0011011",
+    "fma": null,
+    "label": "Brachioradialis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'brachioradialis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Brachioradialis_muscle",
+      "Brachioradialis_muscle_1"
+    ]
+  },
+  {
+    "id": "bucinator",
+    "uberon": "UBERON:0001582",
+    "fma": null,
+    "label": "Bucinator",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'buccinator muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Bucinatorl",
+      "Bucinatorr"
+    ]
+  },
+  {
+    "id": "coccygeus-muscle",
+    "uberon": "UBERON:0001327",
+    "fma": null,
+    "label": "Coccygeus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'coccygeus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Coccygeus_musclel",
+      "Coccygeus_muscler"
+    ]
+  },
+  {
+    "id": "coracobrachialis-muscle",
+    "uberon": "UBERON:0001505",
+    "fma": null,
+    "label": "Coracobrachialis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'coracobrachialis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Coracobrachialis_muscle",
+      "Coracobrachialis_muscle_1"
+    ]
+  },
+  {
+    "id": "deep-part-of-masseter",
+    "uberon": "UBERON:0010995",
+    "fma": null,
+    "label": "Deep part of masseter",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'deep part of masseter muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_part_of_masseter",
+      "Deep_part_of_masseter_1"
+    ]
+  },
+  {
+    "id": "depressor-anguli-oris",
+    "uberon": "UBERON:0008597",
+    "fma": null,
+    "label": "Depressor anguli oris",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'depressor anguli oris muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Depressor_anguli_oris",
+      "Depressor_anguli_oris_1"
+    ]
+  },
+  {
+    "id": "depressor-labii-inferioris",
+    "uberon": "UBERON:0001581",
+    "fma": null,
+    "label": "Depressor labii inferioris",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'depressor labii inferioris', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Depressor_labii_inferioris",
+      "Depressor_labii_inferioris_1"
+    ]
+  },
+  {
+    "id": "depressor-septi-nasi",
+    "uberon": "UBERON:0008589",
+    "fma": null,
+    "label": "Depressor septi nasi",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'depressor septi nasi', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Depressor_septi_nasil",
+      "Depressor_septi_nasir"
+    ]
+  },
+  {
+    "id": "diaphragm",
+    "uberon": "UBERON:0001103",
+    "fma": null,
+    "label": "Diaphragm",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'diaphragm', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Diaphragm_1",
+      "Diaphragm_2"
+    ]
+  },
+  {
+    "id": "extensor-carpi-radialis-brevis",
+    "uberon": "UBERON:0001525",
+    "fma": null,
+    "label": "Extensor carpi radialis brevis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'extensor carpi radialis brevis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Extensor_carpi_radialis_brevis",
+      "Extensor_carpi_radialis_brevis_1"
+    ]
+  },
+  {
+    "id": "extensor-carpi-radialis-longus",
+    "uberon": "UBERON:0001524",
+    "fma": null,
+    "label": "Extensor carpi radialis longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'extensor carpi radialis longus muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Extensor_carpi_radialis_longus",
+      "Extensor_carpi_radialis_longus_1"
+    ]
+  },
+  {
+    "id": "extensor-digiti-minimi",
+    "uberon": "UBERON:0007614",
+    "fma": null,
+    "label": "Extensor digiti minimi",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'extensor digiti minimi muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Extensor_digiti_minimi",
+      "Extensor_digiti_minimi_1"
+    ]
+  },
+  {
+    "id": "extensor-digitorum-longus",
+    "uberon": "UBERON:0001386",
+    "fma": null,
+    "label": "Extensor digitorum longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'extensor digitorum longus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Extensor_digitorum_longus",
+      "Extensor_digitorum_longus_1",
+      "Tendon_of_extensor_digitorum_longusl",
+      "Tendon_of_extensor_digitorum_longusr"
+    ]
+  },
+  {
+    "id": "extensor-pollicis-brevis",
+    "uberon": "UBERON:0017618",
+    "fma": null,
+    "label": "Extensor pollicis brevis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'extensor pollicis brevis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Extensor_pollicis_brevis",
+      "Extensor_pollicis_brevis_1"
+    ]
+  },
+  {
+    "id": "extensor-pollicis-longus",
+    "uberon": "UBERON:0003234",
+    "fma": null,
+    "label": "Extensor pollicis longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'extensor pollicis longus muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Extensor_pollicis_longus",
+      "Extensor_pollicis_longus_1"
+    ]
+  },
+  {
+    "id": "external-abdominal-oblique-muscle",
+    "uberon": "UBERON:0005442",
+    "fma": null,
+    "label": "External abdominal oblique muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'abdominal external oblique muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_abdominal_oblique_musclel",
+      "External_abdominal_oblique_muscler",
+      "Inguinal_ligamentl",
+      "Inguinal_ligamentr"
+    ]
+  },
+  {
+    "id": "external-anal-sphincter",
+    "uberon": "UBERON:0001367",
+    "fma": null,
+    "label": "External anal sphincter",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'external anal sphincter', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_anal_sphincterl",
+      "External_anal_sphincterr"
+    ]
+  },
+  {
+    "id": "external-intercostal-muscles",
+    "uberon": "UBERON:0005441",
+    "fma": null,
+    "label": "External intercostal muscles",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'external intercostal muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_intercostal_musclesl",
+      "External_intercostal_musclesr"
+    ]
+  },
+  {
+    "id": "fibularis-brevis-muscle",
+    "uberon": "UBERON:0010526",
+    "fma": null,
+    "label": "Fibularis brevis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'fibularis brevis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fibularis_brevis_muscle",
+      "Fibularis_brevis_muscle_1"
+    ]
+  },
+  {
+    "id": "fibularis-longus-muscle",
+    "uberon": "UBERON:0001387",
+    "fma": null,
+    "label": "Fibularis longus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'fibularis longus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fibularis_longus_muscle",
+      "Fibularis_longus_muscle_1"
+    ]
+  },
+  {
+    "id": "fibularis-tertius-muscle",
+    "uberon": "UBERON:0010524",
+    "fma": null,
+    "label": "Fibularis tertius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'fibularis tertius'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fibularis_tertius_muscle",
+      "Fibularis_tertius_muscle_1"
+    ]
+  },
+  {
+    "id": "flexor-carpi-radialis",
+    "uberon": "UBERON:0001521",
+    "fma": null,
+    "label": "Flexor carpi radialis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'flexor carpi radialis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flexor_carpi_radialis",
+      "Flexor_carpi_radialis_1"
+    ]
+  },
+  {
+    "id": "flexor-digitorum-brevis",
+    "uberon": "UBERON:0014380",
+    "fma": null,
+    "label": "Flexor digitorum brevis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'flexor digitorum brevis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flexor_digitorum_brevis",
+      "Flexor_digitorum_brevis_1"
+    ]
+  },
+  {
+    "id": "flexor-digitorum-longus",
+    "uberon": "UBERON:0001666",
+    "fma": null,
+    "label": "Flexor digitorum longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'flexor digitorum longus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flexor_digitorum_longus",
+      "Flexor_digitorum_longus_1"
+    ]
+  },
+  {
+    "id": "flexor-digitorum-profundus",
+    "uberon": "UBERON:0001523",
+    "fma": null,
+    "label": "Flexor digitorum profundus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'flexor digitorum profundus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flexor_digitorum_profundus",
+      "Flexor_digitorum_profundus_1"
+    ]
+  },
+  {
+    "id": "flexor-hallucis-longus",
+    "uberon": "UBERON:0001392",
+    "fma": null,
+    "label": "Flexor hallucis longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'flexor hallucis longus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flexor_hallucis_longus",
+      "Flexor_hallucis_longus_1"
+    ]
+  },
+  {
+    "id": "flexor-pollicis-longus",
+    "uberon": "UBERON:0008446",
+    "fma": null,
+    "label": "Flexor pollicis longus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'flexor pollicis longus muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flexor_pollicis_longus",
+      "Flexor_pollicis_longus_1"
+    ]
+  },
+  {
+    "id": "genioglossus-muscle",
+    "uberon": "UBERON:0001571",
+    "fma": null,
+    "label": "Genioglossus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'genioglossus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Genioglossus_musclel",
+      "Genioglossus_muscler"
+    ]
+  },
+  {
+    "id": "geniohyoid-muscle",
+    "uberon": "UBERON:0001565",
+    "fma": null,
+    "label": "Geniohyoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'geniohyoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Geniohyoid_musclel",
+      "Geniohyoid_muscler"
+    ]
+  },
+  {
+    "id": "gluteus-maximus-muscle",
+    "uberon": "UBERON:0001370",
+    "fma": null,
+    "label": "Gluteus maximus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'gluteus maximus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gluteus_maximus_musclel",
+      "Gluteus_maximus_muscler"
+    ]
+  },
+  {
+    "id": "gluteus-medius-muscle",
+    "uberon": "UBERON:0001371",
+    "fma": null,
+    "label": "Gluteus medius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'gluteus medius'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gluteus_medius_muscle",
+      "Gluteus_medius_muscle_1"
+    ]
+  },
+  {
+    "id": "gluteus-minimus-muscle",
+    "uberon": "UBERON:0008521",
+    "fma": null,
+    "label": "Gluteus minimus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'gluteus minimus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gluteus_minimus_musclel",
+      "Gluteus_minimus_muscler"
+    ]
+  },
+  {
+    "id": "gracilis-muscle",
+    "uberon": "UBERON:0000950",
+    "fma": null,
+    "label": "Gracilis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'gracilis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gracilis_muscle",
+      "Gracilis_muscle_1"
+    ]
+  },
+  {
+    "id": "hyoglossus-muscle",
+    "uberon": "UBERON:0001572",
+    "fma": null,
+    "label": "Hyoglossus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'hyoglossus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hyoglossus_musclel",
+      "Hyoglossus_muscler"
+    ]
+  },
+  {
+    "id": "iliacus-muscle",
+    "uberon": "UBERON:0001369",
+    "fma": null,
+    "label": "Iliacus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'iliacus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Iliacus_muscle",
+      "Iliacus_muscle_1"
+    ]
+  },
+  {
+    "id": "iliococcygeus-muscle",
+    "uberon": "UBERON:0011511",
+    "fma": null,
+    "label": "Iliococcygeus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'iliococcygeus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Iliococcygeus_musclel",
+      "Iliococcygeus_muscler"
+    ]
+  },
+  {
+    "id": "iliocostalis-lumborum-muscle",
+    "uberon": "UBERON:0011207",
+    "fma": null,
+    "label": "Iliocostalis lumborum muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'iliocostalis lumborum'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Iliocostalis_lumborum_musclel",
+      "Iliocostalis_lumborum_muscler"
+    ]
+  },
+  {
+    "id": "iliocostalis-thoracis-muscle",
+    "uberon": "UBERON:0001400",
+    "fma": null,
+    "label": "Iliocostalis thoracis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'iliocostalis thoracis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Iliocostalis_thoracis_musclel",
+      "Iliocostalis_thoracis_muscler"
+    ]
+  },
+  {
+    "id": "inferior-gemellus-muscle",
+    "uberon": "UBERON:0019202",
+    "fma": null,
+    "label": "Inferior gemellus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior gemellus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_gemellus_muscle",
+      "Inferior_gemellus_muscle_1"
+    ]
+  },
+  {
+    "id": "inferior-pharyngeal-constrictor",
+    "uberon": "UBERON:0001570",
+    "fma": null,
+    "label": "Inferior pharyngeal constrictor",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior pharyngeal constrictor', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_pharyngeal_constrictorl",
+      "Inferior_pharyngeal_constrictorr"
+    ]
+  },
+  {
+    "id": "infraspinatus-muscle",
+    "uberon": "UBERON:0001477",
+    "fma": null,
+    "label": "Infraspinatus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'infraspinatus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Infraspinatus_muscle",
+      "Infraspinatus_muscle_1"
+    ]
+  },
+  {
+    "id": "innermost-intercostal-muscles",
+    "uberon": "UBERON:0008617",
+    "fma": null,
+    "label": "Innermost intercostal muscles",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'innermost intercostal muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Innermost_intercostal_musclesl",
+      "Innermost_intercostal_musclesr"
+    ]
+  },
+  {
+    "id": "internal-abdominal-oblique-muscle",
+    "uberon": "UBERON:0005454",
+    "fma": null,
+    "label": "Internal abdominal oblique muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'abdominal internal oblique muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_abdominal_oblique_musclel",
+      "Internal_abdominal_oblique_muscler"
+    ]
+  },
+  {
+    "id": "internal-intercostal-muscles",
+    "uberon": "UBERON:0002403",
+    "fma": null,
+    "label": "Internal intercostal muscles",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'internal intercostal muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_intercostal_musclesl",
+      "Internal_intercostal_musclesr"
+    ]
+  },
+  {
+    "id": "lateral-crico-arytenoid-muscle",
+    "uberon": "UBERON:0008573",
+    "fma": null,
+    "label": "Lateral crico-arytenoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'lateral crico-arytenoid'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_crico-arytenoid_musclel",
+      "Lateral_crico-arytenoid_muscler"
+    ]
+  },
+  {
+    "id": "latissimus-dorsi-muscle",
+    "uberon": "UBERON:0001112",
+    "fma": null,
+    "label": "Latissimus dorsi muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'latissimus dorsi muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Latissimus_dorsi_muscle",
+      "Latissimus_dorsi_muscle_1"
+    ]
+  },
+  {
+    "id": "levator-anguli-oris",
+    "uberon": "UBERON:0008595",
+    "fma": null,
+    "label": "Levator anguli oris",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'levator anguli oris', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Levator_anguli_orisl",
+      "Levator_anguli_orisr"
+    ]
+  },
+  {
+    "id": "levator-labii-superioris",
+    "uberon": "UBERON:0001580",
+    "fma": null,
+    "label": "Levator labii superioris",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'levator labii superioris', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Levator_labii_superiorisl",
+      "Levator_labii_superiorisr"
+    ]
+  },
+  {
+    "id": "levator-nasolabialis",
+    "uberon": "UBERON:0011464",
+    "fma": null,
+    "label": "Levator nasolabialis",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'levator nasolabialis muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Levator_nasolabialis",
+      "Levator_nasolabialis_1"
+    ]
+  },
+  {
+    "id": "levator-palpebrae-superioris",
+    "uberon": "UBERON:0001604",
+    "fma": null,
+    "label": "Levator palpebrae superioris",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'levator palpebrae superioris', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Levator_palpebrae_superiorisl",
+      "Levator_palpebrae_superiorisr"
+    ]
+  },
+  {
+    "id": "levator-scapulae",
+    "uberon": "UBERON:0005461",
+    "fma": null,
+    "label": "Levator scapulae",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'levator scapulae muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Levator_scapulae",
+      "Levator_scapulae_1"
+    ]
+  },
+  {
+    "id": "long-head-of-biceps-brachii",
+    "uberon": "UBERON:0007168",
+    "fma": null,
+    "label": "Long head of biceps brachii",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'long head of biceps brachii', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Long_head_of_biceps_brachii",
+      "Long_head_of_biceps_brachii_1"
+    ]
+  },
+  {
+    "id": "longissimus-capitis-muscle",
+    "uberon": "UBERON:0001403",
+    "fma": null,
+    "label": "Longissimus capitis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'longissimus capitis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Longissimus_capitis_musclel",
+      "Longissimus_capitis_muscler"
+    ]
+  },
+  {
+    "id": "longissimus-thoracis-muscle",
+    "uberon": "UBERON:0001401",
+    "fma": null,
+    "label": "Longissimus thoracis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'longissimus thoracis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Longissimus_thoracis_musclel",
+      "Longissimus_thoracis_muscler"
+    ]
+  },
+  {
+    "id": "longus-capitis-muscle",
+    "uberon": "UBERON:0001563",
+    "fma": null,
+    "label": "Longus capitis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'longus capitis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Longus_capitis_musclel",
+      "Longus_capitis_muscler"
+    ]
+  },
+  {
+    "id": "longus-colli-muscle",
+    "uberon": "UBERON:0001121",
+    "fma": null,
+    "label": "Longus colli muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'longus colli muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Longus_colli_musclel",
+      "Longus_colli_muscler"
+    ]
+  },
+  {
+    "id": "medial-pterygoid-muscle",
+    "uberon": "UBERON:0006718",
+    "fma": null,
+    "label": "Medial pterygoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'medial pterygoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Medial_pterygoid_musclel",
+      "Medial_pterygoid_muscler"
+    ]
+  },
+  {
+    "id": "mentalis-muscle",
+    "uberon": "UBERON:0008596",
+    "fma": null,
+    "label": "Mentalis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'mentalis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Mentalis_muscle",
+      "Mentalis_muscle_1"
+    ]
+  },
+  {
+    "id": "middle-pharyngeal-constrictor",
+    "uberon": "UBERON:0010749",
+    "fma": null,
+    "label": "Middle pharyngeal constrictor",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle pharyngeal constrictor', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_pharyngeal_constrictorl",
+      "Middle_pharyngeal_constrictorr"
+    ]
+  },
+  {
+    "id": "mylohyoid-muscle",
+    "uberon": "UBERON:0001564",
+    "fma": null,
+    "label": "Mylohyoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'mylohyoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Mylohyoid_musclel",
+      "Mylohyoid_muscler"
+    ]
+  },
+  {
+    "id": "nasalis-muscle",
+    "uberon": "UBERON:0010953",
+    "fma": null,
+    "label": "Nasalis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'nasalis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nasalis_muscle",
+      "Nasalis_muscle_1"
+    ]
+  },
+  {
+    "id": "obturator-externus",
+    "uberon": "UBERON:0001368",
+    "fma": null,
+    "label": "Obturator externus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'obturator externus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Obturator_externusl",
+      "Obturator_externusr"
+    ]
+  },
+  {
+    "id": "obturator-internus",
+    "uberon": "UBERON:0011048",
+    "fma": null,
+    "label": "Obturator internus",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'obturator internus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Obturator_internus",
+      "Obturator_internus_1"
+    ]
+  },
+  {
+    "id": "occipitalis-muscle",
+    "uberon": "UBERON:0010947",
+    "fma": null,
+    "label": "Occipitalis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'occipitalis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Occipitalis_musclel",
+      "Occipitalis_muscler"
+    ]
+  },
+  {
+    "id": "omohyoid-muscle",
+    "uberon": "UBERON:0001108",
+    "fma": null,
+    "label": "Omohyoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'omohyoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Omohyoid_musclel",
+      "Omohyoid_muscler"
+    ]
+  },
+  {
+    "id": "opponens-digiti-minimi-muscle-of-hand",
+    "uberon": "UBERON:0036176",
+    "fma": null,
+    "label": "Opponens digiti minimi muscle of hand",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'opponens digiti minimi of hand'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Opponens_digiti_minimi_muscle_of_hand",
+      "Opponens_digiti_minimi_muscle_of_hand_1"
+    ]
+  },
+  {
+    "id": "orbicularis-oris-muscle",
+    "uberon": "UBERON:0010933",
+    "fma": null,
+    "label": "Orbicularis oris muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'orbicularis oris muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Orbicularis_oris_musclel",
+      "Orbicularis_oris_muscler"
+    ]
+  },
+  {
+    "id": "palatopharyngeus-muscle",
+    "uberon": "UBERON:0010234",
+    "fma": null,
+    "label": "Palatopharyngeus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'palatopharyngeus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Palatopharyngeus_musclel",
+      "Palatopharyngeus_muscler"
+    ]
+  },
+  {
+    "id": "palmaris-longus-muscle",
+    "uberon": "UBERON:0016493",
+    "fma": null,
+    "label": "Palmaris longus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'palmaris longus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Palmaris_longus_muscle",
+      "Palmaris_longus_muscle_1"
+    ]
+  },
+  {
+    "id": "pectineus-muscle",
+    "uberon": "UBERON:0001382",
+    "fma": null,
+    "label": "Pectineus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'pectineus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pectineus_muscle",
+      "Pectineus_muscle_1"
+    ]
+  },
+  {
+    "id": "pectoralis-minor-muscle",
+    "uberon": "UBERON:0001100",
+    "fma": null,
+    "label": "Pectoralis minor muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'pectoralis minor'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pectoralis_minor_musclel",
+      "Pectoralis_minor_muscler"
+    ]
+  },
+  {
+    "id": "piriformis-muscle",
+    "uberon": "UBERON:0008529",
+    "fma": null,
+    "label": "Piriformis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'piriformis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Piriformis_musclel",
+      "Piriformis_muscler"
+    ]
+  },
+  {
+    "id": "plantaris-muscle",
+    "uberon": "UBERON:0011905",
+    "fma": null,
+    "label": "Plantaris muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'plantaris'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Plantaris_muscle",
+      "Plantaris_muscle_1"
+    ]
+  },
+  {
+    "id": "platysma",
+    "uberon": "UBERON:0005467",
+    "fma": null,
+    "label": "Platysma",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'platysma', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Platysma",
+      "Platysma_1"
+    ]
+  },
+  {
+    "id": "popliteus-muscle",
+    "uberon": "UBERON:0001391",
+    "fma": null,
+    "label": "Popliteus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'popliteus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Popliteus_muscle",
+      "Popliteus_muscle_1"
+    ]
+  },
+  {
+    "id": "posterior-crico-arytenoid-muscle",
+    "uberon": "UBERON:0008572",
+    "fma": null,
+    "label": "Posterior crico-arytenoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'posterior crico-arytenoid'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_crico-arytenoid_musclel",
+      "Posterior_crico-arytenoid_muscler"
+    ]
+  },
+  {
+    "id": "procerus-muscle",
+    "uberon": "UBERON:0008588",
+    "fma": null,
+    "label": "Procerus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'procerus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Procerus_muscle",
+      "Procerus_muscle_1"
+    ]
+  },
+  {
+    "id": "psoas-major",
+    "uberon": "UBERON:0001298",
+    "fma": null,
+    "label": "Psoas major",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'psoas major muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Psoas_major",
+      "Psoas_major_1"
+    ]
+  },
+  {
+    "id": "pubococcygeus-muscle",
+    "uberon": "UBERON:0011528",
+    "fma": null,
+    "label": "Pubococcygeus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'pubococcygeus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pubococcygeus_musclel",
+      "Pubococcygeus_muscler"
+    ]
+  },
+  {
+    "id": "pyramidalis-muscle",
+    "uberon": "UBERON:0011016",
+    "fma": null,
+    "label": "Pyramidalis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'pyramidalis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pyramidalis_musclel",
+      "Pyramidalis_muscler"
+    ]
+  },
+  {
+    "id": "quadratus-femoris-muscle",
+    "uberon": "UBERON:0008537",
+    "fma": null,
+    "label": "Quadratus femoris muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'quadratus femoris'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Quadratus_femoris_musclel",
+      "Quadratus_femoris_muscler"
+    ]
+  },
+  {
+    "id": "quadratus-lumborum-muscle",
+    "uberon": "UBERON:0001220",
+    "fma": null,
+    "label": "Quadratus lumborum muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'quadratus lumborum'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Quadratus_lumborum_musclel",
+      "Quadratus_lumborum_muscler"
+    ]
+  },
+  {
+    "id": "rectus-abdominis-muscle",
+    "uberon": "UBERON:0002382",
+    "fma": null,
+    "label": "Rectus abdominis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'rectus abdominis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Rectus_abdominis_muscle",
+      "Rectus_abdominis_muscle_1"
+    ]
+  },
+  {
+    "id": "rectus-femoris-muscle",
+    "uberon": "UBERON:0001378",
+    "fma": null,
+    "label": "Rectus femoris muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'rectus femoris'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Rectus_femoris_muscle",
+      "Rectus_femoris_muscle_1"
+    ]
+  },
+  {
+    "id": "risorius-muscle",
+    "uberon": "UBERON:0008598",
+    "fma": null,
+    "label": "Risorius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'risorius muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Risorius_muscle",
+      "Risorius_muscle_1"
+    ]
+  },
+  {
+    "id": "sartorius-muscle",
+    "uberon": "UBERON:0001373",
+    "fma": null,
+    "label": "Sartorius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sartorius muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sartorius_muscle",
+      "Sartorius_muscle_1"
+    ]
+  },
+  {
+    "id": "scalenus-anterior-muscle",
+    "uberon": "UBERON:0008622",
+    "fma": null,
+    "label": "Scalenus anterior muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'scalenus anterior'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Scalenus_anterior_musclel",
+      "Scalenus_anterior_muscler"
+    ]
+  },
+  {
+    "id": "scalenus-medius-muscle",
+    "uberon": "UBERON:0001122",
+    "fma": null,
+    "label": "Scalenus medius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'scalenus medius'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Scalenus_medius_musclel",
+      "Scalenus_medius_muscler"
+    ]
+  },
+  {
+    "id": "scalenus-posterior-muscle",
+    "uberon": "UBERON:0001123",
+    "fma": null,
+    "label": "Scalenus posterior muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'scalenus posterior'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Scalenus_posterior_musclel",
+      "Scalenus_posterior_muscler"
+    ]
+  },
+  {
+    "id": "semimembranosus-muscle",
+    "uberon": "UBERON:0001381",
+    "fma": null,
+    "label": "Semimembranosus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'semimembranosus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Semimembranosus_muscle",
+      "Semimembranosus_muscle_1"
+    ]
+  },
+  {
+    "id": "semispinalis-thoracis-muscle",
+    "uberon": "UBERON:0001407",
+    "fma": null,
+    "label": "Semispinalis thoracis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'semispinalis thoracis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Semispinalis_thoracis_musclel",
+      "Semispinalis_thoracis_muscler"
+    ]
+  },
+  {
+    "id": "semitendinosus-muscle",
+    "uberon": "UBERON:0001375",
+    "fma": null,
+    "label": "Semitendinosus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'semitendinosus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Semitendinosus_muscle",
+      "Semitendinosus_muscle_1"
+    ]
+  },
+  {
+    "id": "short-head-of-biceps-brachii",
+    "uberon": "UBERON:0007169",
+    "fma": null,
+    "label": "Short head of biceps brachii",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'short head of biceps brachii', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Short_head_of_biceps_brachii",
+      "Short_head_of_biceps_brachii_1"
+    ]
+  },
+  {
+    "id": "soleus-muscle",
+    "uberon": "UBERON:0001389",
+    "fma": null,
+    "label": "Soleus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'soleus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Soleus_muscle",
+      "Soleus_muscle_1"
+    ]
+  },
+  {
+    "id": "spinalis-capitis-muscle",
+    "uberon": "UBERON:0011014",
+    "fma": null,
+    "label": "Spinalis capitis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'spinalis capitis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Spinalis_capitis_muscle",
+      "Spinalis_capitis_muscle_1"
+    ]
+  },
+  {
+    "id": "spinalis-thoracis-muscle",
+    "uberon": "UBERON:0001405",
+    "fma": null,
+    "label": "Spinalis thoracis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'spinalis thoracis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Spinalis_thoracis_musclel",
+      "Spinalis_thoracis_muscler"
+    ]
+  },
+  {
+    "id": "splenius-capitis-muscle",
+    "uberon": "UBERON:0000711",
+    "fma": null,
+    "label": "Splenius capitis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'splenius capitis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Splenius_capitis_muscle",
+      "Splenius_capitis_muscle_1"
+    ]
+  },
+  {
+    "id": "sternocleidomastoid-muscle",
+    "uberon": "UBERON:0001128",
+    "fma": null,
+    "label": "Sternocleidomastoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'sternocleidomastoid'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sternocleidomastoid_muscle",
+      "Sternocleidomastoid_muscle_1"
+    ]
+  },
+  {
+    "id": "sternohyoid-muscle",
+    "uberon": "UBERON:0001107",
+    "fma": null,
+    "label": "Sternohyoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sternohyoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sternohyoid_musclel",
+      "Sternohyoid_muscler"
+    ]
+  },
+  {
+    "id": "sternothyroid-muscle",
+    "uberon": "UBERON:0001109",
+    "fma": null,
+    "label": "Sternothyroid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sternothyroid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sternothyroid_musclel",
+      "Sternothyroid_muscler"
+    ]
+  },
+  {
+    "id": "stylohyoid-muscle",
+    "uberon": "UBERON:0008712",
+    "fma": null,
+    "label": "Stylohyoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'stylohyoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Stylohyoid_musclel",
+      "Stylohyoid_muscler"
+    ]
+  },
+  {
+    "id": "stylopharyngeus-muscle",
+    "uberon": "UBERON:0008804",
+    "fma": null,
+    "label": "Stylopharyngeus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'stylopharyngeus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Stylopharyngeus_musclel",
+      "Stylopharyngeus_muscler"
+    ]
+  },
+  {
+    "id": "subclavius-muscle",
+    "uberon": "UBERON:0008779",
+    "fma": null,
+    "label": "Subclavius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'subclavius'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Subclavius_musclel",
+      "Subclavius_muscler"
+    ]
+  },
+  {
+    "id": "subscapularis-muscle",
+    "uberon": "UBERON:0001129",
+    "fma": null,
+    "label": "Subscapularis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'subscapularis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Subscapularis_musclel",
+      "Subscapularis_muscler"
+    ]
+  },
+  {
+    "id": "superficial-part-of-masseter",
+    "uberon": "UBERON:0011140",
+    "fma": null,
+    "label": "Superficial part of masseter",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'superficial part of masseter muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_part_of_masseter",
+      "Superficial_part_of_masseter_1"
+    ]
+  },
+  {
+    "id": "superior-gemellus-muscle",
+    "uberon": "UBERON:0019203",
+    "fma": null,
+    "label": "Superior gemellus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior gemellus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_gemellus_muscle",
+      "Superior_gemellus_muscle_1"
+    ]
+  },
+  {
+    "id": "superior-pharyngeal-constrictor",
+    "uberon": "UBERON:0006329",
+    "fma": null,
+    "label": "Superior pharyngeal constrictor",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior pharyngeal constrictor', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_pharyngeal_constrictorl",
+      "Superior_pharyngeal_constrictorr"
+    ]
+  },
+  {
+    "id": "supinator",
+    "uberon": "UBERON:0003228",
+    "fma": null,
+    "label": "Supinator",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'supinator muscle'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Supinatorl",
+      "Supinatorr"
+    ]
+  },
+  {
+    "id": "supraspinatus-muscle",
+    "uberon": "UBERON:0002383",
+    "fma": null,
+    "label": "Supraspinatus muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'supraspinatus muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Supraspinatus_musclel",
+      "Supraspinatus_muscler"
+    ]
+  },
+  {
+    "id": "temporalis-muscle",
+    "uberon": "UBERON:0001598",
+    "fma": null,
+    "label": "Temporalis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'temporalis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Temporalis_muscle",
+      "Temporalis_muscle_1"
+    ]
+  },
+  {
+    "id": "teres-major-muscle",
+    "uberon": "UBERON:0001478",
+    "fma": null,
+    "label": "Teres major muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'teres major muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Teres_major_musclel",
+      "Teres_major_muscler"
+    ]
+  },
+  {
+    "id": "teres-minor-muscle",
+    "uberon": "UBERON:0010496",
+    "fma": null,
+    "label": "Teres minor muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'teres minor muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Teres_minor_musclel",
+      "Teres_minor_muscler"
+    ]
+  },
+  {
+    "id": "thyrohyoid-muscle",
+    "uberon": "UBERON:0001110",
+    "fma": null,
+    "label": "Thyrohyoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'thyrohyoid muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Thyrohyoid_musclel",
+      "Thyrohyoid_muscler"
+    ]
+  },
+  {
+    "id": "tibialis-anterior-muscle",
+    "uberon": "UBERON:0001385",
+    "fma": null,
+    "label": "Tibialis anterior muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'tibialis anterior'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tibialis_anterior_muscle",
+      "Tibialis_anterior_muscle_1"
+    ]
+  },
+  {
+    "id": "tibialis-posterior-muscle",
+    "uberon": "UBERON:0001667",
+    "fma": null,
+    "label": "Tibialis posterior muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'tibialis posterior'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tibialis_posterior_muscle",
+      "Tibialis_posterior_muscle_1"
+    ]
+  },
+  {
+    "id": "transverse-arytenoid-muscle",
+    "uberon": "UBERON:0008574",
+    "fma": null,
+    "label": "Transverse arytenoid muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'transverse arytenoid'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transverse_arytenoid_muscle"
+    ]
+  },
+  {
+    "id": "transversus-abdominis-muscle",
+    "uberon": "UBERON:0001221",
+    "fma": null,
+    "label": "Transversus abdominis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'transversus abdominis muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transversus_abdominis_musclel",
+      "Transversus_abdominis_muscler"
+    ]
+  },
+  {
+    "id": "transversus-thoracis-muscle",
+    "uberon": "UBERON:0002404",
+    "fma": null,
+    "label": "Transversus thoracis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'transversus thoracis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transversus_thoracis_musclel",
+      "Transversus_thoracis_muscler"
+    ]
+  },
+  {
+    "id": "vastus-intermedius-muscle",
+    "uberon": "UBERON:0014847",
+    "fma": null,
+    "label": "Vastus intermedius muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'vastus intermedius'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vastus_intermedius_muscle",
+      "Vastus_intermedius_muscle_1"
+    ]
+  },
+  {
+    "id": "vastus-lateralis-muscle",
+    "uberon": "UBERON:0001379",
+    "fma": null,
+    "label": "Vastus lateralis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'vastus lateralis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vastus_lateralis_muscle",
+      "Vastus_lateralis_muscle_1"
+    ]
+  },
+  {
+    "id": "vastus-medialis-muscle",
+    "uberon": "UBERON:0001380",
+    "fma": null,
+    "label": "Vastus medialis muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. UBERON's own label is 'vastus medialis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vastus_medialis_muscle",
+      "Vastus_medialis_muscle_1"
+    ]
+  },
+  {
+    "id": "zygomaticus-major-muscle",
+    "uberon": "UBERON:0008593",
+    "fma": null,
+    "label": "Zygomaticus major muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'zygomaticus major muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Zygomaticus_major_muscle",
+      "Zygomaticus_major_muscle_1"
+    ]
+  },
+  {
+    "id": "zygomaticus-minor-muscle",
+    "uberon": "UBERON:0008594",
+    "fma": null,
+    "label": "Zygomaticus minor muscle",
+    "layer": "muscle",
+    "part_of": "muscle",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "muscle-v3-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped muscle GLB (R2 muscle-v3-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'zygomaticus minor muscle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Zygomaticus_minor_muscle",
+      "Zygomaticus_minor_muscle_1"
     ]
   }
 ]

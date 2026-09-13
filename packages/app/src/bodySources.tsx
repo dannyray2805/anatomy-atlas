@@ -149,6 +149,14 @@ function ReferenceAttribution() {
         drawer says they are not mapped to a structure.
       </li>
       <li>
+        Muscle — 132 of this body&apos;s muscles are mapped to their own structures, each id
+        verified by exact label against OLS4. The rest are not mapped, and the reason is the
+        ontology rather than the asset: Uberon does not model a number of them at all as the source
+        names them (extensor indicis, corrugator supercilii) or models them only as part of a named
+        group (a named head or belly, such as the clavicular head of pectoralis major). Those
+        meshes render and click, and the drawer says they are not mapped to a structure.
+      </li>
+      <li>
         A single fixed male reference individual (“Taro”) — a different person from the Visible
         Human donors, and a male body: no female anatomy is shown here, while the viscera layer
         does include that individual&apos;s male reproductive organs. Not per-sex.
@@ -213,9 +221,9 @@ const REFERENCE: BodySourceConfig = {
       Peel down the rail — each stop takes the layers outside it off, so the body opens up from
       skin to nerves. Layers inside the peel point stay as you left them; the heavy systems
       mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi,
-      the brainstem and the bones of the skull, spine, ribs, sternum and limbs are each mapped to
-      a structure; muscle, vessel, hand-and-foot bone and peripheral-nerve names are not mapped
-      yet, so they report “not mapped to a structure”.
+      the brainstem, the bones of the skull, spine, ribs, sternum and limbs, and 132 of this
+      body&apos;s muscles are each mapped to a structure; vessel, hand-and-foot bone and
+      peripheral-nerve names are not mapped yet, so they report “not mapped to a structure”.
     </>
   ),
   attribution: <ReferenceAttribution />
