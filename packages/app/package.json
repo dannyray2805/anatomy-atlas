@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types --test src/structureLookup.test.ts src/layerPicking.test.ts src/layerVisibility.test.ts src/layers.test.ts src/layerTransform.test.ts src/guide.test.ts src/guideEntryPlan.test.ts src/chat.test.ts src/bodySource.test.ts src/peel.test.ts src/theme.test.ts src/anatomyColors.test.ts"
+    "test": "node --experimental-strip-types --test src/structureLookup.test.ts src/layerPicking.test.ts src/layerVisibility.test.ts src/layers.test.ts src/layerTransform.test.ts src/guide.test.ts src/guideEntryPlan.test.ts src/chat.test.ts src/bodySource.test.ts src/peel.test.ts src/theme.test.ts src/anatomyColors.test.ts src/structureIndex.test.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",

@@ -197,6 +197,14 @@ export function StructureDrawer({ pickedName, structure, onClose }: StructureDra
           </p>
         </div>
         <div className="sidebar-action">
+          <button type="button" className="volume-jump" onClick={() => navigate("/structures")}>
+            Browse all documented structures →
+          </button>
+          <p className="note">
+            The full list, with what is still unmapped stated plainly.
+          </p>
+        </div>
+        <div className="sidebar-action">
           <CopyLink />
           <p className="note">
             The link opens this structure on this body — it is the citation for what you are

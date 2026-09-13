@@ -137,6 +137,106 @@ code {
   font-size: 1.45rem;
 }
 
+/* --------------------------------------------------------------------------
+   Structure index (/structures) — the list of everything the atlas documents.
+   Uses only palette variables, so both themes are handled without overrides.
+   -------------------------------------------------------------------------- */
+.idx-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.7rem;
+}
+.idx-summary,
+.idx-legend {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+.idx-summary {
+  margin: 0 0 0.6rem;
+}
+.idx-legend {
+  margin: 0 0 1.4rem;
+  padding: 0.6rem 0.85rem;
+  border-left: 2px solid var(--line);
+  color: var(--faint);
+  font-size: 0.84rem;
+}
+.idx-legend strong {
+  color: var(--muted);
+}
+.idx-group {
+  margin: 0 0 1.5rem;
+}
+.idx-group__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.05rem;
+}
+.idx-group__count {
+  color: var(--faint);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+.idx-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 0.15rem 1.4rem;
+}
+.idx-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.idx-item__link {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.idx-item__link:hover {
+  border-bottom-color: var(--amber);
+}
+.idx-item__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  color: var(--faint);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+.idx-item__meta code {
+  color: var(--faint);
+}
+.idx-item__bodies {
+  color: var(--muted);
+}
+/* Only shown when an entry has no card, so the list never implies more depth than exists. */
+.idx-item__flag {
+  color: var(--amber);
+}
+.idx-foot {
+  margin: 1.6rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+.idx-foot a {
+  color: var(--muted);
+}
+
 /* Data disclosure banner (used by HoaVolume; BodyPage uses lab context instead) */
 .banner {
   margin: 0.7rem 0 1rem;

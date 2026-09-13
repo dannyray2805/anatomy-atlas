@@ -21,6 +21,7 @@ import {
 } from "./bodySource";
 import { BODY_SOURCES, type BodySourceConfig } from "./bodySources";
 import { lookupStructure } from "./structureLookup";
+import { indexSummary } from "./structureIndex";
 import { guideStepOrder, type GuideStepKey } from "./guide";
 import { useGuidedPeel } from "./useGuidedPeel";
 import { SEX_LABELS, type Sex } from "./sex";
@@ -121,6 +122,9 @@ export function BodyPage() {
 
   const hasOpacity = configuredLayers.includes("organ");
   const primaryBanner = config.banners[0];
+  // Stated from the graph rather than written as a literal, so the footer cannot drift from what
+  // the index actually lists.
+  const documentedCount = indexSummary(structures).documented;
 
   // The guided journey needs a real outer->inner peel AND mapped stops. Only the donor bodies
   // have both; on the reference body it is not offered rather than shown as theatre.
@@ -269,17 +273,20 @@ export function BodyPage() {
     );
   }, [structure, config]);
 
-  // A shared link names a structure, which may sit on a layer this body starts with hidden (the
-  // reference body's viscera do). Reveal that layer, or the link would open the right entry over a
-  // body that is not showing it.
+  // A shared link names a structure that may sit behind layers this body shows by default (the
+  // reference body's viscera are behind skin, muscle and skeleton). Merely switching its layer on
+  // would leave it hidden, so the link PEELS to that layer instead — the same rule the rail
+  // applies, so the rail then shows exactly what happened and the structure is really on screen.
   const linkedStructure = useMemo(
     () => (initialView.structure ? structures.find((s) => s.id === initialView.structure) : undefined),
     [initialView.structure]
   );
+  const linkPeeled = useRef(false);
   useEffect(() => {
-    if (!linkedStructure?.layer) return;
-    setVisibleLayers((prev) => (prev[linkedStructure.layer] ? prev : { ...prev, [linkedStructure.layer]: true }));
-  }, [linkedStructure]);
+    if (linkPeeled.current || !linkedStructure?.layer) return;
+    linkPeeled.current = true;
+    setVisibleLayers((prev) => peelTo(layers, linkedStructure.layer, prev));
+  }, [linkedStructure, layers]);
 
   // Once the scene reports what it actually mounted, swap the linked structure id for the concrete
   // mesh name that resolves to it. That is exactly what a click produces, so the part highlights
@@ -594,6 +601,7 @@ export function BodyPage() {
             <p>{COLOR_DISCLOSURE}</p>
             <h4>Deep dives</h4>
             <p>
+              <Link to="/structures">All {documentedCount} documented structures →</Link>{" "}
               <Link to="/volume">Heart tissue volume (donor S-20-29) →</Link>{" "}
               <Link to="/slices">Visible Human cross-sections →</Link>
             </p>

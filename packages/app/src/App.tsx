@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react
 import { BodyPage } from "./BodyPage";
 import { HoaVolume } from "./components/HoaVolume";
 import { SliceViewer } from "./components/SliceViewer";
+import { StructuresPage } from "./StructuresPage";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { DEFAULT_THEME, THEME_STORAGE_KEY, nextTheme, parseTheme, type Theme } from "./theme";
 
@@ -33,6 +34,12 @@ function readStoredTheme(): Theme {
  * which body and which structure are open (see BodyPage).
  */
 const ROUTE_META: Record<string, { title: string; description: string }> = {
+  // The body pane owns "/" (it knows which structure is open), so it is not listed here.
+  "/structures": {
+    title: "All structures — Anatomy Atlas",
+    description:
+      "Every structure this atlas documents, by body system, with its Uberon identifier and the body that carries it. Each entry is a link you can share."
+  },
   "/volume": {
     title: "Heart tissue volume (S-20-29) — Anatomy Atlas",
     description:
@@ -80,6 +87,7 @@ function Shell() {
       </header>
       <Routes>
         <Route path="/" element={<BodyPage />} />
+        <Route path="/structures" element={<StructuresPage />} />
         <Route
           path="/volume"
           element={
