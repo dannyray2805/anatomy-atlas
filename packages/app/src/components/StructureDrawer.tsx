@@ -11,6 +11,31 @@ type StructureDrawerProps = {
 };
 
 /**
+ * Copy the current URL, which BodyPage keeps naming the open structure. A button rather than an
+ * automatic clipboard write: a copy nobody asked for is a surprise, and the browser can refuse it.
+ */
+function CopyLink() {
+  const [copied, setCopied] = useState(false);
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1600);
+    } catch {
+      // Clipboard unavailable (insecure origin, or permission denied). Leaving the label as it was
+      // is honest — a "copied" message that did not copy would be worse than nothing.
+    }
+  }
+
+  return (
+    <button type="button" className="volume-jump" onClick={copy}>
+      {copied ? "Link copied" : "Copy link to this structure"}
+    </button>
+  );
+}
+
+/**
  * Citation-bounded tutor (Worker POST /api/chat). There is deliberately no free-form chat box: a
  * question is always scoped to the structure whose card is open, and the Worker refuses — never
  * invents — anything the published card does not answer.
@@ -169,6 +194,13 @@ export function StructureDrawer({ pickedName, structure, onClose }: StructureDra
           <p className="note">
             NLM Visible Human cryosection slices (0.33&nbsp;mm/pixel) — body-context images, not a
             labelled structure map.
+          </p>
+        </div>
+        <div className="sidebar-action">
+          <CopyLink />
+          <p className="note">
+            The link opens this structure on this body — it is the citation for what you are
+            looking at.
           </p>
         </div>
       </div>

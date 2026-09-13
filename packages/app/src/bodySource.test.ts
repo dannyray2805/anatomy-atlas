@@ -5,8 +5,10 @@ import {
   BODY_SOURCE_ORDER,
   DEFAULT_BODY_SOURCE,
   bodySourceFromQuery,
+  buildShareQuery,
   isDonorSource,
   resolveSource,
+  shareStateFromQuery,
   sourceSex
 } from "./bodySource.ts";
 
@@ -56,5 +58,58 @@ describe("bodySource (which individual the pane is showing)", () => {
       assert.ok(BODY_SOURCE_LABELS[source].length > 0, `missing label for ${source}`);
     }
     assert.equal(new Set(BODY_SOURCE_ORDER).size, BODY_SOURCE_ORDER.length);
+  });
+});
+
+describe("shareable view state (?body= and ?structure=)", () => {
+  it("reads the default view from an empty query", () => {
+    assert.deepEqual(shareStateFromQuery(""), { source: "reference", structure: null });
+    assert.deepEqual(shareStateFromQuery("?"), { source: "reference", structure: null });
+  });
+
+  it("reads a body and a structure", () => {
+    assert.deepEqual(shareStateFromQuery("?body=donor-female&structure=uterus"), {
+      source: "donor-female",
+      structure: "uterus"
+    });
+  });
+
+  it("falls back to the default body for an unknown one, without losing the structure", () => {
+    // A hand-edited or outdated link should still open the structure it names.
+    assert.deepEqual(shareStateFromQuery("?body=donor-alien&structure=liver"), {
+      source: "reference",
+      structure: "liver"
+    });
+  });
+
+  it("treats a blank structure as no structure", () => {
+    assert.equal(shareStateFromQuery("?structure=").structure, null);
+    assert.equal(shareStateFromQuery("?structure=%20%20").structure, null);
+  });
+
+  it("tolerates extra unrelated parameters", () => {
+    assert.deepEqual(shareStateFromQuery("?utm_source=x&body=donor-male&structure=brain&align=1"), {
+      source: "donor-male",
+      structure: "brain"
+    });
+  });
+
+  it("omits the default body, so the default view is the bare URL", () => {
+    assert.equal(buildShareQuery({ source: "reference", structure: null }), "");
+    assert.equal(buildShareQuery({ source: "donor-male", structure: null }), "?body=donor-male");
+    assert.equal(buildShareQuery({ source: "reference", structure: "liver" }), "?structure=liver");
+  });
+
+  it("emits a stable parameter order, so the same view is always the same string", () => {
+    // The caller compares this against the current URL to decide whether to write history at all;
+    // an unstable order would make it rewrite the address bar on every render.
+    const a = buildShareQuery({ source: "donor-female", structure: "uterus" });
+    assert.equal(a, buildShareQuery({ source: "donor-female", structure: "uterus" }));
+    assert.equal(a, "?body=donor-female&structure=uterus");
+  });
+
+  it("round-trips through the parser", () => {
+    const state = { source: "donor-female" as const, structure: "fallopian-tube" };
+    assert.deepEqual(shareStateFromQuery(buildShareQuery(state)), state);
   });
 });

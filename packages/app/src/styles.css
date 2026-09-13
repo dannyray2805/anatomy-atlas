@@ -1259,8 +1259,69 @@ code {
 }
 
 @media (max-width: 700px) {
-  /* Keep the canvas uncluttered on small screens; camera rail is touch-draggable anyway. */
+  /*
+    The camera presets are NOT reproducible by dragging — a drag cannot snap to a canonical view —
+    so they stay on small screens rather than being hidden. They move off the right-edge rail,
+    where they would sit under the hand holding the phone, to a row in the bottom cluster.
+
+    This is done by making the stage a bottom-anchored column: the two glasses become flow items
+    (the canvas, the body switch, the search box and the hint are all `position: absolute`, so they
+    stay out of flow and keep their own placement). Stacking them in flow is what makes this robust
+    — the rail wraps to a different height per body, so any fixed `bottom` offset would collide.
+  */
+  .lab-stage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.7rem;
+  }
+  .glass--peel,
   .glass--camera {
+    position: static;
+    transform: none;
+    /*
+      Without this the glass grows to fit the nowrap rail's min-content width — the rail measured
+      627 px inside a 390 px viewport, and the stage's `overflow: hidden` then CLIPPED the stops
+      rather than letting them scroll. min-width: 0 lets the glass be narrower than its content, so
+      the rail scrolls as intended.
+    */
+    min-width: 0;
+    max-width: 100%;
+  }
+  .glass--camera {
+    align-self: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem;
+  }
+  /* The body's identity is already spelled out in the Body control above; repeating it here costs
+     a line of a phone screen for nothing. */
+  .peel-who {
+    display: none;
+  }
+  /*
+    One scrolling row instead of the four it wraps into. Once the stops are fingertip-sized the
+    wrapped rail took ~300 px — over a third of a 390 px screen given to chrome, with the body
+    pushed behind it. A scrolling chip rail is the familiar pattern for this and keeps the
+    anatomy visible.
+  */
+  .peel-rail {
+    /*
+      width:100% matters: the rail is a flex item in a COLUMN container, so it sizes to its own
+      max-content width rather than stretching — at 390 px that measured 627 px, and the stage's
+      `overflow: hidden` then clipped the last three stops instead of scrolling to them.
+    */
+    width: 100%;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .peel-rail::-webkit-scrollbar {
     display: none;
   }
   .glass--search {
@@ -1268,5 +1329,41 @@ code {
   }
   .glass--search input {
     width: 108px;
+  }
+}
+
+/*
+  Touch sizing (2026-09-13). The chrome above is sized for a mouse pointer: a peel pill is about
+  26 px tall, which is under every platform's minimum touch target (44 px), making the body switch
+  and the peel rail fiddly to hit on a phone. Keyed on `pointer: coarse` rather than on width on
+  purpose — what matters is that the input is a fingertip, not how wide the window is, so a narrow
+  desktop window keeps the compact chrome while a large tablet gets the bigger targets.
+*/
+@media (pointer: coarse) {
+  .pill,
+  .pill--sm,
+  .chip,
+  .theme-toggle,
+  .volume-jump,
+  .drawer-close {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .glass--search input {
+    min-height: 2.75rem;
+  }
+  /* A range input's box is only as tall as its track (~16 px), so the thumb is hard to grab with a
+     thumb. Growing the element grows the hit area even though the track stays thin. */
+  input[type="range"] {
+    min-height: 2.75rem;
+  }
+  .lab-notes__bar {
+    min-height: 2.75rem;
+  }
+  /* Keep a fingertip's gap between adjacent stops on the peel rail. */
+  .peel-rail {
+    gap: 0.28rem;
   }
 }

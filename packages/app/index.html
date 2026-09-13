@@ -3,7 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anatomy Atlas</title>
+    <title>Anatomy Atlas — one body, peeled and clickable</title>
+    <!--
+      These tags are what a shared or indexed link shows, so they state the product's actual
+      position rather than marketing it: one real individual per body, every claim sourced from a
+      named dataset, and nothing filled in where a source is missing. BodyPage rewrites the title
+      and description once a structure is open, so a link says what it points at.
+
+      og:image and og:url are ABSOLUTE on purpose — several crawlers will not resolve a relative
+      one. If this site moves to a custom domain, these two are what must change.
+    -->
+    <meta
+      name="description"
+      content="A 3D anatomy atlas built on real donor scans. Peel the body layer by layer and click any part for an entry that cites its source — one individual per body, never a composite, and nothing invented where a source is missing."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0a0e16" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anatomy Atlas" />
+    <meta property="og:url" content="https://anatomy-atlas-5ca.pages.dev/" />
+    <meta property="og:title" content="Anatomy Atlas — one body, peeled and clickable" />
+    <meta
+      property="og:description"
+      content="Peel the body layer by layer and click any part for an entry that cites its source. One real individual per body, never a composite — and nothing invented where a source is missing."
+    />
+    <meta property="og:image" content="https://anatomy-atlas-5ca.pages.dev/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anatomy Atlas — one body, peeled and clickable" />
+    <meta
+      name="twitter:description"
+      content="Peel the body layer by layer and click any part for an entry that cites its source. One real individual per body, never a composite."
+    />
+    <meta name="twitter:image" content="https://anatomy-atlas-5ca.pages.dev/og.jpg" />
   </head>
   <body>
     <div id="root"></div>

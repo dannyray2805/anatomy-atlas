@@ -76,6 +76,52 @@ export function bodySourceFromQuery(value: string | null | undefined): BodySourc
   return DEFAULT_BODY_SOURCE;
 }
 
+/**
+ * The pane's shareable view state: which body, and which structure is open.
+ *
+ * WHY THIS EXISTS: the body control and the structure drawer are reachable only by clicking, so
+ * before this the address bar never changed — you could not send anyone "the female donor's
+ * uterus", or even "the donor body", and a reload dropped you back at the default. A reference
+ * resource that cannot be linked to is much harder to cite, and citation is the point of this one
+ * (see docs/review-log.md). `?structure=` makes a structure citable.
+ *
+ * A structure is identified by its register id (e.g. `liver`), never by a mesh node name: node
+ * names are per-asset and per-donor (`VH_F_body_of_uterus`), so a link built from one would only
+ * work on one body of one person.
+ */
+export type ShareState = {
+  source: BodySource;
+  /** A structure id, or null when nothing is open. */
+  structure: string | null;
+};
+
+/**
+ * Parse the view from a query string. Defensive like `bodySourceFromQuery`: these values arrive
+ * from links people typed, truncated or hand-edited, so anything unrecognised falls back rather
+ * than throwing.
+ */
+export function shareStateFromQuery(search: string): ShareState {
+  const params = new URLSearchParams(search);
+  const structure = params.get("structure");
+  return {
+    source: bodySourceFromQuery(params.get("body")),
+    structure: structure && structure.trim() ? structure.trim() : null
+  };
+}
+
+/**
+ * Build the query string for a view. The default body is omitted, so a link to the default view
+ * stays the bare URL, and the parameter order is fixed — that is what lets the caller compare this
+ * against the current URL and skip a redundant history write on every render.
+ */
+export function buildShareQuery(state: ShareState): string {
+  const params = new URLSearchParams();
+  if (state.source !== DEFAULT_BODY_SOURCE) params.set("body", state.source);
+  if (state.structure) params.set("structure", state.structure);
+  const query = params.toString();
+  return query ? `?${query}` : "";
+}
+
 /** Resolve a source id against the configured list, falling back to the first configured one. */
 export function resolveSource<T extends { id: BodySource }>(
   configs: readonly T[],

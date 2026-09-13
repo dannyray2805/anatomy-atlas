@@ -27,6 +27,24 @@ function readStoredTheme(): Theme {
   }
 }
 
+/**
+ * Document title and description per route, so a shared or indexed link says what that page is.
+ * The root path is deliberately absent: the body pane owns its own title, because only it knows
+ * which body and which structure are open (see BodyPage).
+ */
+const ROUTE_META: Record<string, { title: string; description: string }> = {
+  "/volume": {
+    title: "Heart tissue volume (S-20-29) — Anatomy Atlas",
+    description:
+      "The whole-heart HiP-CT volume of donor S-20-29, viewed live in its own viewer (DOI 10.15151/ESRF-DC-1773964017, 19.89 µm/voxel, CC BY 4.0). A fixed ex-vivo organ: camera motion only."
+  },
+  "/slices": {
+    title: "Visible Human cross-sections — Anatomy Atlas",
+    description:
+      "Cryosection slices through the Visible Human body (NLM, 0.33 mm/pixel) — body-context images for orientation, not a labelled structure map."
+  }
+};
+
 function Shell() {
   const { pathname } = useLocation();
   const [theme, setTheme] = useState<Theme>(readStoredTheme);
@@ -43,6 +61,13 @@ function Shell() {
       // Storage unavailable; the theme still applies for this session.
     }
   }, [theme]);
+
+  useEffect(() => {
+    const meta = ROUTE_META[pathname];
+    if (!meta) return;
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", meta.description);
+  }, [pathname]);
 
   return (
     <div className="app">

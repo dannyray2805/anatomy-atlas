@@ -12,7 +12,13 @@ import { StructureDrawer } from "./components/StructureDrawer";
 import { COLOR_DISCLOSURE } from "./anatomyColors";
 import { allSystemsShown, applyVisibility, setSystemsVisibility, systemLayers } from "./layerVisibility";
 import { isPeeled, peelStops, peelTo, restorePeel, type PeelStopState } from "./peel";
-import { bodySourceFromQuery, resolveSource, sourceSex, type BodySource } from "./bodySource";
+import {
+  buildShareQuery,
+  resolveSource,
+  shareStateFromQuery,
+  sourceSex,
+  type BodySource
+} from "./bodySource";
 import { BODY_SOURCES, type BodySourceConfig } from "./bodySources";
 import { lookupStructure } from "./structureLookup";
 import { guideStepOrder, type GuideStepKey } from "./guide";
@@ -62,10 +68,10 @@ function peelTitle(state: PeelStopState, label: string): string {
  * colours in anatomyColors.ts (all testable without React).
  */
 export function BodyPage() {
-  const [source, setSource] = useState<BodySource>(() =>
-    bodySourceFromQuery(new URLSearchParams(window.location.search).get("body"))
-  );
-  const [pickedName, setPickedName] = useState<string | null>(null);
+  // Read the shareable view ONCE, from the URL, so a link opens exactly what it describes.
+  const [initialView] = useState(() => shareStateFromQuery(window.location.search));
+  const [source, setSource] = useState<BodySource>(initialView.source);
+  const [pickedName, setPickedName] = useState<string | null>(initialView.structure);
   const [opacity, setOpacity] = useState(1);
   // Explicit show/hide choice per anatomical layer, recorded only when the user peels. Absent
   // keys fall back to the layer's own default (see layerVisibility.ts).
@@ -219,7 +225,16 @@ export function BodyPage() {
 
   // A different body is a different set of GLBs and a different person: reset the peel, the
   // selection and the readiness gate so nothing from the previous individual leaks across.
+  //
+  // Skipped on the first render: this effect also fires on mount, where it would wipe the
+  // structure a shared link had just opened.
+  const prevSource = useRef<BodySource | null>(null);
   useEffect(() => {
+    if (prevSource.current === null || prevSource.current === source) {
+      prevSource.current = source;
+      return;
+    }
+    prevSource.current = source;
     setVisibleLayers({});
     setPickedName(null);
     setInventory([]);
@@ -228,6 +243,58 @@ export function BodyPage() {
     setOpacity(1);
     setSceneReady(false);
   }, [source]);
+
+  // Keep the address bar in step with the view, so whatever is on screen can be linked to. Only a
+  // RESOLVED structure id is written — a raw mesh node name would be per-asset and per-donor, i.e.
+  // a link that only works while looking at one body of one person. replaceState rather than
+  // pushState: the URL describes the current view, it is not a navigation history to walk back.
+  const structureId = structure?.id ?? null;
+  useEffect(() => {
+    const next = `${window.location.pathname}${buildShareQuery({ source, structure: structureId })}`;
+    const current = `${window.location.pathname}${window.location.search}`;
+    if (next !== current) window.history.replaceState(null, "", next);
+  }, [source, structureId]);
+
+  // The pane owns the document title on "/" (App's route table deliberately skips it), so a tab or
+  // a shared preview names what is actually open instead of a generic product name.
+  useEffect(() => {
+    document.title = structure
+      ? `${structure.label} — Anatomy Atlas`
+      : "Anatomy Atlas — one body, peeled and clickable";
+    document.querySelector('meta[name="description"]')?.setAttribute(
+      "content",
+      structure
+        ? `${structure.label}${structure.uberon ? ` (${structure.uberon})` : ""} on the ${config.label.toLowerCase()} — its sourced entry, on a body you can peel layer by layer and click.`
+        : `${config.who} — peel the body layer by layer and click any structure for an entry that cites its source.`
+    );
+  }, [structure, config]);
+
+  // A shared link names a structure, which may sit on a layer this body starts with hidden (the
+  // reference body's viscera do). Reveal that layer, or the link would open the right entry over a
+  // body that is not showing it.
+  const linkedStructure = useMemo(
+    () => (initialView.structure ? structures.find((s) => s.id === initialView.structure) : undefined),
+    [initialView.structure]
+  );
+  useEffect(() => {
+    if (!linkedStructure?.layer) return;
+    setVisibleLayers((prev) => (prev[linkedStructure.layer] ? prev : { ...prev, [linkedStructure.layer]: true }));
+  }, [linkedStructure]);
+
+  // Once the scene reports what it actually mounted, swap the linked structure id for the concrete
+  // mesh name that resolves to it. That is exactly what a click produces, so the part highlights
+  // and the camera flies to it; both names resolve to the same row, so the drawer does not flicker
+  // and the URL is unchanged by the swap.
+  const followedLink = useRef(false);
+  useEffect(() => {
+    if (followedLink.current || !linkedStructure || !sceneReady) return;
+    const hit = inventory.find((i) => i.structureId === linkedStructure.id);
+    if (!hit) return;
+    followedLink.current = true;
+    setPickedName(hit.name);
+    setSearch(hit.label);
+    viewerRef.current?.flyToName(hit.name);
+  }, [linkedStructure, sceneReady, inventory]);
 
   return (
     <div className="lab-page">
