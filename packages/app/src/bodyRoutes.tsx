@@ -130,10 +130,10 @@ export function ReferenceAtlasPage() {
       note={() => (
         <>
           Switch a system on to load it (they are the larger layers, so they load on demand).
-          Organs, the brainstem and the spleen/thymus are mapped to structures, so clicking those
-          opens their entry; bone, muscle, vessel and peripheral-nerve names are not mapped yet,
-          and those clicks show “not in this dataset”. The VH body peel (skin + organs, per sex)
-          is on the Visible Human body tab.
+          The organs, their ducts and tubes, the brainstem, the spleen and the thymus are mapped
+          to structures, so those clicks open an entry; bone, muscle, vessel and peripheral-nerve
+          names are not mapped yet and still show “not in this dataset”. The VH body peel (skin +
+          organs, per sex) is on the Visible Human body tab.
         </>
       )}
     />
