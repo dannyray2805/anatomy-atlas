@@ -1,11 +1,12 @@
 ---
 id: urethra
 uberon: UBERON:0000057
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-urethra"
 ---
@@ -37,3 +38,6 @@ citations:
 - One mesh node, arriving as a converted curve tube rather than a modelling mesh (z-anatomy).
 - That source models one male individual, so the mesh is his urethra — the longer male form of the
   canal Uberon describes above. The same layer also carries his reproductive organs (z-anatomy).
+- Present in the Visible Human MALE donor body only, as two named meshes (hubmap-hra-glb). The
+  female donor's published set has no urethra asset, so on her body this structure is not shown and
+  is never substituted.

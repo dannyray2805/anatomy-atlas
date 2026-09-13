@@ -1,11 +1,12 @@
 ---
 id: spleen
 uberon: UBERON:0002106
-reviewed: false
-reviewer: null
-date: 2026-09-12
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-spleen"
 ---
@@ -33,3 +34,5 @@ citations:
   retopologised BodyParts3D derivative) (z-anatomy).
 - The Z-Anatomy lymphoid collection holds the node groups, the palatine tonsils, the thymus lobes
   and the spleen; it does not include lymphatic vessels (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as five named meshes each — the gastric,
+  diaphragmatic, colic and renal surfaces and the hilum (hubmap-hra-glb).

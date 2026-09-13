@@ -1,9 +1,9 @@
 ---
 id: aorta-ascending
 uberon: UBERON:0001496
-reviewed: false
-reviewer: null
-date: 2026-09-05
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "hubmap-hra-glb"
   - "uberon"

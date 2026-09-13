@@ -1,11 +1,12 @@
 ---
 id: ureter
 uberon: UBERON:0000056
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-ureter"
 ---
@@ -37,3 +38,8 @@ citations:
   retopologised BodyParts3D derivative) (z-anatomy).
 - Two mesh nodes, one per side, each arriving as a converted curve tube rather than a modelling mesh
   (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as one mesh per side in each, named
+  `VH_M_ureter_L`/`.R` and `VH_F_left_ureter`/`VH_F_right_ureter` — note the two sources word
+  the names differently (hubmap-hra-glb).
+- The renal pelvis, calyces and papillae that ship inside those same ureter assets are NOT mapped
+  here: they belong to the kidney, and they open the `kidney` entry instead (hubmap-hra-glb).

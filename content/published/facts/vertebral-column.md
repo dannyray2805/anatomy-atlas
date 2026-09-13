@@ -1,10 +1,11 @@
 ---
 id: vertebral-column
 uberon: UBERON:0001130
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
+  - "z-anatomy"
   - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-spinal-column"

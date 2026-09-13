@@ -1,11 +1,12 @@
 ---
 id: bronchus
 uberon: UBERON:0002185
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-bronchus"
 ---
@@ -44,3 +45,7 @@ citations:
 - Each of the 28 arrives as a converted curve tube rather than a modelling mesh (z-anatomy).
 - Nothing below the segmental bronchi is mapped: that source carries no bronchiole or alveolar
   meshes at all (z-anatomy).
+- Present in BOTH Visible Human donor bodies — 29 named meshes on the male body and 28 on the
+  female body, covering the main, lobar and segmental bronchi (hubmap-hra-glb).
+- The cartilage within the bronchial wall is mapped to this structure too, because it is part of
+  the bronchus rather than a structure of its own (hubmap-hra-glb).

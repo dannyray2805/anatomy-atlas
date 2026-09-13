@@ -1,11 +1,12 @@
 ---
 id: trachea
 uberon: UBERON:0003126
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-trachea"
 ---
@@ -34,5 +35,10 @@ citations:
 
 - Present in the Reference Atlas body — one fixed male reference individual (Z-Anatomy, a
   retopologised BodyParts3D derivative) (z-anatomy).
-- That source contains no larynx mesh at all, so the trachea is the only airway structure mapped from
-the neck above it; the epiglottis is a separate mesh and is not mapped (z-anatomy).
+- That source contains no larynx mesh at all, so the trachea is the only airway structure mapped
+  from it; the epiglottis is a separate mesh and is not mapped (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as three named meshes each — the trachea, the
+  carina and the cartilage of the tracheal wall (hubmap-hra-glb).
+- The same donor asset also carries the laryngeal cartilages, which are NOT mapped to this
+  structure: the larynx is not in the published graph, so clicking them opens no entry
+  (hubmap-hra-glb).

@@ -1,11 +1,12 @@
 ---
 id: jejunum
 uberon: UBERON:0002115
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-jejunum"
 ---
@@ -38,3 +39,5 @@ citations:
   source also carries a `Duodenum` mesh, which has no structure row yet, and it contains no ileum
   mesh at all; its other intestinal tubes are the ascending, transverse, descending and sigmoid
   colon (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as a single mesh each — the source spells it
+  `jejenum`, which is reported here exactly as published (hubmap-hra-glb).

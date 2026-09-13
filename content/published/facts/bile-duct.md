@@ -1,11 +1,12 @@
 ---
 id: bile-duct
 uberon: UBERON:0002394
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-bile-duct"
 ---
@@ -37,3 +38,7 @@ citations:
 - One mesh node, arriving as a converted curve tube rather than a modelling mesh (z-anatomy).
 - The source also carries a project-typed object named `Extrahepatic bile ducts.j`. It holds no
   surface geometry, so it ships as a node without a mesh and is not mapped (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as a single mesh each — the common bile duct
+  (hubmap-hra-glb).
+- Not to be confused with `hepatic-duct` (UBERON:0005171) or `cystic-duct` (UBERON:0001152),
+  which are separate rows (hubmap-hra-glb).

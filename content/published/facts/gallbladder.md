@@ -1,11 +1,12 @@
 ---
 id: gallbladder
 uberon: UBERON:0002110
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-gallbladder"
 ---
@@ -34,3 +35,4 @@ citations:
 
 - Present in the Reference Atlas body — one fixed male reference individual (Z-Anatomy, a
   retopologised BodyParts3D derivative) (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as a single mesh in each (hubmap-hra-glb).

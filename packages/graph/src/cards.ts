@@ -90,7 +90,7 @@ export function registerSourceIds(registerMarkdown: string): Set<string> {
   return ids;
 }
 
-export type CardFile = { file: string; frontmatter: CardFrontmatter };
+export type CardFile = { file: string; frontmatter: CardFrontmatter; body: string };
 
 /** Read and parse every card in a directory. Throws with the filename on any parse failure. */
 export function readCards(factsDir: string): CardFile[] {
@@ -102,11 +102,31 @@ export function readCards(factsDir: string): CardFile[] {
       try {
         const { block, body } = splitCard(text);
         if (!body.trim()) throw new Error("empty body");
-        return { file, frontmatter: parseCardFrontmatter(block) };
+        return { file, frontmatter: parseCardFrontmatter(block), body };
       } catch (e) {
         throw new Error(`${file}: ${(e as Error).message}`);
       }
     });
+}
+
+/**
+ * The citation keys a card actually cites in its body, e.g. `(uberon)` or
+ * `(z-anatomy, hubmap-hra-glb)`.
+ *
+ * Only tokens that are REAL register keys are returned, so ordinary parentheses such as
+ * `(UBERON:0000948)`, `(layer \`organ\`)` or `(e.g. the lungs)` are never mistaken for citations.
+ * That makes this check precise: it fires only when a card attributes a claim to a source it does
+ * not declare, which is otherwise invisible — the citation renders, but it resolves to nothing.
+ */
+export function inBodyCitationKeys(body: string, register: Set<string>): string[] {
+  const keys = new Set<string>();
+  for (const match of body.matchAll(/\(([^()\n]+)\)/g)) {
+    for (const part of match[1].split(",")) {
+      const token = part.trim().replace(/\.$/, "");
+      if (register.has(token)) keys.add(token);
+    }
+  }
+  return [...keys];
 }
 
 /**
@@ -130,13 +150,22 @@ export function validateCards(opts: {
   const register = registerSourceIds(readFileSync(opts.sourcesPath, "utf8"));
   const byId = new Map(cards.map((c) => [c.frontmatter.id, c]));
 
-  for (const { file, frontmatter } of cards) {
+  for (const { file, frontmatter, body } of cards) {
     if (`${frontmatter.id}.md` !== file) {
       errors.push(`${file}: frontmatter id "${frontmatter.id}" does not match the filename`);
     }
     const unknown = frontmatter.citations.filter((c) => !register.has(c));
     if (unknown.length) {
       errors.push(`${file}: citation key(s) not in docs/sources.md: ${unknown.join(", ")}`);
+    }
+    // A key cited in the body but absent from the frontmatter resolves to nothing: the reader sees
+    // an attribution, the register lookup sees nothing. Caught here because it is invisible in the
+    // rendered card and the deploy smoke only checks that the card is reachable.
+    const undeclared = inBodyCitationKeys(body, register).filter(
+      (c) => !frontmatter.citations.includes(c)
+    );
+    if (undeclared.length) {
+      errors.push(`${file}: body cites key(s) the card does not declare: ${undeclared.join(", ")}`);
     }
   }
 

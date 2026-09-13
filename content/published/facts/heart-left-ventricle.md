@@ -1,9 +1,9 @@
 ---
 id: heart-left-ventricle
 uberon: UBERON:0002084
-reviewed: false
-reviewer: null
-date: 2026-09-01
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "hubmap-asctb-heart"
   - "hoa-heart-S-20-29"
@@ -19,7 +19,7 @@ citations:
 
 - `VH_M_heart_left_ventricle` is listed on the same male HRA heart 3D reference object as `VH_M_heart` (UBERON:0000948) (hubmap-asctb-heart).
 
-## Source volume
+## Presence
 
 - Visible in the S-20-29 whole-heart HiP-CT volume: DOI `10.15151/ESRF-DC-1773964017`, 19.89 µm/voxel (hoa-heart-S-20-29).
-- This volume is not a left-ventricle segmentation.
+- This volume is not a left-ventricle segmentation (hoa-heart-S-20-29).

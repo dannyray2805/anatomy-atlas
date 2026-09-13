@@ -1,8 +1,11 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { dirname, resolve } from "node:path";
+import { mkdtempSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  inBodyCitationKeys,
   parseCardFrontmatter,
   readCards,
   registerSourceIds,
@@ -87,5 +90,60 @@ describe("validateCards", () => {
     assert.ok(fm.citations.length > 0);
     const register = registerSourceIds("| id | name |\n|---|---|\n| something-else | x |");
     assert.equal(register.has(fm.citations[0]), false);
+  });
+});
+
+describe("inBodyCitationKeys", () => {
+  const register = new Set(["uberon", "z-anatomy", "hubmap-hra-glb"]);
+
+  it("returns only tokens that are real register keys", () => {
+    // Ordinary parentheses must never be mistaken for citations, or the check below would be
+    // unusable on real cards (they are full of (UBERON:...) and (layer `organ`) asides).
+    const body = [
+      "- A claim (uberon).",
+      "- An ascription (UBERON:0000948) in the (layer `organ`) sense (e.g. the lungs)."
+    ].join("\n");
+    assert.deepEqual(inBodyCitationKeys(body, register), ["uberon"]);
+  });
+
+  it("handles a parenthesised list of several keys", () => {
+    const keys = inBodyCitationKeys("- A claim (z-anatomy, hubmap-hra-glb).", register);
+    assert.deepEqual(keys.sort(), ["hubmap-hra-glb", "z-anatomy"]);
+  });
+
+  it("ignores a register key that the card never cites", () => {
+    assert.deepEqual(inBodyCitationKeys("- A claim (uberon).", register), ["uberon"]);
+  });
+});
+
+describe("validateCards: body citations must be declared", () => {
+  function withTempCard(cardMarkdown: string): string[] {
+    const dir = mkdtempSync(join(tmpdir(), "atlas-cards-"));
+    writeFileSync(join(dir, "x.md"), cardMarkdown);
+    // Deliberately NOT named *.md: readCards() reads every .md in the facts dir as a card, so a
+    // register file living there would be parsed as one.
+    const sourcesPath = join(dir, "sources.txt");
+    writeFileSync(sourcesPath, "| id | name |\n|---|---|\n| uberon | Uberon |\n| z-anatomy | Z-Anatomy |\n");
+    const base = loadGraph()[0];
+    return validateCards({
+      factsDir: dir,
+      sourcesPath,
+      structures: [{ ...base, id: "x", facts_id: "x" }]
+    });
+  }
+
+  const HEAD = '---\nid: x\nuberon: null\nreviewed: false\nreviewer: null\ndate: null\ncitations:\n  - "uberon"\n---\n\n';
+
+  it("flags a body citing a register key the card does not declare", () => {
+    const errors = withTempCard(`${HEAD}## Identity\n\n- A claim (uberon) and another (z-anatomy).\n`);
+    assert.ok(
+      errors.some((e) => e.includes("does not declare") && e.includes("z-anatomy")),
+      `expected an undeclared-citation error, got: ${JSON.stringify(errors)}`
+    );
+  });
+
+  it("accepts a body whose every cited key is declared", () => {
+    const errors = withTempCard(`${HEAD}## Identity\n\n- A claim (uberon).\n`);
+    assert.deepEqual(errors, []);
   });
 });

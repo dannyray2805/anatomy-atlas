@@ -1,11 +1,12 @@
 ---
 id: lung
 uberon: UBERON:0002048
-reviewed: false
-reviewer: null
-date: 2026-09-12
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-lung"
 ---
@@ -37,3 +38,10 @@ citations:
 - That source contains no single whole-lung mesh: the lungs exist only as their lobes, which is why
   this structure maps to five meshes (z-anatomy).
 - The pleura is a separate mesh in that source and is NOT mapped to this structure (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as 27 named meshes each — the hilum regions and
+  every bronchopulmonary segment (hubmap-hra-glb).
+- IMPORTANT DIFFERENCE: unlike the Reference Atlas source above, the donor lung assets publish NO
+  lobe meshes at all — only bronchopulmonary segments. So on the donor bodies a click resolves to a
+  segment or a hilum, never to a lobe (hubmap-hra-glb).
+- The donors' airways are mapped to their own rows rather than to this one: the trachea and carina
+  open `trachea`, and the main, lobar and segmental bronchi open `bronchus` (hubmap-hra-glb).

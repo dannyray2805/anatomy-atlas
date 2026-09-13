@@ -35,7 +35,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "heart-left-ventricle",
@@ -54,7 +54,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "heart-left-ventricle",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_M_heart_left_ventricle"
     ]
@@ -76,7 +76,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "muscle",
@@ -95,7 +95,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "viscera",
@@ -114,7 +114,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "liver",
@@ -143,7 +143,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "liver",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Anterior lateral segment of liver (VI)",
       "Anterior medial segment of liver (V)",
@@ -225,7 +225,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "stomach",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Stomach"
     ]
@@ -257,7 +257,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "pancreas",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Pancreas",
       "VH_F_body_of_pancreas",
@@ -299,7 +299,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "gallbladder",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Gallbladder",
       "VH_F_gallbladder",
@@ -333,7 +333,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "kidney",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Kidney.l",
       "Kidney.r",
@@ -516,7 +516,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "urinary-bladder",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Urinary bladder",
       "VH_F_fundus_of_urinary_bladder_base",
@@ -560,7 +560,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "trachea",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Trachea",
       "VH_F_carina",
@@ -588,7 +588,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "thyroid-gland",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Thyroid gland"
     ]
@@ -610,7 +610,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "adrenal-gland",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Suprarenal gland.l",
       "Suprarenal gland.r"
@@ -643,7 +643,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "lung",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Inferior lobe of left lung",
       "Inferior lobe of right lung",
@@ -723,7 +723,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "oesophagus",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Oesophagus"
     ]
@@ -755,7 +755,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "jejunum",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Jejunum",
       "VH_F_jejenum",
@@ -789,7 +789,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "ureter",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Ureter.l",
       "Ureter.r",
@@ -821,7 +821,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "urethra",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Urethra",
       "VH_M_other_urethra",
@@ -855,7 +855,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "bile-duct",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Bile duct",
       "VH_F_common_bile_duct",
@@ -889,7 +889,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "pancreatic-duct",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Pancreatic duct",
       "VH_F_dorsal_pancreatic_duct",
@@ -925,7 +925,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "bronchus",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "(Anteromedial basal segmental bronchus of left lung)",
       "Anterior basal segmental bronchus of left lung (BVIII)",
@@ -1031,7 +1031,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "nervous-system",
@@ -1050,7 +1050,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "midbrain",
@@ -1069,7 +1069,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "midbrain",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Midbrain.l",
       "Midbrain.r"
@@ -1092,7 +1092,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "pons",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Pons.l",
       "Pons.r"
@@ -1115,7 +1115,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "medulla-oblongata",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Medulla oblongata.l",
       "Medulla oblongata.r"
@@ -1138,7 +1138,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "lymphoid-system",
@@ -1157,7 +1157,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "spleen",
@@ -1186,7 +1186,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "spleen",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Spleen",
       "VH_F_colic_surface_of_spleen",
@@ -1228,7 +1228,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "thymus",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Left lobe of thymus",
       "Right lobe of thymus",
@@ -1260,7 +1260,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "blood-vasculature",
@@ -1279,7 +1279,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": null,
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "aorta-ascending",
@@ -1298,7 +1298,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "aorta-ascending",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_M_ascending_aorta",
       "VH_F_ascending_aorta"
@@ -1321,7 +1321,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "heart-right-ventricle",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_M_heart_right_ventricle",
       "VH_F_right_ventricle"
@@ -1344,7 +1344,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "heart-right-atrium",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_M_right_cardiac_atrium",
       "VH_F_right_cardiac_atrium"
@@ -1372,7 +1372,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "duodenum",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_duodenal_ampulla",
       "VH_F_duodenum_ascending",
@@ -1413,7 +1413,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "ileum",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_ileum",
       "VH_F_ileum_terminal",
@@ -1443,7 +1443,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "large-intestine",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_ascending_colon",
       "VH_F_caecum",
@@ -1484,7 +1484,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "prostate",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_M_anterior_fibromuscular_stroma_L",
       "VH_M_anterior_fibromuscular_stroma_R",
@@ -1522,7 +1522,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "vertebral-column",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_cervical_vertebra_1",
       "VH_F_cervical_vertebra_2",
@@ -1597,7 +1597,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "bony-pelvis",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_coccyx",
       "VH_F_ilium_compact_bone_L",
@@ -1651,7 +1651,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "spinal-cord",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_C1_segment_of_cervical_spinal_cord",
       "VH_F_C2_segment_of_cervical_spinal_cord",
@@ -1736,7 +1736,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "brain",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Allen_amygdalohippocampal_area_L",
       "Allen_amygdalohippocampal_area_R",
@@ -2046,7 +2046,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "lymph-node",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "Yao_afferent_lymphatic_vessel",
       "Yao_blood_vasculature",
@@ -2074,7 +2074,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "uterus",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_anterior_wall_of_uterus",
       "VH_F_body_of_uterus",
@@ -2101,7 +2101,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "uterine-cervix",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_cervix",
       "VH_F_external_cervical_os",
@@ -2125,7 +2125,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "ovary",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_left_ovary",
       "VH_F_right_ovary"
@@ -2148,7 +2148,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "fallopian-tube",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_abdominal_ostium_of_uterine_tube",
       "VH_F_ampulla_of_uterine_tube_L",
@@ -2178,7 +2178,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "vagina",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_cervicovaginal_junction",
       "VH_F_vagina"
@@ -2201,7 +2201,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "hepatic-duct",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_common_hepatic_duct",
       "VH_F_left_hepatic_duct",
@@ -2225,7 +2225,7 @@
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
     "facts_id": "cystic-duct",
-    "reviewed": false,
+    "reviewed": true,
     "mesh_names": [
       "VH_F_cystic_duct"
     ]

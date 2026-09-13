@@ -1,11 +1,12 @@
 ---
 id: pancreas
 uberon: UBERON:0001264
-reviewed: false
-reviewer: null
-date: 2026-09-12
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-pancreas"
 ---
@@ -38,3 +39,5 @@ citations:
 - The pancreatic duct and the accessory pancreatic duct ARE separate meshes in that source (they
   arrive as converted curve tubes, not as modelling meshes) and are NOT mapped to this structure, so
   clicking a duct does not open the pancreas entry (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as five named meshes each — head, neck, body, tail
+  and uncinate process (hubmap-hra-glb).

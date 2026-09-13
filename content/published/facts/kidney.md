@@ -1,11 +1,12 @@
 ---
 id: kidney
 uberon: UBERON:0002113
-reviewed: false
-reviewer: null
-date: 2026-09-12
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-kidney"
 ---
@@ -36,3 +37,9 @@ citations:
   retopologised BodyParts3D derivative), as a left and a right mesh (z-anatomy).
 - The renal pelvis is a separate mesh in that source and is NOT mapped to this structure, so
   clicking it does not open the kidney entry (z-anatomy).
+- Present in BOTH Visible Human donor bodies — 71 named meshes on the male body and 79 on the
+  female body, counting both sides (hubmap-hra-glb).
+- On the donor bodies the renal pelvis, calyces and papillae ARE mapped to this structure, because
+  they ship inside that donor's own kidney/ureter assets and belong to the kidney rather than the
+  ureter. That differs from the Reference Atlas body above, where the renal pelvis is a separate
+  unmapped mesh (hubmap-hra-glb).

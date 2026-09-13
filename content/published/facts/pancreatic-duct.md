@@ -1,11 +1,12 @@
 ---
 id: pancreatic-duct
 uberon: UBERON:0007329
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-pancreatic-duct"
 ---
@@ -38,3 +39,7 @@ citations:
   a grouping class that "groups together accessory (dorsal) and main (ventral) pancreatic ducts", so
   folding two separately named ducts into one row would make a single entry stand for both. Clicking
   the accessory duct reports it as not in this dataset (uberon, z-anatomy).
+- Present in BOTH Visible Human donor bodies, as two named meshes each — the dorsal and ventral
+  pancreatic ducts (hubmap-hra-glb).
+- The accessory pancreatic duct is deliberately NOT mapped to this row: one row must not silently
+  stand for two ducts that drain to different papillae (hubmap-hra-glb).

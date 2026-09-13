@@ -1,9 +1,9 @@
 ---
 id: heart-right-ventricle
 uberon: UBERON:0002080
-reviewed: false
-reviewer: null
-date: 2026-09-06
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "hubmap-hra-glb"
   - "uberon"
@@ -30,4 +30,4 @@ citations:
 ## Source volume
 
 - Visible in the S-20-29 whole-heart HiP-CT volume: DOI `10.15151/ESRF-DC-1773964017`, 19.89 µm/voxel (hoa-heart-S-20-29).
-- This volume is not a right-ventricle segmentation.
+- This volume is not a right-ventricle segmentation (hoa-heart-S-20-29).

@@ -1,11 +1,12 @@
 ---
 id: liver
 uberon: UBERON:0002107
-reviewed: false
-reviewer: null
-date: 2026-09-12
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
+date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-liver"
 ---
@@ -38,3 +39,8 @@ citations:
   one surface (z-anatomy).
 - The segment meshes are mapped to this same structure, so a click on any of them opens the liver
   entry (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as 26 individually named meshes each — the
+  diaphragmatic surface, capsule, bare area, porta hepatis, the named lobes and segments, the
+  impressions left by neighbouring organs, and the ligaments of the liver (hubmap-hra-glb).
+- Her source also carries the hepatic and cystic ducts separately; those are their own rows and do
+  not open this one (hubmap-hra-glb).

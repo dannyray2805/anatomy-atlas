@@ -1,11 +1,12 @@
 ---
 id: urinary-bladder
 uberon: UBERON:0001255
-reviewed: false
-reviewer: null
+reviewed: true
+reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
   - "z-anatomy"
+  - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-bladder"
 ---
@@ -34,3 +35,5 @@ citations:
 
 - Present in the Reference Atlas body — one fixed male reference individual (Z-Anatomy, a
   retopologised BodyParts3D derivative) (z-anatomy).
+- Present in BOTH Visible Human donor bodies, as six named meshes each — dome, base, trigone, the
+  two ureteral orifices and the neck (hubmap-hra-glb).
