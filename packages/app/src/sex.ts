@@ -4,7 +4,6 @@
 // female node clicks resolve to DATA_MISSING (truth rules: never guess).
 
 export type Sex = "male" | "female";
-export const SEX_OPTIONS: Sex[] = ["male", "female"];
 export const SEX_LABELS: Record<Sex, string> = { male: "Male", female: "Female" };
 
 const GLB_MALE = (import.meta.env.VITE_HEART_GLB_MALE ?? "").trim();

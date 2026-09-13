@@ -13,9 +13,18 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF, useProgress, type OrbitControlsImpl } from "@react-three/drei";
 import { filterVisibleLayers, hasConfiguredUrl } from "../layerVisibility";
 import { effectiveTransform, groupTransformProps, isSameFrame, type LayerTransform, OVERRIDES_STORAGE_KEY, parseOverrides, serializeOverrides } from "../layerTransform";
+import { anatomyColor } from "../anatomyColors";
 import { lookupStructure } from "../structureLookup";
-import structures from "../../../../content/published/structures.json";
+import structuresJson from "../../../../content/published/structures.json";
+import type { Structure } from "../../../schema/src/structure";
 import { AlignPanel } from "./AlignPanel";
+
+/**
+ * The published graph, typed as Structure[]. `pnpm validate` checks structures.json against
+ * StructureSchema, so this assertion is backed by that gate — importing the JSON directly widens
+ * `layer` to `string` and silently loses the anatomy-layer union.
+ */
+const structures = structuresJson as unknown as Structure[];
 
 const HIGHLIGHT_HEX = 0xd4a017; // amber tint for the picked structure
 
@@ -133,6 +142,8 @@ type LayerModelProps = {
   onPick: (name: string | null) => void;
   onHover: (name: string | null, clientX?: number, clientY?: number) => void;
   opacity: number;
+  /** Anatomical layer key, used to pick this layer's illustrative colour (anatomyColors.ts). */
+  layerKey: string;
 };
 
 const WHITE = new THREE.Color(0xffffff);
@@ -141,7 +152,7 @@ function lighten(hex: number, amount: number) {
 }
 
 /** Load one layer GLB and attach it to the shared scene with picking + tinting hooks. */
-function LayerModel({ url, selectedName, hoveredName, onPick, onHover, opacity = 1 }: LayerModelProps) {
+function LayerModel({ url, selectedName, hoveredName, onPick, onHover, opacity = 1, layerKey }: LayerModelProps) {
   const { scene } = useGLTF(url);
   const invalidate = useThree((s) => s.invalidate);
 
@@ -161,14 +172,26 @@ function LayerModel({ url, selectedName, hoveredName, onPick, onHover, opacity =
         mesh.userData._atlasCloned = true;
       }
       const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+      // Resolve this mesh's illustrative colour ONCE per mesh: the structure lookup is the
+      // expensive part and a mesh name never changes its structure. anatomyColor() decides the
+      // precedence (mapped structure tone, else layer tone, else nothing -> keep the asset's
+      // own colour). Presentation only — see anatomyColors.ts.
+      if (!("_atlasStructureId" in mesh.userData)) {
+        const s = lookupStructure(structures, mesh.name);
+        mesh.userData._atlasStructureId = s?.id ?? null;
+      }
+      const anatomyHex = anatomyColor(
+        layerKey,
+        (mesh.userData._atlasStructureId as string | null) ?? undefined
+      );
       for (const m of mats) {
-        if (!("_atlasBase" in m.userData)) {
+        if (!("_atlasBaked" in m.userData)) {
           const c = (m as { color?: THREE.Color }).color;
-          m.userData._atlasBase = c ? c.getHex() : 0xffffff;
+          m.userData._atlasBaked = c ? c.getHex() : 0xffffff;
         }
         const color = (m as { color?: THREE.Color }).color;
         if (color) {
-          const base = m.userData._atlasBase as number;
+          const base = anatomyHex ?? (m.userData._atlasBaked as number);
           let hex = base;
           if (mesh.name === selectedName) hex = HIGHLIGHT_HEX;
           else if (mesh.name === hoveredName) hex = lighten(base, 0.32);
@@ -550,6 +573,7 @@ function VolumeViewerInner({
                     >
                       <LayerModel
                         url={layer.url}
+                        layerKey={layer.layer}
                         selectedName={selectedName}
                         hoveredName={hoveredName}
                         onPick={onPick}

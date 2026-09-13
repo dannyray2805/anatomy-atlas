@@ -152,17 +152,29 @@ export function StructureDrawer({ pickedName, structure, sex, onClose }: Structu
           )}
         </dd>
       </dl>
-      {(structure.id === "heart" || structure.part_of === "heart") && (
+      <div className="drawer-dives">
+        <p className="drawer-kicker">Deep dives</p>
+        {(structure.id === "heart" || structure.part_of === "heart") && (
+          <div className="sidebar-action">
+            <button type="button" className="volume-jump" onClick={() => navigate("/volume")}>
+              Heart tissue volume (S-20-29, HiP-CT) →
+            </button>
+            <p className="note">
+              Leaving the reference mesh → the HOA donor volume. S-20-29 is a male donor — yet
+              another individual.
+            </p>
+          </div>
+        )}
         <div className="sidebar-action">
-          <button type="button" className="volume-jump" onClick={() => navigate("/")}>
-            Open S-20-29 HOA volume →
+          <button type="button" className="volume-jump" onClick={() => navigate("/slices")}>
+            Visible Human cross-sections →
           </button>
           <p className="note">
-            Leaving HRA reference mesh → HOA donor volume. S-20-29 is a male donor — a
-            different person from either reference mesh.
+            NLM Visible Human cryosection slices (0.33&nbsp;mm/pixel) — body-context images, not a
+            labelled structure map.
           </p>
         </div>
-      )}
+      </div>
       {canAsk(structure) && <AskAboutStructure structureId={structure.id} />}
     </>
   );

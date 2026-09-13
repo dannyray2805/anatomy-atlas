@@ -72,6 +72,7 @@ This doc proposes the direction in phases, each ending in a human checkpoint bef
 | **P1 — Dark immersive layout** | Full-bleed canvas, floating glass controls, slim dark header, right drawer replaces empty sidebar, banners collapsed to one info line + sources popover. | **DONE 2026-09-05** — human visual review passed; deployed |
 | **P2 — Interaction** | Hover highlight + tooltip, click → drawer, camera presets + auto-orbit, search-to-fly. | **DONE 2026-09-05** — hover label, Front/¾/Top presets, auto-orbit, search-to-fly; deployed |
 | **P3 — Peel experience** | Layer pill toggles + hide-outer-layer peel, guided educational mode, animated transitions. | **DONE 2026-09-05** — one-tap peel + guided journey with camera fly; deployed |
+| **P4 — Single pane** | One body, one route: peel rail replaces layer toggles, Body source control replaces the Sex toggle, the four peer tabs collapse and HOA/slices become click-through deep dives. | **DONE 2026-09-13** — dev-verified; deploy is a separate gate |
 
 ---
 
@@ -126,3 +127,149 @@ Sequencing notes (grounded, with caveats):
   citations; (2) the VH body is literally one real scanned donor, not an illustrated composite —
   worth saying explicitly in the UI; (3) free, no-login, ad-supported journey vs. subscription
   reference atlases. All three must stay truthful and never overclaim what a donor is or isn't.
+
+---
+
+## 9. Single pane of glass (2026-09-13, P4)
+
+Human review: “I still not satisfied… multiple tabs and user confusing wondering which tab to go.
+The site may require a restructuring into a single pane of glass focusing purely on human anatomy
+and then on-click, interactive user experience will deep dive into the most interior parts.”
+
+### What was actually wrong (measured, not guessed)
+
+1. **The landing page was not anatomy.** `/` was a hero video plus a Neuroglancer iframe of one
+   heart volume — a research volume viewer was the first thing a visitor met.
+2. **Two rival bodies.** `/body` (HuBMAP Visible Human, per sex, skin + heart + vessels — honestly
+   almost hollow) and `/reference` (Z-Anatomy “Taro”, the full eight-layer peel, male only). A
+   visitor could not tell which to open, and neither was complete by itself.
+3. **The real experience was mislabelled and hidden.** Only `/reference` supported peel + interior
+   deep dive, its name read like a footnote, and its five systems started HIDDEN behind a
+   “▸ All systems” pill — so the default view looked empty.
+4. **Deep-dive targets were peer tabs.** The tissue volume and the cross-sections competed in the
+   nav instead of being what you get when you click something.
+
+The existing drawer (identity + published fact card + citation-gated tutor) was already the
+on-click deep dive and was kept as-is.
+
+### What shipped
+
+- **One route: `/` is the body.** `BodyPage` owns the canvas; there is no route per body.
+- **Body source control** (replaces the Male|Female toggle): `Reference body` | `Donor male` |
+  `Donor female`, each with a permanent one-line identity (whose body it is). A toggle that
+  silently swaps which *person* you are looking at is exactly the kind of thing that misleads, so
+  the control now names the bodies. Default = **Reference body**, because it is the only source
+  with a complete interior — the complaint was precisely that there was nothing inside.
+- **Peel rail** (replaces eight independent layer pills): the body's layers in one canonical
+  outer→inner order (`peel.ts`). A stop outside the peel point is struck through (already taken
+  off), the outermost visible layer is where the peel currently ends, and the rest are available
+  deeper in. Clicking a stop peels to it. Layers *inside* the peel point keep whatever the user
+  set — a peel never silently switches on something deeper. `⟲ Restore` returns the body to its
+  opening state.
+- **Deep dives left the nav**: `/volume` (HOA tissue volume) and `/slices` (NLM cross-sections)
+  are reached from a structure's drawer, and are also listed in the Notes & licensing panel. They
+  keep their URLs so a specific view can still be linked.
+- **The guided peel is unchanged and still donor-only.** Its stops are real mapped structures
+  (right ventricle → left ventricle → ascending aorta) on the VH hearts. The reference body's
+  heart meshes are not mapped to structures, so offering the journey there would be theatre; the
+  pane simply does not offer it.
+- **Legacy URLs redirect**: `/body` → `/?body=donor-male`, `/reference` → `/?body=reference`,
+  `/heart-3d` → `/?body=donor-male`, `/volume/heart` → `/volume`. `?body=` is parsed defensively
+  (unknown value → default; never a broken pane).
+
+### New pure modules (unit-tested, no React)
+
+- `bodySource.ts` — the source model, labels, identities, `?body=` parsing, donor sex mapping.
+- `peel.ts` — `PEEL_ORDER`, `peelRail`, `peelTo`, `isPeeled`, `restorePeel`, `peelStops`. The rail
+  reads each layer's **resolved** `visible` flag, so the peel order and the visibility defaults
+  can never disagree.
+
+### Consequence worth stating
+
+On the reference body the peel makes **17 organs reachable** (and its ducts, bronchi and
+brainstem), where before the default view offered no search at all. The honest gaps are unchanged
+and still surfaced: the donor bodies show `Skeleton · not in this dataset` and
+`Muscle · not in this dataset`, and a female donor body is the only female body there is —
+no female whole-body anatomy is published, so none is shown and none is invented.
+
+### Follow-ups (deliberately not done)
+
+- A guided journey on the **reference** body would need its heart/viscera meshes mapped to
+  structures first (and the existing heart cards touched, which would invalidate the human's
+  pending review read). Content task, not a UI one.
+- Per-structure mapping for bone, muscle, vessel and peripheral-nerve meshes — those clicks
+  still, correctly, report “not in this dataset”.
+
+---
+
+## 10. Viewing theme — light / dark (2026-09-13)
+
+Human review: “add light and dark toggle button with a icon as the current dark theme does not
+have clear view of the anatomy.”
+
+That is a correct reading of the dark theme's limitation: a dark backdrop flattens the shading of
+the meshes, and the pale skeleton loses contrast against it. Dark stays the app's identity, but
+light is a **viewing mode**, not a cosmetic alternative.
+
+- **Switch**: an icon button in the top bar. The icon and the word name the theme you will *get*
+  (`☀ Light` while dark), and `aria-label` states it as an action ("Switch to Light theme").
+- **Persisted** per device (`localStorage`, versioned key `anatomy-atlas.theme.v1`), with a
+  defensive parse — an unknown or unreadable value falls back to dark rather than leaving the pane
+  unstyled. Private-mode storage failures are caught.
+- **Applied as a document attribute** (`data-theme` on `<html>`), so every surface — including the
+  3D viewing canvas, which is a CSS backdrop behind a transparent Canvas — switches together
+  without any component needing to know the theme. `color-scheme` is set alongside it so native
+  form controls and scrollbars follow.
+- **No dark flash**: a tiny pre-mount script in `index.html` applies the remembered theme before
+  React loads. Its key and accepted values must stay in sync with `src/theme.ts`.
+- **The light viewing surface is deliberately not white.** A pure white backdrop washes out both
+  the pale skeleton and the translucent skin, so it is a soft blue-grey
+  (`#f4f7fc → #dde5f1 → #c7d3e6`) that light and dark meshes both read against. The vignette is
+  softened to match rather than removed.
+- Light-theme rules live in one labelled block in `styles.css`: palette variables first, then the
+  handful of rules that carry hardcoded dark values (surfaces, gradients, shadows, drawer,
+  canvas). Kept together so the two themes are compared and changed as a pair instead of drifting
+  rule by rule.
+
+---
+
+## 11. Quiet disclosure + illustrative colour (2026-09-13)
+
+Human review: “Ensure the Notes and Licensing pane is somewhere at the bottom of the page and not
+obviously visible… embedded text on the page with not so visible font size.” and “Why the donor
+female and male color is blue, see if real human skin color is possible even if it deviates from
+originals… ensure to apply real color throughout the exterior and interior.”
+
+### Disclosure moved to a quiet footer
+
+The dismissible bar across the top of the pane is gone. Disclosure + licensing now live in
+`.lab-notes`, a **footer below the pane** at the very bottom of the page: small (0.72 rem), muted
+(`--faint`), plain embedded text, with the full sources in a native `<details>` element.
+
+Deliberate limits on “not obviously visible”: the text is **small and muted, never hidden**. It is
+still present on every view (truth rule 10), still selectable and searchable, still exposed to
+assistive technology, and the `<details>` needs no JavaScript — so the disclosure cannot be lost
+to a rendering or script failure. `<details>` also replaces the old open/dismiss React state, which
+removes a piece of UI state rather than adding one.
+
+### Illustrative anatomy colour
+
+Why: the sources are not coloured like anatomy. The HuBMAP Visible Human skin ships as **one flat
+blue material (`#3566d5`)** and the Z-Anatomy/BodyParts3D layers are flat or near-flat, so the body
+read as a 3D asset rather than as a body.
+
+How: `anatomyColors.ts` (pure, unit-tested) resolves a mesh's colour as
+**mapped structure tone → its layer's tone → nothing** (nothing = leave the asset's own colour
+alone, so an unmapped or unknown layer is never given an invented colour). It is applied in
+`VolumeViewer` as the material **base**, which keeps the existing picked-amber and hover-lighten
+tints working on top of it, and the per-mesh structure lookup is cached on the mesh because the
+material effect re-runs on every hover.
+
+**This is presentation, not data.** The colours are conventional anatomy-illustration tones: they
+are NOT measured from the scans, and they are not the skin or tissue colour of either donor. Only
+geometry, names and structures come from the cited sources. That sentence lives beside the values
+(`COLOR_DISCLOSURE`) and is shown to the reader under **Colour** in the notes footer, so the claim
+and the caveat cannot drift apart.
+
+Skin tone is deliberately a warm human tone and **not varied by sex** — inventing a per-sex tone
+would assert something about the individuals that we do not know.

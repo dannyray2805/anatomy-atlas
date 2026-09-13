@@ -22,7 +22,8 @@ content/published/     ← working source of truth: structures.json + facts/ (au
 docs/                  ← specs (truth rules), body-peel, ui-vision, sources register
 packages/schema        ← Structure + FactCard types
 packages/graph         ← validate the published graph
-packages/app           ← Pages UI (Vite + React + R3F): /body, /reference, HOA volume, Visible Human slices
+packages/app           ← Pages UI (Vite + React + R3F) — ONE pane at `/` (peel + click into it);
+                         deep dives `/volume` (HOA) and `/slices` (Visible Human cross-sections)
 packages/worker        ← facts + citation-gated chat (bundles content/published/structures.json)
 packages/tools         ← local converters + compressors (Python/Node)
 functions/             ← Pages Function proxy /api/* → Worker
