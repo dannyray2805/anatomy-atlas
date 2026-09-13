@@ -49,6 +49,20 @@ function sha256(text) {
   return createHash("sha256").update(text).digest("hex");
 }
 
+/**
+ * Hash a card's TEXT with line endings normalised to LF.
+ *
+ * Git checks this repo out with CRLF on Windows and LF on the CI runner, so hashing raw bytes
+ * would make the manifest machine-specific — and it did: a manifest written from a Windows
+ * checkout made the next CI run see all 42 cards as changed. Markdown renders identically either
+ * way, and a card whose only difference is its line endings is not a content change. Normalising
+ * also keeps the manifest compatible with the one already in R2, which was written from an LF
+ * checkout and therefore already holds these values.
+ */
+function cardHash(path) {
+  return sha256(readFileSync(path, "utf8").replace(/\r\n/g, "\n"));
+}
+
 async function wrangler(args) {
   return run(WRANGLER_CMD, args, {
     maxBuffer: 32 * 1024 * 1024,
@@ -103,7 +117,7 @@ if (cards.length === 0) {
 }
 
 const local = new Map(
-  cards.map((card) => [card.id, sha256(readFileSync(card.path))])
+  cards.map((card) => [card.id, cardHash(card.path)])
 );
 
 const previous = await readManifest();
