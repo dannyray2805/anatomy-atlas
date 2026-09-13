@@ -200,7 +200,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "gallbladder",
     "reviewed": false,
     "mesh_names": ["Gallbladder"]
   },
@@ -240,7 +240,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "urinary-bladder",
     "reviewed": false,
     "mesh_names": ["Urinary bladder"]
   },
@@ -260,7 +260,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "trachea",
     "reviewed": false,
     "mesh_names": ["Trachea"]
   },
@@ -280,7 +280,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "thyroid-gland",
     "reviewed": false,
     "mesh_names": ["Thyroid gland"]
   },
@@ -300,7 +300,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "adrenal-gland",
     "reviewed": false,
     "mesh_names": ["Suprarenal gland.l", "Suprarenal gland.r"]
   },
@@ -328,6 +328,175 @@
       "Superior lobe of right lung",
       "Middle lobe of right lung",
       "Inferior lobe of right lung"
+    ]
+  },
+  {
+    "id": "oesophagus",
+    "uberon": "UBERON:0001043",
+    "fma": null,
+    "label": "Oesophagus",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Oesophagus' confirmed present in the shipped viscera GLB — it arrives as a converted curve tube, not a modelling mesh, which is why a MESH-only inventory listing does not show it. Uberon id verified against OLS4 (label 'esophagus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Oesophagus"]
+  },
+  {
+    "id": "jejunum",
+    "uberon": "UBERON:0002115",
+    "fma": null,
+    "label": "Jejunum",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Jejunum' confirmed present in the shipped viscera GLB (a converted curve tube). It is the only part of the small intestine modelled as its own tube in this source; the duodenum is a modelling mesh and the ileum is not present. Uberon id verified against OLS4 (label 'jejunum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Jejunum"]
+  },
+  {
+    "id": "ureter",
+    "uberon": "UBERON:0000056",
+    "fma": null,
+    "label": "Ureter",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh nodes 'Ureter.l' and 'Ureter.r' confirmed present in the shipped viscera GLB (converted curve tubes). Uberon id verified against OLS4 (label 'ureter', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Ureter.l", "Ureter.r"]
+  },
+  {
+    "id": "urethra",
+    "uberon": "UBERON:0000057",
+    "fma": null,
+    "label": "Urethra",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Urethra' confirmed present in the shipped viscera GLB (a converted curve tube). Uberon id verified against OLS4 (label 'urethra', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Urethra"]
+  },
+  {
+    "id": "bile-duct",
+    "uberon": "UBERON:0002394",
+    "fma": null,
+    "label": "Bile duct",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Bile duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source also carries a project-typed 'Extrahepatic bile ducts.j' object, which holds no surface and therefore ships as a node without geometry. Uberon id verified against OLS4 (label 'bile duct', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Bile duct"]
+  },
+  {
+    "id": "pancreatic-duct",
+    "uberon": "UBERON:0007329",
+    "fma": null,
+    "label": "Pancreatic duct",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "Mesh node 'Pancreatic duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source names 'Accessory pancreatic duct' as a separate mesh; it is left unmapped because no matching Uberon term was found (the closest hits were the dorsal pancreatic duct and the duodenal papillae, which are different structures). UBERON:0001064 is the VENTRAL pancreatic duct and was deliberately not used. Uberon id verified against OLS4 (label 'pancreatic duct', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": ["Pancreatic duct"]
+  },
+  {
+    "id": "bronchus",
+    "uberon": "UBERON:0002185",
+    "fma": null,
+    "label": "Bronchus",
+    "layer": "organ",
+    "part_of": "viscera",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "pending",
+        "note": "All 28 bronchus tubes confirmed present in the shipped viscera GLB (converted curve tubes): the left and right main bronchi, the lobar bronchi, and the segmental bronchi the source names individually (BI–BX and the left apicoposterior and lingular ones). This source models each bronchus as its own tube and has no single 'bronchi' mesh, so this structure maps to them all; the more specific names are not mapped as separate structures yet. Uberon id verified against OLS4 (label 'bronchus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left main bronchus",
+      "Right main bronchus",
+      "Left superior lobar bronchus",
+      "Left inferior lobar bronchus",
+      "Right superior lobar bronchus",
+      "Right inferior lobar bronchus",
+      "Middle lobar bronchus.r",
+      "Intermediate bronchus.r",
+      "(Anteromedial basal segmental bronchus of left lung)",
+      "Apicoposterior segmental bronchus of left lung (BI+BII)",
+      "Anterior segmental bronchus of left lung (BIII)",
+      "Superior lingular segmental bronchus of left lung (BIV)",
+      "Inferior lingular segmental bronchus of left lung (BV)",
+      "Superior segmental bronchus of left lung (BVI)",
+      "Medial basal segmental bronchus of left lung (BVII)",
+      "Anterior basal segmental bronchus of left lung (BVIII)",
+      "Lateral basal segmental bronchus of left lung (BIX)",
+      "Posterior basal segmental bronchus of left lung (BX)",
+      "Apical segmental bronchus of right lung (BI)",
+      "Posterior segmental bronchus of right lung (BII)",
+      "Anterior segmental bronchus of right lung (BIII)",
+      "Lateral segmental bronchus of right lung (BIV)",
+      "Medial segmental bronchus of right lung (BV)",
+      "Superior segmental bronchus of right lung (BVI)",
+      "Medial basal segmental bronchus of right lung (BVII)",
+      "Anterior basal segmental bronchus of right lung (BVIII)",
+      "Lateral basal segmental bronchus of right lung (BIX)",
+      "Posterior basal segmental bronchus of right lung (BX)"
     ]
   },
   {
@@ -384,7 +553,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "midbrain",
     "reviewed": false,
     "mesh_names": ["Midbrain.l", "Midbrain.r"]
   },
@@ -404,7 +573,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "pons",
     "reviewed": false,
     "mesh_names": ["Pons.l", "Pons.r"]
   },
@@ -424,7 +593,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "medulla-oblongata",
     "reviewed": false,
     "mesh_names": ["Medulla oblongata.l", "Medulla oblongata.r"]
   },
