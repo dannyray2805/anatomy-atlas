@@ -13,8 +13,10 @@ import type { Sex } from "./sex";
  *    individual from the Visible Human donors, and it is male — no female anatomy is published
  *    for it anywhere, so none is shown and none is invented.
  *  - `donor-male` / `donor-female` — the HuBMAP Visible Human. One real scanned individual per
- *    sex, but only skin + heart + blood vasculature are published, so the interior is honestly
- *    incomplete (surfaced as “not in this dataset”, never filled in).
+ *    sex. Each publishes that person's skin, organs, blood vasculature, spine + pelvis and spinal
+ *    cord (plus a contributed brain atlas, large intestine and one lymph node), all from the same
+ *    individual so they nest at identity. What is NOT published for either of them is whole-body
+ *    muscle and a full articulated skeleton — surfaced as “not in this dataset”, never filled in.
  *
  * Pure module: no `import.meta.env` at runtime, so node:test can import it (sex.ts cannot be
  * imported for value — it reads the environment at module load — hence the type-only import).
@@ -43,7 +45,8 @@ export const BODY_SOURCE_WHO: Record<BodySource, string> = {
   reference: "Z-Anatomy “Taro” — one male reference individual",
   "donor-male":
     "Visible Human male donor — skin, organs, brain, vessels, spine and cord",
-  "donor-female": "Visible Human female donor — skin, heart and vessels only"
+  "donor-female":
+    "Visible Human female donor — skin, organs, brain, vessels, spine and cord"
 };
 
 /** True for the per-sex Visible Human bodies (which are not the reference individual). */

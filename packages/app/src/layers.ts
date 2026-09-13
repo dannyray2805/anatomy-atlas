@@ -5,10 +5,10 @@ import type { Sex } from "./sex";
  * Path 1 layer assembly (see docs/body-peel.md). TWO independent bodies, each internally
  * same-individual — no cross-individual registration any longer (Tasks O–R transforms retired):
  *
- *  - **VH body peel** (per sex): HuBMAP VH skin + organs. Male = VH_M_* together, Female =
+ *  - **VH body peel** (per sex): HuBMAP VH skin + heart + organs. Male = VH_M_* together, Female =
  *    VH_F_* together; each sex's assets share that individual's frame, so IDENTITY is the
- *    correct registration (sameFrame). Muscle + full skeleton of that individual are NOT
- *    sourced → they don't exist in this body (Reference Atlas shows Z-Anatomy instead).
+ *    correct registration (sameFrame). Muscle + a full skeleton of either individual are NOT
+ *    sourced → they don't exist in these bodies (Reference Atlas shows Z-Anatomy instead).
  *  - **Reference Atlas**: Z-Anatomy skeleton + muscle + the BodyParts3D whole-body skin
  *    ("Taro", a different male individual, also identity/sameFrame — the skin's frame
  *    translation is baked into the GLB), shown on its own route and never claimed as the
@@ -189,19 +189,78 @@ const MALE_DONOR_EXTRAS: Array<[string, string, string, boolean]> = [
 ];
 
 /**
+ * The extra organs, reproductive organs, spine and spinal cord published for the HuBMAP Visible
+ * Human FEMALE reference body — the same individual as her skin, heart and vessels, so every
+ * entry is `sameFrame` (identity). Same shape as MALE_DONOR_EXTRAS above.
+ *
+ * Her set differs from the male's in three ways the source itself defines, not by choice here:
+ *  - she has uterus, cervix, ovaries, fallopian tubes and vagina instead of prostate and urethra;
+ *    she also carries a lumbar vertebra 6 (a lumbarisation variant, recorded on the row note);
+ *  - the lung asset has NO lobe meshes (only bronchopulmonary segments), unlike the male's;
+ *  - VH_F_Placenta.glb is deliberately NOT wired. It is a pregnancy-specific organ, and putting
+ *    it on a non-pregnant body would assert a state that is not there. VH_F_Ligaments_Uterus_Ovaries
+ *    (no matching structure row yet) and VH_F_Sm_Intest_Measurements (measurement geometry, not
+ *    anatomy) are likewise excluded.
+ *
+ * The three dedicated duct assets (Ducts_of_Liver / Ducts_of_Gallbladder / Ducts_of_Pancreas) are
+ * also NOT wired, and this one is a rendering decision: together they carry exactly the same eight
+ * duct meshes as VH_F_Biliary_Tree.glb (their triangle counts sum to that asset's 10,836 exactly),
+ * so mounting both would draw the same surfaces twice, coincident, and z-fight. The single
+ * combined asset is used instead.
+ */
+const FEMALE_DONOR_EXTRAS: Array<[string, string, string, boolean]> = [
+  // Viscera (organ layer)
+  ["liver-female-draco", "liver", "organ", false],
+  ["lung-female-draco", "lung", "organ", false],
+  ["kidney-l-female-draco", "kidney", "organ", false],
+  ["kidney-r-female-draco", "kidney", "organ", false],
+  ["gallbladder-female-draco", "gallbladder", "organ", false],
+  ["biliary-tree-female-draco", "bile-duct", "organ", false],
+  ["pancreas-female-draco", "pancreas", "organ", false],
+  ["spleen-female-draco", "spleen", "organ", false],
+  ["thymus-female-draco", "thymus", "organ", false],
+  ["small-intestine-female-draco", "jejunum", "organ", false],
+  ["large-intestine-female-draco", "large-intestine", "organ", false],
+  ["urinary-bladder-female-draco", "urinary-bladder", "organ", false],
+  ["ureter-l-female-draco", "ureter", "organ", false],
+  ["ureter-r-female-draco", "ureter", "organ", false],
+  // Female reproductive organs (organ layer)
+  ["uterus-female-draco", "uterus", "organ", false],
+  ["ovary-l-female-draco", "ovary", "organ", false],
+  ["ovary-r-female-draco", "ovary", "organ", false],
+  ["fallopian-tube-l-female-draco", "fallopian-tube", "organ", false],
+  ["fallopian-tube-r-female-draco", "fallopian-tube", "organ", false],
+  ["vagina-female-draco", "vagina", "organ", false],
+  // Spine + pelvis (skeleton layer — a PARTIAL skeleton, not a full one)
+  ["vertebrae-female-draco", "vertebral-column", "skeleton", true],
+  ["pelvis-female-draco", "bony-pelvis", "skeleton", true],
+  // Spinal cord (nerve layer — the cord only; no peripheral nerves are published)
+  ["spinal-cord-female-draco", "spinal-cord", "nerve", true],
+  // Contributed models in the same reference body (Allen brain atlas, one NIH lymph node).
+  ["brain-female-draco", "brain", "nerve", true],
+  ["lymph-node-female-draco", "lymph-node", "lymphatic", true]
+];
+
+/** One table per sex, so a donor body can only ever mount that individual's own assets. */
+const DONOR_EXTRAS_BY_SEX: Record<Sex, Array<[string, string, string, boolean]>> = {
+  male: MALE_DONOR_EXTRAS,
+  female: FEMALE_DONOR_EXTRAS
+};
+
+/**
  * Pure core: build the donor's extra layers from an asset base URL (…/api/media/hubmap/glb).
- * Returns [] when there is no base, when the body is female (her organ set is a separate,
- * not-yet-wired batch) — never a partial or invented list.
+ * Returns [] when there is no base, and otherwise that sex's own table — never a partial or
+ * invented list. The visible/`defaultHidden` split is described on the tables above.
  */
 export function donorExtrasFromBase(sex: Sex, base: string): LayerAsset[] {
   const root = base.trim().replace(/\/+$/, "");
-  if (!root || sex !== "male") return [];
-  return MALE_DONOR_EXTRAS.map(([file, structureId, layer, defaultHidden]) => ({
+  if (!root) return [];
+  return DONOR_EXTRAS_BY_SEX[sex].map(([file, structureId, layer, defaultHidden]) => ({
     structureId,
     layer,
     url: `${root}/${file}.glb`,
     visible: !defaultHidden,
-    // Same Visible Human male as the skin/heart/vessels -> identity is the correct registration.
+    // Same Visible Human individual as that sex's skin/heart/vessels -> identity is correct.
     sameFrame: true,
     defaultHidden
   }));
@@ -217,9 +276,9 @@ const SKIN_MALE = (ENV.VITE_SKIN_GLB_MALE ?? "").trim();
 const SKIN_FEMALE = (ENV.VITE_SKIN_GLB_FEMALE ?? "").trim();
 const VESSEL_MALE = (ENV.VITE_VESSEL_GLB_MALE ?? "").trim();
 const VESSEL_FEMALE = (ENV.VITE_VESSEL_GLB_FEMALE ?? "").trim();
-// Base URL for the donor's compressed organ/spine/cord assets (…/api/media/hubmap/glb). One key
-// rather than twenty: the file names live in MALE_DONOR_EXTRAS above, so the list cannot drift
-// out of step with the env.
+// Base URL for the donors' compressed organ/spine/cord assets (…/api/media/hubmap/glb). One key
+// rather than forty-five: the file names live in the per-sex tables above, so the lists cannot
+// drift out of step with the env.
 const DONOR_GLB_BASE = (ENV.VITE_DONOR_GLB_BASE ?? "").trim();
 const SKELETON_GLB = (ENV.VITE_SKELETON_GLB ?? "").trim();
 const MUSCLE_GLB = (ENV.VITE_MUSCLE_GLB ?? "").trim();
@@ -231,7 +290,8 @@ const JOINTS_GLB = (ENV.VITE_JOINTS_GLB ?? "").trim();
 const LYMPHOID_GLB = (ENV.VITE_LYMPHOID_GLB ?? "").trim();
 
 /** VH body peel for a sex: per-sex HuBMAP VH skin + heart + blood vasculature at identity (CC BY 4.0).
- *  For the male body this also mounts his published organs, spine, pelvis and spinal cord. */
+ *  For a donor body this also mounts that individual's published organs, spine, pelvis and cord
+ *  (male and female each have their own set — see DONOR_EXTRAS_BY_SEX). */
 export function buildVhBody(sex: Sex): LayerAsset[] {
   return buildVhBodyFromUrls(
     sex,

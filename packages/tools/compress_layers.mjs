@@ -78,6 +78,43 @@ const SRC = [
   ["incoming/vh-male/VH_M_Spinal_Cord.glb", "spinal-cord-male"],
   ["incoming/vh-male/Allen_M_Brain.glb", "brain-male"],
   ["incoming/vh-male/NIH_M_Lymph_Node.glb", "lymph-node-male"],
+  // --- Female Visible Human donor: her organ set (2026-09-13) ---
+  // Same individual as VH_F_Skin, published in the same folder, so these nest at identity and
+  // need no registration either. Verified BEFORE compression with the app's own loader via
+  // incoming/check_donor_organs.mjs female -> 28/28 inside her skin, 28/28 in the expected
+  // anatomical band, smallest clearance 14 mm, exit 0.
+  // Deliberately NOT included: VH_F_Placenta.glb (a pregnancy-specific organ -- wiring it onto
+  // a non-pregnant body would assert a state that is not there), VH_F_Ligaments_Uterus_Ovaries.glb
+  // (a ligament set with no matching structure row yet), and VH_F_Sm_Intest_Measurements.glb
+  // (measurement geometry, not anatomy). Reasons are recorded in docs/sources.md.
+  ["incoming/vh-female/VH_F_Liver.glb", "liver-female"],
+  ["incoming/vh-female/VH_F_Lung.glb", "lung-female"],
+  ["incoming/vh-female/VH_F_Kidney_L.glb", "kidney-l-female"],
+  ["incoming/vh-female/VH_F_Kidney_R.glb", "kidney-r-female"],
+  ["incoming/vh-female/VH_F_Gallbladder.glb", "gallbladder-female"],
+  ["incoming/vh-female/VH_F_Biliary_Tree.glb", "biliary-tree-female"],
+  ["incoming/vh-female/VH_F_Ducts_of_Liver.glb", "ducts-of-liver-female"],
+  ["incoming/vh-female/VH_F_Ducts_of_Gallbladder.glb", "ducts-of-gallbladder-female"],
+  ["incoming/vh-female/VH_F_Ducts_of_Pancreas.glb", "ducts-of-pancreas-female"],
+  ["incoming/vh-female/VH_F_Pancreas.glb", "pancreas-female"],
+  ["incoming/vh-female/VH_F_Spleen.glb", "spleen-female"],
+  ["incoming/vh-female/VH_F_Thymus.glb", "thymus-female"],
+  ["incoming/vh-female/VH_F_Small_Intestine.glb", "small-intestine-female"],
+  ["incoming/vh-female/SBU_F_Intestine_Large.glb", "large-intestine-female"],
+  ["incoming/vh-female/VH_F_Urinary_Bladder.glb", "urinary-bladder-female"],
+  ["incoming/vh-female/VH_F_Ureter_L.glb", "ureter-l-female"],
+  ["incoming/vh-female/VH_F_Ureter_R.glb", "ureter-r-female"],
+  ["incoming/vh-female/VH_F_Uterus.glb", "uterus-female"],
+  ["incoming/vh-female/VH_F_Ovary_L.glb", "ovary-l-female"],
+  ["incoming/vh-female/VH_F_Ovary_R.glb", "ovary-r-female"],
+  ["incoming/vh-female/VH_F_Fallopian_Tube_L.glb", "fallopian-tube-l-female"],
+  ["incoming/vh-female/VH_F_Fallopian_Tube_R.glb", "fallopian-tube-r-female"],
+  ["incoming/vh-female/VH_F_Vagina.glb", "vagina-female"],
+  ["incoming/vh-female/VH_F_Vertebrae.glb", "vertebrae-female"],
+  ["incoming/vh-female/VH_F_Pelvis.glb", "pelvis-female"],
+  ["incoming/vh-female/VH_F_Spinal_Cord.glb", "spinal-cord-female"],
+  ["incoming/vh-female/Allen_F_Brain.glb", "brain-female"],
+  ["incoming/vh-female/NIH_F_Lymph_Node.glb", "lymph-node-female"],
 ];
 const OUT_DIR = "incoming/opt";
 fs.mkdirSync(OUT_DIR, { recursive: true });

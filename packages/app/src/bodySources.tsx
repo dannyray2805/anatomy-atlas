@@ -60,8 +60,22 @@ function VhAttribution({ sex }: { sex: Sex }) {
         </li>
       ) : (
         <li>
-          Her published set is skin, heart and blood vasculature only. Her organ set exists in the
-          same source and is a separate, not-yet-wired batch — nothing is shown in its place.
+          Her organ set is published inside the same HuBMAP reference body and is registered into
+          her frame, so nothing is aligned by hand: liver, lungs, kidneys, gallbladder and biliary
+          tree, pancreas, spleen, thymus, small and large intestine, urinary bladder, ureters,
+          uterus, cervix, ovaries, fallopian tubes and vagina — plus the spine (including a sixth
+          lumbar vertebra, a lumbarisation variant the source records), the bony pelvis and the
+          spinal cord. Every one was checked to sit inside her skin envelope at identity before it
+          was wired.
+        </li>
+      )}
+      {!isMale && (
+        <li>
+          Two items from her source are deliberately not shown rather than shown by default: the
+          placenta, because it is a pregnancy-specific organ and placing it on a non-pregnant body
+          would assert a state that is not there, and the ligament set between the uterus and the
+          ovaries, which has no matching structure row yet. Her source also carries a measurement
+          model (not anatomy), which is likewise left out.
         </li>
       )}
       <li>
@@ -81,8 +95,7 @@ function VhAttribution({ sex }: { sex: Sex }) {
         regions, each resolving to the brain as a whole) and one lymph node (NIH; its meshes are
         authored &quot;Yao&quot;). None of the three is HuBMAP-authored, and the brain is an atlas
         rather than that donor&apos;s scanned brain. Each structure row says so.
-      </li>
-      <li>
+      </li>      <li>
         HOA tissue volume (male donor S-20-29, DOI 10.15151/ESRF-DC-1773964017, CC BY 4.0) is a
         different individual again — reachable from a heart pick or from the deep dives below.
       </li>
@@ -135,6 +148,7 @@ function ReferenceAttribution() {
 
 function donorConfig(sex: Sex): BodySourceConfig {
   const id: BodySource = sex === "male" ? "donor-male" : "donor-female";
+  const isMaleDonor = sex === "male";
   return {
     id,
     label: BODY_SOURCE_LABELS[id],
@@ -149,9 +163,9 @@ function donorConfig(sex: Sex): BodySourceConfig {
     banners: [
       <>
         Visible Human {SEX_LABELS[sex].toLowerCase()} donor — HuBMAP HRA (CC BY 4.0).{" "}
-        {sex === "male"
+        {isMaleDonor
           ? "His published anatomy, plus three models contributed by other labs and registered into his frame (large intestine, brain atlas, one lymph node — named in the notes below)."
-          : "Her published anatomy."}{" "}
+          : "Her published anatomy, including the reproductive organs (uterus, cervix, ovaries, fallopian tubes, vagina), plus the same three contributed models registered into her frame (large intestine, brain atlas, one lymph node — named in the notes below)."}{" "}
         Anything not published is labelled “not in this dataset”; muscle and a full skeleton are not
         published for this individual. The HOA tissue volume is yet another individual (donor
         S-20-29).
