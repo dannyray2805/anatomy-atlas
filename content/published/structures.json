@@ -1303,7 +1303,7 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
         "note": "VH_Male + VH_Female v1.2 Blood_Vasculature.glb — mesh node names VH_M_ascending_aorta + VH_F_ascending_aorta confirmed in the node dump (present in both sexes)"
       },
       {
@@ -1390,8 +1390,8 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "VH_M_Small_Intestine.glb",
-        "note": "The four named parts, the hepatopancreatic ampulla, its sphincter and the duodenal papilla. OLS4 label 'duodenum', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male asset via the app's own loader (three GLTFLoader)."
+        "asset": "VH_M_Biliary_Tree.glb, VH_M_Small_Intestine.glb",
+        "note": "The four named parts, the hepatopancreatic ampulla, its sphincter and the duodenal papilla — the ampulla and its sphincter live in the Biliary_Tree asset, the parts in Small_Intestine. OLS4 label 'duodenum', not obsolete. Mesh node(s) confirmed present in the shipped HuBMAP Visible Human male assets via the app's own loader (three GLTFLoader)."
       },
       {
         "source_id": "hubmap-hra-glb",

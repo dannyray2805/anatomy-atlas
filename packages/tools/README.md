@@ -8,6 +8,64 @@ Planned scripts (agent may add, must not invent anatomy):
 - Inspect HOA downsampled pyramids via `hoa-tools` / Fiji
 - Emit `metadata.json` with pixel size from NLM or HOA docs only
 
+## Layer inspection and mapping audits
+
+Three tools that read a layer GLB the way the app does and check what the published graph
+claims about it. All run from the repository root.
+
+### `dump_layer_meshes.mjs` — the mesh names the app really sees
+
+```text
+node packages/tools/dump_layer_meshes.mjs <layer.glb> <out.tsv>
+```
+
+Groups every `Mesh` in a GLB by the object it came from, using three's own `GLTFLoader`.
+**Every `mesh_names` entry in `content/published/structures.json` must come from here**, not from
+the file's node names: the loader replaces whitespace with `_` and removes `[ ] . : /`, and it
+names a multi-primitive object after the MESH DATA, so `Femur.l` and `Femur.r` both arrive as
+`Femur` plus `Femur_1`. Writing a mapping from the file's own names is how rows end up dead on
+arrival — the mesh renders, the click resolves to nothing, and nothing reports it.
+
+The dumps for the shipped assets live in `incoming/` (gitignored). Regenerate any of them from
+the assets, which are on R2 and in the upstream libraries named in `docs/sources.md`.
+
+### `audit_mesh_reachability.mjs` — is any published mesh name unreachable?
+
+```text
+node packages/tools/audit_mesh_reachability.mjs
+```
+
+For every row, takes the assets its sources declare, finds the matching loader dump, and checks
+each published mesh name against it. Exits non-zero when a name cannot be produced.
+
+Two details it has to get right, both learned the hard way. It compares with the app's own
+`normalizeMeshName`, so `Pons.l`, `Kidneyl` and `Middle_lobar_bronchusr` all pass — the app folds
+both sides. And the multi-primitive rule runs in the *other* direction from the obvious one: the
+scene reports the child as `<mesh data name>_1` and the app strips that suffix off the SCENE name,
+so a registered name is reachable when the dump holds it or any `_N` child of it.
+
+### `audit_source_coverage.mjs` — could a declared source have provided this mesh?
+
+```text
+node packages/tools/audit_source_coverage.mjs
+```
+
+Uses the library prefix (`VH_M_`, `VH_F_`, `Allen_`, …) and the SEX that prefix encodes to ask
+whether a row has a source that could have supplied each mesh name it claims. It caught
+`heart-left-atrium` listing both donors' meshes with no visible-human source at all, and
+`heart-left-ventricle` listing a woman's mesh while declaring only a male table.
+
+### `analyse_layer_names.mjs` — the vocabulary, before designing any mapping
+
+```text
+node packages/tools/analyse_layer_names.mjs <owners.tsv>
+```
+
+Prints how many meshes and labels a layer has, which nodes a published row ALREADY claims (so a
+mesh is not mapped twice, which the graph validator rejects), the last-word histogram of the names,
+and the full label list. Measure first: doing this before the skeleton, muscle and vessel passes is
+what showed that Uberon matched only 25 of 123 bone and 76 of 305 muscle labels exactly.
+
 ## `compress_layers.mjs` — uniform Draco/weld compression of layer GLBs (P0, 2026-09-05)
 
 Produces two derived variants of each R2-served layer GLB (male/female VH skin,

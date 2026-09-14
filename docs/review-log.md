@@ -212,6 +212,43 @@ the product. Both now use a name no row can ever claim.
   because a leaflet is part of a valve whose own row comes from the donor heart assets. A click on a
   leaflet on the reference body still reports "not mapped to a structure".
 
+## 2026-09-14 — a reachability audit, and the two defects it found
+
+New tracked tools in `packages/tools/` (documented in that package's README):
+`dump_layer_meshes.mjs`, `analyse_layer_names.mjs`, `audit_mesh_reachability.mjs`,
+`audit_source_coverage.mjs`.
+
+`audit_mesh_reachability.mjs` checks the graph's core invariant — every published `mesh_names` entry
+must be a string the app's loader really reports — against a loader dump of the asset each row
+declares. Result over the whole graph: **1800 mesh names, 486 rows, all reachable, 0 rows
+unverifiable.**
+
+It found two real defects, neither visible in the interface:
+
+1. **`aorta-ascending` declared the wrong asset.** Its meshes (`VH_M_ascending_aorta`,
+   `VH_F_ascending_aorta`) live in the donor Blood_Vasculature assets — the row's own note said so —
+   while the asset field named the HRA heart GLBs. The names were right; the documentation was not.
+   (This one was introduced earlier the same day, by the batch that filled in the placeholder asset
+   fields: it mapped that row to the heart GLBs by mistake.)
+2. **`duodenum` claims `VH_M_hepatopancreatic_ampulla`**, which lives in `VH_M_Biliary_Tree.glb`, an
+   asset the row did not declare.
+
+Both are the same failure mode: the row is correct but points at the wrong asset, so nothing can
+check it. A second audit, `audit_source_coverage.mjs`, asks a different question of the same kind —
+could a declared source have supplied each mesh name, judged by the library prefix and the sex that
+prefix encodes — and caught `heart-left-atrium` listing both donors' meshes with no visible-human
+source at all, and `heart-left-ventricle` listing a woman's mesh while declaring only a male table.
+
+**The audit was wrong twice before it was right**, which is worth recording: its first version
+flagged 55 names as unreachable, and all 55 resolve fine, because the app normalises both sides
+(`Pons.l` and `Ponsl` fold to the same key). Its multi-primitive rule then ran in the wrong
+direction — it stripped `_N` off the registered name instead of accepting it in the dump — so
+`Liver` and the five lung lobes read as missing when their dump entries are `Liver_1`,
+`Inferior_lobe_of_left_lung_1`, … A check that reports failures nobody can reproduce is worse than
+no check, so both mistakes are recorded here with their cause.
+
+None of this is a review of anatomy. These audits check names, not meanings.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was
