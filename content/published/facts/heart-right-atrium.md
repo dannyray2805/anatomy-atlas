@@ -5,6 +5,7 @@ reviewed: true
 reviewer: "GitHub Copilot — agent review; maintainer granted REVIEW_ACCEPT 2026-09-13"
 date: 2026-09-13
 citations:
+  - "z-anatomy"
   - "hubmap-hra-glb"
   - "uberon"
   - "wikipedia-atrium-heart"
@@ -31,3 +32,5 @@ citations:
 
 - Visible in the S-20-29 whole-heart HiP-CT volume: DOI `10.15151/ESRF-DC-1773964017`, 19.89 µm/voxel (hoa-heart-S-20-29).
 - This volume is not a right-atrium segmentation (hoa-heart-S-20-29).
+
+- Present in the Reference body's Z-Anatomy cardiovascular layer as the mesh node `Right atrium` — that layer is labelled 'Heart + vessels' (z-anatomy). The Reference body is a different individual from the Visible Human donors.

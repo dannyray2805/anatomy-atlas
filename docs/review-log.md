@@ -70,6 +70,35 @@ clickable (it has no mesh names), and it carries three unresolved problems:
 
 It needs a human decision about what that row is meant to represent before it is signed off.
 
+## 2026-09-14 — four reviewed cards extended with a second dataset
+
+The heart chambers and the ascending aorta now resolve on the Reference body as well as on the
+Visible Human donors, so four cards that were already `reviewed: true` gained a Presence bullet for
+that third body, and each gained the `z-anatomy` citation its new bullet cites:
+
+- `heart-left-ventricle`, `heart-right-ventricle`, `heart-right-atrium`, `aorta-ascending`.
+
+**What was checked for this extension, per row:** the new mesh name was confirmed present in the
+shipping asset with the app's own loader (not the file's node names — those differ); the Uberon id
+was re-confirmed at OLS4; and the page was checked to open the row from that body. The
+already-reviewed claims were not re-checked, and nothing was removed.
+
+**Two genuine gaps were closed rather than documented**, which is why the extensions are larger than
+a citation edit:
+
+- the **female** left ventricle had been unmapped since the first heart batch, because her asset
+  names it `VH_F_left_ventricle` while the male's says `VH_M_heart_left_ventricle`. Cards had been
+  apologising for a "male-only" left ventricle; that is now fixed, and the female guided journey
+  picks up the left-ventricle stop.
+- the **left atrium** had no row at all. Both donors' heart assets carry the mesh
+  (`VH_M_left_cardiac_atrium`, `VH_F_left_cardiac_atrium`) and had done since the hearts were first
+  mapped — the row was simply never written. A card was added for it (`heart-left-atrium`, still
+  `reviewed: false`).
+
+**Caught by the gate, worth recording:** the first patch cited `hubmap-hra-glb` in a card body
+without declaring it in the frontmatter. `pnpm validate` failed on the dangling citation, which is
+exactly what that rule exists for. Fixed by declaring the source.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

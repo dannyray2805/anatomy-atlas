@@ -48,8 +48,28 @@ describe("bodiesForMeshNames (which body carries a structure)", () => {
     assert.deepEqual(entry("prostate")?.bodies, ["donor-male"]);
     assert.deepEqual(entry("liver")?.bodies, ["reference", "donor-male", "donor-female"]);
     assert.deepEqual(entry("jejunum")?.bodies, ["reference", "donor-male", "donor-female"]);
-    // The heart rows name `VH_M_` / `VH_F_` meshes; they are the donor hearts, not the reference.
-    assert.deepEqual(entry("heart-right-ventricle")?.bodies, ["donor-male", "donor-female"]);
+    // The heart chambers are carried by all three bodies: the donors' HRA heart assets (`VH_M_` /
+    // `VH_F_`) and the Reference body's Z-Anatomy cardiovascular layer, whose meshes carry no prefix.
+    assert.deepEqual(entry("heart-right-ventricle")?.bodies, [
+      "reference",
+      "donor-male",
+      "donor-female"
+    ]);
+    // The left ventricle used to be male-only, because the female asset names it
+    // `VH_F_left_ventricle` while the male one says `VH_M_heart_left_ventricle`; the female mesh is
+    // mapped now, so this row must not quietly go back to one body.
+    assert.deepEqual(entry("heart-left-ventricle")?.bodies, [
+      "reference",
+      "donor-male",
+      "donor-female"
+    ]);
+    // And the left atrium, which had no row at all until it was noticed that both donors' assets
+    // carry the mesh. A body must not be dropped for this one either.
+    assert.deepEqual(entry("heart-left-atrium")?.bodies, [
+      "reference",
+      "donor-male",
+      "donor-female"
+    ]);
   });
 });
 

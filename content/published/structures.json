@@ -49,6 +49,11 @@
         "source_id": "hubmap-asctb-heart",
         "asset": "pending",
         "note": "ASCT+B heart table — map mesh node before review"
+      },
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node 'Left ventricle' confirmed present in the shipped Z-Anatomy cardiovascular GLB (R2 cardiovascular-v1-draco.glb) — the Reference body carries this chamber in its 'Heart + vessels' layer."
       }
     ],
     "voxel_size_um": null,
@@ -56,6 +61,8 @@
     "facts_id": "heart-left-ventricle",
     "reviewed": true,
     "mesh_names": [
+      "Left_ventricle",
+      "VH_F_left_ventricle",
       "VH_M_heart_left_ventricle"
     ]
   },
@@ -1293,6 +1300,11 @@
         "source_id": "hubmap-hra-glb",
         "asset": "pending",
         "note": "VH_Male + VH_Female v1.2 Blood_Vasculature.glb — mesh node names VH_M_ascending_aorta + VH_F_ascending_aorta confirmed in the node dump (present in both sexes)"
+      },
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node 'Ascending aorta' confirmed present in the shipped Z-Anatomy cardiovascular GLB (R2 cardiovascular-v1-draco.glb) — the Reference body carries it in its 'Heart + vessels' layer."
       }
     ],
     "voxel_size_um": null,
@@ -1300,8 +1312,9 @@
     "facts_id": "aorta-ascending",
     "reviewed": true,
     "mesh_names": [
-      "VH_M_ascending_aorta",
-      "VH_F_ascending_aorta"
+      "Ascending_aorta",
+      "VH_F_ascending_aorta",
+      "VH_M_ascending_aorta"
     ]
   },
   {
@@ -1316,6 +1329,11 @@
         "source_id": "hubmap-hra-glb",
         "asset": "pending",
         "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_heart_right_ventricle + VH_F_right_ventricle confirmed by direct GLB inspection (both sexes)"
+      },
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node 'Right ventricle' confirmed present in the shipped Z-Anatomy cardiovascular GLB (R2 cardiovascular-v1-draco.glb) — the Reference body carries this chamber in its 'Heart + vessels' layer."
       }
     ],
     "voxel_size_um": null,
@@ -1323,8 +1341,9 @@
     "facts_id": "heart-right-ventricle",
     "reviewed": true,
     "mesh_names": [
-      "VH_M_heart_right_ventricle",
-      "VH_F_right_ventricle"
+      "Right_ventricle",
+      "VH_F_right_ventricle",
+      "VH_M_heart_right_ventricle"
     ]
   },
   {
@@ -1339,6 +1358,11 @@
         "source_id": "hubmap-hra-glb",
         "asset": "pending",
         "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_right_cardiac_atrium + VH_F_right_cardiac_atrium confirmed by direct GLB inspection (both sexes)"
+      },
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node 'Right atrium' confirmed present in the shipped Z-Anatomy cardiovascular GLB (R2 cardiovascular-v1-draco.glb) — the Reference body carries this chamber in its 'Heart + vessels' layer."
       }
     ],
     "voxel_size_um": null,
@@ -1346,8 +1370,9 @@
     "facts_id": "heart-right-atrium",
     "reviewed": true,
     "mesh_names": [
-      "VH_M_right_cardiac_atrium",
-      "VH_F_right_cardiac_atrium"
+      "Right_atrium",
+      "VH_F_right_cardiac_atrium",
+      "VH_M_right_cardiac_atrium"
     ]
   },
   {
@@ -6835,6 +6860,30 @@
     "mesh_names": [
       "Zygomaticus_minor_muscle",
       "Zygomaticus_minor_muscle_1"
+    ]
+  },
+  {
+    "id": "heart-left-atrium",
+    "uberon": "UBERON:0002079",
+    "fma": null,
+    "label": "Left atrium",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node 'Left atrium' confirmed present in the shipped Z-Anatomy cardiovascular GLB (R2 cardiovascular-v1-draco.glb) — the Reference body carries this chamber in its 'Heart + vessels' layer. UBERON's own label is 'left cardiac atrium'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": "heart-left-atrium",
+    "reviewed": false,
+    "mesh_names": [
+      "Left_atrium",
+      "VH_F_left_cardiac_atrium",
+      "VH_M_left_cardiac_atrium"
     ]
   }
 ]
