@@ -179,6 +179,20 @@ function ReferenceAttribution() {
         claims none of the heart's parts.
       </li>
       <li>
+        Nerves and sense organs — 160 of the 315 names in this layer are their own structures, each id
+        accepted only where the asset&apos;s name is exactly Uberon&apos;s label or one of its exact
+        synonyms. That covers the cranial nerves, the named nerves of the limbs and trunk, the
+        brainstem and its nuclei, the cerebellum, parts of the brain surface, the spinal cord, and the
+        eye (cornea, iris, retina, sclera, vitreous body and the eyeball&apos;s segments). The rest are
+        not mapped, and the reason is the ontology or the naming: Uberon has no term at all for several
+        named nerves (iliohypogastric, genitofemoral, lateral femoral cutaneous), and for others it
+        names the structure with a qualifier its synonym list does not shorten to the asset&apos;s word
+        (the source says &quot;Culmen&quot;, Uberon says &quot;cerebellum vermis culmen&quot;; the source
+        says &quot;Lens&quot;, Uberon says &quot;lens of camera-type eye&quot;). A few are the source&apos;s
+        own abbreviations of an atlas parcellation (Lat Fis-ant-Horizont), which cannot be resolved
+        without guessing. Those meshes render and click, and the drawer says they are not mapped.
+      </li>
+      <li>
         A single fixed male reference individual (“Taro”) — a different person from the Visible
         Human donors, and a male body: no female anatomy is shown here, while the viscera layer
         does include that individual&apos;s male reproductive organs. Not per-sex.
@@ -228,7 +242,7 @@ const REFERENCE: BodySourceConfig = {
   label: BODY_SOURCE_LABELS.reference,
   who: BODY_SOURCE_WHO.reference,
   build: () => buildReference(),
-  layerLabels: { organ: "Viscera", vessel: "Heart + vessels" },
+  layerLabels: { organ: "Viscera", vessel: "Heart + vessels", nerve: "Nerves + eyes" },
   journey: REFERENCE_JOURNEY,
   banners: [
     <>
@@ -244,9 +258,11 @@ const REFERENCE: BodySourceConfig = {
       skin to nerves. Layers inside the peel point stay as you left them; the heavy systems
       mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi,
       the brainstem, the bones of the skull, spine, ribs, sternum and limbs, 132 of this
-      body&apos;s muscles, and 229 named vessels of the heart-and-vessels layer are each mapped to
-      a structure; hand-and-foot bone, peripheral-nerve and the remaining vessel names are not
-      mapped yet, so they report “not mapped to a structure”.
+      body&apos;s muscles, 229 named vessels of the heart-and-vessels layer, and 160 of the nerve
+      layer&apos;s names — the cranial and named peripheral nerves, the brain&apos;s parts and the
+      eye — are each mapped to a structure; the hand-and-foot bones, and the vessel, nerve and
+      muscle names Uberon does not model, are not mapped yet, so they report “not mapped to a
+      structure”.
     </>
   ),
   attribution: <ReferenceAttribution />

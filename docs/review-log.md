@@ -249,6 +249,61 @@ no check, so both mistakes are recorded here with their cause.
 
 None of this is a review of anatomy. These audits check names, not meanings.
 
+## 2026-09-14 — the nervous-system layer, and three rows that had never resolved
+
+Scope: 157 new `nerve` rows for the Reference body's Z-Anatomy nervous-system layer, and three
+already-`reviewed: true` brainstem rows corrected. Graph 486 → 643 rows.
+
+### What was checked
+
+- Every id accepted only on an **exact Uberon label or an exact synonym**, read from the OLS4 term
+  endpoint (`incoming/resolve_nerves.mjs`). 160 of the layer's 315 names resolved, covering 293 mesh
+  names; 116 matched the term's own label, 26 an exact synonym, 6 needed a rename.
+- The dry run before the graph was touched: 0 mesh names already claimed elsewhere, 0 Uberon ids used
+  by two new rows, and the 3 id clashes it found were the brainstem rows below.
+- `packages/tools/audit_mesh_reachability.mjs` after the batch: **2087 published mesh names, all
+  reachable from a loader dump, 0 rows unverifiable**. `audit_source_coverage.mjs`: 0 unaccounted.
+
+### Three rows that had never resolved
+
+`midbrain`, `pons` and `medulla-oblongata` were written from the FILE's node names (`Pons.l`) while
+the loader reports `Ponsl`. They were `reviewed: true` with published fact cards and resolved for
+nobody — a dead mapping behind a live-looking row, found by the reachability audit rather than by
+anything in the UI. Their mesh names are corrected; the generic apply writes a row wholesale, which
+would have dropped their `facts_id` and reset `reviewed`, so `incoming/repair_brainstem_rows.mjs`
+restores both and rewrites each note to record what was wrong. `shared/apply_layer_mappings.mjs` now
+refuses to overwrite a reviewed row unless it is explicitly told to, so this cannot happen quietly
+again.
+
+### Two mistakes made and corrected during the batch, recorded because both were silent
+
+1. **Grouping by the object that owns a mesh mislabels anatomy.** The loader names a multi-primitive
+   object after the mesh-data block, and that block can hold unrelated structures: the object `Ponsr`
+   carries the pons AND the facial motor nucleus, the abducens nucleus, the salivatory nuclei and the
+   vestibular nuclei. Grouping by the owner put all nine on the `pons` row, so a click on the facial
+   nucleus would have reported "Pons". Labels now come from the mesh a click actually reports.
+   This also recovered 15 more structures, because those nuclei are now their own names.
+2. **An exclusion rule dropped mappable rows.** A first draft excluded anything containing "part of"
+   and the "proprius" names. Uberon DOES name the opercular, orbital and triangular parts of the
+   inferior frontal gyrus, so three real structures were being discarded by a rule, not by the
+   ontology. The exclusions are now limited to names that are not structures at all, and the gate
+   decides everything else.
+
+### Not checked, and not claimed
+
+- No anatomist confirmed the meshes are the structures their names say.
+- 155 of the layer's names stay unmapped, and the reasons are recorded rather than smoothed over:
+  Uberon has no term at all for several named nerves (iliohypogastric, genitofemoral, lateral femoral
+  cutaneous); for others it names the structure with a qualifier its synonym list does not shorten to
+  the asset's word (`Culmen` is "cerebellum vermis culmen", `Lens` is "lens of camera-type eye",
+  `Lateral ventricle` is "telencephalic ventricle"); and a few are the source's own atlas
+  abbreviations (`Lat Fis-ant-Horizont`).
+- A limitation of the OLS4 search index, worth knowing for any future layer: some names exist as
+  synonyms the search never returns. `Hippocampus` is an exact synonym of UBERON:0002421
+  "hippocampal formation", yet no query form surfaces that term — so it stays unmapped even though the
+  ontology does name it. The search index also claims exact synonyms the term record denies (`Lateral
+  ventricle` for UBERON:0002285), which is why acceptance follows the TERM record, not the index.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

@@ -1056,7 +1056,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/nervous-v1-draco.glb",
-        "note": "Z-Anatomy 'Nervous system & Sense organs' collection (R2 nervous-v1-draco.glb) — 580 surface nodes: brain surfaces, spinal cord parts, spinal dura, cranial and peripheral nerve tubes (247 converted from beveled curves). Honest gap: the eye's ciliary body has NO surface geometry in this source (its two curves are unbeveled and were dropped)."
+        "note": "Z-Anatomy 'Nervous system & Sense organs' collection (R2 nervous-v1-draco.glb) — 580 surface nodes: brain surfaces, spinal cord parts, spinal dura, cranial and peripheral nerve tubes (247 converted from beveled curves). 160 of the layer's 315 names are mapped as their own structures, each id accepted only on an exact Uberon label or exact synonym; the other 155 are named nerves Uberon lacks, structures Uberon names with a qualifier its synonyms do not shorten to the asset's word, and a few of the source's own atlas abbreviations. Honest gap: the eye's ciliary body has NO surface geometry in this source (its two curves are unbeveled and were dropped)."
       }
     ],
     "voxel_size_um": null,
@@ -1075,7 +1075,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/nervous-v1-draco.glb",
-        "note": "Mesh nodes 'Midbrain.l' and 'Midbrain.r' confirmed present in the shipped nervous-system GLB (R2 nervous-v1-draco.glb). This source carries the brain as its named parts, not as one whole-brain mesh. Uberon id verified against OLS4 (label 'midbrain', not obsolete)."
+        "note": "Mesh nodes 'Midbrainl' and 'Midbrainr' confirmed present in the shipped nervous-system GLB (R2 nervous-v1-draco.glb) with the app's own loader. The list previously read 'Midbrain.l' / 'Midbrain.r' — the file's own spelling, which the loader never reports (it strips the dot), so these meshes resolved for nobody. This source carries the brain as its named parts, not as one whole-brain mesh. Uberon id verified against OLS4 (label 'midbrain', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -1083,8 +1083,8 @@
     "facts_id": "midbrain",
     "reviewed": true,
     "mesh_names": [
-      "Midbrain.l",
-      "Midbrain.r"
+      "Midbrainl",
+      "Midbrainr"
     ]
   },
   {
@@ -1098,7 +1098,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/nervous-v1-draco.glb",
-        "note": "Mesh nodes 'Pons.l' and 'Pons.r' confirmed present in the shipped nervous-system GLB. Uberon id verified against OLS4 (label 'pons', not obsolete)."
+        "note": "Mesh nodes 'Ponsl' and 'Ponsr' confirmed present in the shipped nervous-system GLB with the app's own loader (previously written 'Pons.l' / 'Pons.r', which the loader never reports). The nuclei this source groups under the pons object — facial motor, abducens, salivatory and vestibular — are separate meshes and are mapped as their own rows rather than being claimed here. Uberon id verified against OLS4 (label 'pons', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -1106,8 +1106,8 @@
     "facts_id": "pons",
     "reviewed": true,
     "mesh_names": [
-      "Pons.l",
-      "Pons.r"
+      "Ponsl",
+      "Ponsr"
     ]
   },
   {
@@ -1121,7 +1121,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/nervous-v1-draco.glb",
-        "note": "Mesh nodes 'Medulla oblongata.l' and 'Medulla oblongata.r' confirmed present in the shipped nervous-system GLB. The pyramids of the medulla are separate meshes and are not mapped here. Uberon id verified against OLS4 (label 'medulla oblongata', not obsolete)."
+        "note": "Mesh nodes 'Medulla_oblongatal' and 'Medulla_oblongatar' confirmed present in the shipped nervous-system GLB with the app's own loader (previously written 'Medulla oblongata.l' / '.r', which the loader never reports). The pyramids of the medulla are separate meshes and are their own row (pyramid-of-medulla-oblongata). Uberon id verified against OLS4 (label 'medulla oblongata', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -1129,8 +1129,8 @@
     "facts_id": "medulla-oblongata",
     "reviewed": true,
     "mesh_names": [
-      "Medulla oblongata.l",
-      "Medulla oblongata.r"
+      "Medulla_oblongatal",
+      "Medulla_oblongatar"
     ]
   },
   {
@@ -12201,6 +12201,3590 @@
     "mesh_names": [
       "VH_F_tricuspid_valve",
       "VH_M_tricuspid_valve"
+    ]
+  },
+  {
+    "id": "abducens-nerve-vi",
+    "uberon": "UBERON:0001646",
+    "fma": null,
+    "label": "Abducens nerve VI",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'abducens nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Abducens_nerve_(VI)l",
+      "Abducens_nerve_(VI)r"
+    ]
+  },
+  {
+    "id": "accessory-nerve-xi",
+    "uberon": "UBERON:0002019",
+    "fma": null,
+    "label": "Accessory nerve XI",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'accessory XI nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Accessory_nerve_(XI)l",
+      "Accessory_nerve_(XI)r"
+    ]
+  },
+  {
+    "id": "amygdaloid-body",
+    "uberon": "UBERON:0001876",
+    "fma": null,
+    "label": "Amygdaloid body",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'amygdala'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Amygdaloid_bodyl",
+      "Amygdaloid_bodyr"
+    ]
+  },
+  {
+    "id": "angular-gyrus",
+    "uberon": "UBERON:0002686",
+    "fma": null,
+    "label": "Angular gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'angular gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Angular_gyrus",
+      "Angular_gyrus_1"
+    ]
+  },
+  {
+    "id": "anterior-chamber-of-eyeball",
+    "uberon": "UBERON:0001766",
+    "fma": null,
+    "label": "Anterior chamber of eyeball",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'anterior chamber of eyeball', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_chamber_of_eyeballl",
+      "Anterior_chamber_of_eyeballr"
+    ]
+  },
+  {
+    "id": "anterior-cochlear-nucleus",
+    "uberon": "UBERON:0002828",
+    "fma": null,
+    "label": "Anterior cochlear nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'ventral cochlear nucleus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_cochlear_nucleusl",
+      "Anterior_cochlear_nucleusr"
+    ]
+  },
+  {
+    "id": "anterior-commissure",
+    "uberon": "UBERON:0000935",
+    "fma": null,
+    "label": "Anterior commissure",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'anterior commissure', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_commissure"
+    ]
+  },
+  {
+    "id": "anterior-corticospinal-tract",
+    "uberon": "UBERON:0002760",
+    "fma": null,
+    "label": "Anterior corticospinal tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'Ventral corticospinal tract'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_corticospinal_tract"
+    ]
+  },
+  {
+    "id": "anterior-horn-of-spinal-cord",
+    "uberon": "UBERON:0002257",
+    "fma": null,
+    "label": "Anterior horn of spinal cord",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'ventral horn of spinal cord'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_horn_of_spinal_cord"
+    ]
+  },
+  {
+    "id": "anterior-occipital-sulcus",
+    "uberon": "UBERON:0002906",
+    "fma": null,
+    "label": "Anterior occipital sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior occipital sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_occipital_sulcus*",
+      "Anterior_occipital_sulcus*_1"
+    ]
+  },
+  {
+    "id": "anterior-quadrangular-lobule",
+    "uberon": "UBERON:0003015",
+    "fma": null,
+    "label": "Anterior quadrangular lobule",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior quadrangular lobule', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_quadrangular_lobulel",
+      "Anterior_quadrangular_lobuler"
+    ]
+  },
+  {
+    "id": "anterior-segment-of-eyeball",
+    "uberon": "UBERON:0001801",
+    "fma": null,
+    "label": "Anterior segment of eyeball",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'anterior segment of eyeball', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_segment_of_eyeballl",
+      "Anterior_segment_of_eyeballr"
+    ]
+  },
+  {
+    "id": "anterior-spinocerebellar-tract",
+    "uberon": "UBERON:0002987",
+    "fma": null,
+    "label": "Anterior spinocerebellar tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior spinocerebellar tract', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_spinocerebellar_tract"
+    ]
+  },
+  {
+    "id": "aqueduct-of-midbrain",
+    "uberon": "UBERON:0002289",
+    "fma": null,
+    "label": "Aqueduct of midbrain",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'midbrain cerebral aqueduct'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Aqueduct_of_midbrain"
+    ]
+  },
+  {
+    "id": "auditory-tube",
+    "uberon": "UBERON:0002393",
+    "fma": null,
+    "label": "Auditory tube",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'pharyngotympanic tube'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Auditory_tubel",
+      "Auditory_tuber"
+    ]
+  },
+  {
+    "id": "axillary-nerve",
+    "uberon": "UBERON:0001493",
+    "fma": null,
+    "label": "Axillary nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'axillary nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Axillary_nervel",
+      "Axillary_nerver"
+    ]
+  },
+  {
+    "id": "biventral-lobule",
+    "uberon": "UBERON:0006121",
+    "fma": null,
+    "label": "Biventral lobule",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'Biventer lobule'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Biventral_lobulel",
+      "Biventral_lobuler"
+    ]
+  },
+  {
+    "id": "buccal-nerve",
+    "uberon": "UBERON:0013646",
+    "fma": null,
+    "label": "Buccal nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Buccal nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Buccal_nervel",
+      "Buccal_nerver"
+    ]
+  },
+  {
+    "id": "calcarine-sulcus",
+    "uberon": "UBERON:0002586",
+    "fma": null,
+    "label": "Calcarine sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'calcarine sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Calcarine_sulcus",
+      "Calcarine_sulcus_1"
+    ]
+  },
+  {
+    "id": "cauda-equina",
+    "uberon": "UBERON:0012337",
+    "fma": null,
+    "label": "Cauda equina",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'cauda equina', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cauda_equina"
+    ]
+  },
+  {
+    "id": "caudate-nucleus",
+    "uberon": "UBERON:0001873",
+    "fma": null,
+    "label": "Caudate nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'caudate nucleus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Caudate_nucleusl",
+      "Caudate_nucleusr"
+    ]
+  },
+  {
+    "id": "central-canal",
+    "uberon": "UBERON:0002291",
+    "fma": null,
+    "label": "Central canal",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'central canal of spinal cord'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Central_canal",
+      "Central_canal'"
+    ]
+  },
+  {
+    "id": "central-lobule",
+    "uberon": "UBERON:0003021",
+    "fma": null,
+    "label": "Central lobule",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Central lobule', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Central_lobule"
+    ]
+  },
+  {
+    "id": "central-sulcus",
+    "uberon": "UBERON:0002916",
+    "fma": null,
+    "label": "Central sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'central sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Central_sulcus",
+      "Central_sulcus_1"
+    ]
+  },
+  {
+    "id": "chorda-tympani",
+    "uberon": "UBERON:0009675",
+    "fma": null,
+    "label": "Chorda tympani",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Chorda tympani', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Chorda_tympanil",
+      "Chorda_tympanir"
+    ]
+  },
+  {
+    "id": "choroid-plexus",
+    "uberon": "UBERON:0001886",
+    "fma": null,
+    "label": "Choroid plexus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'choroid plexus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Choroid_plexusl",
+      "Choroid_plexusr"
+    ]
+  },
+  {
+    "id": "circular-sulcus-of-insula",
+    "uberon": "UBERON:0002713",
+    "fma": null,
+    "label": "Circular sulcus of insula",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Circular sulcus of insula', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Circular_sulcus_of_insula",
+      "Circular_sulcus_of_insula_1"
+    ]
+  },
+  {
+    "id": "cochlea",
+    "uberon": "UBERON:0001844",
+    "fma": null,
+    "label": "Cochlea",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'cochlea', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cochleal",
+      "Cochlear"
+    ]
+  },
+  {
+    "id": "cochlear-nerve",
+    "uberon": "UBERON:0004727",
+    "fma": null,
+    "label": "Cochlear nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'cochlear nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cochlear_nerve",
+      "Cochlear_nervel"
+    ]
+  },
+  {
+    "id": "collateral-sulcus",
+    "uberon": "UBERON:0002716",
+    "fma": null,
+    "label": "Collateral sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Collateral sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Collateral_sulcus",
+      "Collateral_sulcus_1"
+    ]
+  },
+  {
+    "id": "common-fibular-nerve",
+    "uberon": "UBERON:0001324",
+    "fma": null,
+    "label": "Common fibular nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Common fibular nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Common_fibular_nervel",
+      "Common_fibular_nerver"
+    ]
+  },
+  {
+    "id": "cornea",
+    "uberon": "UBERON:0000964",
+    "fma": null,
+    "label": "Cornea",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'cornea', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Corneal",
+      "Cornear"
+    ]
+  },
+  {
+    "id": "corpus-callosum",
+    "uberon": "UBERON:0002336",
+    "fma": null,
+    "label": "Corpus callosum",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'corpus callosum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Corpus_callosum"
+    ]
+  },
+  {
+    "id": "cuneate-fasciculus",
+    "uberon": "UBERON:0005832",
+    "fma": null,
+    "label": "Cuneate fasciculus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'cuneate fasciculus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cuneate_fasciculus"
+    ]
+  },
+  {
+    "id": "deep-fibular-nerve",
+    "uberon": "UBERON:0035207",
+    "fma": null,
+    "label": "Deep fibular nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Deep fibular nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_fibular_nervel",
+      "Deep_fibular_nerver"
+    ]
+  },
+  {
+    "id": "facial-nerve-vii",
+    "uberon": "UBERON:0001647",
+    "fma": null,
+    "label": "Facial nerve VII",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'facial nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Facial_nerve_(VII)l",
+      "Facial_nerve_(VII)r"
+    ]
+  },
+  {
+    "id": "falx-cerebri",
+    "uberon": "UBERON:0006059",
+    "fma": null,
+    "label": "Falx cerebri",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'falx cerebri', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Falx_cerebri"
+    ]
+  },
+  {
+    "id": "femoral-nerve",
+    "uberon": "UBERON:0001267",
+    "fma": null,
+    "label": "Femoral nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'femoral nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Femoral_nervel",
+      "Femoral_nerver"
+    ]
+  },
+  {
+    "id": "flocculus",
+    "uberon": "UBERON:0001063",
+    "fma": null,
+    "label": "Flocculus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'flocculus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Flocculusl",
+      "Flocculusr"
+    ]
+  },
+  {
+    "id": "fourth-ventricle",
+    "uberon": "UBERON:0002422",
+    "fma": null,
+    "label": "Fourth ventricle",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'fourth ventricle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fourth_ventricle"
+    ]
+  },
+  {
+    "id": "globus-pallidus",
+    "uberon": "UBERON:0001875",
+    "fma": null,
+    "label": "Globus pallidus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'globus pallidus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Globus_pallidusl",
+      "Globus_pallidusr"
+    ]
+  },
+  {
+    "id": "glossopharyngeal-nerve-ix",
+    "uberon": "UBERON:0001649",
+    "fma": null,
+    "label": "Glossopharyngeal nerve IX",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'glossopharyngeal nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Glossopharyngeal_nerve_(IX)l",
+      "Glossopharyngeal_nerve_(IX)r"
+    ]
+  },
+  {
+    "id": "gracile-fasciculus",
+    "uberon": "UBERON:0005821",
+    "fma": null,
+    "label": "Gracile fasciculus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'gracile fasciculus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gracile_fasciculus"
+    ]
+  },
+  {
+    "id": "gracile-lobule",
+    "uberon": "UBERON:0005349",
+    "fma": null,
+    "label": "Gracile lobule",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Gracile lobule', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gracile_lobulel",
+      "Gracile_lobuler"
+    ]
+  },
+  {
+    "id": "habenula",
+    "uberon": "UBERON:0001904",
+    "fma": null,
+    "label": "Habenula",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'habenula', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Habenula"
+    ]
+  },
+  {
+    "id": "hypoglossal-nerve-xii",
+    "uberon": "UBERON:0001650",
+    "fma": null,
+    "label": "Hypoglossal nerve XII",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'hypoglossal nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hypoglossal_nerve_(XII)l",
+      "Hypoglossal_nerve_(XII)r"
+    ]
+  },
+  {
+    "id": "hypothalamus",
+    "uberon": "UBERON:0001898",
+    "fma": null,
+    "label": "Hypothalamus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'hypothalamus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hypothalamus"
+    ]
+  },
+  {
+    "id": "inferior-alveolar-nerve",
+    "uberon": "UBERON:0018405",
+    "fma": null,
+    "label": "Inferior alveolar nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior alveolar nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_alveolar_nervel",
+      "Inferior_alveolar_nerver"
+    ]
+  },
+  {
+    "id": "inferior-colliculus",
+    "uberon": "UBERON:0001946",
+    "fma": null,
+    "label": "Inferior colliculus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior colliculus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_colliculusl",
+      "Inferior_colliculusr"
+    ]
+  },
+  {
+    "id": "inferior-frontal-sulcus",
+    "uberon": "UBERON:0002761",
+    "fma": null,
+    "label": "Inferior frontal sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior frontal sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_frontal_sulcus",
+      "Inferior_frontal_sulcus_1"
+    ]
+  },
+  {
+    "id": "inferior-salivatory-nucleus",
+    "uberon": "UBERON:0002872",
+    "fma": null,
+    "label": "Inferior salivatory nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior salivatory nucleus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_salivatory_nucleusl",
+      "Inferior_salivatory_nucleusr"
+    ]
+  },
+  {
+    "id": "inferior-semilunar-lobule",
+    "uberon": "UBERON:0005977",
+    "fma": null,
+    "label": "Inferior semilunar lobule",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior semilunar lobule', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_semilunar_lobulel",
+      "Inferior_semilunar_lobuler"
+    ]
+  },
+  {
+    "id": "inferior-temporal-gyrus",
+    "uberon": "UBERON:0002751",
+    "fma": null,
+    "label": "Inferior temporal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior temporal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_temporal_gyrus",
+      "Inferior_temporal_gyrus_1"
+    ]
+  },
+  {
+    "id": "inferior-temporal-sulcus",
+    "uberon": "UBERON:0002969",
+    "fma": null,
+    "label": "Inferior temporal sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior temporal sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_temporal_sulcus",
+      "Inferior_temporal_sulcus_1"
+    ]
+  },
+  {
+    "id": "intercostal-nerves",
+    "uberon": "UBERON:0003727",
+    "fma": null,
+    "label": "Intercostal nerves",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'intercostal nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Intercostal_nervesl",
+      "Intercostal_nervesr"
+    ]
+  },
+  {
+    "id": "intermediolateral-nucleus",
+    "uberon": "UBERON:0002175",
+    "fma": null,
+    "label": "Intermediolateral nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Intermediolateral nucleus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Intermediolateral_nucleus"
+    ]
+  },
+  {
+    "id": "intraparietal-sulcus",
+    "uberon": "UBERON:0002913",
+    "fma": null,
+    "label": "Intraparietal sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'intraparietal sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Intraparietal_sulcus",
+      "Intraparietal_sulcus_1"
+    ]
+  },
+  {
+    "id": "iris",
+    "uberon": "UBERON:0001769",
+    "fma": null,
+    "label": "Iris",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'iris', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Irisl",
+      "Irisr"
+    ]
+  },
+  {
+    "id": "lacrimal-canaliculus",
+    "uberon": "UBERON:0001770",
+    "fma": null,
+    "label": "Lacrimal canaliculus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lacrimal canaliculus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lacrimal_canaliculusl",
+      "Lacrimal_canaliculusr"
+    ]
+  },
+  {
+    "id": "lacrimal-gland",
+    "uberon": "UBERON:0001817",
+    "fma": null,
+    "label": "Lacrimal gland",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lacrimal gland', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lacrimal_glandl",
+      "Lacrimal_glandr"
+    ]
+  },
+  {
+    "id": "lacrimal-sac",
+    "uberon": "UBERON:0001351",
+    "fma": null,
+    "label": "Lacrimal sac",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lacrimal sac', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lacrimal_sacl",
+      "Lacrimal_sacr"
+    ]
+  },
+  {
+    "id": "lateral-corticospinal-tract",
+    "uberon": "UBERON:0002589",
+    "fma": null,
+    "label": "Lateral corticospinal tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lateral corticospinal tract', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_corticospinal_tract"
+    ]
+  },
+  {
+    "id": "lateral-geniculate-body",
+    "uberon": "UBERON:0001926",
+    "fma": null,
+    "label": "Lateral geniculate body",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lateral geniculate body', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_geniculate_bodyl",
+      "Lateral_geniculate_bodyr"
+    ]
+  },
+  {
+    "id": "lateral-plantar-nerve",
+    "uberon": "UBERON:0035110",
+    "fma": null,
+    "label": "Lateral plantar nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lateral plantar nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_plantar_nervel",
+      "Lateral_plantar_nerver"
+    ]
+  },
+  {
+    "id": "lentiform-nucleus",
+    "uberon": "UBERON:0002263",
+    "fma": null,
+    "label": "Lentiform nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lentiform nucleus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lentiform_nucleusl",
+      "Lentiform_nucleusr"
+    ]
+  },
+  {
+    "id": "lingual-gyrus",
+    "uberon": "UBERON:0002943",
+    "fma": null,
+    "label": "Lingual gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lingual gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lingual_gyrus",
+      "Lingual_gyrus_1"
+    ]
+  },
+  {
+    "id": "lingual-nerve",
+    "uberon": "UBERON:0003721",
+    "fma": null,
+    "label": "Lingual nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lingual nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lingual_nervel",
+      "Lingual_nerver"
+    ]
+  },
+  {
+    "id": "lingula-of-cerebellum",
+    "uberon": "UBERON:0004074",
+    "fma": null,
+    "label": "Lingula of cerebellum",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lingula of cerebellum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lingula_of_cerebellum"
+    ]
+  },
+  {
+    "id": "lunate-sulcus",
+    "uberon": "UBERON:0002903",
+    "fma": null,
+    "label": "Lunate sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lunate sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lunate_sulcus",
+      "Lunate_sulcus_1"
+    ]
+  },
+  {
+    "id": "mamillary-body",
+    "uberon": "UBERON:0002206",
+    "fma": null,
+    "label": "Mamillary body",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'mammillary body'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Mamillary_bodyl",
+      "Mamillary_bodyr"
+    ]
+  },
+  {
+    "id": "maxillary-nerve",
+    "uberon": "UBERON:0000377",
+    "fma": null,
+    "label": "Maxillary nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'maxillary nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Maxillary_nervel",
+      "Maxillary_nerver"
+    ]
+  },
+  {
+    "id": "medial-geniculate-body",
+    "uberon": "UBERON:0001927",
+    "fma": null,
+    "label": "Medial geniculate body",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'medial geniculate body', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Medial_geniculate_bodyl",
+      "Medial_geniculate_bodyr"
+    ]
+  },
+  {
+    "id": "medial-plantar-nerve",
+    "uberon": "UBERON:0035111",
+    "fma": null,
+    "label": "Medial plantar nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Medial plantar nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Medial_plantar_nervel",
+      "Medial_plantar_nerver"
+    ]
+  },
+  {
+    "id": "median-nerve",
+    "uberon": "UBERON:0001148",
+    "fma": null,
+    "label": "Median nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Median nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Median_nervel",
+      "Median_nerver"
+    ]
+  },
+  {
+    "id": "mental-nerve",
+    "uberon": "UBERON:0018406",
+    "fma": null,
+    "label": "Mental nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Mental nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Mental_nervel",
+      "Mental_nerver"
+    ]
+  },
+  {
+    "id": "middle-frontal-gyrus",
+    "uberon": "UBERON:0002702",
+    "fma": null,
+    "label": "Middle frontal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle frontal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_frontal_gyrus",
+      "Middle_frontal_gyrus_1"
+    ]
+  },
+  {
+    "id": "middle-temporal-gyrus",
+    "uberon": "UBERON:0002771",
+    "fma": null,
+    "label": "Middle temporal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle temporal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_temporal_gyrus",
+      "Middle_temporal_gyrus_1"
+    ]
+  },
+  {
+    "id": "motor-nucleus-of-facial-nerve",
+    "uberon": "UBERON:0003011",
+    "fma": null,
+    "label": "Motor nucleus of facial nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Motor nucleus of facial nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Motor_nucleus_of_facial_nervel",
+      "Motor_nucleus_of_facial_nerver"
+    ]
+  },
+  {
+    "id": "motor-root-of-trigeminal-nerve",
+    "uberon": "UBERON:0002796",
+    "fma": null,
+    "label": "Motor root of trigeminal nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Motor root of trigeminal nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Motor_root_of_trigeminal_nervel",
+      "Motor_root_of_trigeminal_nerver"
+    ]
+  },
+  {
+    "id": "musculocutaneous-nerve",
+    "uberon": "UBERON:0003724",
+    "fma": null,
+    "label": "Musculocutaneous nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'musculocutaneous nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Musculocutaneous_nervel",
+      "Musculocutaneous_nerver"
+    ]
+  },
+  {
+    "id": "nasolacrimal-duct",
+    "uberon": "UBERON:0002392",
+    "fma": null,
+    "label": "Nasolacrimal duct",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'nasolacrimal duct', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nasolacrimal_ductl",
+      "Nasolacrimal_ductr"
+    ]
+  },
+  {
+    "id": "nucleus-ambiguus",
+    "uberon": "UBERON:0001719",
+    "fma": null,
+    "label": "Nucleus ambiguus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'nucleus ambiguus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nucleus_ambiguusl",
+      "Nucleus_ambiguusr"
+    ]
+  },
+  {
+    "id": "nucleus-of-abducens-nerve",
+    "uberon": "UBERON:0002682",
+    "fma": null,
+    "label": "Nucleus of abducens nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'abducens nucleus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nucleus_of_abducens_nervel",
+      "Nucleus_of_abducens_nerver"
+    ]
+  },
+  {
+    "id": "nucleus-of-hypoglossal-nerve",
+    "uberon": "UBERON:0002871",
+    "fma": null,
+    "label": "Nucleus of hypoglossal nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'hypoglossal nucleus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nucleus_of_hypoglossal_nervel",
+      "Nucleus_of_hypoglossal_nerver"
+    ]
+  },
+  {
+    "id": "nucleus-of-oculomotor-nerve",
+    "uberon": "UBERON:0001715",
+    "fma": null,
+    "label": "Nucleus of oculomotor nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'oculomotor nuclear complex'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nucleus_of_oculomotor_nervel",
+      "Nucleus_of_oculomotor_nerver"
+    ]
+  },
+  {
+    "id": "nucleus-of-trochlear-nerve",
+    "uberon": "UBERON:0002722",
+    "fma": null,
+    "label": "Nucleus of trochlear nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'trochlear nucleus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nucleus_of_trochlear_nervel",
+      "Nucleus_of_trochlear_nerver"
+    ]
+  },
+  {
+    "id": "obturator-nerve",
+    "uberon": "UBERON:0005465",
+    "fma": null,
+    "label": "Obturator nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'obturator nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Obturator_nervel",
+      "Obturator_nerver"
+    ]
+  },
+  {
+    "id": "occipital-pole",
+    "uberon": "UBERON:0002902",
+    "fma": null,
+    "label": "Occipital pole",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Occipital pole', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Occipital_pole",
+      "Occipital_pole_1"
+    ]
+  },
+  {
+    "id": "oculomotor-nerve-iii",
+    "uberon": "UBERON:0001643",
+    "fma": null,
+    "label": "Oculomotor nerve III",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'oculomotor nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Oculomotor_nerve_(III)l",
+      "Oculomotor_nerve_(III)r"
+    ]
+  },
+  {
+    "id": "olfactory-nerve-i",
+    "uberon": "UBERON:0001579",
+    "fma": null,
+    "label": "Olfactory nerve I",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'olfactory nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Olfactory_nerve_(I)l",
+      "Olfactory_nerve_(I)r"
+    ]
+  },
+  {
+    "id": "olfactory-sulcus",
+    "uberon": "UBERON:0002772",
+    "fma": null,
+    "label": "Olfactory sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'olfactory sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Olfactory_sulcus",
+      "Olfactory_sulcus_1"
+    ]
+  },
+  {
+    "id": "opercular-part-of-inferior-frontal-gyrus",
+    "uberon": "UBERON:0002980",
+    "fma": null,
+    "label": "Opercular part of inferior frontal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'opercular part of inferior frontal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Opercular_part_of_inferior_frontal_gyrus",
+      "Opercular_part_of_inferior_frontal_gyrus_1"
+    ]
+  },
+  {
+    "id": "ophthalmic-nerve",
+    "uberon": "UBERON:0000348",
+    "fma": null,
+    "label": "Ophthalmic nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ophthalmic nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ophthalmic_nervel",
+      "Ophthalmic_nerver"
+    ]
+  },
+  {
+    "id": "optic-chiasm",
+    "uberon": "UBERON:0000959",
+    "fma": null,
+    "label": "Optic chiasm",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'optic chiasma'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Optic_chiasml",
+      "Optic_chiasmr"
+    ]
+  },
+  {
+    "id": "optic-nerve-ii",
+    "uberon": "UBERON:0000941",
+    "fma": null,
+    "label": "Optic nerve II",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'cranial nerve II'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Optic_nerve_(II)l",
+      "Optic_nerve_(II)r"
+    ]
+  },
+  {
+    "id": "optic-tract",
+    "uberon": "UBERON:0001908",
+    "fma": null,
+    "label": "Optic tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'optic tract', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Optic_tractl",
+      "Optic_tractr"
+    ]
+  },
+  {
+    "id": "orbital-gyri",
+    "uberon": "UBERON:0007193",
+    "fma": null,
+    "label": "Orbital gyri",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'orbital gyrus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Orbital_gyri",
+      "Orbital_gyri_1"
+    ]
+  },
+  {
+    "id": "orbital-part-of-inferior-frontal-gyrus",
+    "uberon": "UBERON:0002624",
+    "fma": null,
+    "label": "Orbital part of inferior frontal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'orbital part of inferior frontal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Orbital_part_of__inferior_frontal_gyrus",
+      "Orbital_part_of__inferior_frontal_gyrus_1"
+    ]
+  },
+  {
+    "id": "palmar-branch-of-median-nerve",
+    "uberon": "UBERON:0016430",
+    "fma": null,
+    "label": "Palmar branch of median nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Palmar branch of median nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Palmar_branch_of_median_nervel",
+      "Palmar_branch_of_median_nerver"
+    ]
+  },
+  {
+    "id": "paracentral-sulcus",
+    "uberon": "UBERON:0002598",
+    "fma": null,
+    "label": "Paracentral sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Paracentral sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Paracentral_sulcus",
+      "Paracentral_sulcus_1"
+    ]
+  },
+  {
+    "id": "parieto-occipital-sulcus",
+    "uberon": "UBERON:0002695",
+    "fma": null,
+    "label": "Parieto-occipital sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'parieto-occipital sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Parieto-occipital_sulcus",
+      "Parieto-occipital_sulcus_1"
+    ]
+  },
+  {
+    "id": "postcentral-gyrus",
+    "uberon": "UBERON:0002581",
+    "fma": null,
+    "label": "Postcentral gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'postcentral gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Postcentral_gyrus",
+      "Postcentral_gyrus_1"
+    ]
+  },
+  {
+    "id": "postcentral-sulcus",
+    "uberon": "UBERON:0002915",
+    "fma": null,
+    "label": "Postcentral sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'postcentral sulcus of parietal lobe'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Postcentral_sulcus",
+      "Postcentral_sulcus_1"
+    ]
+  },
+  {
+    "id": "posterior-cochlear-nucleus",
+    "uberon": "UBERON:0002829",
+    "fma": null,
+    "label": "Posterior cochlear nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'dorsal cochlear nucleus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_cochlear_nucleusl",
+      "Posterior_cochlear_nucleusr"
+    ]
+  },
+  {
+    "id": "posterior-commissure",
+    "uberon": "UBERON:0000936",
+    "fma": null,
+    "label": "Posterior commissure",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'posterior commissure', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_commissure"
+    ]
+  },
+  {
+    "id": "posterior-horn-of-spinal-cord",
+    "uberon": "UBERON:0002256",
+    "fma": null,
+    "label": "Posterior horn of spinal cord",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'dorsal horn of spinal cord'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_horn_of_spinal_cord"
+    ]
+  },
+  {
+    "id": "posterior-root-of-spinal-nerve",
+    "uberon": "UBERON:0002261",
+    "fma": null,
+    "label": "Posterior root of spinal nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'dorsal root of spinal cord'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_root_of_spinal_nervel",
+      "Posterior_root_of_spinal_nerver"
+    ]
+  },
+  {
+    "id": "posterior-segment-of-eyeball",
+    "uberon": "UBERON:0001802",
+    "fma": null,
+    "label": "Posterior segment of eyeball",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'posterior segment of eyeball', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_segment_of_eyeballl",
+      "Posterior_segment_of_eyeballr"
+    ]
+  },
+  {
+    "id": "posterior-spinocerebellar-tract",
+    "uberon": "UBERON:0002753",
+    "fma": null,
+    "label": "Posterior spinocerebellar tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior spinocerebellar tract', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_spinocerebellar_tract"
+    ]
+  },
+  {
+    "id": "posterolateral-tract",
+    "uberon": "UBERON:0002649",
+    "fma": null,
+    "label": "Posterolateral tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'Dorsolateral fasciculus of medulla'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterolateral_tract"
+    ]
+  },
+  {
+    "id": "precentral-gyrus",
+    "uberon": "UBERON:0002703",
+    "fma": null,
+    "label": "Precentral gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'precentral gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Precentral_gyrus",
+      "Precentral_gyrus_1"
+    ]
+  },
+  {
+    "id": "pudendal-nerve",
+    "uberon": "UBERON:0011390",
+    "fma": null,
+    "label": "Pudendal nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Pudendal nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pudendal_nervel",
+      "Pudendal_nerver"
+    ]
+  },
+  {
+    "id": "putamen",
+    "uberon": "UBERON:0001874",
+    "fma": null,
+    "label": "Putamen",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'putamen', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Putamenl",
+      "Putamenr"
+    ]
+  },
+  {
+    "id": "pyramid-of-medulla-oblongata",
+    "uberon": "UBERON:0005159",
+    "fma": null,
+    "label": "Pyramid of medulla oblongata",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'pyramid of medulla oblongata', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pyramid_of_medulla_oblongatal",
+      "Pyramid_of_medulla_oblongatar"
+    ]
+  },
+  {
+    "id": "radial-nerve",
+    "uberon": "UBERON:0001492",
+    "fma": null,
+    "label": "Radial nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'radial nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Radial_nervel",
+      "Radial_nerver"
+    ]
+  },
+  {
+    "id": "red-nucleus",
+    "uberon": "UBERON:0001947",
+    "fma": null,
+    "label": "Red nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Red nucleus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Red_nucleusl",
+      "Red_nucleusr"
+    ]
+  },
+  {
+    "id": "retina",
+    "uberon": "UBERON:0000966",
+    "fma": null,
+    "label": "Retina",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'retina', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Retinal",
+      "Retinar"
+    ]
+  },
+  {
+    "id": "rubrospinal-tract",
+    "uberon": "UBERON:0002714",
+    "fma": null,
+    "label": "Rubrospinal tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'rubrospinal tract', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Rubrospinal_tract"
+    ]
+  },
+  {
+    "id": "saphenous-nerve",
+    "uberon": "UBERON:0002475",
+    "fma": null,
+    "label": "Saphenous nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Saphenous nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Saphenous_nervel",
+      "Saphenous_nerver"
+    ]
+  },
+  {
+    "id": "sciatic-nerve",
+    "uberon": "UBERON:0001322",
+    "fma": null,
+    "label": "Sciatic nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sciatic nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sciatic_nervel",
+      "Sciatic_nerver"
+    ]
+  },
+  {
+    "id": "sclera",
+    "uberon": "UBERON:0001773",
+    "fma": null,
+    "label": "Sclera",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sclera', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Scleral",
+      "Sclerar"
+    ]
+  },
+  {
+    "id": "sensory-root-of-trigeminal-nerve",
+    "uberon": "UBERON:0009907",
+    "fma": null,
+    "label": "Sensory root of trigeminal nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Sensory root of trigeminal nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sensory_root_of_trigeminal_nervel",
+      "Sensory_root_of_trigeminal_nerver"
+    ]
+  },
+  {
+    "id": "septal-nuclei",
+    "uberon": "UBERON:0002663",
+    "fma": null,
+    "label": "Septal nuclei",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'septal nuclear complex'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Septal_nuclei"
+    ]
+  },
+  {
+    "id": "septum-pellucidum",
+    "uberon": "UBERON:0004714",
+    "fma": null,
+    "label": "Septum pellucidum",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'septum pellucidum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Septum_pellucidum"
+    ]
+  },
+  {
+    "id": "stria-medullaris-thalami",
+    "uberon": "UBERON:0006086",
+    "fma": null,
+    "label": "Stria medullaris thalami",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'Stria medullaris of thalamus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Stria_medullaris_thalamil",
+      "Stria_medullaris_thalamir"
+    ]
+  },
+  {
+    "id": "stria-terminalis",
+    "uberon": "UBERON:0003029",
+    "fma": null,
+    "label": "Stria terminalis",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Stria terminalis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Stria_terminalisl",
+      "Stria_terminalisr"
+    ]
+  },
+  {
+    "id": "subparietal-sulcus",
+    "uberon": "UBERON:0002908",
+    "fma": null,
+    "label": "Subparietal sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Subparietal sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Subparietal_sulcus",
+      "Subparietal_sulcus_1"
+    ]
+  },
+  {
+    "id": "superficial-fibular-nerve",
+    "uberon": "UBERON:0035526",
+    "fma": null,
+    "label": "Superficial fibular nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superficial fibular nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_fibular_nervel",
+      "Superficial_fibular_nerver"
+    ]
+  },
+  {
+    "id": "superior-cerebellar-peduncle",
+    "uberon": "UBERON:0002150",
+    "fma": null,
+    "label": "Superior cerebellar peduncle",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior cerebellar peduncle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_cerebellar_pedunclel",
+      "Superior_cerebellar_peduncler"
+    ]
+  },
+  {
+    "id": "superior-colliculus",
+    "uberon": "UBERON:0001945",
+    "fma": null,
+    "label": "Superior colliculus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior colliculus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_colliculusl",
+      "Superior_colliculusr"
+    ]
+  },
+  {
+    "id": "superior-frontal-gyrus",
+    "uberon": "UBERON:0002661",
+    "fma": null,
+    "label": "Superior frontal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior frontal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_frontal_gyrus",
+      "Superior_frontal_gyrus_1"
+    ]
+  },
+  {
+    "id": "superior-frontal-sulcus",
+    "uberon": "UBERON:0002562",
+    "fma": null,
+    "label": "Superior frontal sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior frontal sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_frontal_sulcus",
+      "Superior_frontal_sulcus_1"
+    ]
+  },
+  {
+    "id": "superior-salivatory-nucleus",
+    "uberon": "UBERON:0002149",
+    "fma": null,
+    "label": "Superior salivatory nucleus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior salivatory nucleus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_salivatory_nucleusl",
+      "Superior_salivatory_nucleusr"
+    ]
+  },
+  {
+    "id": "superior-semilunar-lobule",
+    "uberon": "UBERON:0005976",
+    "fma": null,
+    "label": "Superior semilunar lobule",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior semilunar lobule', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_semilunar_lobulel",
+      "Superior_semilunar_lobuler"
+    ]
+  },
+  {
+    "id": "superior-temporal-sulcus",
+    "uberon": "UBERON:0002734",
+    "fma": null,
+    "label": "Superior temporal sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior temporal sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_temporal_sulcus",
+      "Superior_temporal_sulcus_1"
+    ]
+  },
+  {
+    "id": "supramarginal-gyrus",
+    "uberon": "UBERON:0002688",
+    "fma": null,
+    "label": "Supramarginal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'supramarginal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Supramarginal_gyrus",
+      "Supramarginal_gyrus_1"
+    ]
+  },
+  {
+    "id": "sural-nerve",
+    "uberon": "UBERON:0015488",
+    "fma": null,
+    "label": "Sural nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Sural nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sural_nervel",
+      "Sural_nerver"
+    ]
+  },
+  {
+    "id": "sympathetic-nerves",
+    "uberon": "UBERON:0034729",
+    "fma": null,
+    "label": "Sympathetic nerves",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'sympathetic nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sympathetic_nervesl",
+      "Sympathetic_nervesr"
+    ]
+  },
+  {
+    "id": "sympathetic-trunk",
+    "uberon": "UBERON:0000407",
+    "fma": null,
+    "label": "Sympathetic trunk",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sympathetic trunk', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sympathetic_trunkl",
+      "Sympathetic_trunkr"
+    ]
+  },
+  {
+    "id": "tectospinal-tract",
+    "uberon": "UBERON:0002949",
+    "fma": null,
+    "label": "Tectospinal tract",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'tectospinal tract', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tectospinal_tract"
+    ]
+  },
+  {
+    "id": "temporal-pole",
+    "uberon": "UBERON:0002576",
+    "fma": null,
+    "label": "Temporal pole",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'temporal pole', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Temporal_pole",
+      "Temporal_pole_1"
+    ]
+  },
+  {
+    "id": "tentorium-cerebelli",
+    "uberon": "UBERON:0006691",
+    "fma": null,
+    "label": "Tentorium cerebelli",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Tentorium cerebelli', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tentorium_cerebellil",
+      "Tentorium_cerebellir"
+    ]
+  },
+  {
+    "id": "third-ventricle",
+    "uberon": "UBERON:0002286",
+    "fma": null,
+    "label": "Third ventricle",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'third ventricle', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Third_ventricle"
+    ]
+  },
+  {
+    "id": "tibial-nerve",
+    "uberon": "UBERON:0001323",
+    "fma": null,
+    "label": "Tibial nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'tibial nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tibial_nervel",
+      "Tibial_nerver"
+    ]
+  },
+  {
+    "id": "transverse-occipital-sulcus",
+    "uberon": "UBERON:0002900",
+    "fma": null,
+    "label": "Transverse occipital sulcus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Transverse occipital sulcus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transverse_occipital_sulcus",
+      "Transverse_occipital_sulcus_1"
+    ]
+  },
+  {
+    "id": "triangular-part-of-inferior-frontal-gyrus",
+    "uberon": "UBERON:0002629",
+    "fma": null,
+    "label": "Triangular part of inferior frontal gyrus",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'triangular part of inferior frontal gyrus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Triangular_part_of_inferior_frontal_gyrus",
+      "Triangular_part_of_inferior_frontal_gyrus_1"
+    ]
+  },
+  {
+    "id": "trigeminal-nerve-v",
+    "uberon": "UBERON:0001645",
+    "fma": null,
+    "label": "Trigeminal nerve V",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'trigeminal nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Trigeminal_nerve_(V)l",
+      "Trigeminal_nerve_(V)r"
+    ]
+  },
+  {
+    "id": "trochlear-nerve-iv",
+    "uberon": "UBERON:0001644",
+    "fma": null,
+    "label": "Trochlear nerve IV",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'trochlear nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Trochlear_nerve_(IV)l",
+      "Trochlear_nerve_(IV)r"
+    ]
+  },
+  {
+    "id": "tympanic-membrane",
+    "uberon": "UBERON:0002364",
+    "fma": null,
+    "label": "Tympanic membrane",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'tympanic membrane', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Tympanic_membranel",
+      "Tympanic_membraner"
+    ]
+  },
+  {
+    "id": "ulnar-nerve",
+    "uberon": "UBERON:0001494",
+    "fma": null,
+    "label": "Ulnar nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ulnar nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ulnar_nervel",
+      "Ulnar_nerver"
+    ]
+  },
+  {
+    "id": "vagus-nerve-x",
+    "uberon": "UBERON:0001759",
+    "fma": null,
+    "label": "Vagus nerve X",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'vagus nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vagus_nerve_(X)l",
+      "Vagus_nerve_(X)r"
+    ]
+  },
+  {
+    "id": "vestibular-nerve",
+    "uberon": "UBERON:0003723",
+    "fma": null,
+    "label": "Vestibular nerve",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'vestibular nerve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vestibular_nervel",
+      "Vestibular_nerver"
+    ]
+  },
+  {
+    "id": "vestibular-nuclei",
+    "uberon": "UBERON:0002673",
+    "fma": null,
+    "label": "Vestibular nuclei",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'vestibular nuclear complex'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vestibular_nucleil",
+      "Vestibular_nucleir"
+    ]
+  },
+  {
+    "id": "vestibulocochlear-nerve-viii",
+    "uberon": "UBERON:0001648",
+    "fma": null,
+    "label": "Vestibulocochlear nerve VIII",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. UBERON's own label is 'vestibulocochlear nerve'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vestibulocochlear_nerve_(VIII)l",
+      "Vestibulocochlear_nerve_(VIII)r"
+    ]
+  },
+  {
+    "id": "vitreous-body",
+    "uberon": "UBERON:0001798",
+    "fma": null,
+    "label": "Vitreous body",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'vitreous body', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vitreous_bodyl",
+      "Vitreous_bodyr"
+    ]
+  },
+  {
+    "id": "white-matter-of-spinal-cord",
+    "uberon": "UBERON:0002318",
+    "fma": null,
+    "label": "White matter of spinal cord",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'white matter of spinal cord', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "White_matter_of_spinal_cord"
+    ]
+  },
+  {
+    "id": "white-matter-of-telencephalon",
+    "uberon": "UBERON:0011299",
+    "fma": null,
+    "label": "White matter of telencephalon",
+    "layer": "nerve",
+    "part_of": "nervous-system",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped nerve GLB (R2 z-anatomy/glb/nervous-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'white matter of telencephalon', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "White_matter_of_telencephalonl",
+      "White_matter_of_telencephalonr"
     ]
   }
 ]

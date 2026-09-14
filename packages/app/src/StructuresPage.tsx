@@ -93,10 +93,10 @@ export function StructuresPage() {
       <p className="idx-foot">
         Parts of the bodies are not mapped to structures yet. On the Visible Human donor bodies the
         per-vessel names are not mapped and only the ascending aorta is; on the reference body the
-        peripheral nerves, the hand-and-foot bones, the named muscle parts Uberon does not model and
-        166 of its 416 vessel names are not. Those meshes report “not mapped to a structure” when
-        clicked, and they are absent from this list on purpose rather than listed as if they were
-        browsable.{" "}
+        hand-and-foot bones, 155 of its 315 nerve-layer names, 166 of its 416 vessel names and the
+        named muscle parts Uberon does not model are not. Those meshes report “not mapped to a
+        structure” when clicked, and they are absent from this list on purpose rather than listed as
+        if they were browsable.{" "}
         <Link to="/">Back to the body →</Link>
       </p>
     </div>
