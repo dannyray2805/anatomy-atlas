@@ -99,6 +99,69 @@ a citation edit:
 without declaring it in the frontmatter. `pnpm validate` failed on the dangling citation, which is
 exactly what that rule exists for. Fixed by declaring the source.
 
+## 2026-09-14 — the vessel tree, and a correction to how this project verifies an id
+
+Scope: 229 new `vessel`-layer rows for the Reference body's Z-Anatomy cardiovascular layer, all added
+`reviewed: false`. Two already-`reviewed: true` whole-layer rows had their source notes corrected
+(below); no reviewed row's id, label, Uberon id or mesh names changed.
+
+### The mapping rule, and the correction to it
+
+Earlier passes accepted an id only when the asset's name equalled the Uberon **label** exactly. That
+gate produced an obvious false negative here: UBERON:0001585 is labelled "anterior vena cava", and the
+human superior vena cava is one of its synonyms — so "Superior vena cava", which nobody would call
+unmappable, was refused.
+
+The gate is now the label **or an exact synonym**, and an earlier note in this project claiming the
+OLS4 search API returns no synonyms is simply wrong: the field is `exact_synonyms`, not `synonym`.
+Only exact synonyms are accepted — `related_synonyms` are ignored because they can be broader or
+narrower than the term. This raised the layer from 202 to 229 resolved labels.
+
+Two further corrections came out of the same work:
+
+- **The search index's own `label` can disagree with the term**, so it is now used only to *propose*
+  ids; the label that reaches the graph is always read from the OLS4 term endpoint. Measured
+  disagreements: the index calls UBERON:0010408 "ocular angle artery" while the term's label is
+  "Angular artery" (whose definition *is* the human angular artery, terminal part of the facial
+  artery), and it called UBERON:0006198 "dorsal intercostal artery" while the term's label is
+  "Supreme intercostal artery", defined as the highest intercostal artery.
+- **Uberon's synonymy is not anatomy.** Two names were refused although an exact synonym matched.
+  `Aortic arch` is an exact synonym of UBERON:0004363, which is the **pharyngeal arch artery** — the
+  *embryonic* arch artery — so the mesh is mapped to the adult `arch of aorta` (UBERON:0001508)
+  instead. `Medial plantar veins` matches UBERON:0006144, the medial plantar **digital** vein of the
+  toes, a different vessel from the veins that accompany the plantar artery in the sole. Both
+  refusals live in the resolver and are printed on every run.
+
+### What was actually checked
+
+- Every id was read from the OLS4 **term endpoint** (label plus synonyms), never from a search hit's
+  label.
+- Every `mesh_names` entry came from a loader dump of the shipping GLB, with sidedness read from the
+  file's own `.l`/`.r` node names rather than guessed from a trailing letter. 255 of the layer's
+  labels exist on both sides and became one row holding both mesh names.
+- The graph was dry-run before it was touched (`incoming/check_vessel_resolution.mjs`): 0 id clashes
+  with existing rows, 0 mesh names already claimed elsewhere, 0 Uberon ids used by two rows.
+- `pnpm validate` passes, including the mesh-name-collision and duplicate-id invariants.
+
+### Not checked, and not claimed
+
+- No anatomist confirmed that each mesh is the vessel its name says. The verification is nominal and
+  ontological — the same footing the rest of this graph stands on.
+- 166 of the layer's 416 labels stay unmapped and are reported by the script rather than guessed at:
+  segmental vessels of the lung, small named branches, and vessels Uberon does not model. A part is
+  never mapped to its whole, which is why the M1/M3 segments of the middle cerebral artery, the
+  abdominal and thoracic parts of the inferior vena cava and the divisions of the internal iliac
+  artery remain unmapped.
+- The heart's valves and leaflets, which this layer also carries, are part of the heart rather than
+  the vessel tree, and were left to the heart rows instead of being claimed here.
+
+### Two reviewed rows had stale notes corrected
+
+`cardiovascular-system` and `blood-vasculature` both carried notes this batch made false ("no
+per-vessel mapping yet"). They now state what is and is not mapped. Neither row's id, label, Uberon
+id, layer or mesh names were touched and both keep `reviewed: true` — recorded here because a note is
+part of what was reviewed.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

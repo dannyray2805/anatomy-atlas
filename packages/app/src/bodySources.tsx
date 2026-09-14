@@ -157,6 +157,21 @@ function ReferenceAttribution() {
         meshes render and click, and the drawer says they are not mapped to a structure.
       </li>
       <li>
+        Vessels — 229 of the 416 vessels this layer names are their own structures, each id accepted
+        only where the asset&apos;s name is exactly Uberon&apos;s label or one of its exact synonyms.
+        The remaining 166 are unmapped and the reason is the ontology: the segmental vessels of the
+        lung, small named branches, and vessels Uberon does not model. A part is never mapped to its
+        whole — the M1/M3 segments of the middle cerebral artery, the abdominal and thoracic parts
+        of the inferior vena cava, and the divisions of the internal iliac artery all stay unmapped,
+        as does a whole vena cava or aorta, which this layer carries only as its parts. Two names
+        were refused even though Uberon&apos;s synonymy would have accepted them: &quot;Aortic
+        arch&quot; is a synonym of the EMBRYONIC pharyngeal arch artery (UBERON:0004363), so it maps
+        to the adult arch of the aorta (UBERON:0001508) instead, and &quot;Medial plantar veins&quot;
+        resolves to a digital vein of the toes, a different vessel. The heart valves and leaflets
+        this layer also carries are part of the heart, not the vessel tree, and are not claimed
+        here.
+      </li>
+      <li>
         A single fixed male reference individual (“Taro”) — a different person from the Visible
         Human donors, and a male body: no female anatomy is shown here, while the viscera layer
         does include that individual&apos;s male reproductive organs. Not per-sex.
@@ -221,9 +236,10 @@ const REFERENCE: BodySourceConfig = {
       Peel down the rail — each stop takes the layers outside it off, so the body opens up from
       skin to nerves. Layers inside the peel point stay as you left them; the heavy systems
       mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi,
-      the brainstem, the bones of the skull, spine, ribs, sternum and limbs, and 132 of this
-      body&apos;s muscles are each mapped to a structure; vessel, hand-and-foot bone and
-      peripheral-nerve names are not mapped yet, so they report “not mapped to a structure”.
+      the brainstem, the bones of the skull, spine, ribs, sternum and limbs, 132 of this
+      body&apos;s muscles, and 229 named vessels of the heart-and-vessels layer are each mapped to
+      a structure; hand-and-foot bone, peripheral-nerve and the remaining vessel names are not
+      mapped yet, so they report “not mapped to a structure”.
     </>
   ),
   attribution: <ReferenceAttribution />

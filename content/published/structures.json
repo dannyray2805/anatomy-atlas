@@ -1032,7 +1032,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "pending",
-        "note": "Z-Anatomy 'Cardiovascular system' collection (R2 cardiovascular-v1-draco.glb) — 676 surface nodes: heart chambers, valves, papillary muscles, pulmonary trunk, dural sinuses, plus 654 vessel tubes converted from beveled curves, i.e. the arterial and venous tree including distal limb coverage. Distinct from the HuBMAP blood-vasculature row, which is a different individual and trunk-only."
+        "note": "Z-Anatomy 'Cardiovascular system' collection (R2 cardiovascular-v1-draco.glb) — 676 surface nodes: heart chambers, valves, papillary muscles, pulmonary trunk, dural sinuses, plus 654 vessel tubes converted from beveled curves, i.e. the arterial and venous tree including distal limb coverage. Distinct from the HuBMAP blood-vasculature row, which is a different individual and trunk-only. 229 of this layer's 416 named vessels are mapped as their own structures, each id accepted only on an exact Uberon label or exact synonym; the other 166 are segmental vessels and named branches Uberon does not model, and the heart's own parts (valves, leaflets, chambers) are claimed by the heart rows instead."
       }
     ],
     "voxel_size_um": null,
@@ -1280,7 +1280,7 @@
       {
         "source_id": "hubmap-hra-glb",
         "asset": "pending",
-        "note": "VH_Male + VH_Female v1.2 Blood_Vasculature — central/trunk arterial-venous tree, same individual frame as skin (identity). Per-vessel mapping not done yet (whole-layer row)."
+        "note": "VH_Male + VH_Female v1.2 Blood_Vasculature — central/trunk arterial-venous tree, same individual frame as skin (identity). This row stays a whole-layer row for THAT asset: only its ascending aorta mesh is mapped, and its per-vessel node names are not. The Reference body's Z-Anatomy vessel tree is mapped per vessel in its own child rows."
       }
     ],
     "voxel_size_um": null,
@@ -6884,6 +6884,5198 @@
       "Left_atrium",
       "VH_F_left_cardiac_atrium",
       "VH_M_left_cardiac_atrium"
+    ]
+  },
+  {
+    "id": "abdominal-aorta",
+    "uberon": "UBERON:0001516",
+    "fma": null,
+    "label": "Abdominal aorta",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'abdominal aorta', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Abdominal_aorta"
+    ]
+  },
+  {
+    "id": "accessory-hemi-azygos-vein",
+    "uberon": "UBERON:0006665",
+    "fma": null,
+    "label": "Accessory hemi-azygos vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Accessory hemiazygos vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Accessory_hemi-azygos_vein"
+    ]
+  },
+  {
+    "id": "angular-artery",
+    "uberon": "UBERON:0010408",
+    "fma": null,
+    "label": "Angular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Angular artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Angular_arteryl",
+      "Angular_arteryr"
+    ]
+  },
+  {
+    "id": "angular-vein",
+    "uberon": "UBERON:0014686",
+    "fma": null,
+    "label": "Angular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'angular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Angular_veinl",
+      "Angular_veinr"
+    ]
+  },
+  {
+    "id": "anterior-cerebral-artery",
+    "uberon": "UBERON:0001624",
+    "fma": null,
+    "label": "Anterior cerebral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior cerebral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_cerebral_arteryl",
+      "Anterior_cerebral_arteryr"
+    ]
+  },
+  {
+    "id": "anterior-circumflex-humeral-artery",
+    "uberon": "UBERON:8600106",
+    "fma": null,
+    "label": "Anterior circumflex humeral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'anterior humeral circumflex artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_circumflex_humeral_arteryl",
+      "Anterior_circumflex_humeral_arteryr"
+    ]
+  },
+  {
+    "id": "anterior-communicating-artery",
+    "uberon": "UBERON:0006764",
+    "fma": null,
+    "label": "Anterior communicating artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior communicating artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_communicating_artery"
+    ]
+  },
+  {
+    "id": "anterior-ethmoidal-artery",
+    "uberon": "UBERON:0012318",
+    "fma": null,
+    "label": "Anterior ethmoidal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior ethmoidal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_ethmoidal_arteryl",
+      "Anterior_ethmoidal_arteryr"
+    ]
+  },
+  {
+    "id": "anterior-inferior-cerebellar-artery",
+    "uberon": "UBERON:0009689",
+    "fma": null,
+    "label": "Anterior inferior cerebellar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior inferior cerebellar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_inferior_cerebellar_arteryl",
+      "Anterior_inferior_cerebellar_arteryr"
+    ]
+  },
+  {
+    "id": "anterior-inferior-pancreaticoduodenal-artery",
+    "uberon": "UBERON:8920026",
+    "fma": null,
+    "label": "Anterior inferior pancreaticoduodenal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'anterior inferior pancreaticoduodenal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_inferior_pancreaticoduodenal_artery"
+    ]
+  },
+  {
+    "id": "anterior-jugular-vein",
+    "uberon": "UBERON:0001104",
+    "fma": null,
+    "label": "Anterior jugular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior jugular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_jugular_veinl",
+      "Anterior_jugular_veinr"
+    ]
+  },
+  {
+    "id": "anterior-segmental-artery-of-left-lung",
+    "uberon": "UBERON:0039850",
+    "fma": null,
+    "label": "Anterior segmental artery of left lung",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Left anterior segmental artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_segmental_artery_of_left_lung"
+    ]
+  },
+  {
+    "id": "anterior-spinal-artery",
+    "uberon": "UBERON:0005431",
+    "fma": null,
+    "label": "Anterior spinal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'anterior spinal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_spinal_arteryl",
+      "Anterior_spinal_arteryr"
+    ]
+  },
+  {
+    "id": "anterior-tibial-artery",
+    "uberon": "UBERON:0001537",
+    "fma": null,
+    "label": "Anterior tibial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior tibial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_tibial_arteryl",
+      "Anterior_tibial_arteryr"
+    ]
+  },
+  {
+    "id": "anterior-tibial-veins",
+    "uberon": "UBERON:0001545",
+    "fma": null,
+    "label": "Anterior tibial veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'anterior tibial vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_tibial_veinsl",
+      "Anterior_tibial_veinsr"
+    ]
+  },
+  {
+    "id": "aortic-arch",
+    "uberon": "UBERON:0001508",
+    "fma": null,
+    "label": "Aortic arch",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'arch of aorta'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Aortic_arch"
+    ]
+  },
+  {
+    "id": "appendicular-artery",
+    "uberon": "UBERON:0039215",
+    "fma": null,
+    "label": "Appendicular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Appendicular artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Appendicular_artery"
+    ]
+  },
+  {
+    "id": "artery-of-pterygoid-canal",
+    "uberon": "UBERON:8600100",
+    "fma": null,
+    "label": "Artery of pterygoid canal",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'artery of pterygoid canal', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Artery_of_pterygoid_canall",
+      "Artery_of_pterygoid_canalr"
+    ]
+  },
+  {
+    "id": "ascending-branch-of-left-colic-artery",
+    "uberon": "UBERON:8920036",
+    "fma": null,
+    "label": "Ascending branch of left colic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ascending branch of left colic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ascending_branch_of_left_colic_artery"
+    ]
+  },
+  {
+    "id": "ascending-pharyngeal-artery",
+    "uberon": "UBERON:8600078",
+    "fma": null,
+    "label": "Ascending pharyngeal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ascending pharyngeal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ascending_pharyngeal_arteryl",
+      "Ascending_pharyngeal_arteryr"
+    ]
+  },
+  {
+    "id": "axillary-artery",
+    "uberon": "UBERON:0001394",
+    "fma": null,
+    "label": "Axillary artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'axillary artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Axillary_arteryl",
+      "Axillary_arteryr"
+    ]
+  },
+  {
+    "id": "axillary-vein",
+    "uberon": "UBERON:0000985",
+    "fma": null,
+    "label": "Axillary vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'axillary vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Axillary_veinl",
+      "Axillary_veinr"
+    ]
+  },
+  {
+    "id": "azygos-vein",
+    "uberon": "UBERON:0001594",
+    "fma": null,
+    "label": "Azygos vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Azygos vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Azygos_vein"
+    ]
+  },
+  {
+    "id": "basilar-artery",
+    "uberon": "UBERON:0001633",
+    "fma": null,
+    "label": "Basilar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'basilar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Basilar_artery"
+    ]
+  },
+  {
+    "id": "basilic-vein",
+    "uberon": "UBERON:0001411",
+    "fma": null,
+    "label": "Basilic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Basilic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Basilic_veinl",
+      "Basilic_veinr"
+    ]
+  },
+  {
+    "id": "brachial-artery",
+    "uberon": "UBERON:0001398",
+    "fma": null,
+    "label": "Brachial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'brachial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Brachial_arteryl",
+      "Brachial_arteryr"
+    ]
+  },
+  {
+    "id": "brachial-veins",
+    "uberon": "UBERON:0001413",
+    "fma": null,
+    "label": "Brachial veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Brachial vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Brachial_veinsl",
+      "Brachial_veinsr"
+    ]
+  },
+  {
+    "id": "brachiocephalic-trunk",
+    "uberon": "UBERON:0001529",
+    "fma": null,
+    "label": "Brachiocephalic trunk",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'brachiocephalic artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Brachiocephalic_trunk"
+    ]
+  },
+  {
+    "id": "buccal-artery",
+    "uberon": "UBERON:0001618",
+    "fma": null,
+    "label": "Buccal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Buccal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Buccal_arteryl",
+      "Buccal_arteryr"
+    ]
+  },
+  {
+    "id": "cavernous-sinus",
+    "uberon": "UBERON:0003712",
+    "fma": null,
+    "label": "Cavernous sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'cavernous sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cavernous_sinusl",
+      "Cavernous_sinusr"
+    ]
+  },
+  {
+    "id": "central-retinal-artery",
+    "uberon": "UBERON:0001620",
+    "fma": null,
+    "label": "Central retinal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'central retinal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Central_retinal_arteryl",
+      "Central_retinal_arteryr"
+    ]
+  },
+  {
+    "id": "cephalic-vein",
+    "uberon": "UBERON:0001106",
+    "fma": null,
+    "label": "Cephalic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Cephalic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cephalic_veinl",
+      "Cephalic_veinr"
+    ]
+  },
+  {
+    "id": "coeliac-trunk",
+    "uberon": "UBERON:0006637",
+    "fma": null,
+    "label": "Coeliac trunk",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Celiac trunk'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Coeliac_trunk"
+    ]
+  },
+  {
+    "id": "colic-branch-of-ileocolic-artery",
+    "uberon": "UBERON:8920034",
+    "fma": null,
+    "label": "Colic branch of ileocolic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'colic branch of ileocolic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Colic_branch_of_ileocolic_artery"
+    ]
+  },
+  {
+    "id": "common-hepatic-artery",
+    "uberon": "UBERON:0005436",
+    "fma": null,
+    "label": "Common hepatic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'common hepatic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Common_hepatic_artery"
+    ]
+  },
+  {
+    "id": "common-iliac-artery",
+    "uberon": "UBERON:0001191",
+    "fma": null,
+    "label": "Common iliac artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'common iliac artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Common_iliac_arteryl",
+      "Common_iliac_arteryr"
+    ]
+  },
+  {
+    "id": "common-iliac-vein",
+    "uberon": "UBERON:0001139",
+    "fma": null,
+    "label": "Common iliac vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'common iliac vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Common_iliac_veinl",
+      "Common_iliac_veinr"
+    ]
+  },
+  {
+    "id": "common-palmar-digital-arteries",
+    "uberon": "UBERON:0001410",
+    "fma": null,
+    "label": "Common palmar digital arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Common palmar digital artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Common_palmar_digital_arteriesl",
+      "Common_palmar_digital_arteriesr"
+    ]
+  },
+  {
+    "id": "common-plantar-digital-arteries",
+    "uberon": "UBERON:0002455",
+    "fma": null,
+    "label": "Common plantar digital arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Set of common plantar digital arteries'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Common_plantar_digital_arteriesl",
+      "Common_plantar_digital_arteriesr"
+    ]
+  },
+  {
+    "id": "coronary-sinus",
+    "uberon": "UBERON:0005438",
+    "fma": null,
+    "label": "Coronary sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Coronary sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Coronary_sinus"
+    ]
+  },
+  {
+    "id": "costocervical-trunk",
+    "uberon": "UBERON:0004688",
+    "fma": null,
+    "label": "Costocervical trunk",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'costo-cervical trunk'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Costocervical_trunkl",
+      "Costocervical_trunkr"
+    ]
+  },
+  {
+    "id": "deep-artery-of-penis",
+    "uberon": "UBERON:0008321",
+    "fma": null,
+    "label": "Deep artery of penis",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Deep artery of penis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_artery_of_penisl",
+      "Deep_artery_of_penisr"
+    ]
+  },
+  {
+    "id": "deep-brachial-artery",
+    "uberon": "UBERON:0001399",
+    "fma": null,
+    "label": "Deep brachial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Deep brachial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_brachial_arteryl",
+      "Deep_brachial_arteryr"
+    ]
+  },
+  {
+    "id": "deep-cervical-artery",
+    "uberon": "UBERON:0012321",
+    "fma": null,
+    "label": "Deep cervical artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'deep cervical artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_cervical_arteryl",
+      "Deep_cervical_arteryr"
+    ]
+  },
+  {
+    "id": "deep-dorsal-vein-of-penis",
+    "uberon": "UBERON:0006656",
+    "fma": null,
+    "label": "Deep dorsal vein of penis",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Deep dorsal vein of penis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_dorsal_vein_of_penis"
+    ]
+  },
+  {
+    "id": "deep-external-pudendal-artery",
+    "uberon": "UBERON:0007316",
+    "fma": null,
+    "label": "Deep external pudendal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Deep external pudendal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_external_pudendal_arteryl",
+      "Deep_external_pudendal_arteryr"
+    ]
+  },
+  {
+    "id": "deep-femoral-artery",
+    "uberon": "UBERON:0001355",
+    "fma": null,
+    "label": "Deep femoral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'deep femoral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Deep_femoral_arteryl",
+      "Deep_femoral_arteryr"
+    ]
+  },
+  {
+    "id": "descending-branch-of-left-colic-artery",
+    "uberon": "UBERON:8920037",
+    "fma": null,
+    "label": "Descending branch of left colic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'descending branch of left colic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Descending_branch_of_left_colic_artery"
+    ]
+  },
+  {
+    "id": "descending-palatine-artery",
+    "uberon": "UBERON:8600101",
+    "fma": null,
+    "label": "Descending palatine artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'descending palatine artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Descending_palatine_arteryl",
+      "Descending_palatine_arteryr"
+    ]
+  },
+  {
+    "id": "dorsal-artery-of-penis",
+    "uberon": "UBERON:0001340",
+    "fma": null,
+    "label": "Dorsal artery of penis",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Dorsal artery of penis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsal_artery_of_penisl",
+      "Dorsal_artery_of_penisr"
+    ]
+  },
+  {
+    "id": "dorsal-digital-arteries-of-foot",
+    "uberon": "UBERON:0006145",
+    "fma": null,
+    "label": "Dorsal digital arteries of foot",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Dorsal digital artery of foot'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsal_digital_arteries_of_footl",
+      "Dorsal_digital_arteries_of_footr"
+    ]
+  },
+  {
+    "id": "dorsal-digital-arteries-of-hand",
+    "uberon": "UBERON:0006146",
+    "fma": null,
+    "label": "Dorsal digital arteries of hand",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'dorsal digital artery of manus'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsal_digital_arteries_of_handl",
+      "Dorsal_digital_arteries_of_handr"
+    ]
+  },
+  {
+    "id": "dorsal-metacarpal-arteries",
+    "uberon": "UBERON:0002454",
+    "fma": null,
+    "label": "Dorsal metacarpal arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Set of dorsal metacarpal arteries'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsal_metacarpal_arteriesl",
+      "Dorsal_metacarpal_arteriesr"
+    ]
+  },
+  {
+    "id": "dorsal-metatarsal-veins",
+    "uberon": "UBERON:0001549",
+    "fma": null,
+    "label": "Dorsal metatarsal veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'dorsal metatarsal vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsal_metatarsal_veinsl",
+      "Dorsal_metatarsal_veinsr"
+    ]
+  },
+  {
+    "id": "dorsal-venous-arch-of-foot",
+    "uberon": "UBERON:0008783",
+    "fma": null,
+    "label": "Dorsal venous arch of foot",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'dorsal venous arch'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsal_venous_arch_of_footl",
+      "Dorsal_venous_arch_of_footr"
+    ]
+  },
+  {
+    "id": "dorsalis-pedis-artery",
+    "uberon": "UBERON:0001539",
+    "fma": null,
+    "label": "Dorsalis pedis artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Dorsalis pedis artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Dorsalis_pedis_arteryl",
+      "Dorsalis_pedis_arteryr"
+    ]
+  },
+  {
+    "id": "external-carotid-artery",
+    "uberon": "UBERON:0001070",
+    "fma": null,
+    "label": "External carotid artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'external carotid artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_carotid_arteryl",
+      "External_carotid_arteryr"
+    ]
+  },
+  {
+    "id": "external-iliac-artery",
+    "uberon": "UBERON:0001308",
+    "fma": null,
+    "label": "External iliac artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'external iliac artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_iliac_arteryl",
+      "External_iliac_arteryr"
+    ]
+  },
+  {
+    "id": "external-iliac-vein",
+    "uberon": "UBERON:0001316",
+    "fma": null,
+    "label": "External iliac vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'external iliac vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_iliac_veinl",
+      "External_iliac_veinr"
+    ]
+  },
+  {
+    "id": "external-jugular-vein",
+    "uberon": "UBERON:0001101",
+    "fma": null,
+    "label": "External jugular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'External jugular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_jugular_veinl",
+      "External_jugular_veinr"
+    ]
+  },
+  {
+    "id": "external-pudendal-veins",
+    "uberon": "UBERON:0018253",
+    "fma": null,
+    "label": "External pudendal veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'external pudendal vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "External_pudendal_veinsl",
+      "External_pudendal_veinsr"
+    ]
+  },
+  {
+    "id": "facial-artery",
+    "uberon": "UBERON:0001612",
+    "fma": null,
+    "label": "Facial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'facial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Facial_arteryl",
+      "Facial_arteryr"
+    ]
+  },
+  {
+    "id": "facial-vein",
+    "uberon": "UBERON:0001653",
+    "fma": null,
+    "label": "Facial vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'facial vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Facial_veinl",
+      "Facial_veinr"
+    ]
+  },
+  {
+    "id": "femoral-artery",
+    "uberon": "UBERON:0002060",
+    "fma": null,
+    "label": "Femoral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'femoral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Femoral_arteryl",
+      "Femoral_arteryr"
+    ]
+  },
+  {
+    "id": "femoral-vein",
+    "uberon": "UBERON:0001361",
+    "fma": null,
+    "label": "Femoral vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'femoral vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Femoral_veinl",
+      "Femoral_veinr"
+    ]
+  },
+  {
+    "id": "fibular-artery",
+    "uberon": "UBERON:0001540",
+    "fma": null,
+    "label": "Fibular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'peroneal artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fibular_arteryl",
+      "Fibular_arteryr"
+    ]
+  },
+  {
+    "id": "fibular-veins",
+    "uberon": "UBERON:8600083",
+    "fma": null,
+    "label": "Fibular veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'fibular vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Fibular_veinsl",
+      "Fibular_veinsr"
+    ]
+  },
+  {
+    "id": "gastroduodenal-artery",
+    "uberon": "UBERON:0010132",
+    "fma": null,
+    "label": "Gastroduodenal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Gastroduodenal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Gastroduodenal_artery"
+    ]
+  },
+  {
+    "id": "great-cardiac-vein",
+    "uberon": "UBERON:0006958",
+    "fma": null,
+    "label": "Great cardiac vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Great cardiac vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Great_cardiac_vein"
+    ]
+  },
+  {
+    "id": "great-saphenous-vein",
+    "uberon": "UBERON:0001363",
+    "fma": null,
+    "label": "Great saphenous vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'great saphenous vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Great_saphenous_veinl",
+      "Great_saphenous_veinr"
+    ]
+  },
+  {
+    "id": "greater-palatine-artery",
+    "uberon": "UBERON:0006664",
+    "fma": null,
+    "label": "Greater palatine artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Greater palatine artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Greater_palatine_arteryl",
+      "Greater_palatine_arteryr"
+    ]
+  },
+  {
+    "id": "hemi-azygos-vein",
+    "uberon": "UBERON:0006663",
+    "fma": null,
+    "label": "Hemi-azygos vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Hemiazygos vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hemi-azygos_vein"
+    ]
+  },
+  {
+    "id": "hepatic-portal-vein",
+    "uberon": "UBERON:0001639",
+    "fma": null,
+    "label": "Hepatic portal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'hepatic portal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hepatic_portal_vein"
+    ]
+  },
+  {
+    "id": "hepatic-veins",
+    "uberon": "UBERON:0001143",
+    "fma": null,
+    "label": "Hepatic veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'hepatic vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Hepatic_veins"
+    ]
+  },
+  {
+    "id": "ileal-branch-of-ileocolic-artery",
+    "uberon": "UBERON:8920042",
+    "fma": null,
+    "label": "Ileal branch of ileocolic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ileal branch of ileocolic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ileal_branch_of_ileocolic_artery"
+    ]
+  },
+  {
+    "id": "ileocolic-artery",
+    "uberon": "UBERON:0001197",
+    "fma": null,
+    "label": "Ileocolic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ileocolic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ileocolic_artery"
+    ]
+  },
+  {
+    "id": "iliolumbar-artery",
+    "uberon": "UBERON:0001313",
+    "fma": null,
+    "label": "Iliolumbar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Iliolumbar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Iliolumbar_arteryl",
+      "Iliolumbar_arteryr"
+    ]
+  },
+  {
+    "id": "iliolumbar-vein",
+    "uberon": "UBERON:0001320",
+    "fma": null,
+    "label": "Iliolumbar vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Iliolumbar vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Iliolumbar_veinl",
+      "Iliolumbar_veinr"
+    ]
+  },
+  {
+    "id": "inferior-alveolar-artery",
+    "uberon": "UBERON:0014693",
+    "fma": null,
+    "label": "Inferior alveolar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior alveolar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_alveolar_arteryl",
+      "Inferior_alveolar_arteryr"
+    ]
+  },
+  {
+    "id": "inferior-epigastric-artery",
+    "uberon": "UBERON:0001354",
+    "fma": null,
+    "label": "Inferior epigastric artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior epigastric artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_epigastric_arteryl",
+      "Inferior_epigastric_arteryr"
+    ]
+  },
+  {
+    "id": "inferior-epigastric-vein",
+    "uberon": "UBERON:0007154",
+    "fma": null,
+    "label": "Inferior epigastric vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior epigastric vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_epigastric_veinl",
+      "Inferior_epigastric_veinr"
+    ]
+  },
+  {
+    "id": "inferior-labial-artery",
+    "uberon": "UBERON:0003471",
+    "fma": null,
+    "label": "Inferior labial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'artery of lower lip'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_labial_arteryl",
+      "Inferior_labial_arteryr"
+    ]
+  },
+  {
+    "id": "inferior-labial-veins",
+    "uberon": "UBERON:0003478",
+    "fma": null,
+    "label": "Inferior labial veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'vein of lower lip'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_labial_veinsl",
+      "Inferior_labial_veinsr"
+    ]
+  },
+  {
+    "id": "inferior-mesenteric-artery",
+    "uberon": "UBERON:0001183",
+    "fma": null,
+    "label": "Inferior mesenteric artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior mesenteric artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_mesenteric_artery"
+    ]
+  },
+  {
+    "id": "inferior-mesenteric-vein",
+    "uberon": "UBERON:0001215",
+    "fma": null,
+    "label": "Inferior mesenteric vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior mesenteric vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_mesenteric_vein"
+    ]
+  },
+  {
+    "id": "inferior-ophthalmic-vein",
+    "uberon": "UBERON:0011193",
+    "fma": null,
+    "label": "Inferior ophthalmic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior ophthalmic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_ophthalmic_veinl",
+      "Inferior_ophthalmic_veinr"
+    ]
+  },
+  {
+    "id": "inferior-pancreaticoduodenal-artery",
+    "uberon": "UBERON:0001195",
+    "fma": null,
+    "label": "Inferior pancreaticoduodenal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior pancreaticoduodenal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_pancreaticoduodenal_artery"
+    ]
+  },
+  {
+    "id": "inferior-petrosal-sinus",
+    "uberon": "UBERON:0007160",
+    "fma": null,
+    "label": "Inferior petrosal sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior petrosal sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_petrosal_sinusl",
+      "Inferior_petrosal_sinusr"
+    ]
+  },
+  {
+    "id": "inferior-phrenic-artery",
+    "uberon": "UBERON:0012255",
+    "fma": null,
+    "label": "Inferior phrenic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior phrenic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_phrenic_artery"
+    ]
+  },
+  {
+    "id": "inferior-sagittal-sinus",
+    "uberon": "UBERON:0007152",
+    "fma": null,
+    "label": "Inferior sagittal sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior sagittal sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_sagittal_sinus"
+    ]
+  },
+  {
+    "id": "inferior-suprarenal-artery",
+    "uberon": "UBERON:0002056",
+    "fma": null,
+    "label": "Inferior suprarenal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior suprarenal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_suprarenal_arteryl",
+      "Inferior_suprarenal_arteryr"
+    ]
+  },
+  {
+    "id": "inferior-thyroid-artery",
+    "uberon": "UBERON:0007149",
+    "fma": null,
+    "label": "Inferior thyroid artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior thyroid artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Inferior_thyroid_arteryl",
+      "Inferior_thyroid_arteryr"
+    ]
+  },
+  {
+    "id": "infra-orbital-artery",
+    "uberon": "UBERON:0004646",
+    "fma": null,
+    "label": "Infra-orbital artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Infra-orbital artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Infra-orbital_arteryl",
+      "Infra-orbital_arteryr"
+    ]
+  },
+  {
+    "id": "internal-carotid-artery",
+    "uberon": "UBERON:0001532",
+    "fma": null,
+    "label": "Internal carotid artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal carotid artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_carotid_arteryl",
+      "Internal_carotid_arteryr"
+    ]
+  },
+  {
+    "id": "internal-iliac-artery",
+    "uberon": "UBERON:0001309",
+    "fma": null,
+    "label": "Internal iliac artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal iliac artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_iliac_arteryl",
+      "Internal_iliac_arteryr"
+    ]
+  },
+  {
+    "id": "internal-iliac-vein",
+    "uberon": "UBERON:0001317",
+    "fma": null,
+    "label": "Internal iliac vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal iliac vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_iliac_veinl",
+      "Internal_iliac_veinr"
+    ]
+  },
+  {
+    "id": "internal-jugular-vein",
+    "uberon": "UBERON:0001586",
+    "fma": null,
+    "label": "Internal jugular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal jugular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_jugular_veinl",
+      "Internal_jugular_veinr"
+    ]
+  },
+  {
+    "id": "internal-pudendal-artery",
+    "uberon": "UBERON:0007315",
+    "fma": null,
+    "label": "Internal pudendal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Internal pudendal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_pudendal_arteryl",
+      "Internal_pudendal_arteryr"
+    ]
+  },
+  {
+    "id": "internal-pudendal-vein",
+    "uberon": "UBERON:0018252",
+    "fma": null,
+    "label": "Internal pudendal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal pudendal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_pudendal_veinl",
+      "Internal_pudendal_veinr"
+    ]
+  },
+  {
+    "id": "internal-thoracic-artery",
+    "uberon": "UBERON:0002456",
+    "fma": null,
+    "label": "Internal thoracic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal thoracic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_thoracic_arteryl",
+      "Internal_thoracic_arteryr"
+    ]
+  },
+  {
+    "id": "internal-thoracic-veins",
+    "uberon": "UBERON:0001589",
+    "fma": null,
+    "label": "Internal thoracic veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Internal thoracic vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Internal_thoracic_veinsl",
+      "Internal_thoracic_veinsr"
+    ]
+  },
+  {
+    "id": "lacrimal-artery",
+    "uberon": "UBERON:0001622",
+    "fma": null,
+    "label": "Lacrimal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'lacrimal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lacrimal_arteryl",
+      "Lacrimal_arteryr"
+    ]
+  },
+  {
+    "id": "lateral-sacral-veins",
+    "uberon": "UBERON:8600056",
+    "fma": null,
+    "label": "Lateral sacral veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'lateral sacral vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_sacral_veinsl",
+      "Lateral_sacral_veinsr"
+    ]
+  },
+  {
+    "id": "lateral-thoracic-artery",
+    "uberon": "UBERON:0001396",
+    "fma": null,
+    "label": "Lateral thoracic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lateral thoracic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_thoracic_arteryl",
+      "Lateral_thoracic_arteryr"
+    ]
+  },
+  {
+    "id": "lateral-thoracic-vein",
+    "uberon": "UBERON:0002088",
+    "fma": null,
+    "label": "Lateral thoracic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lateral thoracic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_thoracic_veinl",
+      "Lateral_thoracic_veinr"
+    ]
+  },
+  {
+    "id": "left-colic-artery",
+    "uberon": "UBERON:8410022",
+    "fma": null,
+    "label": "Left colic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left colic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_colic_artery"
+    ]
+  },
+  {
+    "id": "left-common-carotid-artery",
+    "uberon": "UBERON:0001536",
+    "fma": null,
+    "label": "Left common carotid artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'left common carotid artery plus branches'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_common_carotid_artery"
+    ]
+  },
+  {
+    "id": "left-coronary-artery",
+    "uberon": "UBERON:0001626",
+    "fma": null,
+    "label": "Left coronary artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left coronary artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_coronary_artery"
+    ]
+  },
+  {
+    "id": "left-gastric-artery",
+    "uberon": "UBERON:0001192",
+    "fma": null,
+    "label": "Left gastric artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left gastric artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_gastric_artery"
+    ]
+  },
+  {
+    "id": "left-gastro-omental-vein",
+    "uberon": "UBERON:8920047",
+    "fma": null,
+    "label": "Left gastro-omental vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'left gastroepiploic vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_gastro-omental_vein"
+    ]
+  },
+  {
+    "id": "left-inferior-pulmonary-vein",
+    "uberon": "UBERON:8920017",
+    "fma": null,
+    "label": "Left inferior pulmonary vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left inferior pulmonary vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_inferior_pulmonary_vein"
+    ]
+  },
+  {
+    "id": "left-pulmonary-artery",
+    "uberon": "UBERON:0001652",
+    "fma": null,
+    "label": "Left pulmonary artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left pulmonary artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_pulmonary_artery"
+    ]
+  },
+  {
+    "id": "left-renal-artery",
+    "uberon": "UBERON:0001186",
+    "fma": null,
+    "label": "Left renal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left renal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_renal_artery"
+    ]
+  },
+  {
+    "id": "left-renal-vein",
+    "uberon": "UBERON:0001142",
+    "fma": null,
+    "label": "Left renal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left renal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_renal_vein"
+    ]
+  },
+  {
+    "id": "left-subclavian-artery",
+    "uberon": "UBERON:0001584",
+    "fma": null,
+    "label": "Left subclavian artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left subclavian artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_subclavian_artery"
+    ]
+  },
+  {
+    "id": "left-subcostal-vein",
+    "uberon": "UBERON:0035252",
+    "fma": null,
+    "label": "Left subcostal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left subcostal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_subcostal_vein"
+    ]
+  },
+  {
+    "id": "left-superior-intercostal-vein",
+    "uberon": "UBERON:0012195",
+    "fma": null,
+    "label": "Left superior intercostal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left superior intercostal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_superior_intercostal_vein"
+    ]
+  },
+  {
+    "id": "left-superior-pulmonary-vein",
+    "uberon": "UBERON:8920019",
+    "fma": null,
+    "label": "Left superior pulmonary vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left superior pulmonary vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_superior_pulmonary_vein"
+    ]
+  },
+  {
+    "id": "left-testicular-artery",
+    "uberon": "UBERON:0001189",
+    "fma": null,
+    "label": "Left testicular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left testicular artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_testicular_artery"
+    ]
+  },
+  {
+    "id": "left-testicular-vein",
+    "uberon": "UBERON:0000443",
+    "fma": null,
+    "label": "Left testicular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left testicular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Left_testicular_vein"
+    ]
+  },
+  {
+    "id": "lingual-vein",
+    "uberon": "UBERON:0006634",
+    "fma": null,
+    "label": "Lingual vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lingual vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lingual_veinl",
+      "Lingual_veinr"
+    ]
+  },
+  {
+    "id": "long-posterior-ciliary-arteries",
+    "uberon": "UBERON:8920002",
+    "fma": null,
+    "label": "Long posterior ciliary arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'long posterior ciliary artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Long_posterior_ciliary_arteriesl",
+      "Long_posterior_ciliary_arteriesr"
+    ]
+  },
+  {
+    "id": "lumbar-arteries",
+    "uberon": "UBERON:0006636",
+    "fma": null,
+    "label": "Lumbar arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Lumbar artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lumbar_arteriesl",
+      "Lumbar_arteriesr"
+    ]
+  },
+  {
+    "id": "lumbar-veins",
+    "uberon": "UBERON:8600105",
+    "fma": null,
+    "label": "Lumbar veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'lumbar vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lumbar_veinsl",
+      "Lumbar_veinsr"
+    ]
+  },
+  {
+    "id": "maxillary-artery",
+    "uberon": "UBERON:0001616",
+    "fma": null,
+    "label": "Maxillary artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'maxillary artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Maxillary_arteryl",
+      "Maxillary_arteryr"
+    ]
+  },
+  {
+    "id": "maxillary-veins",
+    "uberon": "UBERON:0001660",
+    "fma": null,
+    "label": "Maxillary veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Maxillary vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Maxillary_veinsl",
+      "Maxillary_veinsr"
+    ]
+  },
+  {
+    "id": "medial-circumflex-femoral-artery",
+    "uberon": "UBERON:0001356",
+    "fma": null,
+    "label": "Medial circumflex femoral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'medial circumflex femoral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Medial_circumflex_femoral_arteryl",
+      "Medial_circumflex_femoral_arteryr"
+    ]
+  },
+  {
+    "id": "medial-circumflex-femoral-veins",
+    "uberon": "UBERON:0035234",
+    "fma": null,
+    "label": "Medial circumflex femoral veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Medial circumflex femoral vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Medial_circumflex_femoral_veinsl",
+      "Medial_circumflex_femoral_veinsr"
+    ]
+  },
+  {
+    "id": "medial-plantar-artery",
+    "uberon": "UBERON:0001541",
+    "fma": null,
+    "label": "Medial plantar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Medial plantar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Medial_plantar_arteryl",
+      "Medial_plantar_arteryr"
+    ]
+  },
+  {
+    "id": "median-cubital-vein",
+    "uberon": "UBERON:0001414",
+    "fma": null,
+    "label": "Median cubital vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Median cubital vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Median_cubital_veinl",
+      "Median_cubital_veinr"
+    ]
+  },
+  {
+    "id": "median-sacral-artery",
+    "uberon": "UBERON:0005464",
+    "fma": null,
+    "label": "Median sacral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Median sacral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Median_sacral_artery"
+    ]
+  },
+  {
+    "id": "mental-branch-of-inferior-alveolar-artery",
+    "uberon": "UBERON:0001617",
+    "fma": null,
+    "label": "Mental branch of inferior alveolar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Mental artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Mental_branch_of_inferior_alveolar_arteryl",
+      "Mental_branch_of_inferior_alveolar_arteryr"
+    ]
+  },
+  {
+    "id": "middle-cardiac-vein",
+    "uberon": "UBERON:0009687",
+    "fma": null,
+    "label": "Middle cardiac vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Middle cardiac vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_cardiac_vein"
+    ]
+  },
+  {
+    "id": "middle-colic-artery",
+    "uberon": "UBERON:0001196",
+    "fma": null,
+    "label": "Middle colic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle colic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_colic_artery"
+    ]
+  },
+  {
+    "id": "middle-colic-vein",
+    "uberon": "UBERON:0001218",
+    "fma": null,
+    "label": "Middle colic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle colic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_colic_vein"
+    ]
+  },
+  {
+    "id": "middle-meningeal-artery",
+    "uberon": "UBERON:0010250",
+    "fma": null,
+    "label": "Middle meningeal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Middle meningeal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Middle_meningeal_arteryl",
+      "Middle_meningeal_arteryr"
+    ]
+  },
+  {
+    "id": "musculophrenic-artery",
+    "uberon": "UBERON:0006632",
+    "fma": null,
+    "label": "Musculophrenic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'musculo-phrenic artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Musculophrenic_arteryl",
+      "Musculophrenic_arteryr"
+    ]
+  },
+  {
+    "id": "musculophrenic-veins",
+    "uberon": "UBERON:0006662",
+    "fma": null,
+    "label": "Musculophrenic veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Musculophrenic vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Musculophrenic_veinsl",
+      "Musculophrenic_veinsr"
+    ]
+  },
+  {
+    "id": "obturator-artery",
+    "uberon": "UBERON:0001314",
+    "fma": null,
+    "label": "Obturator artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'obturator artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Obturator_arteryl",
+      "Obturator_arteryr"
+    ]
+  },
+  {
+    "id": "occipital-artery",
+    "uberon": "UBERON:0001613",
+    "fma": null,
+    "label": "Occipital artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'occipital artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Occipital_arteryl",
+      "Occipital_arteryr"
+    ]
+  },
+  {
+    "id": "ophthalmic-artery",
+    "uberon": "UBERON:0001619",
+    "fma": null,
+    "label": "Ophthalmic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ophthalmic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ophthalmic_arteryl",
+      "Ophthalmic_arteryr"
+    ]
+  },
+  {
+    "id": "palmar-digital-veins",
+    "uberon": "UBERON:0006140",
+    "fma": null,
+    "label": "Palmar digital veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Set of palmar digital veins'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Palmar_digital_veinsl",
+      "Palmar_digital_veinsr"
+    ]
+  },
+  {
+    "id": "plantar-digital-veins",
+    "uberon": "UBERON:0006139",
+    "fma": null,
+    "label": "Plantar digital veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Plantar digital vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Plantar_digital_veinsl",
+      "Plantar_digital_veinsr"
+    ]
+  },
+  {
+    "id": "plantar-metatarsal-arteries",
+    "uberon": "UBERON:0035195",
+    "fma": null,
+    "label": "Plantar metatarsal arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Plantar metatarsal artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Plantar_metatarsal_arteriesl",
+      "Plantar_metatarsal_arteriesr"
+    ]
+  },
+  {
+    "id": "popliteal-artery",
+    "uberon": "UBERON:0002250",
+    "fma": null,
+    "label": "Popliteal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'popliteal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Popliteal_arteryl",
+      "Popliteal_arteryr"
+    ]
+  },
+  {
+    "id": "popliteal-vein",
+    "uberon": "UBERON:0001544",
+    "fma": null,
+    "label": "Popliteal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'popliteal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Popliteal_veinl",
+      "Popliteal_veinr"
+    ]
+  },
+  {
+    "id": "posterior-auricular-vein",
+    "uberon": "UBERON:0006199",
+    "fma": null,
+    "label": "Posterior auricular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior auricular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_auricular_veinl",
+      "Posterior_auricular_veinr"
+    ]
+  },
+  {
+    "id": "posterior-cerebral-artery",
+    "uberon": "UBERON:0001636",
+    "fma": null,
+    "label": "Posterior cerebral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior cerebral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_cerebral_arteryl",
+      "Posterior_cerebral_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-circumflex-humeral-artery",
+    "uberon": "UBERON:8600107",
+    "fma": null,
+    "label": "Posterior circumflex humeral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'posterior humeral circumflex artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_circumflex_humeral_arteryl",
+      "Posterior_circumflex_humeral_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-circumflex-humeral-vein",
+    "uberon": "UBERON:0006200",
+    "fma": null,
+    "label": "Posterior circumflex humeral vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Posterior humeral circumflex vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_circumflex_humeral_veinl",
+      "Posterior_circumflex_humeral_veinr"
+    ]
+  },
+  {
+    "id": "posterior-communicating-artery",
+    "uberon": "UBERON:0001628",
+    "fma": null,
+    "label": "Posterior communicating artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'posterior communicating artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_communicating_arteryl",
+      "Posterior_communicating_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-ethmoidal-artery",
+    "uberon": "UBERON:0012319",
+    "fma": null,
+    "label": "Posterior ethmoidal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior ethmoidal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_ethmoidal_arteryl",
+      "Posterior_ethmoidal_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-inferior-cerebellar-artery",
+    "uberon": "UBERON:0009688",
+    "fma": null,
+    "label": "Posterior inferior cerebellar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior inferior cerebellar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_inferior_cerebellar_arteryl",
+      "Posterior_inferior_cerebellar_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-intercostal-arteries",
+    "uberon": "UBERON:0039835",
+    "fma": null,
+    "label": "Posterior intercostal arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'posterior intercostal artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_intercostal_arteriesl",
+      "Posterior_intercostal_arteriesr"
+    ]
+  },
+  {
+    "id": "posterior-parietal-artery",
+    "uberon": "UBERON:0035222",
+    "fma": null,
+    "label": "Posterior parietal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior parietal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_parietal_arteryl",
+      "Posterior_parietal_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-superior-alveolar-artery",
+    "uberon": "UBERON:0018397",
+    "fma": null,
+    "label": "Posterior superior alveolar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior superior alveolar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_superior_alveolar_arteryl",
+      "Posterior_superior_alveolar_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-tibial-artery",
+    "uberon": "UBERON:0001538",
+    "fma": null,
+    "label": "Posterior tibial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior tibial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_tibial_arteryl",
+      "Posterior_tibial_arteryr"
+    ]
+  },
+  {
+    "id": "posterior-tibial-veins",
+    "uberon": "UBERON:0001546",
+    "fma": null,
+    "label": "Posterior tibial veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Posterior tibial vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_tibial_veinsl",
+      "Posterior_tibial_veinsr"
+    ]
+  },
+  {
+    "id": "proper-hepatic-artery",
+    "uberon": "UBERON:0015480",
+    "fma": null,
+    "label": "Proper hepatic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'proper hepatic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Proper_hepatic_artery"
+    ]
+  },
+  {
+    "id": "proper-palmar-digital-arteries",
+    "uberon": "UBERON:0006137",
+    "fma": null,
+    "label": "Proper palmar digital arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Set of proper palmar digital arteries'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Proper_palmar_digital_arteriesl",
+      "Proper_palmar_digital_arteriesr"
+    ]
+  },
+  {
+    "id": "proper-plantar-digital-arteries",
+    "uberon": "UBERON:0004540",
+    "fma": null,
+    "label": "Proper plantar digital arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Set of plantar digital arteries proper'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Proper_plantar_digital_arteriesl",
+      "Proper_plantar_digital_arteriesr"
+    ]
+  },
+  {
+    "id": "pulmonary-trunk",
+    "uberon": "UBERON:0002333",
+    "fma": null,
+    "label": "Pulmonary trunk",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'pulmonary trunk', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pulmonary_trunk"
+    ]
+  },
+  {
+    "id": "radial-artery",
+    "uberon": "UBERON:0001404",
+    "fma": null,
+    "label": "Radial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Radial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Radial_arteryl",
+      "Radial_arteryr"
+    ]
+  },
+  {
+    "id": "radial-veins",
+    "uberon": "UBERON:8600092",
+    "fma": null,
+    "label": "Radial veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'radial vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Radial_veinsl",
+      "Radial_veinsr"
+    ]
+  },
+  {
+    "id": "retromandibular-vein",
+    "uberon": "UBERON:0001656",
+    "fma": null,
+    "label": "Retromandibular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Retromandibular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Retromandibular_veinl",
+      "Retromandibular_veinr"
+    ]
+  },
+  {
+    "id": "right-colic-artery",
+    "uberon": "UBERON:8410023",
+    "fma": null,
+    "label": "Right colic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Right colic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_colic_artery"
+    ]
+  },
+  {
+    "id": "right-colic-vein",
+    "uberon": "UBERON:8410018",
+    "fma": null,
+    "label": "Right colic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right colic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_colic_vein"
+    ]
+  },
+  {
+    "id": "right-common-carotid-artery",
+    "uberon": "UBERON:0001531",
+    "fma": null,
+    "label": "Right common carotid artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'right common carotid artery plus branches'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_common_carotid_artery"
+    ]
+  },
+  {
+    "id": "right-coronary-artery",
+    "uberon": "UBERON:0001625",
+    "fma": null,
+    "label": "Right coronary artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Right coronary artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_coronary_artery"
+    ]
+  },
+  {
+    "id": "right-inferior-pulmonary-vein",
+    "uberon": "UBERON:8920016",
+    "fma": null,
+    "label": "Right inferior pulmonary vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right inferior pulmonary vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_inferior_pulmonary_vein"
+    ]
+  },
+  {
+    "id": "right-pulmonary-artery",
+    "uberon": "UBERON:0001651",
+    "fma": null,
+    "label": "Right pulmonary artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right pulmonary artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_pulmonary_artery"
+    ]
+  },
+  {
+    "id": "right-renal-artery",
+    "uberon": "UBERON:0001185",
+    "fma": null,
+    "label": "Right renal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right renal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_renal_artery"
+    ]
+  },
+  {
+    "id": "right-renal-vein",
+    "uberon": "UBERON:0001141",
+    "fma": null,
+    "label": "Right renal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right renal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_renal_vein"
+    ]
+  },
+  {
+    "id": "right-subclavian-artery",
+    "uberon": "UBERON:0001534",
+    "fma": null,
+    "label": "Right subclavian artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right subclavian artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_subclavian_artery"
+    ]
+  },
+  {
+    "id": "right-subcostal-vein",
+    "uberon": "UBERON:0035474",
+    "fma": null,
+    "label": "Right subcostal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Right subcostal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_subcostal_vein"
+    ]
+  },
+  {
+    "id": "right-superior-intercostal-vein",
+    "uberon": "UBERON:0012196",
+    "fma": null,
+    "label": "Right superior intercostal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Right superior intercostal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_superior_intercostal_vein"
+    ]
+  },
+  {
+    "id": "right-superior-pulmonary-vein",
+    "uberon": "UBERON:8920018",
+    "fma": null,
+    "label": "Right superior pulmonary vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right superior pulmonary vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_superior_pulmonary_vein"
+    ]
+  },
+  {
+    "id": "right-testicular-artery",
+    "uberon": "UBERON:0001188",
+    "fma": null,
+    "label": "Right testicular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right testicular artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_testicular_arteryr"
+    ]
+  },
+  {
+    "id": "right-testicular-vein",
+    "uberon": "UBERON:0000442",
+    "fma": null,
+    "label": "Right testicular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right testicular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Right_testicular_vein"
+    ]
+  },
+  {
+    "id": "short-posterior-ciliary-arteries",
+    "uberon": "UBERON:8920001",
+    "fma": null,
+    "label": "Short posterior ciliary arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'short posterior ciliary artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Short_posterior_ciliary_arteriesl",
+      "Short_posterior_ciliary_arteriesr"
+    ]
+  },
+  {
+    "id": "sigmoid-arteries",
+    "uberon": "UBERON:0035180",
+    "fma": null,
+    "label": "Sigmoid arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Sigmoid artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sigmoid_arteries"
+    ]
+  },
+  {
+    "id": "sigmoid-sinus",
+    "uberon": "UBERON:0005475",
+    "fma": null,
+    "label": "Sigmoid sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Sigmoid sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sigmoid_sinusl",
+      "Sigmoid_sinusr"
+    ]
+  },
+  {
+    "id": "sigmoid-veins",
+    "uberon": "UBERON:0039228",
+    "fma": null,
+    "label": "Sigmoid veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'sigmoid vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sigmoid_veins"
+    ]
+  },
+  {
+    "id": "small-saphenous-vein",
+    "uberon": "UBERON:0001547",
+    "fma": null,
+    "label": "Small saphenous vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'small saphenous vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Small_saphenous_veinl",
+      "Small_saphenous_veinr"
+    ]
+  },
+  {
+    "id": "splenic-artery",
+    "uberon": "UBERON:0001194",
+    "fma": null,
+    "label": "Splenic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'splenic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Splenic_artery"
+    ]
+  },
+  {
+    "id": "splenic-vein",
+    "uberon": "UBERON:0003713",
+    "fma": null,
+    "label": "Splenic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'splenic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Splenic_vein"
+    ]
+  },
+  {
+    "id": "subcostal-artery",
+    "uberon": "UBERON:0001561",
+    "fma": null,
+    "label": "Subcostal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Subcostal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Subcostal_arteryl",
+      "Subcostal_arteryr"
+    ]
+  },
+  {
+    "id": "submental-artery",
+    "uberon": "UBERON:8600096",
+    "fma": null,
+    "label": "Submental artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'submental artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Submental_arteryl",
+      "Submental_arteryr"
+    ]
+  },
+  {
+    "id": "submental-vein",
+    "uberon": "UBERON:0001655",
+    "fma": null,
+    "label": "Submental vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Submental vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Submental_veinl",
+      "Submental_veinr"
+    ]
+  },
+  {
+    "id": "subscapular-artery",
+    "uberon": "UBERON:0001397",
+    "fma": null,
+    "label": "Subscapular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'subscapular artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Subscapular_arteryl",
+      "Subscapular_arteryr"
+    ]
+  },
+  {
+    "id": "subscapular-vein",
+    "uberon": "UBERON:0001420",
+    "fma": null,
+    "label": "Subscapular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Subscapular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Subscapular_veinl",
+      "Subscapular_veinr"
+    ]
+  },
+  {
+    "id": "superficial-branch-of-transverse-cervical-artery",
+    "uberon": "UBERON:0001071",
+    "fma": null,
+    "label": "Superficial branch of transverse cervical artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'superficial cervical artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "(Superficial_branch_of_transverse_cervical_artery)l",
+      "(Superficial_branch_of_transverse_cervical_artery)r"
+    ]
+  },
+  {
+    "id": "superficial-dorsal-veins-of-penis",
+    "uberon": "UBERON:0039421",
+    "fma": null,
+    "label": "Superficial dorsal veins of penis",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Superficial dorsal vein of penis'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_dorsal_veins_of_penis"
+    ]
+  },
+  {
+    "id": "superficial-epigastric-artery",
+    "uberon": "UBERON:0034964",
+    "fma": null,
+    "label": "Superficial epigastric artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superficial epigastric artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_epigastric_arteryl",
+      "Superficial_epigastric_arteryr"
+    ]
+  },
+  {
+    "id": "superficial-epigastric-vein",
+    "uberon": "UBERON:0014692",
+    "fma": null,
+    "label": "Superficial epigastric vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superficial epigastric vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_epigastric_veinl",
+      "Superficial_epigastric_veinr"
+    ]
+  },
+  {
+    "id": "superficial-external-pudendal-artery",
+    "uberon": "UBERON:0007317",
+    "fma": null,
+    "label": "Superficial external pudendal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superficial external pudendal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_external_pudendal_arteryl",
+      "Superficial_external_pudendal_arteryr"
+    ]
+  },
+  {
+    "id": "superficial-palmar-arch",
+    "uberon": "UBERON:0006564",
+    "fma": null,
+    "label": "Superficial palmar arch",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Superficial palmar arterial arch'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_palmar_archl",
+      "Superficial_palmar_archr"
+    ]
+  },
+  {
+    "id": "superficial-temporal-artery",
+    "uberon": "UBERON:0001614",
+    "fma": null,
+    "label": "Superficial temporal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superficial temporal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_temporal_arteryl",
+      "Superficial_temporal_arteryr"
+    ]
+  },
+  {
+    "id": "superficial-temporal-veins",
+    "uberon": "UBERON:0001657",
+    "fma": null,
+    "label": "Superficial temporal veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Superficial temporal vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superficial_temporal_veinsl",
+      "Superficial_temporal_veinsr"
+    ]
+  },
+  {
+    "id": "superior-cerebellar-artery",
+    "uberon": "UBERON:0001635",
+    "fma": null,
+    "label": "Superior cerebellar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior cerebellar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_cerebellar_arteryl",
+      "Superior_cerebellar_arteryr"
+    ]
+  },
+  {
+    "id": "superior-epigastric-artery",
+    "uberon": "UBERON:0007153",
+    "fma": null,
+    "label": "Superior epigastric artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior epigastric artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_epigastric_arteryl",
+      "Superior_epigastric_arteryr"
+    ]
+  },
+  {
+    "id": "superior-epigastric-veins",
+    "uberon": "UBERON:0007155",
+    "fma": null,
+    "label": "Superior epigastric veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Superior epigastric vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_epigastric_veinsl",
+      "Superior_epigastric_veinsr"
+    ]
+  },
+  {
+    "id": "superior-gluteal-artery",
+    "uberon": "UBERON:0001315",
+    "fma": null,
+    "label": "Superior gluteal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior gluteal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_gluteal_arteryl",
+      "Superior_gluteal_arteryr"
+    ]
+  },
+  {
+    "id": "superior-labial-artery",
+    "uberon": "UBERON:0003470",
+    "fma": null,
+    "label": "Superior labial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'artery of upper lip'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_labial_arteryl",
+      "Superior_labial_arteryr"
+    ]
+  },
+  {
+    "id": "superior-labial-vein",
+    "uberon": "UBERON:0003477",
+    "fma": null,
+    "label": "Superior labial vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'vein of upper lip'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_labial_veinl",
+      "Superior_labial_veinr"
+    ]
+  },
+  {
+    "id": "superior-mesenteric-artery",
+    "uberon": "UBERON:0001182",
+    "fma": null,
+    "label": "Superior mesenteric artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior mesenteric artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_mesenteric_artery"
+    ]
+  },
+  {
+    "id": "superior-mesenteric-vein",
+    "uberon": "UBERON:0001138",
+    "fma": null,
+    "label": "Superior mesenteric vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior mesenteric vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_mesenteric_vein"
+    ]
+  },
+  {
+    "id": "superior-ophthalmic-vein",
+    "uberon": "UBERON:0011192",
+    "fma": null,
+    "label": "Superior ophthalmic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior ophthalmic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_ophthalmic_veinl",
+      "Superior_ophthalmic_veinr"
+    ]
+  },
+  {
+    "id": "superior-phrenic-arteries",
+    "uberon": "UBERON:0013133",
+    "fma": null,
+    "label": "Superior phrenic arteries",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Superior phrenic artery'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_phrenic_arteries"
+    ]
+  },
+  {
+    "id": "superior-sagittal-sinus",
+    "uberon": "UBERON:0001642",
+    "fma": null,
+    "label": "Superior sagittal sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior sagittal sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_sagittal_sinus"
+    ]
+  },
+  {
+    "id": "superior-thyroid-vein",
+    "uberon": "UBERON:0007157",
+    "fma": null,
+    "label": "Superior thyroid vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Superior thyroid vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_thyroid_veinl",
+      "Superior_thyroid_veinr"
+    ]
+  },
+  {
+    "id": "superior-vena-cava",
+    "uberon": "UBERON:0001585",
+    "fma": null,
+    "label": "Superior vena cava",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'anterior vena cava'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Superior_vena_cava"
+    ]
+  },
+  {
+    "id": "supra-orbital-artery",
+    "uberon": "UBERON:0015160",
+    "fma": null,
+    "label": "Supra-orbital artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Supra-orbital artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Supra-orbital_arteryl",
+      "Supra-orbital_arteryr"
+    ]
+  },
+  {
+    "id": "suprascapular-artery",
+    "uberon": "UBERON:0039847",
+    "fma": null,
+    "label": "Suprascapular artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Suprascapular artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Suprascapular_arteryl",
+      "Suprascapular_arteryr"
+    ]
+  },
+  {
+    "id": "suprascapular-vein",
+    "uberon": "UBERON:0039187",
+    "fma": null,
+    "label": "Suprascapular vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Suprascapular vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Suprascapular_veinl",
+      "Suprascapular_veinr"
+    ]
+  },
+  {
+    "id": "supratrochlear-artery",
+    "uberon": "UBERON:0012187",
+    "fma": null,
+    "label": "Supratrochlear artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Supratrochlear artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Supratrochlear_arteryl",
+      "Supratrochlear_arteryr"
+    ]
+  },
+  {
+    "id": "supreme-intercostal-artery",
+    "uberon": "UBERON:0006198",
+    "fma": null,
+    "label": "Supreme intercostal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Supreme intercostal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Supreme_intercostal_arteryl",
+      "Supreme_intercostal_arteryr"
+    ]
+  },
+  {
+    "id": "thoracic-aorta",
+    "uberon": "UBERON:0001515",
+    "fma": null,
+    "label": "Thoracic aorta",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'thoracic aorta', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Thoracic_aorta"
+    ]
+  },
+  {
+    "id": "thoraco-acromial-artery",
+    "uberon": "UBERON:0001395",
+    "fma": null,
+    "label": "Thoraco-acromial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Thoraco-acromial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Thoraco-acromial_arteryl",
+      "Thoraco-acromial_arteryr"
+    ]
+  },
+  {
+    "id": "thoracodorsal-artery",
+    "uberon": "UBERON:0002011",
+    "fma": null,
+    "label": "Thoracodorsal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'thoracodorsal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Thoracodorsal_arteryl",
+      "Thoracodorsal_arteryr"
+    ]
+  },
+  {
+    "id": "thoracodorsal-vein",
+    "uberon": "UBERON:0002089",
+    "fma": null,
+    "label": "Thoracodorsal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'thoracodorsal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Thoracodorsal_veinl",
+      "Thoracodorsal_veinr"
+    ]
+  },
+  {
+    "id": "thyrocervical-trunk",
+    "uberon": "UBERON:8600062",
+    "fma": null,
+    "label": "Thyrocervical trunk",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'thyrocervical trunk', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Thyrocervical_trunkl",
+      "Thyrocervical_trunkr"
+    ]
+  },
+  {
+    "id": "transverse-cervical-artery",
+    "uberon": "UBERON:0012324",
+    "fma": null,
+    "label": "Transverse cervical artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'transverse cervical artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transverse_cervical_arteryl",
+      "Transverse_cervical_arteryr"
+    ]
+  },
+  {
+    "id": "transverse-facial-artery",
+    "uberon": "UBERON:0001615",
+    "fma": null,
+    "label": "Transverse facial artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Transverse facial artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transverse_facial_arteryl",
+      "Transverse_facial_arteryr"
+    ]
+  },
+  {
+    "id": "transverse-sinus",
+    "uberon": "UBERON:0001641",
+    "fma": null,
+    "label": "Transverse sinus",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Transverse sinus', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Transverse_sinusl",
+      "Transverse_sinusr"
+    ]
+  },
+  {
+    "id": "ulnar-artery",
+    "uberon": "UBERON:0001406",
+    "fma": null,
+    "label": "Ulnar artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Ulnar artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ulnar_arteryl",
+      "Ulnar_arteryr"
+    ]
+  },
+  {
+    "id": "ulnar-veins",
+    "uberon": "UBERON:8600093",
+    "fma": null,
+    "label": "Ulnar veins",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'ulnar vein'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Ulnar_veinsl",
+      "Ulnar_veinsr"
+    ]
+  },
+  {
+    "id": "vertebral-artery",
+    "uberon": "UBERON:0001535",
+    "fma": null,
+    "label": "Vertebral artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'vertebral artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebral_arteryl",
+      "Vertebral_arteryr"
+    ]
+  },
+  {
+    "id": "vertebral-vein",
+    "uberon": "UBERON:0001588",
+    "fma": null,
+    "label": "Vertebral vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Vertebral vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Vertebral_veinl",
+      "Vertebral_veinr"
     ]
   }
 ]
