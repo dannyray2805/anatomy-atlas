@@ -439,6 +439,69 @@ arch nor "pharyngeal arch artery" appears twice in the graph.
     happened. Closing it deliberately would need a documented third route, the way the joint pass
     added one for `label + " of …"`.
 
+## 2026-09-14 — fact cards for the 75 donor-vessel rows
+
+Scope: 75 new fact cards, one per vessel row that the donor-vessel batch had just made clickable. They
+take the atlas from 43 cards to **118** (118 rows now carry a `facts_id`; 0 cards are unreachable from
+a row). Every one is `reviewed: false`.
+
+### What was checked
+
+- **The gate, per row**: the OLS4 **term endpoint** for the id already on the row (not the search
+  index, whose `label` can disagree with the term). Terms resolved for **75 of 75** rows.
+- **A real article, per row**: a Wikipedia intro for 68 of 75, and the article's own sentence was used
+  only when it **names this structure**. The generator asserts each quotation appears **verbatim** in
+  the fetched text before writing the card, so a mangled or paraphrased quote fails the run.
+- **The register**: 60 new `wikipedia-*` rows, each with its URL, licence (CC BY-SA 4.0) and fetch
+  date. `pnpm validate` checks the register, so an undeclared or dangling citation fails the build.
+- **The mesh evidence, counted off the graph** rather than copied from a note: which node names the
+  row carries, and on which body, is computed from `mesh_names` — so a card cannot claim a body the
+  mapping does not support.
+- Graph ok, 191 tests pass, CI-faithful build ok.
+
+### The cards say what they are
+
+Every sentence is one of three things: the Uberon term record's own label, definition or synonym
+(quoted, attributed `uberon`); a sentence from the fetched article (quoted, attributed to that
+article); or a fact counted off this atlas (`hubmap-hra-glb` / `z-anatomy`). **No prose was authored
+here**, which is why the cards could be generated at all: the generator cannot paraphrase its way into
+inventing anatomy. That is also the limit of what these cards are worth — see "Not checked".
+
+### Eight articles were fetched and then refused
+
+For `left/right hepatic artery`, `left/right renal artery`, the four `superior/inferior pulmonary
+veins` and `left common carotid artery`, the requested article title **redirects to a parent
+article** about a different structure — "Right renal artery" lands on *Renal artery*, whose intro
+begins "The renal arteries are paired arteries that supply the kidneys with blood", and "Left hepatic
+artery" lands on *Hepatic artery proper*. Quoting either would have put a neighbouring structure's
+description on this row. They are not cited, and the cards for those rows rest on the Uberon term
+record plus the mesh evidence. Seven further rows (`left/right hepatic vein`, `left renal artery`,
+`right renal vein`, `sigmoid veins`, `inferior pancreaticoduodenal vein`, `middle hepatic vein`) have
+no article at either wording, and are carded the same way.
+
+### Defect found and fixed: a silent, 200-OK truncation
+
+The first fetch reported **5 articles out of 75** and looked like a Wikipedia coverage problem. It was
+not: `prop=extracts` defaults to `exlimit=1`, so a 20-title request returns an extract for exactly one
+page, and `exlimit=max` is **silently lowered back to 1 for whole-article requests** — the API says so
+in a `warnings` field, not in `error`, and the response still carries `query.pages` for all 20 titles
+with 19 empty extracts. A 200 with a degradation notice reads as success. The fix is `exintro=1`
+(intro-only extracts batch properly, and the intro is the right thing to quote anyway) **plus printing
+`warnings`**, because checking `error` alone is what let it through. Coverage went 5 → 68.
+
+### Not checked
+
+- **No anatomist read these.** The definitions are Uberon's and the relations sentences are
+  Wikipedia's; they were checked for correct attribution and for being quoted verbatim, not for being
+  right. The cards are `reviewed: false` and claim no review.
+- Nothing was verified against the meshes themselves: a card does not claim that the geometry matches
+  the structure, only that a click on those node names opens this row.
+- 7 rows have no article, and 8 more cite none by choice, so their Relations section is one Uberon
+  definition plus the node names — thinner than the cards written by hand in earlier batches.
+- The remaining **184 cardless vessel rows** on the Reference body (segmental and small named
+  branches) still say "no published fact card for this structure yet", which is honest and unchanged.
+  Across the whole atlas, 118 of 693 rows carry a card.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

@@ -7257,7 +7257,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "aortic-arch",
     "reviewed": false,
     "mesh_names": [
       "Aortic_arch",
@@ -7535,7 +7535,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "brachiocephalic-trunk",
     "reviewed": false,
     "mesh_names": [
       "Brachiocephalic_trunk",
@@ -7612,7 +7612,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "central-retinal-artery",
     "reviewed": false,
     "mesh_names": [
       "Central_retinal_arteryl",
@@ -7667,7 +7667,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "coeliac-trunk",
     "reviewed": false,
     "mesh_names": [
       "Coeliac_trunk",
@@ -7718,7 +7718,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "common-hepatic-artery",
     "reviewed": false,
     "mesh_names": [
       "Common_hepatic_artery",
@@ -7770,7 +7770,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "common-iliac-vein",
     "reviewed": false,
     "mesh_names": [
       "Common_iliac_veinl",
@@ -7848,7 +7848,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "coronary-sinus",
     "reviewed": false,
     "mesh_names": [
       "Coronary_sinus",
@@ -8289,7 +8289,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "external-iliac-vein",
     "reviewed": false,
     "mesh_names": [
       "External_iliac_veinl",
@@ -8525,7 +8525,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "great-cardiac-vein",
     "reviewed": false,
     "mesh_names": [
       "Great_cardiac_vein",
@@ -8622,7 +8622,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "hepatic-portal-vein",
     "reviewed": false,
     "mesh_names": [
       "Hepatic_portal_vein",
@@ -8695,7 +8695,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ileocolic-artery",
     "reviewed": false,
     "mesh_names": [
       "Ileocolic_artery",
@@ -8885,7 +8885,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "inferior-mesenteric-artery",
     "reviewed": false,
     "mesh_names": [
       "Inferior_mesenteric_artery",
@@ -8914,7 +8914,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "inferior-mesenteric-vein",
     "reviewed": false,
     "mesh_names": [
       "Inferior_mesenteric_vein",
@@ -8943,7 +8943,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "inferior-ophthalmic-vein",
     "reviewed": false,
     "mesh_names": [
       "Inferior_ophthalmic_veinl",
@@ -9179,7 +9179,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "internal-iliac-vein",
     "reviewed": false,
     "mesh_names": [
       "Internal_iliac_veinl",
@@ -9257,7 +9257,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "internal-pudendal-vein",
     "reviewed": false,
     "mesh_names": [
       "Internal_pudendal_veinl",
@@ -9427,7 +9427,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-colic-artery",
     "reviewed": false,
     "mesh_names": [
       "Left_colic_artery",
@@ -9456,7 +9456,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-common-carotid-artery",
     "reviewed": false,
     "mesh_names": [
       "Left_common_carotid_artery",
@@ -9487,7 +9487,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-coronary-artery",
     "reviewed": false,
     "mesh_names": [
       "Left_coronary_artery",
@@ -9560,7 +9560,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-inferior-pulmonary-vein",
     "reviewed": false,
     "mesh_names": [
       "Left_inferior_pulmonary_vein",
@@ -9589,7 +9589,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-pulmonary-artery",
     "reviewed": false,
     "mesh_names": [
       "Left_pulmonary_artery",
@@ -9618,7 +9618,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-renal-artery",
     "reviewed": false,
     "mesh_names": [
       "Left_renal_artery",
@@ -9647,7 +9647,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-renal-vein",
     "reviewed": false,
     "mesh_names": [
       "Left_renal_vein",
@@ -9676,7 +9676,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-subclavian-artery",
     "reviewed": false,
     "mesh_names": [
       "Left_subclavian_artery",
@@ -9751,7 +9751,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-superior-pulmonary-vein",
     "reviewed": false,
     "mesh_names": [
       "Left_superior_pulmonary_vein",
@@ -10099,7 +10099,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "middle-cardiac-vein",
     "reviewed": false,
     "mesh_names": [
       "Middle_cardiac_vein",
@@ -10128,7 +10128,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "middle-colic-artery",
     "reviewed": false,
     "mesh_names": [
       "Middle_colic_artery",
@@ -10157,7 +10157,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "middle-colic-vein",
     "reviewed": false,
     "mesh_names": [
       "Middle_colic_vein",
@@ -10301,7 +10301,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ophthalmic-artery",
     "reviewed": false,
     "mesh_names": [
       "Ophthalmic_arteryl",
@@ -10724,7 +10724,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "proper-hepatic-artery",
     "reviewed": false,
     "mesh_names": [
       "Proper_hepatic_artery",
@@ -10799,7 +10799,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "pulmonary-trunk",
     "reviewed": false,
     "mesh_names": [
       "Pulmonary_trunk",
@@ -10897,7 +10897,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-colic-artery",
     "reviewed": false,
     "mesh_names": [
       "Right_colic_artery",
@@ -10926,7 +10926,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-colic-vein",
     "reviewed": false,
     "mesh_names": [
       "Right_colic_vein",
@@ -10977,7 +10977,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-coronary-artery",
     "reviewed": false,
     "mesh_names": [
       "Right_coronary_artery",
@@ -11006,7 +11006,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-inferior-pulmonary-vein",
     "reviewed": false,
     "mesh_names": [
       "Right_inferior_pulmonary_vein",
@@ -11035,7 +11035,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-pulmonary-artery",
     "reviewed": false,
     "mesh_names": [
       "Right_pulmonary_artery",
@@ -11064,7 +11064,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-renal-artery",
     "reviewed": false,
     "mesh_names": [
       "Right_renal_artery",
@@ -11093,7 +11093,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-renal-vein",
     "reviewed": false,
     "mesh_names": [
       "Right_renal_vein",
@@ -11188,7 +11188,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-superior-pulmonary-vein",
     "reviewed": false,
     "mesh_names": [
       "Right_superior_pulmonary_vein",
@@ -11284,7 +11284,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "sigmoid-arteries",
     "reviewed": false,
     "mesh_names": [
       "Sigmoid_arteries",
@@ -11340,7 +11340,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "sigmoid-veins",
     "reviewed": false,
     "mesh_names": [
       "Sigmoid_veins",
@@ -11394,7 +11394,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "splenic-artery",
     "reviewed": false,
     "mesh_names": [
       "Splenic_artery",
@@ -11423,7 +11423,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "splenic-vein",
     "reviewed": false,
     "mesh_names": [
       "Splenic_vein",
@@ -11888,7 +11888,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "superior-mesenteric-artery",
     "reviewed": false,
     "mesh_names": [
       "Superior_mesenteric_artery",
@@ -11917,7 +11917,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "superior-mesenteric-vein",
     "reviewed": false,
     "mesh_names": [
       "Superior_mesenteric_vein",
@@ -11946,7 +11946,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "superior-ophthalmic-vein",
     "reviewed": false,
     "mesh_names": [
       "Superior_ophthalmic_veinl",
@@ -12045,7 +12045,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "superior-vena-cava",
     "reviewed": false,
     "mesh_names": [
       "Superior_vena_cava",
@@ -16658,7 +16658,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "brachiocephalic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_M_brachiocephalic_vein_L",
@@ -16681,7 +16681,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "central-retinal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_central_retinal_vein_L",
@@ -16706,7 +16706,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "cystic-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_cystic_artery",
@@ -16729,7 +16729,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "cystic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_cystic_vein",
@@ -16752,7 +16752,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "descending-aorta",
     "reviewed": false,
     "mesh_names": [
       "VH_F_descending_aorta_a",
@@ -16777,7 +16777,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ileocolic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_ileocolic_vein",
@@ -16800,7 +16800,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "inferior-pancreaticoduodenal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_inferior_pancreaticoduodenal_vein",
@@ -16823,7 +16823,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "inferior-rectal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_inferior_rectal_vein_L",
@@ -16848,7 +16848,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "inferior-vena-cava",
     "reviewed": false,
     "mesh_names": [
       "VH_F_inferior_vena_cava_a",
@@ -16873,7 +16873,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-anterior-descending-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_anterior_descending_artery",
@@ -16896,7 +16896,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-colic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_colic_vein",
@@ -16919,7 +16919,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-hepatic-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_hepatic_artery",
@@ -16942,7 +16942,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-hepatic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_hepatic_vein",
@@ -16965,7 +16965,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "left-marginal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_marginal_vein"
@@ -16987,7 +16987,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "marginal-artery-of-drummond",
     "reviewed": false,
     "mesh_names": [
       "VH_F_marginal_artery_of_Drummond",
@@ -17010,7 +17010,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "median-sacral-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_median_sacral_vein",
@@ -17033,7 +17033,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "middle-hemorrhoidal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_middle_rectal_vein_L",
@@ -17058,7 +17058,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "middle-hepatic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_middle_hepatic_vein",
@@ -17081,7 +17081,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "ophthalmic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_ophthalmic_vein_L",
@@ -17106,7 +17106,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "portal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_M_portal_vein"
@@ -17128,7 +17128,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-hepatic-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_right_hepatic_artery",
@@ -17151,7 +17151,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-hepatic-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_right_hepatic_vein",
@@ -17174,7 +17174,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "right-marginal-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_right_marginal_artery",
@@ -17197,7 +17197,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "small-cardiac-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_small_cardiac_vein",
@@ -17220,7 +17220,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "superior-rectal-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_superior_rectal_artery"
@@ -17242,7 +17242,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "superior-rectal-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_superior_rectal_vein",
@@ -17265,7 +17265,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "uterine-artery",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_uterine_artery",
@@ -17288,7 +17288,7 @@
     ],
     "voxel_size_um": null,
     "hoa_dataset_doi": null,
-    "facts_id": null,
+    "facts_id": "uterine-vein",
     "reviewed": false,
     "mesh_names": [
       "VH_F_left_uterine_vein",
