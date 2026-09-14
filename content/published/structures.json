@@ -9,8 +9,8 @@
     "sources": [
       {
         "source_id": "nlm-vhp-male",
-        "asset": "pending",
-        "note": "whole-body context — asset path after R2 sync"
+        "asset": "NLM Visible Human male cryosection dataset",
+        "note": "Whole-body context for the Visible Human male: the NLM Visible Human Project cryosection dataset (0.33 mm/pixel). This row is the graph's body-level parent and nothing resolves to it. It is deliberately NOT review-accepted: its label is 'Human body' while UBERON:0000468 is 'multicellular organism' — not the same claim — and it has no layer of its own."
       }
     ],
     "voxel_size_um": null,
@@ -28,8 +28,8 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "pending",
-        "note": "HuBMAP HRA heart GLB — asset path after R2 sync"
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "HuBMAP HRA ref-organ heart GLBs (male v1.3 + female v1.3), loaded by the app from the HuBMAP CDN. Neither asset publishes a whole-organ heart mesh: each is three groups carrying fourteen individually-named meshes (four chambers, four valves, the interventricular septum and five papillary muscles), which are mapped as their own rows. Nothing resolves to this row itself."
       }
     ],
     "voxel_size_um": null,
@@ -47,8 +47,13 @@
     "sources": [
       {
         "source_id": "hubmap-asctb-heart",
-        "asset": "pending",
-        "note": "ASCT+B heart table — map mesh node before review"
+        "asset": "ASCT-B_3D_Models_Mapping.csv (v1.2)",
+        "note": "ASCT+B heart table (v1.2) — lists mesh node VH_M_heart_left_ventricle labelled 'heart left ventricle', i.e. the male HRA reference heart's left ventricle, mapped to UBERON:0002084"
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_heart_left_ventricle + VH_F_left_ventricle confirmed by direct GLB inspection (both sexes)"
       },
       {
         "source_id": "z-anatomy",
@@ -114,7 +119,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Z-Anatomy 'Visceral systems' collection (R2 visceral-v1-draco.glb) — the modelling meshes (118 surface objects: liver + its segments, gallbladder, stomach, pancreas, kidneys, urinary bladder, lung lobes, pleura, trachea, thyroid and parathyroid glands, salivary glands, tongue, palate, pharynx, pituitary and pineal glands, and that individual's male reproductive organs) PLUS curve-converted tubes that are equally real geometry: the segmental and lobar bronchi, the oesophagus, the jejunum, the bile duct, the pancreatic and accessory pancreatic ducts, the parotid and submandibular ducts, the ductus deferens, the ejaculatory ducts, the ureters and the urethra. Ten structures have their own rows (liver, stomach, pancreas, gallbladder, kidney, urinary bladder, trachea, thyroid gland, adrenal gland, lung) so those clicks open an entry; everything else in this layer still reports not-in-this-dataset."
       }
     ],
@@ -133,7 +138,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh nodes 'Liver' plus its eight named segments, confirmed present in the shipped viscera GLB (R2 visceral-v1-draco.glb) with packages/tools/compare_glb_scene.mjs. Uberon id verified against OLS4 (label 'liver', not obsolete)."
       },
       {
@@ -225,7 +230,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Stomach' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'stomach', not obsolete)."
       }
     ],
@@ -247,7 +252,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Pancreas' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'pancreas', not obsolete)."
       },
       {
@@ -289,7 +294,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Gallbladder' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'gallbladder', not obsolete)."
       },
       {
@@ -323,7 +328,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh nodes 'Kidney.l' and 'Kidney.r' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'kidney', not obsolete). In that Z-Anatomy asset the renal pelvis is a separate mesh and is not mapped; for the Visible Human male the renal pelvis and calyces ARE mapped to this row."
       },
       {
@@ -506,7 +511,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Urinary bladder' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'urinary bladder', not obsolete)."
       },
       {
@@ -550,7 +555,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Trachea' confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'trachea', not obsolete)."
       },
       {
@@ -588,7 +593,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Thyroid gland' confirmed present in the shipped viscera GLB. The parathyroid glands are separate meshes and are not mapped here. Uberon id verified against OLS4 (label 'thyroid gland', not obsolete)."
       }
     ],
@@ -610,7 +615,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh nodes 'Suprarenal gland.l' and 'Suprarenal gland.r' (suprarenal = adrenal) confirmed present in the shipped viscera GLB. Uberon id verified against OLS4 (label 'adrenal gland', not obsolete)."
       }
     ],
@@ -633,7 +638,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "The five lobe meshes (superior and inferior of the left lung; superior, middle and inferior of the right) confirmed present in the shipped viscera GLB. There is no single whole-lung mesh in this source, so the structure maps to its lobes. Uberon id verified against OLS4 (label 'lung', not obsolete)."
       },
       {
@@ -723,7 +728,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Oesophagus' confirmed present in the shipped viscera GLB — it arrives as a converted curve tube, not a modelling mesh, which is why a MESH-only inventory listing does not show it. Uberon id verified against OLS4 (label 'esophagus', not obsolete)."
       }
     ],
@@ -745,7 +750,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Jejunum' confirmed present in the shipped viscera GLB (a converted curve tube). It is the only part of the small intestine mapped to a structure in this atlas: the source also carries a 'Duodenum' mesh, which has no structure row yet, and it contains no ileum mesh at all. Re-verified 2026-09-13 by loading the GLB with the app's own loader ('Duodenum' PRESENT, 'Jejunum' PRESENT, 'Ileum' ABSENT). Uberon id verified against OLS4 (label 'jejunum', not obsolete)."
       },
       {
@@ -779,7 +784,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh nodes 'Ureter.l' and 'Ureter.r' confirmed present in the shipped viscera GLB (converted curve tubes). Uberon id verified against OLS4 (label 'ureter', not obsolete)."
       },
       {
@@ -816,7 +821,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Urethra' confirmed present in the shipped viscera GLB (a converted curve tube). Uberon id verified against OLS4 (label 'urethra', not obsolete)."
       },
       {
@@ -845,7 +850,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Bile duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source also carries a project-typed 'Extrahepatic bile ducts.j' object, which holds no surface and therefore ships as a node without geometry. Uberon id verified against OLS4 (label 'bile duct', not obsolete)."
       },
       {
@@ -879,7 +884,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "Mesh node 'Pancreatic duct' confirmed present in the shipped viscera GLB (a converted curve tube). The source also names a separate 'Accessory pancreatic duct' mesh, which is left unmapped — and that is a deliberate choice, NOT a missing term. CORRECTED 2026-09-13: this note previously said no matching Uberon term was found, which the ontology contradicts. OLS4's curator note on UBERON:0007329 reads 'this class groups together accessory (dorsal) and main (ventral) pancreatic ducts', and that term's own description lists 'duct of pancreas', 'ductus pancreaticus' and 'pancreas duct' as synonyms. So the class does cover the accessory duct, and mapping both meshes to it would make one structure row stand for two separately named ducts that drain to different papillae; the accessory duct is therefore left unmapped and disclosed in the card instead. UBERON:0001064 remains the VENTRAL pancreatic duct on its own and was not used. Uberon id verified against OLS4 (label 'pancreatic duct', not obsolete)."
       },
       {
@@ -915,7 +920,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/visceral-v1-draco.glb",
         "note": "All 28 bronchus tubes confirmed present in the shipped viscera GLB (converted curve tubes): the left and right main bronchi, the lobar bronchi, and the segmental bronchi the source names individually (BI–BX and the left apicoposterior and lingular ones). This source models each bronchus as its own tube and has no single 'bronchi' mesh, so this structure maps to them all; the more specific names are not mapped as separate structures yet. Uberon id verified against OLS4 (label 'bronchus', not obsolete)."
       },
       {
@@ -1031,8 +1036,8 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
-        "note": "Z-Anatomy 'Cardiovascular system' collection (R2 cardiovascular-v1-draco.glb) — 676 surface nodes: heart chambers, valves, papillary muscles, pulmonary trunk, dural sinuses, plus 654 vessel tubes converted from beveled curves, i.e. the arterial and venous tree including distal limb coverage. Distinct from the HuBMAP blood-vasculature row, which is a different individual and trunk-only. 229 of this layer's 416 named vessels are mapped as their own structures, each id accepted only on an exact Uberon label or exact synonym; the other 166 are segmental vessels and named branches Uberon does not model, and the heart's own parts (valves, leaflets, chambers) are claimed by the heart rows instead."
+        "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
+        "note": "Z-Anatomy 'Cardiovascular system' collection (R2 cardiovascular-v1-draco.glb) — 676 surface nodes: heart chambers, valves, papillary muscles, pulmonary trunk, dural sinuses, plus 654 vessel tubes converted from beveled curves, i.e. the arterial and venous tree including distal limb coverage. Distinct from the HuBMAP blood-vasculature row, which is a different individual and trunk-only. 229 of this layer's 416 named vessels are mapped as their own structures, each id accepted only on an exact Uberon label or exact synonym; the other 166 are segmental vessels and named branches Uberon does not model. The heart's own parts are claimed by the heart rows instead (the four chambers from this layer, the valves and the interventricular septum from the donors' heart assets), and the valve LEAFLETS this layer names stay unmapped because a leaflet is a part of a valve."
       }
     ],
     "voxel_size_um": null,
@@ -1050,7 +1055,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
         "note": "Z-Anatomy 'Nervous system & Sense organs' collection (R2 nervous-v1-draco.glb) — 580 surface nodes: brain surfaces, spinal cord parts, spinal dura, cranial and peripheral nerve tubes (247 converted from beveled curves). Honest gap: the eye's ciliary body has NO surface geometry in this source (its two curves are unbeveled and were dropped)."
       }
     ],
@@ -1069,7 +1074,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
         "note": "Mesh nodes 'Midbrain.l' and 'Midbrain.r' confirmed present in the shipped nervous-system GLB (R2 nervous-v1-draco.glb). This source carries the brain as its named parts, not as one whole-brain mesh. Uberon id verified against OLS4 (label 'midbrain', not obsolete)."
       }
     ],
@@ -1092,7 +1097,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
         "note": "Mesh nodes 'Pons.l' and 'Pons.r' confirmed present in the shipped nervous-system GLB. Uberon id verified against OLS4 (label 'pons', not obsolete)."
       }
     ],
@@ -1115,7 +1120,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/nervous-v1-draco.glb",
         "note": "Mesh nodes 'Medulla oblongata.l' and 'Medulla oblongata.r' confirmed present in the shipped nervous-system GLB. The pyramids of the medulla are separate meshes and are not mapped here. Uberon id verified against OLS4 (label 'medulla oblongata', not obsolete)."
       }
     ],
@@ -1138,7 +1143,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
         "note": "Z-Anatomy 'Joints' collection (R2 joints-v1-draco.glb) — 409 surface nodes of periarticular structures only: joint capsules, ligaments, menisci, labra. Contains no bones (those are the skeleton row), so it reads as connective-tissue detail laid over the skeleton."
       }
     ],
@@ -1157,7 +1162,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/lymphoid-v1-draco.glb",
         "note": "Z-Anatomy 'Lymphoid organs' collection (R2 lymphoid-v1-draco.glb) — 158 surface nodes: about 150 named lymph-node groups (cervical, axillary, inguinal, iliac, mesenteric, mediastinal, popliteal, etc.), palatine tonsils, thymus lobes and spleen. Lymphatic VESSELS are not part of this collection."
       }
     ],
@@ -1176,7 +1181,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/lymphoid-v1-draco.glb",
         "note": "Mesh node 'Spleen' confirmed present in the shipped lymphoid GLB (R2 lymphoid-v1-draco.glb). Uberon id verified against OLS4 (label 'spleen', not obsolete)."
       },
       {
@@ -1218,7 +1223,7 @@
     "sources": [
       {
         "source_id": "z-anatomy",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/lymphoid-v1-draco.glb",
         "note": "Mesh nodes 'Left lobe of thymus' and 'Right lobe of thymus' confirmed present in the shipped lymphoid GLB; this source models the thymus as its two lobes. Uberon id verified against OLS4 (label 'thymus', not obsolete)."
       },
       {
@@ -1255,12 +1260,12 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "pending",
+        "asset": "VH_M_Skin.glb, VH_F_Skin.glb",
         "note": "VH male + female v1.2 whole-body skins — each in its own individual's frame, layered at identity in the /body peel (no transform)"
       },
       {
         "source_id": "bodyparts3d",
-        "asset": "pending",
+        "asset": "z-anatomy/glb/skin-v2-draco.glb",
         "note": "Taro reference-model whole-body skin (FJ2810.obj, FMA7163), layer 0 of the /reference body — placed by a landmark-derived translation, no rotation or scale"
       }
     ],
@@ -1279,7 +1284,7 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "pending",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
         "note": "VH_Male + VH_Female v1.2 Blood_Vasculature — central/trunk arterial-venous tree, same individual frame as skin (identity). This row stays a whole-layer row for THAT asset: only its ascending aorta mesh is mapped, and its per-vessel node names are not. The Reference body's Z-Anatomy vessel tree is mapped per vessel in its own child rows."
       }
     ],
@@ -1298,7 +1303,7 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "pending",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
         "note": "VH_Male + VH_Female v1.2 Blood_Vasculature.glb — mesh node names VH_M_ascending_aorta + VH_F_ascending_aorta confirmed in the node dump (present in both sexes)"
       },
       {
@@ -1327,7 +1332,7 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "pending",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
         "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_heart_right_ventricle + VH_F_right_ventricle confirmed by direct GLB inspection (both sexes)"
       },
       {
@@ -1356,7 +1361,7 @@
     "sources": [
       {
         "source_id": "hubmap-hra-glb",
-        "asset": "pending",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
         "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_right_cardiac_atrium + VH_F_right_cardiac_atrium confirmed by direct GLB inspection (both sexes)"
       },
       {
@@ -6871,6 +6876,11 @@
     "part_of": "heart",
     "sources": [
       {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "HRA ref-organ heart GLBs (male v1.3 + female v1.3) — mesh node names VH_M_left_cardiac_atrium + VH_F_left_cardiac_atrium confirmed by direct GLB inspection (both sexes)"
+      },
+      {
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node 'Left atrium' confirmed present in the shipped Z-Anatomy cardiovascular GLB (R2 cardiovascular-v1-draco.glb) — the Reference body carries this chamber in its 'Heart + vessels' layer. UBERON's own label is 'left cardiac atrium'; id verified against OLS4 (not obsolete)."
@@ -12076,6 +12086,121 @@
     "mesh_names": [
       "Vertebral_veinl",
       "Vertebral_veinr"
+    ]
+  },
+  {
+    "id": "interventricular-septum",
+    "uberon": "UBERON:0002094",
+    "fma": null,
+    "label": "Interventricular septum",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "Mesh node names VH_F_interventricular_septum + VH_M_interventricular_septum confirmed present in the HuBMAP HRA ref-organ heart GLBs (male v1.3 + female v1.3) with the app's own loader. Uberon id verified against OLS4 (exact label 'interventricular septum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_interventricular_septum",
+      "VH_M_interventricular_septum"
+    ]
+  },
+  {
+    "id": "aortic-valve",
+    "uberon": "UBERON:0002137",
+    "fma": null,
+    "label": "Aortic valve",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "Mesh node names VH_F_aortic_valve + VH_M_aortic_valve confirmed present in the HuBMAP HRA ref-organ heart GLBs (male v1.3 + female v1.3) with the app's own loader. Uberon id verified against OLS4 (exact label 'aortic valve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_aortic_valve",
+      "VH_M_aortic_valve"
+    ]
+  },
+  {
+    "id": "mitral-valve",
+    "uberon": "UBERON:0002135",
+    "fma": null,
+    "label": "Mitral valve",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "Mesh node names VH_F_mitral_valve + VH_M_mitral_valve confirmed present in the HuBMAP HRA ref-organ heart GLBs (male v1.3 + female v1.3) with the app's own loader. Uberon id verified against OLS4 (exact label 'mitral valve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_mitral_valve",
+      "VH_M_mitral_valve"
+    ]
+  },
+  {
+    "id": "pulmonary-valve",
+    "uberon": "UBERON:0002146",
+    "fma": null,
+    "label": "Pulmonary valve",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "Mesh node names VH_F_pulmonary_valve + VH_M_pulmonary_valve confirmed present in the HuBMAP HRA ref-organ heart GLBs (male v1.3 + female v1.3) with the app's own loader. Uberon id verified against OLS4 (exact label 'pulmonary valve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_pulmonary_valve",
+      "VH_M_pulmonary_valve"
+    ]
+  },
+  {
+    "id": "tricuspid-valve",
+    "uberon": "UBERON:0002134",
+    "fma": null,
+    "label": "Tricuspid valve",
+    "layer": "organ",
+    "part_of": "heart",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "3d-vh-m-heart.glb, 3d-vh-f-heart.glb",
+        "note": "Mesh node names VH_F_tricuspid_valve + VH_M_tricuspid_valve confirmed present in the HuBMAP HRA ref-organ heart GLBs (male v1.3 + female v1.3) with the app's own loader. Uberon id verified against OLS4 (exact label 'tricuspid valve', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_tricuspid_valve",
+      "VH_M_tricuspid_valve"
     ]
   }
 ]

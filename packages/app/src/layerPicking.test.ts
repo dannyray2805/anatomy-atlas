@@ -67,8 +67,10 @@ describe("multi-layer picking is layer-agnostic", () => {
   });
 
   it("returns DATA_MISSING (undefined) for an unknown mesh in ANY layer", () => {
-    // Unknown node inside the heart layer.
-    assert.equal(lookupStructure(structures, "VH_M_mitral_valve"), undefined);
+    // Unknown node inside the heart layer. Deliberately a name that cannot become a row later: this
+    // test's fixture is hand-written, so a real mesh name (it used to be `VH_M_mitral_valve`) makes
+    // the assertion read as "this mesh is unmapped in the product" when it only means "not here".
+    assert.equal(lookupStructure(structures, "VH_M_no_such_part"), undefined);
     // Unknown node inside the mocked non-heart layer.
     assert.equal(lookupStructure(structures, "MOCK_OTHER_LAYER_unknown"), undefined);
   });

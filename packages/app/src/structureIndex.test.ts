@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import structuresJson from "../../../content/published/structures.json" with { type: "json" };
 import type { Structure } from "../../schema/src/structure";
 import { shareStateFromQuery } from "./bodySource.ts";
+import { lookupStructure } from "./structureLookup.ts";
 import {
   BODY_PREFERENCE,
   bodiesForMeshNames,
@@ -146,6 +147,37 @@ describe("indexEntries", () => {
       assert.equal(state.source, e.body, `${e.id}: link opens ${state.source}, expected ${e.body}`);
       assert.ok(e.bodies.includes(state.source), `${e.id}: linked body does not carry it`);
     }
+  });
+});
+
+describe("the heart's own parts (valves and the interventricular septum)", () => {
+  it("are mapped for both donors, and resolve from the mesh names a click produces", () => {
+    for (const id of ["aortic-valve", "mitral-valve", "pulmonary-valve", "tricuspid-valve", "interventricular-septum"]) {
+      assert.ok(entry(id), `${id} is missing from the index`);
+      assert.deepEqual(entry(id)?.bodies, ["donor-male", "donor-female"], `${id} lost a body`);
+    }
+    // The name the scene actually reports is what has to resolve; a row listing the asset's name
+    // from the FILE rather than the loader's is dead on arrival, which this project has hit before.
+    assert.equal(lookupStructure(structures, "VH_M_mitral_valve")?.id, "mitral-valve");
+    assert.equal(lookupStructure(structures, "VH_F_tricuspid_valve")?.id, "tricuspid-valve");
+    assert.equal(
+      lookupStructure(structures, "VH_F_interventricular_septum")?.id,
+      "interventricular-septum"
+    );
+  });
+
+  it("leaves the ten named papillary muscles unmapped rather than filing them under one broad term", () => {
+    // They are real meshes in both shipping heart GLBs. Uberon models the papillary muscles as a
+    // group, so mapping each named muscle would map a part to its whole — the same reason the named
+    // muscle heads and bellies are unmapped. Recorded here so the gap cannot be quietly forgotten.
+    assert.equal(
+      lookupStructure(structures, "VH_M_papillary_muscle_of_heart_anterior"),
+      undefined
+    );
+    assert.equal(
+      lookupStructure(structures, "VH_F_papillary_muscle_of_heart_posmed"),
+      undefined
+    );
   });
 });
 

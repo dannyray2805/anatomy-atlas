@@ -116,7 +116,11 @@ describe("lookupStructure", () => {
   });
 
   it("returns undefined for a mesh not in the graph (DATA_MISSING)", () => {
-    assert.equal(lookupStructure(structures, "VH_M_mitral_valve"), undefined);
+    // These tests run against the hand-written fixture above, not the published graph, so the
+    // example must be a name no row could ever claim. A real-looking one does not stay true:
+    // this assertion used to use `VH_M_mitral_valve`, which IS now a published row, so it quietly
+    // stopped being an example of a mesh that resolves to nothing.
+    assert.equal(lookupStructure(structures, "VH_M_no_such_part"), undefined);
   });
 
   it("returns undefined for null", () => {

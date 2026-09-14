@@ -162,6 +162,56 @@ per-vessel mapping yet"). They now state what is and is not mapped. Neither row'
 id, layer or mesh names were touched and both keep `reviewed: true` — recorded here because a note is
 part of what was reviewed.
 
+## 2026-09-14 — stale `asset` placeholders, and the heart's own parts
+
+Scope: 36 published rows whose source `asset` still read `"pending"`, four stale notes, and 5 new
+`organ` rows for the heart's valves and interventricular septum (all `reviewed: false`).
+
+### What was wrong
+
+Every one of those 36 rows has been serving real data since 2026-09-02 while telling a reader "asset
+pending" — a placeholder written when the graph was scaffolded and never corrected, because each later
+batch fixed only the rows it touched. Three notes were stale in the same way: `heart` and `body` both
+said "asset path after R2 sync", and `heart-left-ventricle`'s ASCT+B note was still a build-time TODO
+("map mesh node before review") on a `reviewed: true` row that has been mapped for weeks.
+
+### What was checked
+
+- **All six Z-Anatomy R2 keys were ranged-GET through the Pages proxy and answered 206** before any
+  value was written, so the strings name assets that exist.
+- Visible-human file names are either already used elsewhere in this graph (`Allen_M_Brain.glb`,
+  `VH_F_Uterus.glb`, …) or the HRA heart GLB the app itself loads for that body.
+- **A new audit** (`incoming/audit_source_coverage.mjs`) asks whether every mesh name a row claims has
+  a source that could have provided it, using the library prefix and the SEX the prefix encodes. It
+  found two real gaps: `heart-left-atrium` listed both donors' meshes while declaring no
+  visible-human source at all, and `heart-left-ventricle` listed a **woman's** mesh while declaring
+  only a male table. Both now declare the HRA heart GLBs. The audit's first version was itself wrong —
+  its sex rule was written for underscore names (`VH_F_Liver.glb`) and missed the hyphenated
+  `3d-vh-f-heart.glb` — which is recorded here because a check that silently passes is worse than
+  none.
+- The five new ids were accepted **only on an exact Uberon label** at OLS4 (interventricular septum
+  0002094, aortic valve 0002137, mitral valve 0002135, pulmonary valve 0002146, tricuspid valve
+  0002134), and every mesh name came from a loader dump of the shipping heart GLBs — three group
+  nodes carrying fourteen individually-named meshes each.
+- **The ten named papillary muscles are left unmapped, with the reason and a test**: Uberon models
+  them as a group, so filing five named muscles under one broad term would map a part to its whole.
+  `structureIndex.test.ts` asserts both that the five new rows resolve from the mesh names a click
+  produces and that the papillary muscles do not.
+
+### Also corrected
+
+Two unit tests used `VH_M_mitral_valve` as their example of "a mesh not in the graph". That name is
+now a published row. The tests still passed, because they run against a hand-written fixture rather
+than the published graph — which is exactly why the example was misleading: it read as a claim about
+the product. Both now use a name no row can ever claim.
+
+### Not checked
+
+- No anatomist confirmed the valve meshes are the valves their names say.
+- The Z-Anatomy cardiovascular layer names valve **leaflets**, not whole valves; those stay unmapped
+  because a leaflet is part of a valve whose own row comes from the donor heart assets. A click on a
+  leaflet on the reference body still reports "not mapped to a structure".
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

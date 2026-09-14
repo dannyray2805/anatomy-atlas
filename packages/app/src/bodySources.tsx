@@ -81,6 +81,13 @@ function VhAttribution({ sex }: { sex: Sex }) {
         </li>
       )}
       <li>
+        Heart — this individual&apos;s own heart asset publishes the organ as separate meshes, not as
+        one piece: four chambers, four valves, the interventricular septum and five named papillary
+        muscles. The chambers, the valves and the septum each map to their own structure; the
+        papillary muscles are deliberately unmapped, because Uberon models them as a group and
+        filing five named muscles under one broad term would map a part to its whole.
+      </li>
+      <li>
         Not published for this individual, and therefore shown as “not in this dataset”: whole-body
         muscle, and a full articulated skeleton — only the spine, pelvis and spinal cord exist.
         (The Reference body shows a different individual&apos;s complete musculature and skeleton.)
@@ -167,9 +174,9 @@ function ReferenceAttribution() {
         were refused even though Uberon&apos;s synonymy would have accepted them: &quot;Aortic
         arch&quot; is a synonym of the EMBRYONIC pharyngeal arch artery (UBERON:0004363), so it maps
         to the adult arch of the aorta (UBERON:0001508) instead, and &quot;Medial plantar veins&quot;
-        resolves to a digital vein of the toes, a different vessel. The heart valves and leaflets
-        this layer also carries are part of the heart, not the vessel tree, and are not claimed
-        here.
+        resolves to a digital vein of the toes, a different vessel. The valve leaflets this layer
+        names are parts of valves whose own rows come from the donors' heart assets, so the layer
+        claims none of the heart's parts.
       </li>
       <li>
         A single fixed male reference individual (“Taro”) — a different person from the Visible
