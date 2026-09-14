@@ -66,6 +66,45 @@ mesh is not mapped twice, which the graph validator rejects), the last-word hist
 and the full label list. Measure first: doing this before the skeleton, muscle and vessel passes is
 what showed that Uberon matched only 25 of 123 bone and 76 of 305 muscle labels exactly.
 
+## The resolvers and appliers — the mapping passes themselves
+
+These are the four mapping passes that gave the layer meshes their Uberon ids, and the appliers that
+wrote the results into `content/published/structures.json`. They are here so a mapping's provenance
+is a script that can be re-read and re-run, not a paragraph in a log. **All run from the repository
+root with plain `node`** (the same cwd caveat as `compress_layers.mjs`), and all read/write artefacts
+in the gitignored `incoming/` directory, which is where the loader dumps live.
+
+| script | maps | reads | writes |
+| --- | --- | --- | --- |
+| `resolve_vessels.mjs` | the Reference body's Z-Anatomy vessel tree | `incoming/cardiovascular-v1.glb`, `incoming/_vessel-owners.tsv` | `incoming/_vessel-resolution.tsv` |
+| `resolve_nerves.mjs` | its nervous-system layer | `incoming/nervous-v1.glb`, `incoming/_nerve-owners.tsv` | `incoming/_nerve-resolution.tsv` |
+| `resolve_joints.mjs` | its joint layer | `incoming/joints-v1.glb`, `incoming/_joints-owners.tsv` | `incoming/_joints-resolution.tsv` |
+| `resolve_donor_vessels.mjs` | the two Visible Human donors' own vessel trees | `incoming/_m-vasculature.tsv`, `incoming/_f-vasculature.tsv` | `incoming/_donor-vessels-resolution.tsv` |
+| `apply_layer_mappings.mjs` | writes a Reference-body resolution into the graph | a `_*-resolution.tsv` | the graph |
+| `apply_donor_vessels.mjs` | writes the donors' resolution into the graph | `incoming/_donor-vessels-resolution.tsv` | the graph |
+| `repair_brainstem_rows.mjs` | repairs three rows whose mesh names were the FILE's spelling | — | the graph |
+
+Every resolver follows one gate, and it is the whole point of them: **search proposes ids, the OLS4
+term endpoint confirms an exact label or an exact synonym, and the label written into the graph is
+the term's own.** Consequences worth knowing before editing one:
+
+- A `REJECT` table refuses a term the gate *would* accept when it is a different structure. Both
+  vessel passes carry the same entry: `aortic arch` resolves to UBERON:0004363, the **embryonic**
+  pharyngeal arch artery, which carries the adult wording as a synonym from embryology; these meshes
+  are the adult arch (UBERON:0001508). Every refusal is printed on every run.
+- An `ALIASES` table records documented corrections of the asset's own spelling (`Opthalmic` →
+  `Ophthalmic`, the donor assets' `opthalmic` artery), and the correction still has to be confirmed
+  by the term endpoint.
+- Unresolved labels are printed, never guessed. `docs/review-log.md` records what stayed unmapped and
+  the evidence for each one.
+- Merging is deliberate: several wordings landing on ONE term produce one row holding both sides (the
+  `kidney` precedent), which is why a row can hold `left`/`right` meshes.
+- `apply_*.mjs` refuse to touch a `reviewed: true` row unless `--allow-reviewed` is passed (merging
+  mesh names into such a row changes what it claims), and they are idempotent: mesh names are unioned,
+  a source entry is added once.
+
+Run `audit_mesh_reachability.mjs` and `audit_source_coverage.mjs` after any of them.
+
 ## `compress_layers.mjs` — uniform Draco/weld compression of layer GLBs (P0, 2026-09-05)
 
 Produces two derived variants of each R2-served layer GLB (male/female VH skin,
