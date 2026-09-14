@@ -93,9 +93,13 @@ function VhAttribution({ sex }: { sex: Sex }) {
         (The Reference body shows a different individual&apos;s complete musculature and skeleton.)
       </li>
       <li>
-        Blood vasculature (v1.2) is a central/trunk arterial-venous tree. The ascending aorta is
-        mapped to a structure (both sexes); most of the ~104/108 per-vessel node names are not, so
-        most vessel clicks report “not mapped to a structure”.
+        Blood vasculature (v1.2) is a central/trunk arterial-venous tree, and this individual&apos;s
+        own vessels are now their own structures: {isMale ? "92 of the 104" : "95 of the 108"} vessel
+        meshes this body publishes are mapped, each id verified at OLS4, and a click on one opens it.
+        Both sexes are mapped where the source publishes both. The rest are vessels Uberon does not
+        name — the coronary artery&apos;s named diagonal, descending and marginal branches and its
+        smaller cardiac veins, the liver&apos;s segmental arteries, and the portal vein&apos;s two
+        branches — and those clicks still report “not mapped to a structure”.
       </li>
       <li>
         Contributor note: three models in this body come from other labs, published inside the same

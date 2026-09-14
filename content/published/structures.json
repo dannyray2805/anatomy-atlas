@@ -1285,7 +1285,7 @@
       {
         "source_id": "hubmap-hra-glb",
         "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
-        "note": "VH_Male + VH_Female v1.2 Blood_Vasculature — central/trunk arterial-venous tree, same individual frame as skin (identity). This row stays a whole-layer row for THAT asset: only its ascending aorta mesh is mapped, and its per-vessel node names are not. The Reference body's Z-Anatomy vessel tree is mapped per vessel in its own child rows."
+        "note": "VH_Male + VH_Female v1.2 Blood_Vasculature — central/trunk arterial-venous tree, same individual frame as skin (identity). 92 of the 104 vessel meshes the male body publishes and 95 of the 108 the female body publishes are mapped as their own structures (both sexes where both publish one), each id verified at OLS4 on an exact label or exact synonym; the rest are vessels Uberon does not name — the coronary artery's named branches and its smaller cardiac veins, the liver's segmental arteries, and the portal vein's two branches (each listed, with its evidence, in docs/review-log.md). The Reference body's Z-Anatomy vessel tree is mapped per vessel in its own child rows."
       }
     ],
     "voxel_size_um": null,
@@ -7248,6 +7248,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'arch of aorta'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_aortic_arch + VH_M_aortic_arch confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'arch of aorta', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7255,7 +7260,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Aortic_arch"
+      "Aortic_arch",
+      "VH_F_aortic_arch",
+      "VH_M_aortic_arch"
     ]
   },
   {
@@ -7519,6 +7526,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'brachiocephalic artery'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_brachiocephalic_artery_a + VH_F_brachiocephalic_artery_b + VH_M_brachiocephalic_artery_a + VH_M_brachiocephalic_artery_b confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'brachiocephalic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7526,7 +7538,11 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Brachiocephalic_trunk"
+      "Brachiocephalic_trunk",
+      "VH_F_brachiocephalic_artery_a",
+      "VH_F_brachiocephalic_artery_b",
+      "VH_M_brachiocephalic_artery_a",
+      "VH_M_brachiocephalic_artery_b"
     ]
   },
   {
@@ -7587,6 +7603,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'central retinal artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_central_retinal_artery_L + VH_F_central_retinal_artery_R + VH_M_central_retinal_artery_L + VH_M_central_retinal_artery_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'central retinal artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7595,7 +7616,11 @@
     "reviewed": false,
     "mesh_names": [
       "Central_retinal_arteryl",
-      "Central_retinal_arteryr"
+      "Central_retinal_arteryr",
+      "VH_F_central_retinal_artery_L",
+      "VH_F_central_retinal_artery_R",
+      "VH_M_central_retinal_artery_L",
+      "VH_M_central_retinal_artery_R"
     ]
   },
   {
@@ -7633,6 +7658,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Celiac trunk'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_celiac_trunk + VH_M_celiac_trunk confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Celiac trunk', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7640,7 +7670,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Coeliac_trunk"
+      "Coeliac_trunk",
+      "VH_F_celiac_trunk",
+      "VH_M_celiac_trunk"
     ]
   },
   {
@@ -7677,6 +7709,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'common hepatic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_common_hepatic_artery + VH_M_common_hepatic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'common hepatic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7684,7 +7721,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Common_hepatic_artery"
+      "Common_hepatic_artery",
+      "VH_F_common_hepatic_artery",
+      "VH_M_common_hepatic_artery"
     ]
   },
   {
@@ -7722,6 +7761,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'common iliac vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_common_iliac_vein + VH_F_right_common_iliac_vein + VH_M_common_iliac_vein_L + VH_M_common_iliac_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'common iliac vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7730,7 +7774,11 @@
     "reviewed": false,
     "mesh_names": [
       "Common_iliac_veinl",
-      "Common_iliac_veinr"
+      "Common_iliac_veinr",
+      "VH_F_left_common_iliac_vein",
+      "VH_F_right_common_iliac_vein",
+      "VH_M_common_iliac_vein_L",
+      "VH_M_common_iliac_vein_R"
     ]
   },
   {
@@ -7791,6 +7839,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Coronary sinus', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_coronary_sinus + VH_M_coronary_sinus confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Coronary sinus', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -7798,7 +7851,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Coronary_sinus"
+      "Coronary_sinus",
+      "VH_F_coronary_sinus",
+      "VH_M_coronary_sinus"
     ]
   },
   {
@@ -8225,6 +8280,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'external iliac vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_M_external_iliac_vein_L + VH_M_external_iliac_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'external iliac vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8233,7 +8293,9 @@
     "reviewed": false,
     "mesh_names": [
       "External_iliac_veinl",
-      "External_iliac_veinr"
+      "External_iliac_veinr",
+      "VH_M_external_iliac_vein_L",
+      "VH_M_external_iliac_vein_R"
     ]
   },
   {
@@ -8454,6 +8516,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Great cardiac vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_great_cardiac_vein + VH_M_great_cardiac_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Great cardiac vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8461,7 +8528,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Great_cardiac_vein"
+      "Great_cardiac_vein",
+      "VH_F_great_cardiac_vein",
+      "VH_M_great_cardiac_vein"
     ]
   },
   {
@@ -8544,6 +8613,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'hepatic portal vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_hepatic_portal_vein + VH_M_hepatic_portal_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'hepatic portal vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8551,7 +8625,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Hepatic_portal_vein"
+      "Hepatic_portal_vein",
+      "VH_F_hepatic_portal_vein",
+      "VH_M_hepatic_portal_vein"
     ]
   },
   {
@@ -8610,6 +8686,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ileocolic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_ileocolic_artery + VH_M_ileocolic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'ileocolic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8617,7 +8698,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Ileocolic_artery"
+      "Ileocolic_artery",
+      "VH_F_ileocolic_artery",
+      "VH_M_ileocolic_artery"
     ]
   },
   {
@@ -8793,6 +8876,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior mesenteric artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_inferior_mesenteric_artery + VH_M_inferior_mesenteric_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'inferior mesenteric artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8800,7 +8888,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Inferior_mesenteric_artery"
+      "Inferior_mesenteric_artery",
+      "VH_F_inferior_mesenteric_artery",
+      "VH_M_inferior_mesenteric_artery"
     ]
   },
   {
@@ -8815,6 +8905,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'inferior mesenteric vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_inferior_mesenteric_vein + VH_M_inferior_mesenteric_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'inferior mesenteric vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8822,7 +8917,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Inferior_mesenteric_vein"
+      "Inferior_mesenteric_vein",
+      "VH_F_inferior_mesenteric_vein",
+      "VH_M_inferior_mesenteric_vein"
     ]
   },
   {
@@ -8837,6 +8934,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Inferior ophthalmic vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_inferior_ophthalmic_vein_L + VH_F_inferior_ophthalmic_vein_R + VH_M_inferior_ophthalmic_vein_L + VH_M_inferior_ophthalmic_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Inferior ophthalmic vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -8845,7 +8947,11 @@
     "reviewed": false,
     "mesh_names": [
       "Inferior_ophthalmic_veinl",
-      "Inferior_ophthalmic_veinr"
+      "Inferior_ophthalmic_veinr",
+      "VH_F_inferior_ophthalmic_vein_L",
+      "VH_F_inferior_ophthalmic_vein_R",
+      "VH_M_inferior_ophthalmic_vein_L",
+      "VH_M_inferior_ophthalmic_vein_R"
     ]
   },
   {
@@ -9064,6 +9170,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal iliac vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_internal_iliac_vein_L + VH_F_internal_iliac_vein_R + VH_M_internal_iliac_vein_L + VH_M_internal_iliac_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'internal iliac vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9072,7 +9183,11 @@
     "reviewed": false,
     "mesh_names": [
       "Internal_iliac_veinl",
-      "Internal_iliac_veinr"
+      "Internal_iliac_veinr",
+      "VH_F_internal_iliac_vein_L",
+      "VH_F_internal_iliac_vein_R",
+      "VH_M_internal_iliac_vein_L",
+      "VH_M_internal_iliac_vein_R"
     ]
   },
   {
@@ -9133,6 +9248,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'internal pudendal vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_internal_pudendal_vein_L + VH_F_internal_pudendal_vein_R + VH_M_internal_pudendal_vein_L + VH_M_internal_pudendal_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'internal pudendal vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9141,7 +9261,11 @@
     "reviewed": false,
     "mesh_names": [
       "Internal_pudendal_veinl",
-      "Internal_pudendal_veinr"
+      "Internal_pudendal_veinr",
+      "VH_F_internal_pudendal_vein_L",
+      "VH_F_internal_pudendal_vein_R",
+      "VH_M_internal_pudendal_vein_L",
+      "VH_M_internal_pudendal_vein_R"
     ]
   },
   {
@@ -9294,6 +9418,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left colic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_colic_artery + VH_M_left_colic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Left colic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9301,7 +9430,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_colic_artery"
+      "Left_colic_artery",
+      "VH_F_left_colic_artery",
+      "VH_M_left_colic_artery"
     ]
   },
   {
@@ -9316,6 +9447,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'left common carotid artery plus branches'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_common_carotid_artery_a + VH_F_left_common_carotid_artery_b + VH_M_left_common_carotid_artery_a + VH_M_left_common_carotid_artery_b confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left common carotid artery plus branches', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9323,7 +9459,11 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_common_carotid_artery"
+      "Left_common_carotid_artery",
+      "VH_F_left_common_carotid_artery_a",
+      "VH_F_left_common_carotid_artery_b",
+      "VH_M_left_common_carotid_artery_a",
+      "VH_M_left_common_carotid_artery_b"
     ]
   },
   {
@@ -9338,6 +9478,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Left coronary artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_coronary_artery + VH_M_left_coronary_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Left coronary artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9345,7 +9490,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_coronary_artery"
+      "Left_coronary_artery",
+      "VH_F_left_coronary_artery",
+      "VH_M_left_coronary_artery"
     ]
   },
   {
@@ -9404,6 +9551,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left inferior pulmonary vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_vein_L_inf + VH_M_pulmonary_vein_L_inf confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left inferior pulmonary vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9411,7 +9563,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_inferior_pulmonary_vein"
+      "Left_inferior_pulmonary_vein",
+      "VH_F_pulmonary_vein_L_inf",
+      "VH_M_pulmonary_vein_L_inf"
     ]
   },
   {
@@ -9426,6 +9580,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left pulmonary artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_artery_L + VH_M_pulmonary_artery_L confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left pulmonary artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9433,7 +9592,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_pulmonary_artery"
+      "Left_pulmonary_artery",
+      "VH_F_pulmonary_artery_L",
+      "VH_M_pulmonary_artery_L"
     ]
   },
   {
@@ -9448,6 +9609,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left renal artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_renal_artery + VH_M_left_renal_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left renal artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9455,7 +9621,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_renal_artery"
+      "Left_renal_artery",
+      "VH_F_left_renal_artery",
+      "VH_M_left_renal_artery"
     ]
   },
   {
@@ -9470,6 +9638,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left renal vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_renal_vein + VH_M_renal_vein_L confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left renal vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9477,7 +9650,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_renal_vein"
+      "Left_renal_vein",
+      "VH_F_left_renal_vein",
+      "VH_M_renal_vein_L"
     ]
   },
   {
@@ -9492,6 +9667,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left subclavian artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_subclavian_artery_a + VH_F_left_subclavian_artery_b + VH_M_left_subclavian_artery_a + VH_M_left_subclavian_artery_b confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left subclavian artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9499,7 +9679,11 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_subclavian_artery"
+      "Left_subclavian_artery",
+      "VH_F_left_subclavian_artery_a",
+      "VH_F_left_subclavian_artery_b",
+      "VH_M_left_subclavian_artery_a",
+      "VH_M_left_subclavian_artery_b"
     ]
   },
   {
@@ -9558,6 +9742,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'left superior pulmonary vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_vein_L_sup + VH_M_pulmonary_vein_L_sup confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left superior pulmonary vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9565,7 +9754,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Left_superior_pulmonary_vein"
+      "Left_superior_pulmonary_vein",
+      "VH_F_pulmonary_vein_L_sup",
+      "VH_M_pulmonary_vein_L_sup"
     ]
   },
   {
@@ -9899,6 +10090,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Middle cardiac vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_middle_cardiac_vein + VH_M_middle_cardiac_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Middle cardiac vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9906,7 +10102,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Middle_cardiac_vein"
+      "Middle_cardiac_vein",
+      "VH_F_middle_cardiac_vein",
+      "VH_M_middle_cardiac_vein"
     ]
   },
   {
@@ -9921,6 +10119,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle colic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_middle_colic_artery + VH_M_middle_colic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'middle colic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9928,7 +10131,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Middle_colic_artery"
+      "Middle_colic_artery",
+      "VH_F_middle_colic_artery",
+      "VH_M_middle_colic_artery"
     ]
   },
   {
@@ -9943,6 +10148,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'middle colic vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_middle_colic_vein + VH_M_middle_colic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'middle colic vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -9950,7 +10160,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Middle_colic_vein"
+      "Middle_colic_vein",
+      "VH_F_middle_colic_vein",
+      "VH_M_middle_colic_vein"
     ]
   },
   {
@@ -10080,6 +10292,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'ophthalmic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_opthalmic_artery_L + VH_F_opthalmic_artery_R + VH_M_opthalmic_artery_L + VH_M_opthalmic_artery_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'ophthalmic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10088,7 +10305,11 @@
     "reviewed": false,
     "mesh_names": [
       "Ophthalmic_arteryl",
-      "Ophthalmic_arteryr"
+      "Ophthalmic_arteryr",
+      "VH_F_opthalmic_artery_L",
+      "VH_F_opthalmic_artery_R",
+      "VH_M_opthalmic_artery_L",
+      "VH_M_opthalmic_artery_R"
     ]
   },
   {
@@ -10494,6 +10715,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'proper hepatic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_proper_hepatic_artery + VH_M_proper_hepatic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'proper hepatic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10501,7 +10727,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Proper_hepatic_artery"
+      "Proper_hepatic_artery",
+      "VH_F_proper_hepatic_artery",
+      "VH_M_proper_hepatic_artery"
     ]
   },
   {
@@ -10562,6 +10790,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'pulmonary trunk', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_trunk + VH_M_pulmonary_trunk confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'pulmonary trunk', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10569,7 +10802,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Pulmonary_trunk"
+      "Pulmonary_trunk",
+      "VH_F_pulmonary_trunk",
+      "VH_M_pulmonary_trunk"
     ]
   },
   {
@@ -10653,6 +10888,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Right colic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_colic_artery + VH_M_right_colic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Right colic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10660,7 +10900,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_colic_artery"
+      "Right_colic_artery",
+      "VH_F_right_colic_artery",
+      "VH_M_right_colic_artery"
     ]
   },
   {
@@ -10675,6 +10917,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right colic vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_colic_vein + VH_M_right_colic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right colic vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10682,7 +10929,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_colic_vein"
+      "Right_colic_vein",
+      "VH_F_right_colic_vein",
+      "VH_M_right_colic_vein"
     ]
   },
   {
@@ -10719,6 +10968,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Right coronary artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_coronary_artery + VH_M_right_coronary_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Right coronary artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10726,7 +10980,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_coronary_artery"
+      "Right_coronary_artery",
+      "VH_F_right_coronary_artery",
+      "VH_M_right_coronary_artery"
     ]
   },
   {
@@ -10741,6 +10997,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right inferior pulmonary vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_vein_R_inf + VH_M_pulmonary_vein_R_inf confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right inferior pulmonary vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10748,7 +11009,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_inferior_pulmonary_vein"
+      "Right_inferior_pulmonary_vein",
+      "VH_F_pulmonary_vein_R_inf",
+      "VH_M_pulmonary_vein_R_inf"
     ]
   },
   {
@@ -10763,6 +11026,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right pulmonary artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_artery_R + VH_M_pulmonary_artery_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right pulmonary artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10770,7 +11038,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_pulmonary_artery"
+      "Right_pulmonary_artery",
+      "VH_F_pulmonary_artery_R",
+      "VH_M_pulmonary_artery_R"
     ]
   },
   {
@@ -10785,6 +11055,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right renal artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_renal_artery + VH_M_right_renal_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right renal artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10792,7 +11067,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_renal_artery"
+      "Right_renal_artery",
+      "VH_F_right_renal_artery",
+      "VH_M_right_renal_artery"
     ]
   },
   {
@@ -10807,6 +11084,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right renal vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_renal_vein + VH_M_renal_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right renal vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10814,7 +11096,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_renal_vein"
+      "Right_renal_vein",
+      "VH_F_right_renal_vein",
+      "VH_M_renal_vein_R"
     ]
   },
   {
@@ -10895,6 +11179,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'right superior pulmonary vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_pulmonary_vein_R_sup + VH_M_pulmonary_vein_R_sup confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right superior pulmonary vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10902,7 +11191,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Right_superior_pulmonary_vein"
+      "Right_superior_pulmonary_vein",
+      "VH_F_pulmonary_vein_R_sup",
+      "VH_M_pulmonary_vein_R_sup"
     ]
   },
   {
@@ -10984,6 +11275,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'Sigmoid artery'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_sigmoid_artery_a + VH_F_sigmoid_artery_b + VH_F_sigmoid_artery_c + VH_M_sigmoid_artery_a + VH_M_sigmoid_artery_b + VH_M_sigmoid_artery_c confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Sigmoid artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -10991,7 +11287,13 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Sigmoid_arteries"
+      "Sigmoid_arteries",
+      "VH_F_sigmoid_artery_a",
+      "VH_F_sigmoid_artery_b",
+      "VH_F_sigmoid_artery_c",
+      "VH_M_sigmoid_artery_a",
+      "VH_M_sigmoid_artery_b",
+      "VH_M_sigmoid_artery_c"
     ]
   },
   {
@@ -11029,6 +11331,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'sigmoid vein'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_sigmoid_vein_a + VH_F_sigmoid_vein_b + VH_F_sigmoid_vein_c + VH_M_sigmoid_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'sigmoid vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11036,7 +11343,11 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Sigmoid_veins"
+      "Sigmoid_veins",
+      "VH_F_sigmoid_vein_a",
+      "VH_F_sigmoid_vein_b",
+      "VH_F_sigmoid_vein_c",
+      "VH_M_sigmoid_vein"
     ]
   },
   {
@@ -11074,6 +11385,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'splenic artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_splenic_artery + VH_M_splenic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'splenic artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11081,7 +11397,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Splenic_artery"
+      "Splenic_artery",
+      "VH_F_splenic_artery",
+      "VH_M_splenic_artery"
     ]
   },
   {
@@ -11096,6 +11414,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'splenic vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_splenic_vein + VH_M_splenic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'splenic vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11103,7 +11426,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Splenic_vein"
+      "Splenic_vein",
+      "VH_F_splenic_vein",
+      "VH_M_splenic_vein"
     ]
   },
   {
@@ -11554,6 +11879,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior mesenteric artery', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_superior_mesenteric_artery + VH_M_superior_mesenteric_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'superior mesenteric artery', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11561,7 +11891,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Superior_mesenteric_artery"
+      "Superior_mesenteric_artery",
+      "VH_F_superior_mesenteric_artery",
+      "VH_M_superior_mesenteric_artery"
     ]
   },
   {
@@ -11576,6 +11908,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior mesenteric vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_superior_mesenteric_vein + VH_M_superior_mesenteric_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'superior mesenteric vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11583,7 +11920,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Superior_mesenteric_vein"
+      "Superior_mesenteric_vein",
+      "VH_F_superior_mesenteric_vein",
+      "VH_M_superior_mesenteric_vein"
     ]
   },
   {
@@ -11598,6 +11937,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'superior ophthalmic vein', not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_superior_ophthalmic_vein_L + VH_F_superior_ophthalmic_vein_R + VH_M_superior_ophthalmic_vein_L + VH_M_superior_ophthalmic_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'superior ophthalmic vein', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11606,7 +11950,11 @@
     "reviewed": false,
     "mesh_names": [
       "Superior_ophthalmic_veinl",
-      "Superior_ophthalmic_veinr"
+      "Superior_ophthalmic_veinr",
+      "VH_F_superior_ophthalmic_vein_L",
+      "VH_F_superior_ophthalmic_vein_R",
+      "VH_M_superior_ophthalmic_vein_L",
+      "VH_M_superior_ophthalmic_vein_R"
     ]
   },
   {
@@ -11688,6 +12036,11 @@
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/cardiovascular-v1-draco.glb",
         "note": "Mesh node(s) confirmed present in the shipped vessel GLB (R2 z-anatomy/glb/cardiovascular-v1-draco.glb) with the app's own loader. UBERON's own label is 'anterior vena cava'; id verified against OLS4 (not obsolete)."
+      },
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_superior_vena_cava + VH_M_superior_vena_cava confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'anterior vena cava', not obsolete)."
       }
     ],
     "voxel_size_um": null,
@@ -11695,7 +12048,9 @@
     "facts_id": null,
     "reviewed": false,
     "mesh_names": [
-      "Superior_vena_cava"
+      "Superior_vena_cava",
+      "VH_F_superior_vena_cava",
+      "VH_M_superior_vena_cava"
     ]
   },
   {
@@ -16285,6 +16640,659 @@
     "mesh_names": [
       "Stylohyoid_ligamentl",
       "Stylohyoid_ligamentr"
+    ]
+  },
+  {
+    "id": "brachiocephalic-vein",
+    "uberon": "UBERON:0003711",
+    "fma": null,
+    "label": "Brachiocephalic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_M_brachiocephalic_vein_L + VH_M_brachiocephalic_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'brachiocephalic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_brachiocephalic_vein_L",
+      "VH_M_brachiocephalic_vein_R"
+    ]
+  },
+  {
+    "id": "central-retinal-vein",
+    "uberon": "UBERON:0001673",
+    "fma": null,
+    "label": "Central retinal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_central_retinal_vein_L + VH_F_central_retinal_vein_R + VH_M_central_retinal_vein_L + VH_M_central_retinal_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'central retinal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_central_retinal_vein_L",
+      "VH_F_central_retinal_vein_R",
+      "VH_M_central_retinal_vein_L",
+      "VH_M_central_retinal_vein_R"
+    ]
+  },
+  {
+    "id": "cystic-artery",
+    "uberon": "UBERON:0039222",
+    "fma": null,
+    "label": "cystic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_cystic_artery + VH_M_cystic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'cystic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_cystic_artery",
+      "VH_M_cystic_artery"
+    ]
+  },
+  {
+    "id": "cystic-vein",
+    "uberon": "UBERON:0035392",
+    "fma": null,
+    "label": "cystic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_cystic_vein + VH_M_cystic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Cystic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_cystic_vein",
+      "VH_M_cystic_vein"
+    ]
+  },
+  {
+    "id": "descending-aorta",
+    "uberon": "UBERON:0001514",
+    "fma": null,
+    "label": "descending aorta",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_descending_aorta_a + VH_F_descending_aorta_b + VH_M_descending_aorta_a + VH_M_descending_aorta_b confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'descending aorta', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_descending_aorta_a",
+      "VH_F_descending_aorta_b",
+      "VH_M_descending_aorta_a",
+      "VH_M_descending_aorta_b"
+    ]
+  },
+  {
+    "id": "ileocolic-vein",
+    "uberon": "UBERON:0001219",
+    "fma": null,
+    "label": "ileocolic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_ileocolic_vein + VH_M_ileocolic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'ileocolic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_ileocolic_vein",
+      "VH_M_ileocolic_vein"
+    ]
+  },
+  {
+    "id": "inferior-pancreaticoduodenal-vein",
+    "uberon": "UBERON:0011383",
+    "fma": null,
+    "label": "inferior pancreaticoduodenal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_inferior_pancreaticoduodenal_vein + VH_M_inferior_pancreaticoduodenal_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'inferior pancreaticoduodenal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_inferior_pancreaticoduodenal_vein",
+      "VH_M_inferior_pancreaticoduodenal_vein"
+    ]
+  },
+  {
+    "id": "inferior-rectal-vein",
+    "uberon": "UBERON:8920054",
+    "fma": null,
+    "label": "Inferior rectal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_inferior_rectal_vein_L + VH_F_inferior_rectal_vein_R + VH_M_inferior_rectal_vein_L + VH_M_inferior_rectal_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'inferior rectal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_inferior_rectal_vein_L",
+      "VH_F_inferior_rectal_vein_R",
+      "VH_M_inferior_rectal_vein_L",
+      "VH_M_inferior_rectal_vein_R"
+    ]
+  },
+  {
+    "id": "inferior-vena-cava",
+    "uberon": "UBERON:0001072",
+    "fma": null,
+    "label": "inferior vena cava",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_inferior_vena_cava_a + VH_F_inferior_vena_cava_b + VH_M_inferior_vena_cava_a + VH_M_inferior_vena_cava_b confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'posterior vena cava', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_inferior_vena_cava_a",
+      "VH_F_inferior_vena_cava_b",
+      "VH_M_inferior_vena_cava_a",
+      "VH_M_inferior_vena_cava_b"
+    ]
+  },
+  {
+    "id": "left-anterior-descending-artery",
+    "uberon": "UBERON:8600102",
+    "fma": null,
+    "label": "left anterior descending artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_anterior_descending_artery + VH_M_left_anterior_descending_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left anterior descending artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_anterior_descending_artery",
+      "VH_M_left_anterior_descending_artery"
+    ]
+  },
+  {
+    "id": "left-colic-vein",
+    "uberon": "UBERON:8410017",
+    "fma": null,
+    "label": "left colic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_colic_vein + VH_M_left_colic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left colic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_colic_vein",
+      "VH_M_left_colic_vein"
+    ]
+  },
+  {
+    "id": "left-hepatic-artery",
+    "uberon": "UBERON:0015481",
+    "fma": null,
+    "label": "left hepatic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_hepatic_artery + VH_M_left_hepatic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left hepatic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_hepatic_artery",
+      "VH_M_left_hepatic_artery"
+    ]
+  },
+  {
+    "id": "left-hepatic-vein",
+    "uberon": "UBERON:0011955",
+    "fma": null,
+    "label": "left hepatic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_hepatic_vein + VH_M_left_hepatic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left hepatic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_hepatic_vein",
+      "VH_M_left_hepatic_vein"
+    ]
+  },
+  {
+    "id": "left-marginal-vein",
+    "uberon": "UBERON:8920010",
+    "fma": null,
+    "label": "left marginal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_marginal_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'left marginal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_marginal_vein"
+    ]
+  },
+  {
+    "id": "marginal-artery-of-drummond",
+    "uberon": "UBERON:8920035",
+    "fma": null,
+    "label": "marginal artery of Drummond",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_marginal_artery_of_Drummond + VH_M_marginal_artery_of_Drummond confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'marginal artery of Drummond', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_marginal_artery_of_Drummond",
+      "VH_M_marginal_artery_of_Drummond"
+    ]
+  },
+  {
+    "id": "median-sacral-vein",
+    "uberon": "UBERON:0006687",
+    "fma": null,
+    "label": "median sacral vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_median_sacral_vein + VH_M_median_sacral_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Median sacral vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_median_sacral_vein",
+      "VH_M_median_sacral_vein"
+    ]
+  },
+  {
+    "id": "middle-hemorrhoidal-vein",
+    "uberon": "UBERON:8600057",
+    "fma": null,
+    "label": "Middle hemorrhoidal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_middle_rectal_vein_L + VH_F_middle_rectal_vein_R + VH_M_middle_rectal_vein_L + VH_M_middle_rectal_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'middle hemorrhoidal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_middle_rectal_vein_L",
+      "VH_F_middle_rectal_vein_R",
+      "VH_M_middle_rectal_vein_L",
+      "VH_M_middle_rectal_vein_R"
+    ]
+  },
+  {
+    "id": "middle-hepatic-vein",
+    "uberon": "UBERON:0011957",
+    "fma": null,
+    "label": "middle hepatic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_middle_hepatic_vein + VH_M_middle_hepatic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Middle hepatic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_middle_hepatic_vein",
+      "VH_M_middle_hepatic_vein"
+    ]
+  },
+  {
+    "id": "ophthalmic-vein",
+    "uberon": "UBERON:0011191",
+    "fma": null,
+    "label": "Ophthalmic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_ophthalmic_vein_L + VH_F_ophthalmic_vein_R + VH_M_ophthalmic_vein_L + VH_M_ophthalmic_vein_R confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'ophthalmic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_ophthalmic_vein_L",
+      "VH_F_ophthalmic_vein_R",
+      "VH_M_ophthalmic_vein_L",
+      "VH_M_ophthalmic_vein_R"
+    ]
+  },
+  {
+    "id": "portal-vein",
+    "uberon": "UBERON:0002017",
+    "fma": null,
+    "label": "portal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_M_portal_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'portal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_M_portal_vein"
+    ]
+  },
+  {
+    "id": "right-hepatic-artery",
+    "uberon": "UBERON:0015482",
+    "fma": null,
+    "label": "right hepatic artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_hepatic_artery + VH_M_right_hepatic_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right hepatic artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_right_hepatic_artery",
+      "VH_M_right_hepatic_artery"
+    ]
+  },
+  {
+    "id": "right-hepatic-vein",
+    "uberon": "UBERON:0011956",
+    "fma": null,
+    "label": "right hepatic vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_hepatic_vein + VH_M_right_hepatic_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right hepatic vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_right_hepatic_vein",
+      "VH_M_right_hepatic_vein"
+    ]
+  },
+  {
+    "id": "right-marginal-artery",
+    "uberon": "UBERON:8920003",
+    "fma": null,
+    "label": "right marginal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_right_marginal_artery + VH_M_right_marginal_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'right marginal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_right_marginal_artery",
+      "VH_M_right_marginal_artery"
+    ]
+  },
+  {
+    "id": "small-cardiac-vein",
+    "uberon": "UBERON:0035374",
+    "fma": null,
+    "label": "small cardiac vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_small_cardiac_vein + VH_M_small_cardiac_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Small cardiac vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_small_cardiac_vein",
+      "VH_M_small_cardiac_vein"
+    ]
+  },
+  {
+    "id": "superior-rectal-artery",
+    "uberon": "UBERON:0035040",
+    "fma": null,
+    "label": "superior rectal artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_superior_rectal_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Superior rectal artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_superior_rectal_artery"
+    ]
+  },
+  {
+    "id": "superior-rectal-vein",
+    "uberon": "UBERON:8920053",
+    "fma": null,
+    "label": "superior rectal vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_superior_rectal_vein + VH_M_superior_rectal_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'superior rectal vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_superior_rectal_vein",
+      "VH_M_superior_rectal_vein"
+    ]
+  },
+  {
+    "id": "uterine-artery",
+    "uberon": "UBERON:0002493",
+    "fma": null,
+    "label": "Uterine artery",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_uterine_artery + VH_F_right_uterine_artery confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'Uterine artery', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_uterine_artery",
+      "VH_F_right_uterine_artery"
+    ]
+  },
+  {
+    "id": "uterine-vein",
+    "uberon": "UBERON:8600058",
+    "fma": null,
+    "label": "Uterine vein",
+    "layer": "vessel",
+    "part_of": "blood-vasculature",
+    "sources": [
+      {
+        "source_id": "hubmap-hra-glb",
+        "asset": "VH_M_Blood_Vasculature.glb, VH_F_Blood_Vasculature.glb",
+        "note": "This individual's own blood-vasculature model (v1.2), published in the HuBMAP CCF reference library. Mesh node(s) VH_F_left_uterine_vein + VH_F_right_uterine_vein confirmed present with the app's own loader. Uberon id verified against OLS4 (label 'uterine vein', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "VH_F_left_uterine_vein",
+      "VH_F_right_uterine_vein"
     ]
   }
 ]

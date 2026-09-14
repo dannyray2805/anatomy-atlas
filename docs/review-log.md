@@ -344,6 +344,101 @@ and its row note now says how many are mapped and what is not.
 - No anatomist confirmed the meshes are the structures their names say.
 - No card was written for the new joint rows, so the tutor declines on them and the drawer says so.
 
+## 2026-09-14 — the two Visible Human donors' own vessel trees
+
+Scope: 76 rows — the 73 this batch wrote (26 new, 47 merged into rows the reference body's vessel
+pass had already created) plus the one row (`aorta-ascending`) that already shared meshes with them.
+Everything here is `reviewed: false`: the maintainer has not been asked for `REVIEW_ACCEPT` on it.
+
+### What was checked
+
+- **The layer's own vocabulary, before any mapping was designed.** 106 labels across both donors (90
+  of them on both bodies), from loader dumps of `VH_M_Blood_Vasculature.glb` and
+  `VH_F_Blood_Vasculature.glb` (`packages/tools/dump_layer_meshes.mjs`) — not from the files' node
+  names, which the loader rewrites.
+- **Every id, at OLS4.** Search proposes, the term endpoint confirms an exact label or an exact
+  synonym, and the label written into the graph is the term's own. 86 of the 105 labelled meshes
+  resolved, on the term's label for 81 of them and on an exact synonym for 5.
+- **One row per structure.** Several wordings landing on one term produce ONE row holding both
+  sides — 13 terms merged 26 side-worded labels (the `iliac`, `ophthalmic`, `rectal` and
+  `brachiocephalic` veins, the central retinal artery and vein, and so on). The donor even splits one
+  artery into two surfaces per body (`brachiocephalic_artery_a`/`_b`): 4 meshes, one row, because that
+  is the same `_a`/`_b` mesh split, not two structures.
+- **The audits after the batch**: `audit_mesh_reachability.mjs` — 2310 published mesh names, every
+  one a name the loader really reports, 0 rows unverifiable. `audit_source_coverage.mjs` — 0 rows
+  with an unaccounted-for mesh name. `pnpm validate` graph ok; 191 tests pass.
+- **In the app**, because the graph is not the product: the male donor's Find list holds 72 options
+  and the female's 73, including the two new uterine rows. That list is built from the same resolved
+  inventory a click resolves against, so it is the click result, enumerated. A React duplicate-key
+  warning seen mid-edit was chased down and is **not** a defect: the graph has 0 duplicate ids and
+  exactly one `aortic-arch` row; it was stale hot-reload state from a half-written JSON file, and a
+  clean load of `/?body=donor-male`, `/?body=donor-female` and `/structures` logs no errors.
+
+### Defects found and fixed
+
+1. **A side written as a leading word was not treated as a side.** The resolver recognised the
+   source's `_L`/`_R` suffix (`opthalmic_artery_L` → "Left ophthalmic artery", with a side-less
+   fallback to `ophthalmic artery`) but not its leading-word form (`VH_F_left_uterine_artery`), which
+   it filed as an indivisible name — so the side-less fallback never fired and the female donor's
+   uterine artery and vein stayed unmapped. That was a defect in the tool, not a gap in the ontology:
+   `uterine artery` is UBERON:0002493 and `uterine vein` UBERON:8600058, both exact labels. Fixed,
+   and the re-run's delta was measured rather than assumed: it produced **exactly** those 2 rows, and
+   the other 15 unresolved labels stayed unresolved under the new rule. Coverage went from 92/104 and
+   91/108 to **92/104 (male) and 95/108 (female)**.
+2. **Case-sensitive grouping** split one structure into two rows that resolved to the same term (the
+   source writes `left_renal_vein` and `Left_renal_vein`).
+3. **Prefix-only alias matching**: an alias could only ever rewrite a name's first word, so a
+   correction further into the name could not be expressed.
+4. **A stale count in the graph's own note.** The whole-layer `blood-vasculature` row's source note
+   said "73 of the ~104 vessel meshes each publishes are mapped" — a figure left behind by the
+   previous, partial pass, i.e. the row was still claiming a mapping rate the graph no longer had. It
+   was found by grepping the built bundle for the old number after updating the app's own copy, which
+   is the same lesson as the donor-card batch: **when a batch changes what maps, audit the notes and
+   cards that describe the mapping**. The note now carries the measured 92/104 and 95/108.
+5. **That fix then destroyed a note of its own** — recorded because of how it failed rather than what
+   it did. Refreshing the layer note matched rows by their asset string, so it also overwrote
+   `aorta-ascending`'s own note: the one naming the two mesh nodes that justify the row. Distinguishing
+   the two needed the asset string *and* the em-dash shape — the first "narrowed" attempt matched the
+   row note as well and clobbered it a second time. The row note is restored, the refresh now touches
+   only the layer-description note, and it was proven idempotent by running it twice and watching it
+   report 0 rewrites.
+
+### The aortic arch, refused for the second time
+
+Search accepts UBERON:0004363 for the wording `aortic arch` — and that term is the **embryonic**
+pharyngeal arch artery, which carries the adult wording as a synonym from embryology. These meshes are
+the adult arch (UBERON:0001508). It is refused by the same documented `REJECT` table that caught it on
+the reference body's vessel pass, it is printed on every run, and it is the reason neither the adult
+arch nor "pharyngeal arch artery" appears twice in the graph.
+
+### Not checked
+
+- No anatomist confirmed that these meshes are the structures their names say. Their names are the
+  source's, and the source is the donor's published model.
+- **No fact card was written for any new row**, so the tutor declines on them and the drawer says so.
+  The rows are `reviewed: false` and the flags claim no review.
+- 15 labels stay unmapped. Each is recorded here with its evidence, because "UBERON has no term" is a
+  strong claim:
+  - **No term at all**: `anterior cardiac vein`, `anterior segmental right hepatic artery`,
+    `posterior segmental right hepatic artery`, `middle hepatic artery branch of left hepatic artery`,
+    `diagonal branch of ... left coronary artery` (both spellings), `posterior left ventricular
+    branch`, `left/right posterior descending artery`, `oblique vein of left atrium` (searched as
+    "vein of Marshall" too), `posterior vein of left ventricle` (the only hits are
+    `posterior interventricular sulcus`, a sulcus, and `middle cardiac vein`).
+  - **Part of a structure that has a term, and refused as such**: `Left/Right branch of portal vein`
+    (parts of UBERON:0002017 `portal vein`); `anterior cardiac vein` against `cardiac vein`
+    (UBERON:0004148). A part is never mapped to its whole.
+  - **Its own name is ambiguous**: `Left marginal branch` — UBERON names a `left marginal vein` and a
+    `right marginal artery`, and the source's name does not say which this is.
+  - **The interesting one**: `Left circumflex artery`. UBERON:0035422 *is* the structure a clinician
+    means by that name — "Circumflex branch of left coronary artery" — but neither its label nor any
+    of its three synonyms (`circumflex coronary artery`, `left circumflex branch of left coronary
+    artery`, `ramus circumflexus (arteria coronaria sinistra)`) is the asset's shorter wording, so the
+    gate refuses it. It is recorded as a gap rather than accepted on a judgement call, because
+    loosening an exactness rule to fit one preferred answer is exactly how the embryonic-arch error
+    happened. Closing it deliberately would need a documented third route, the way the joint pass
+    added one for `label + " of …"`.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

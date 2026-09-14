@@ -91,12 +91,14 @@ export function StructuresPage() {
       ))}
 
       <p className="idx-foot">
-        Parts of the bodies are not mapped to structures yet. On the Visible Human donor bodies the
-        per-vessel names are not mapped and only the ascending aorta is; on the reference body the
-        hand-and-foot bones, 155 of its 315 nerve-layer names, 166 of its 416 vessel names, 212 of
-        its 234 joint-layer names and the named muscle parts Uberon does not model are not. Those
-        meshes report “not mapped to a structure” when clicked, and they are absent from this list on
-        purpose rather than listed as if they were browsable.{" "}
+        Parts of the bodies are not mapped to structures yet. On the Visible Human donor bodies, 12
+        of the male body&apos;s 104 vessel meshes and 13 of the female body&apos;s 108 are not —
+        vessels Uberon does not name (the coronary artery&apos;s named branches and its smaller
+        cardiac veins, the liver&apos;s segmental arteries, the portal vein&apos;s branches). On the
+        reference body the hand-and-foot bones, 155 of its 315 nerve-layer names, 166 of its 416
+        vessel names, 212 of its 234 joint-layer names and the named muscle parts Uberon does not
+        model are not. Those meshes report “not mapped to a structure” when clicked, and they are
+        absent from this list on purpose rather than listed as if they were browsable.{" "}
         <Link to="/">Back to the body →</Link>
       </p>
     </div>
