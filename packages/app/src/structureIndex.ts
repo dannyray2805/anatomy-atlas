@@ -56,6 +56,27 @@ export function bodiesForMeshNames(meshNames: readonly string[]): BodySource[] {
   return BODY_PREFERENCE.filter((b) => found.has(b));
 }
 
+/**
+ * Should a shared link mount the optional heavy systems to show the structure it names?
+ *
+ * A row carries its ANATOMICAL layer, which is not always the layer whose asset holds its meshes:
+ * the heart chambers are classified `organ`, but the Reference body carries them in its "Heart +
+ * vessels" system, which mounts lazily. So a link can open an entry and show nothing of it. The
+ * missing check is bounded to the one case where mounting the systems can actually help:
+ *  - the scene does not already hold the structure (nothing to do if it does), and
+ *  - this body carries the structure at all — the same rule the index links on, so a link to a
+ *    structure this body does not have (a femur on the female donor) never spends the download.
+ */
+export function linkNeedsSystems(
+  meshNames: readonly string[],
+  body: BodySource,
+  structureId: string,
+  mountedStructureIds: readonly string[]
+): boolean {
+  if (mountedStructureIds.includes(structureId)) return false;
+  return bodiesForMeshNames(meshNames).includes(body);
+}
+
 export type IndexEntry = {
   id: string;
   label: string;

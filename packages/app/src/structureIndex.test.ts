@@ -8,7 +8,8 @@ import {
   bodiesForMeshNames,
   groupByLayer,
   indexEntries,
-  indexSummary
+  indexSummary,
+  linkNeedsSystems
 } from "./structureIndex.ts";
 
 const structures = structuresJson as unknown as Structure[];
@@ -41,7 +42,6 @@ describe("bodiesForMeshNames (which body carries a structure)", () => {
   it("returns nothing for a structure with no names", () => {
     assert.deepEqual(bodiesForMeshNames([]), []);
   });
-
   // Grounded in the real graph rather than a fixture: these are the cases a wrong rule breaks.
   it("places real structures on the right bodies", () => {
     assert.deepEqual(entry("uterus")?.bodies, ["donor-female"]);
@@ -70,6 +70,44 @@ describe("bodiesForMeshNames (which body carries a structure)", () => {
       "donor-male",
       "donor-female"
     ]);
+  });
+});
+
+describe("linkNeedsSystems (should a shared link mount the heavy systems?)", () => {
+  const namesOf = (id: string) => structures.find((s) => s.id === id)?.mesh_names ?? [];
+
+  it("asks for them when this body carries the structure but the scene has not mounted it", () => {
+    // Grounded in the real graph: the Reference body files the chamber under `organ` yet carries the
+    // mesh in its lazily-mounted "Heart + vessels" system — the deep link that opened the entry and
+    // showed nothing until this was fixed.
+    assert.equal(
+      linkNeedsSystems(namesOf("heart-left-atrium"), "reference", "heart-left-atrium", []),
+      true
+    );
+  });
+
+  it("does not spend the download on a structure this body does not carry", () => {
+    // The female donor publishes no femur; mounting every system could not reveal it.
+    assert.equal(namesOf("femur").length > 0, true);
+    assert.deepEqual(bodiesForMeshNames(namesOf("femur")), ["reference"]);
+    assert.equal(linkNeedsSystems(namesOf("femur"), "donor-female", "femur", []), false);
+  });
+
+  it("does nothing once the scene already holds it", () => {
+    // A default-visible structure (a bone on the Reference body) is mounted before any link runs,
+    // so the peel alone reveals it and no system is switched on behind the user's back. The mounted
+    // list holds structure IDS — what the scene reports per mesh — not mesh names.
+    assert.equal(linkNeedsSystems(namesOf("femur"), "reference", "femur", ["femur"]), false);
+    assert.equal(
+      linkNeedsSystems(namesOf("heart-left-atrium"), "reference", "heart-left-atrium", [
+        "heart-left-atrium"
+      ]),
+      false
+    );
+  });
+
+  it("does nothing for a whole-layer row with no meshes", () => {
+    assert.equal(linkNeedsSystems([], "reference", "body", []), false);
   });
 });
 

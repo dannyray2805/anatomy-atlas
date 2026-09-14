@@ -20,7 +20,7 @@ import {
 } from "./bodySource";
 import { BODY_SOURCES, type BodySourceConfig } from "./bodySources";
 import { lookupStructure } from "./structureLookup";
-import { indexSummary } from "./structureIndex";
+import { indexSummary, linkNeedsSystems } from "./structureIndex";
 import { guideStops } from "./guide";
 import { useGuidedPeel } from "./useGuidedPeel";
 
@@ -234,6 +234,23 @@ export function BodyPage() {
     setSearch(hit.label);
     viewerRef.current?.flyToName(hit.name);
   }, [linkedStructure, sceneReady, inventory]);
+
+  // A row carries its ANATOMICAL layer, which is not always the layer whose asset holds its meshes:
+  // the heart chambers are classified `organ`, but the Reference body carries them in its "Heart +
+  // vessels" asset, which mounts lazily. The peel above follows the anatomical layer, so on that
+  // body a chamber link would open the entry and show nothing of it. If the structure has not turned
+  // up once the scene has settled, mount the remaining systems — the same action as "All systems" —
+  // so a link really reveals what it names. Bounded: at most once per link, and it cannot loop.
+  const linkEscalated = useRef(false);
+  useEffect(() => {
+    if (linkEscalated.current || followedLink.current || !linkedStructure || !sceneReady) return;
+    const mounted = inventory.map((item) => item.structureId);
+    if (!linkNeedsSystems(linkedStructure.mesh_names ?? [], source, linkedStructure.id, mounted)) {
+      return;
+    }
+    linkEscalated.current = true;
+    setVisibleLayers((prev) => setSystemsVisibility(layers, prev, true));
+  }, [linkedStructure, sceneReady, inventory, layers, source]);
 
   return (
     <div className="lab-page">
