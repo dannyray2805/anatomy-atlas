@@ -1144,7 +1144,7 @@
       {
         "source_id": "z-anatomy",
         "asset": "z-anatomy/glb/joints-v1-draco.glb",
-        "note": "Z-Anatomy 'Joints' collection (R2 joints-v1-draco.glb) — 409 surface nodes of periarticular structures only: joint capsules, ligaments, menisci, labra. Contains no bones (those are the skeleton row), so it reads as connective-tissue detail laid over the skeleton."
+        "note": "Z-Anatomy 'Joints' collection (R2 joints-v1-draco.glb) — 409 surface nodes of periarticular structures only: joint capsules, ligaments, menisci, labra. Contains no bones (those are the skeleton row), so it reads as connective-tissue detail laid over the skeleton. 22 of the layer's 234 names are mapped as their own structures, each id accepted only on an exact Uberon label, an exact synonym, or a joint-qualified form of the same name that is unique; the other 212 are periarticular structures Uberon does not name (the acromioclavicular ligament, the fibular collateral ligament, the menisci, the knee's articular capsule)."
       }
     ],
     "voxel_size_um": null,
@@ -15785,6 +15785,506 @@
     "mesh_names": [
       "White_matter_of_telencephalonl",
       "White_matter_of_telencephalonr"
+    ]
+  },
+  {
+    "id": "acetabular-labrum",
+    "uberon": "UBERON:0011958",
+    "fma": null,
+    "label": "Acetabular labrum",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Acetabular labrum', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Acetabular_labruml",
+      "Acetabular_labrumr"
+    ]
+  },
+  {
+    "id": "annular-ligament-of-radius",
+    "uberon": "UBERON:0007657",
+    "fma": null,
+    "label": "Annular ligament of radius",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Annular ligament of radius', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Annular_ligament_of_radiusl",
+      "Annular_ligament_of_radiusr"
+    ]
+  },
+  {
+    "id": "anterior-cruciate-ligament",
+    "uberon": "UBERON:0003671",
+    "fma": null,
+    "label": "Anterior cruciate ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior cruciate ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_cruciate_ligamentl",
+      "Anterior_cruciate_ligamentr"
+    ]
+  },
+  {
+    "id": "anterior-longitudinal-ligament",
+    "uberon": "UBERON:0035419",
+    "fma": null,
+    "label": "Anterior longitudinal ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior longitudinal ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_longitudinal_ligament"
+    ]
+  },
+  {
+    "id": "anterior-talofibular-ligament",
+    "uberon": "UBERON:0013725",
+    "fma": null,
+    "label": "Anterior talofibular ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Anterior talofibular ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Anterior_talofibular_ligamentl",
+      "Anterior_talofibular_ligamentr"
+    ]
+  },
+  {
+    "id": "articular-capsule-of-glenohumeral-joint",
+    "uberon": "UBERON:0011960",
+    "fma": null,
+    "label": "Articular capsule of glenohumeral joint",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'articular capsule of glenohumeral joint', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Articular_capsule_of_glenohumeral_jointl",
+      "Articular_capsule_of_glenohumeral_jointr"
+    ]
+  },
+  {
+    "id": "articular-capsule-of-hip-joint",
+    "uberon": "UBERON:0011961",
+    "fma": null,
+    "label": "Articular capsule of hip joint",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'articular capsule of hip joint', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Articular_capsule_of_hip_jointl",
+      "Articular_capsule_of_hip_jointr"
+    ]
+  },
+  {
+    "id": "articular-capsule-of-temporomandibular-joint",
+    "uberon": "UBERON:0011318",
+    "fma": null,
+    "label": "Articular capsule of temporomandibular joint",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Articular capsule of temporomandibular joint', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Articular_capsule_of_temporomandibular_jointl",
+      "Articular_capsule_of_temporomandibular_jointr"
+    ]
+  },
+  {
+    "id": "articular-disc-of-temporomandibular-joint",
+    "uberon": "UBERON:0011319",
+    "fma": null,
+    "label": "Articular disc of temporomandibular joint",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. UBERON's own label is 'Articular disk of temporomandibular joint'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Articular_disc_of_temporomandibular_jointl",
+      "Articular_disc_of_temporomandibular_jointr"
+    ]
+  },
+  {
+    "id": "calcaneofibular-ligament",
+    "uberon": "UBERON:0011971",
+    "fma": null,
+    "label": "Calcaneofibular ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'calcaneofibular ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Calcaneofibular_ligamentl",
+      "Calcaneofibular_ligamentr"
+    ]
+  },
+  {
+    "id": "cricopharyngeal-ligament",
+    "uberon": "UBERON:0013167",
+    "fma": null,
+    "label": "Cricopharyngeal ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Cricopharyngeal ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Cricopharyngeal_ligamentl",
+      "Cricopharyngeal_ligamentr"
+    ]
+  },
+  {
+    "id": "glenoid-labrum",
+    "uberon": "UBERON:0011959",
+    "fma": null,
+    "label": "Glenoid labrum",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. UBERON's own label is 'Glenoid labrum of scapula'; id verified against OLS4 (not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Glenoid_labruml",
+      "Glenoid_labrumr"
+    ]
+  },
+  {
+    "id": "infrapatellar-fat-pad",
+    "uberon": "UBERON:0016400",
+    "fma": null,
+    "label": "Infrapatellar fat pad",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'infrapatellar fat pad', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Infrapatellar_fat_padl",
+      "Infrapatellar_fat_padr"
+    ]
+  },
+  {
+    "id": "lateral-thyrohyoid-ligament",
+    "uberon": "UBERON:0010926",
+    "fma": null,
+    "label": "Lateral thyrohyoid ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Lateral thyrohyoid ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Lateral_thyrohyoid_ligamentl",
+      "Lateral_thyrohyoid_ligamentr"
+    ]
+  },
+  {
+    "id": "median-thyrohyoid-ligament",
+    "uberon": "UBERON:0010925",
+    "fma": null,
+    "label": "Median thyrohyoid ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Median thyrohyoid ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Median_thyrohyoid_ligament"
+    ]
+  },
+  {
+    "id": "nuchal-ligament",
+    "uberon": "UBERON:0000351",
+    "fma": null,
+    "label": "Nuchal ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'nuchal ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Nuchal_ligament"
+    ]
+  },
+  {
+    "id": "posterior-cruciate-ligament",
+    "uberon": "UBERON:0003680",
+    "fma": null,
+    "label": "Posterior cruciate ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior cruciate ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_cruciate_ligamentl",
+      "Posterior_cruciate_ligamentr"
+    ]
+  },
+  {
+    "id": "posterior-longitudinal-ligament",
+    "uberon": "UBERON:0035246",
+    "fma": null,
+    "label": "Posterior longitudinal ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior longitudinal ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_longitudinal_ligament"
+    ]
+  },
+  {
+    "id": "posterior-talofibular-ligament",
+    "uberon": "UBERON:0013726",
+    "fma": null,
+    "label": "Posterior talofibular ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Posterior talofibular ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Posterior_talofibular_ligamentl",
+      "Posterior_talofibular_ligamentr"
+    ]
+  },
+  {
+    "id": "pubic-symphysis",
+    "uberon": "UBERON:0003699",
+    "fma": null,
+    "label": "Pubic symphysis",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'pubic symphysis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Pubic_symphysis"
+    ]
+  },
+  {
+    "id": "sacrococcygeal-symphysis",
+    "uberon": "UBERON:0011200",
+    "fma": null,
+    "label": "Sacrococcygeal symphysis",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'sacrococcygeal symphysis', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Sacrococcygeal_symphysis"
+    ]
+  },
+  {
+    "id": "stylohyoid-ligament",
+    "uberon": "UBERON:0004361",
+    "fma": null,
+    "label": "Stylohyoid ligament",
+    "layer": "joint",
+    "part_of": "joints",
+    "sources": [
+      {
+        "source_id": "z-anatomy",
+        "asset": "z-anatomy/glb/joints-v1-draco.glb",
+        "note": "Mesh node(s) confirmed present in the shipped joint GLB (R2 z-anatomy/glb/joints-v1-draco.glb) with the app's own loader. Uberon id verified against OLS4 (label 'Stylohyoid ligament', not obsolete)."
+      }
+    ],
+    "voxel_size_um": null,
+    "hoa_dataset_doi": null,
+    "facts_id": null,
+    "reviewed": false,
+    "mesh_names": [
+      "Stylohyoid_ligamentl",
+      "Stylohyoid_ligamentr"
     ]
   }
 ]

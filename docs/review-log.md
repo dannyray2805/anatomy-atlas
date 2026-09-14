@@ -304,6 +304,46 @@ again.
   ontology does name it. The search index also claims exact synonyms the term record denies (`Lateral
   ventricle` for UBERON:0002285), which is why acceptance follows the TERM record, not the index.
 
+## 2026-09-14 — the joint layer, and the end of the layer-by-layer mapping pass
+
+Scope: 22 new `joint` rows for the Z-Anatomy periarticular layer, all `reviewed: false`. Graph
+643 → 665 rows. This is the last of the Reference body's layers: every one of them now has its own
+per-structure mapping, with what could not be mapped stated in the row, the route copy and here.
+
+### What was checked
+
+- 22 of the layer's 234 names resolved, covering 38 mesh names. Each id came from an exact Uberon
+  label or an exact synonym read from the OLS4 term endpoint, or from one new documented route.
+- The dry run first: 0 id clashes, 0 mesh names already claimed, 0 Uberon ids used by two rows.
+- `packages/tools/audit_mesh_reachability.mjs` after the batch: **all published mesh names
+  reachable from a loader dump, 0 rows unverifiable** (2087 → 2125 names).
+
+### The one new acceptance route, and why it is narrow
+
+Uberon qualifies many periarticular structures by the joint they belong to — the asset says
+`Anterior cruciate ligament`, Uberon's term is `anterior cruciate ligament of knee joint`. So the
+joint resolver accepts a term whose label is the asset's name followed by ` of …`, but ONLY when
+exactly one non-obsolete Uberon term matches that way. An ambiguous name is refused rather than
+decided here. It changed the outcome for one label (`Glenoid labrum` → "Glenoid labrum of
+scapula"); the cruciate and talofibular ligaments turned out to match exactly after all, through the
+term record rather than the joint qualifier. Every acceptance on that route is printed by the
+resolver for reading.
+
+### The ceiling here is the ontology, measured rather than assumed
+
+212 of the layer's 234 names stay unmapped, and it is worth being precise about why, because "UBERON
+has no term" is a strong claim: for the acromioclavicular ligament the search returns only
+`coracoclavicular ligament`; for the fibular collateral ligament, only `anterolateral ligament of
+knee`; for the medial meniscus, only `tibial plateau of tibia`; and for the knee's articular capsule,
+only `synovial joint`. Those are different structures, so they are refused. The layer's mesh names
+come from the 3 group objects and 404 nodes of `joints-v1.glb` (`packages/tools/dump_layer_meshes.mjs`),
+and its row note now says how many are mapped and what is not.
+
+### Not checked
+
+- No anatomist confirmed the meshes are the structures their names say.
+- No card was written for the new joint rows, so the tutor declines on them and the drawer says so.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was

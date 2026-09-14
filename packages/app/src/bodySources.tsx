@@ -193,6 +193,17 @@ function ReferenceAttribution() {
         without guessing. Those meshes render and click, and the drawer says they are not mapped.
       </li>
       <li>
+        Joints — 22 of the layer&apos;s 234 names are their own structures, each id accepted on an
+        exact Uberon label, an exact synonym, or (once) on Uberon&apos;s joint-qualified form of the
+        same name. That covers the cruciate and talofibular ligaments, the hip and shoulder capsules,
+        the temporomandibular joint&apos;s capsule and disc, the labra, the anterior and posterior
+        longitudinal ligaments, and the pubic and sacrococcygeal symphyses. The other 212 are not
+        mapped and the reason is the ontology: Uberon has no term at all for the acromioclavicular
+        ligament, the fibular collateral ligament, the menisci or the knee&apos;s articular capsule,
+        and it names others with a joint qualifier that is not unique enough to accept. Those meshes
+        render and click, and the drawer says they are not mapped.
+      </li>
+      <li>
         A single fixed male reference individual (“Taro”) — a different person from the Visible
         Human donors, and a male body: no female anatomy is shown here, while the viscera layer
         does include that individual&apos;s male reproductive organs. Not per-sex.
@@ -258,11 +269,11 @@ const REFERENCE: BodySourceConfig = {
       skin to nerves. Layers inside the peel point stay as you left them; the heavy systems
       mount when you first reach them. Click any structure to inspect it. Organs, ducts, bronchi,
       the brainstem, the bones of the skull, spine, ribs, sternum and limbs, 132 of this
-      body&apos;s muscles, 229 named vessels of the heart-and-vessels layer, and 160 of the nerve
+      body&apos;s muscles, 229 named vessels of the heart-and-vessels layer, 160 of the nerve
       layer&apos;s names — the cranial and named peripheral nerves, the brain&apos;s parts and the
-      eye — are each mapped to a structure; the hand-and-foot bones, and the vessel, nerve and
-      muscle names Uberon does not model, are not mapped yet, so they report “not mapped to a
-      structure”.
+      eye — and 22 of the joint layer&apos;s ligaments, capsules and symphyses are each mapped to a
+      structure; the hand-and-foot bones, and the vessel, nerve, joint and muscle names Uberon does
+      not model, are not mapped yet, so they report “not mapped to a structure”.
     </>
   ),
   attribution: <ReferenceAttribution />
