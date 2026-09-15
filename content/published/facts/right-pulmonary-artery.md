@@ -6,7 +6,6 @@ reviewer: null
 date: 2026-09-14
 citations:
   - "uberon"
-  - "wikipedia-right-pulmonary-artery"
   - "hubmap-hra-glb"
   - "z-anatomy"
 ---
@@ -20,7 +19,6 @@ citations:
 ## Relations
 
 - Uberon records this structure as: "The pulmonary artery that supplies the right lung." (uberon).
-- A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. (wikipedia-right-pulmonary-artery)
 - Its node names are `VH_M_pulmonary_artery_R` on the male donor's model, and `VH_F_pulmonary_artery_R` on the female donor's model (hubmap-hra-glb).
 - On the Reference body's Z-Anatomy cardiovascular layer it appears as the mesh node `Right_pulmonary_artery` (z-anatomy). The Reference body is a different individual from the Visible Human donors.
 

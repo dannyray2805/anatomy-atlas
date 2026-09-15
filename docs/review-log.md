@@ -502,6 +502,72 @@ with 19 empty extracts. A 200 with a degradation notice reads as success. The fi
   branches) still say "no published fact card for this structure yet", which is honest and unchanged.
   Across the whole atlas, 118 of 693 rows carry a card.
 
+## 2026-09-15 — fact cards for every remaining layer
+
+Scope: **564 new cards** (muscle 132, skeleton 66, the Reference body's vessel tree 182, the heart valves
+and septum 5, nerves 157, joints 22), taking the atlas to **682 of 693 rows carded**. The 11 rows
+without a card carry **no mesh names** — the whole-layer rows and `body` — so nothing resolves to them
+and a card could not be reached. All 564 are `reviewed: false`.
+
+This batch uses the same generated-card discipline as the vessel batch: every sentence is the Uberon
+term record (564/564 resolved), a Wikipedia sentence quoted verbatim, or a count taken off this graph.
+299 of the 564 rows quote an article; the other 265 either have no article or have one that is not
+about the structure. 297 new `wikipedia-*` register rows.
+
+### Two new guards, and the trap that required them
+
+These rows come from the Reference body's Z-Anatomy assets, where a label is often a plain English word,
+and the vessel batch's rule ("a sentence that names it") is not strong enough for that:
+
+1. **Disambiguation pages are skipped** (`prop=pageprops`). 45 were refused across this batch.
+2. **A quotation must contain an anatomical kind word for its layer** (muscle/bone/vertebra/nerve/
+   artery/vein/joint/ligament…), and it must **open with the structure**.
+
+The trap: the row `atlas-c1` is labelled "Atlas (C1)", and Wikipedia's article **"Atlas" is about
+collections of maps** — "An atlas is a collection of maps; it is typically a bundle of maps of Earth…".
+That sentence satisfies every wording rule: it opens with the structure's own word and contains no
+pronunciation artefact. It would have put cartography on the first cervical vertebra. Both guards are
+needed: the kind-word rule rejects it, and refusing to fall back to the bare stem of a parenthetical
+label ("Atlas (C1)" → "Atlas") is what stops the lookup ever reaching that article. The row is now
+carded from its Uberon record (`vertebral bone 1`, with "atlas" among its synonyms) and its own mesh
+node, which is honest and useful. **The first fetch did produce that quotation**, and it was caught by
+reading a sample of the output before generating anything — which is why the sample read matters more
+than the pass rate.
+
+### Also corrected in the previous batch
+
+Auditing this batch's redirect handling exposed two defects in the 75 vessel cards:
+
+- **`left-pulmonary-artery` and `right-pulmonary-artery` quoted the article "Pulmonary artery"** — the
+  trunk — whose opening sentence describes the whole artery tree, not the branch the row names. That is
+  the part-versus-whole error the mapping gate refuses, so the quotation and its citation were removed;
+  their Uberon definitions are exact on their own ("The pulmonary artery that supplies the left lung").
+- **15 register rows named the title that was requested rather than the article that was quoted.**
+  "Middle hemorrhoidal vein" is the article *Middle rectal veins*; "Marginal artery of Drummond" is
+  *Marginal artery of the colon*. The keys are identifiers and stay as they are, but every row now names
+  and links the real article, with the requested title recorded so the redirect is visible.
+
+### My own bug, caught by the validator
+
+Rewriting those register rows as `${parts[0]}|…` replaced each row's **id cell** — `parts[0]` is the
+empty string before the first pipe — so 15 rows lost their keys, and my first repair restored the keys
+without restoring the licence/URL cells the rewrite had also dropped. `pnpm validate` failed on the
+first of those immediately (the cards cited keys the register no longer declared), and the 13 surviving
+rows were then rebuilt whole rather than patched cell by cell. **The lesson is the check, not the typo:
+a table rewritten by string-splitting needs its shape asserted afterwards.** The register now has 396
+`wikipedia-*` rows, all in the six-column shape, with 0 duplicate keys.
+
+### Not checked
+
+- **No anatomist read these.** The definitions are Uberon's, the relations sentences are Wikipedia's,
+  checked for attribution and verbatim quotation rather than for being right. Nothing was verified
+  against the meshes: a card claims that a click on those node names opens this row, not that the
+  geometry matches the structure.
+- 265 of the 564 cards have no quoted article, so their Relations section is one Uberon definition plus
+  the node names — thinner than the hand-written cards.
+- The 11 whole-layer rows have no card at all, deliberately: they describe a layer, and listing them as
+  browsable structures would promise a click that does not exist. `/structures` says so.
+
 ## Maintaining this log
 
 When a batch is review-accepted, add an entry: the date, the scope, what was checked, what was
